@@ -4,6 +4,7 @@ import { inject, observer } from "mobx-react"
 import { getNavigation, NavigationScreenProp, NavigationState } from "react-navigation"
 import { RootNavigator } from "./root-navigator"
 import { NavigationStore } from "./navigation-store"
+import { navigateService } from "utils"
 
 interface StatefulNavigatorProps {
   navigationStore?: NavigationStore
@@ -31,6 +32,8 @@ export class StatefulNavigator extends React.Component<StatefulNavigatorProps, {
       {},
       this.getCurrentNavigation,
     )
+
+    navigateService.setTopLevelNavigator(this.currentNavProp)
 
     return <RootNavigator navigation={this.currentNavProp} />
   }

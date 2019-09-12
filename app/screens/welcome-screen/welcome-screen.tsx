@@ -8,6 +8,7 @@ import { Wallpaper } from "../../components/wallpaper"
 import { Header } from "../../components/header"
 import { color, spacing } from "../../theme"
 import { bowserLogo } from "./"
+import { navigateService } from "utils"
 
 const FULL: ViewStyle = { flex: 1 }
 const CONTAINER: ViewStyle = {
@@ -81,7 +82,7 @@ const FOOTER_CONTENT: ViewStyle = {
 export interface WelcomeScreenProps extends NavigationScreenProps<{}> {}
 
 export class WelcomeScreen extends React.Component<WelcomeScreenProps, {}> {
-  nextScreen = () => this.props.navigation.navigate("demo")
+  nextScreen = () => navigateService.navigate("demo")
 
   render() {
     return (

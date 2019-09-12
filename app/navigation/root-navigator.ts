@@ -1,12 +1,12 @@
 import { createStackNavigator } from "react-navigation"
-import { PrimaryNavigator } from "./primary-navigator"
+import { PrimaryNavigator, primaryRoute } from "./primary-navigator"
 
-export const RootNavigator = createStackNavigator(
-  {
-    primaryStack: { screen: PrimaryNavigator },
-  },
-  {
-    headerMode: "none",
-    navigationOptions: { gesturesEnabled: false },
-  },
-)
+const RouteConfigs = {
+  primaryStack: { screen: PrimaryNavigator },
+}
+
+export const RootNavigator = createStackNavigator(RouteConfigs, {
+  headerMode: "none",
+  navigationOptions: { gesturesEnabled: false },
+})
+export type RootRouteName = keyof typeof RouteConfigs | primaryRoute

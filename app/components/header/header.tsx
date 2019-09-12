@@ -6,6 +6,7 @@ import { Icon } from "../icon"
 import { Text } from "../text"
 import { spacing } from "../../theme"
 import { translate } from "../../i18n/"
+import { navigateService } from "utils"
 
 // static styles
 const ROOT: ViewStyle = {
@@ -25,6 +26,9 @@ const RIGHT: ViewStyle = { width: 32 }
  * Header that appears on many screens. Will hold navigation buttons and screen title.
  */
 export class Header extends React.Component<HeaderProps, {}> {
+  static defaultProps = {
+    onLeftPress: navigateService.goBack,
+  }
   render() {
     const {
       onLeftPress,

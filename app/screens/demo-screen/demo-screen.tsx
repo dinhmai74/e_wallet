@@ -128,7 +128,6 @@ export class DemoScreen extends React.Component<DemoScreenProps, {}> {
           <Header
             headerTx="demoScreen.howTo"
             leftIcon="back"
-            onLeftPress={this.goBack}
             style={HEADER}
             titleStyle={HEADER_TITLE}
           />
