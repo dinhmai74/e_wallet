@@ -14,9 +14,9 @@
     "target": "es2015",
     "lib": ["es6"],
     "skipLibCheck": true,
-    "baseUrl": "./app",
+    "baseUrl": ".",
     "paths": {
-      "*": ["node_modules/*", "*"],
+      "*": ["node_modules/*", "app/*"],
       "app": ["./app"],
       "api": ["./app/api"],
       "components": ["./app/components"],

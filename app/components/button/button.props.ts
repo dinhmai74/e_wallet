@@ -1,12 +1,14 @@
-import { ViewStyle, TextStyle, TouchableOpacityProps } from "react-native"
+import { TextStyle, ViewStyle } from "react-native"
 import { ButtonPresetNames } from "./button.presets"
+import { NativeBase } from "native-base"
+import { TranslateKey } from "i18n/lang"
 
-export interface ButtonProps extends TouchableOpacityProps {
+// tslint:disable-next-line: interface-name
+export interface ButtonProps extends NativeBase.Button {
   /**
    * Text which is looked up via i18n.
    */
-  tx?: string
-
+  tx?: TranslateKey
   /**
    * The text to display if not using `tx` or nested components.
    */
@@ -30,5 +32,15 @@ export interface ButtonProps extends TouchableOpacityProps {
   /**
    * One of the different types of text presets.
    */
-  children?: React.ReactNode
+  children?: string
+  /**
+   * Optional options to pass to i18n. Useful for interpolation
+   * as well as explicitly setting locale or translation fallbacks.
+   */
+  txOptions?: object
+
+  linear?: boolean
+
+  full?: boolean
+  rounded?: boolean
 }

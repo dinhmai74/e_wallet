@@ -1,7 +1,7 @@
 import * as RNLocalize from "react-native-localize"
 import i18n from "i18n-js"
-
-const en = require("./en")
+import { en } from "./lang"
+export * from "./lang/en"
 const ja = require("./ja")
 
 i18n.fallbacks = true

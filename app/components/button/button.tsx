@@ -1,6 +1,6 @@
 import * as React from "react"
-import { TouchableOpacity } from "react-native"
 import { Text } from "../text"
+import { Button as NBButton } from "native-base"
 import { viewPresets, textPresets } from "./button.presets"
 import { ButtonProps } from "./button.props"
 import { mergeAll, flatten } from "ramda"
@@ -13,7 +13,7 @@ import { mergeAll, flatten } from "ramda"
 export function Button(props: ButtonProps) {
   // grab the props
   const {
-    preset = "primary",
+    preset,
     tx,
     text,
     style: styleOverride,
@@ -22,7 +22,7 @@ export function Button(props: ButtonProps) {
     ...rest
   } = props
 
-  const viewStyle = mergeAll(flatten([viewPresets[preset] || viewPresets.primary, styleOverride]))
+  const viewStyle = mergeAll(flatten([preset && viewPresets[preset], styleOverride]))
   const textStyle = mergeAll(
     flatten([textPresets[preset] || textPresets.primary, textStyleOverride]),
   )
@@ -30,8 +30,8 @@ export function Button(props: ButtonProps) {
   const content = children || <Text tx={tx} text={text} style={textStyle} />
 
   return (
-    <TouchableOpacity style={viewStyle} {...rest}>
+    <NBButton style={viewStyle} {...rest}>
       {content}
-    </TouchableOpacity>
+    </NBButton>
   )
 }

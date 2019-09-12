@@ -1,8 +1,9 @@
 import * as React from "react"
-import { KeyboardAvoidingView, Platform, ScrollView, StatusBar, View } from "react-native"
+import { KeyboardAvoidingView, Platform, StatusBar, View } from "react-native"
 import { SafeAreaView } from "react-navigation"
 import { ScreenProps } from "./screen.props"
 import { isNonScrolling, offsets, presets } from "./screen.presets"
+import { Content } from "native-base"
 
 const isIos = Platform.OS === "ios"
 
@@ -38,12 +39,12 @@ function ScreenWithScrolling(props: ScreenProps) {
     >
       <StatusBar barStyle={props.statusBar || "light-content"} />
       <Wrapper style={[preset.outer, backgroundStyle]}>
-        <ScrollView
+        <Content
           style={[preset.outer, backgroundStyle]}
           contentContainerStyle={[preset.inner, style]}
         >
           {props.children}
-        </ScrollView>
+        </Content>
       </Wrapper>
     </KeyboardAvoidingView>
   )

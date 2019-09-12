@@ -12,6 +12,9 @@ import { Provider } from "mobx-react"
 import { BackButtonHandler } from "navigation/back-button-handler"
 import { contains } from "ramda"
 import { DEFAULT_NAVIGATION_CONFIG } from "./navigation/navigation-config"
+import { Container, StyleProvider } from "native-base"
+import getTheme from "../native-base-theme/components"
+import material from "../native-base-theme/variables/material"
 
 /**
  * Ignore some yellowbox warnings. Some of these are for deprecated functions
@@ -87,11 +90,15 @@ export class App extends React.Component<{}, AppState> {
     const { navigationStore, ...otherStores } = rootStore
 
     return (
-      <Provider rootStore={rootStore} navigationStore={navigationStore} {...otherStores}>
-        <BackButtonHandler canExit={this.canExit}>
-          <StatefulNavigator />
-        </BackButtonHandler>
-      </Provider>
+      <StyleProvider style={getTheme(material)}>
+        <Container>
+          <Provider rootStore={rootStore} navigationStore={navigationStore} {...otherStores}>
+            <BackButtonHandler canExit={this.canExit}>
+              <StatefulNavigator />
+            </BackButtonHandler>
+          </Provider>
+        </Container>
+      </StyleProvider>
     )
   }
 }
