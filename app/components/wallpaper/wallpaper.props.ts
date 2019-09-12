@@ -1,4 +1,4 @@
-import { ImageStyle } from "react-native"
+import { ImageSourcePropType, ImageStyle } from "react-native"
 import { WallpaperPresets } from "./wallpaper.presets"
 
 export interface WallpaperProps {
@@ -10,7 +10,7 @@ export interface WallpaperProps {
   /**
    * An optional background image to override the default image.
    */
-  backgroundImage?: string
+  backgroundImage?: ImageSourcePropType
 
   /**
    * One of the different types of wallpaper presets.

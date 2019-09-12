@@ -1,9 +1,10 @@
+import { Text } from "components/text"
 import React from "react"
 import { Image } from "react-native"
+import { color, palette } from "theme"
 import { presets } from "./wallpaper.presets"
 import { WallpaperProps } from "./wallpaper.props"
-
-const defaultImage = require("./bg.png")
+import LinearGradient from "react-native-linear-gradient"
 
 /**
  * For your text displaying needs.
@@ -19,7 +20,16 @@ export function Wallpaper(props: WallpaperProps) {
   const style = { ...presetToUse, ...styleOverride }
 
   // figure out which image to use
-  const source = backgroundImage || defaultImage
+  const source = backgroundImage
 
-  return <Image source={source} style={style} />
+  if (source) return <Image source={source} style={style} />
+
+  return (
+    <LinearGradient
+      start={{ x: 0.5, y: 0.0 }}
+      end={{ x: 0.5, y: 1.0 }}
+      colors={[color.linear.start, color.linear.end]}
+      style={style}
+    />
+  )
 }

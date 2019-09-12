@@ -2,8 +2,8 @@
 
 import color from "color"
 import { Platform, Dimensions, PixelRatio } from "react-native"
-
 import { PLATFORM } from "./commonColor"
+import { color as Colors, Fonts, palette } from "../../app/theme"
 
 const deviceHeight = Dimensions.get("window").height
 const deviceWidth = Dimensions.get("window").width
@@ -120,19 +120,19 @@ export default {
   checkboxTickColor: "#fff",
 
   // Color
-  brandPrimary: "#3F51B5",
-  brandInfo: "#62B1F6",
-  brandSuccess: "#5cb85c",
-  brandDanger: "#d9534f",
-  brandWarning: "#f0ad4e",
-  brandDark: "#000",
-  brandLight: "#f4f4f4",
+  brandPrimary: Colors.primary,
+  brandInfo: Colors.brandInfo,
+  brandSuccess: Colors.brandSuccess,
+  brandDanger: Colors.brandDanger,
+  brandWarning: Colors.brandWarning,
+  brandDark: Colors.brandDark,
+  brandLight: Colors.brandLight,
 
   // Container
-  containerBgColor: "#fff",
+  containerBgColor: Colors.containerBg,
 
   // Date Picker
-  datePickerTextColor: "#000",
+  datePickerTextColor: palette.black,
   datePickerBg: "transparent",
 
   // FAB
@@ -140,7 +140,7 @@ export default {
 
   // Font
   DefaultFontSize: 16,
-  fontFamily: "Roboto",
+  fontFamily: Fonts.type.base,
   fontSizeBase: 15,
   get fontSizeH1() {
     return this.fontSizeBase * 1.8
@@ -266,7 +266,7 @@ export default {
   },
 
   // Title
-  titleFontfamily: "Roboto",
+  titleFontfamily: Fonts.type.base,
   titleFontSize: 19,
   subTitleFontSize: 14,
   subtitleColor: "#FFF",

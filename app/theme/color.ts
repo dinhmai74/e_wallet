@@ -1,4 +1,21 @@
-import { palette } from "./palette"
+export const palette = {
+  black: "#1d1d1d",
+  white: "#ffffff",
+  offWhite: "#e6e6e6",
+  whiteSmoke: "#F4F4F4",
+  orange: "#FBA928",
+  orangeDarker: "#EB9918",
+  lightGrey: "#939AA4",
+  lighterGrey: "#CDD4DA",
+  superGrey: "#ccc",
+  angry: "#dd3333",
+  lightStateBlue: "#5f7cfc",
+  mediumStateBlue: "#a78ef1",
+  columbiaBlue: "#aaecfe",
+  blue: "#62B1F6",
+  green: "#5cb85c",
+  realOrange: "#d9534f",
+}
 
 /**
  * Roles for colors.  Prefer using these over the palette.  It makes it easier
@@ -24,10 +41,24 @@ export const color = {
    * The screen background.
    */
   background: palette.white,
+  containerBg: palette.white,
+  linear: {
+    start: "#5B86E5",
+    middle: "#12D8FA",
+    end: "#36D1DC",
+  },
   /**
    * The main tinting color.
    */
-  primary: palette.orange,
+  primary: palette.lightStateBlue,
+  secondary: palette.mediumStateBlue,
+  brandInfo: palette.blue,
+  brandSuccess: palette.green,
+  brandDanger: palette.realOrange,
+  brandWarning: palette.orange,
+  brandDark: palette.black,
+  brandLight: palette.whiteSmoke,
+  divider: palette.superGrey,
   /**
    * The main tinting color, but darker.
    */
