@@ -1,11 +1,12 @@
 import { ViewStyle, TextStyle } from "react-native"
 import { IconTypes } from "../icon"
+import { TranslateKey } from "i18n/lang"
 
 export interface HeaderProps {
   /**
    * Main header, e.g. POWERED BY BOWSER
    */
-  headerTx?: string
+  headerTx?: TranslateKey
 
   /**
    * header non-i18n

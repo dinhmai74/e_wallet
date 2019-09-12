@@ -6,8 +6,7 @@ import { Screen } from "../../components/screen"
 import { color } from "../../theme"
 import { NavigationScreenProps } from "react-navigation"
 
-export interface HomeScreenProps extends NavigationScreenProps<{}> {
-}
+export interface HomeScreenProps extends NavigationScreenProps<{}> {}
 
 const ROOT: ViewStyle = {
   backgroundColor: color.palette.black,
@@ -16,7 +15,7 @@ const ROOT: ViewStyle = {
 // @inject("mobxstuff")
 @observer
 export class HomeScreen extends React.Component<HomeScreenProps, {}> {
-  render () {
+  render() {
     return (
       <Screen style={ROOT} preset="scroll">
         <Text preset="header" tx="homeScreen.header" />
