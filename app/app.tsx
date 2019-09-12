@@ -9,7 +9,7 @@ import { StatefulNavigator } from "./navigation"
 import { StorybookUIRoot } from "../storybook"
 import { RootStore, setupRootStore } from "./models/root-store"
 import { Provider } from "mobx-react"
-import { BackButtonHandler } from "./navigation/back-button-handler"
+import { BackButtonHandler } from "navigation/back-button-handler"
 import { contains } from "ramda"
 import { DEFAULT_NAVIGATION_CONFIG } from "./navigation/navigation-config"
 
@@ -105,6 +105,7 @@ const APP_NAME = "e_wallet"
 //
 // ⚠️ Leave this as `false` when checking into git.
 const SHOW_STORYBOOK = false
+// const SHOW_STORYBOOK = true
 
 const RootComponent = SHOW_STORYBOOK && __DEV__ ? StorybookUIRoot : App
 AppRegistry.registerComponent(APP_NAME, () => RootComponent)
