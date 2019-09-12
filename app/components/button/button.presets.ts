@@ -1,5 +1,6 @@
 import { ViewStyle, TextStyle } from "react-native"
 import { color, spacing } from "../../theme"
+import { palette } from "theme/palette"
 
 /**
  * All text will start off looking like this.
@@ -34,6 +35,7 @@ export const viewPresets = {
     ...BASE_VIEW,
     paddingHorizontal: 0,
     paddingVertical: 0,
+    backgroundColor: color.transparent,
     alignItems: "flex-start",
   } as ViewStyle,
 }
