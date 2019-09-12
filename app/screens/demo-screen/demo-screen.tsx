@@ -1,12 +1,5 @@
 import * as React from "react"
-import {
-  Image,
-  ImageStyle,
-  Platform,
-  TextStyle,
-  View,
-  ViewStyle,
-} from "react-native"
+import { Image, ImageStyle, Platform, TextStyle, View, ViewStyle } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
 import { Screen } from "../../components/screen"
 import { Text } from "../../components/text"
@@ -131,10 +124,7 @@ export class DemoScreen extends React.Component<DemoScreenProps, {}> {
     return (
       <View style={FULL}>
         <Wallpaper />
-        <Screen
-          style={CONTAINER}
-          preset="scroll"
-          backgroundColor={color.transparent}>
+        <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
           <Header
             headerTx="demoScreen.howTo"
             leftIcon="back"
@@ -153,10 +143,7 @@ export class DemoScreen extends React.Component<DemoScreenProps, {}> {
               tx="demoScreen.reactotron"
               onPress={this.demoReactotron}
             />
-            <Text
-              style={HINT}
-              tx={`demoScreen.${Platform.OS}ReactotronHint`}
-            />
+            <Text style={HINT} tx={`demoScreen.${Platform.OS}ReactotronHint`} />
           </View>
           <Image source={logoIgnite} style={IGNITE} />
           <View style={LOVE_WRAPPER}>

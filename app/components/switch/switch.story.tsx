@@ -1,6 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable react-native/no-color-literals */
-
 import * as React from "react"
 import { View, ViewStyle } from "react-native"
 import { storiesOf } from "@storybook/react-native"
@@ -8,7 +5,7 @@ import { StoryScreen, Story, UseCase } from "../../../storybook/views"
 import { Toggle } from "react-powerplug"
 import { Switch } from "."
 
-declare var module
+declare let module
 
 const styleArray: ViewStyle[] = [{ borderColor: "#686868" }]
 

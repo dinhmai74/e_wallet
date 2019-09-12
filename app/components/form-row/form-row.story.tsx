@@ -1,15 +1,12 @@
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable react-native/no-color-literals */
-
 import * as React from "react"
 import { storiesOf } from "@storybook/react-native"
 import { StoryScreen, Story, UseCase } from "../../../storybook/views"
 import { FormRow } from "./form-row"
 import { Text } from "../text"
-import { color } from "../../theme/color"
+import { color } from "../../theme"
 import { ViewStyle } from "react-native"
 
-declare var module
+declare let module
 
 const TEXT_STYLE_OVERRIDE = {
   color: color.storybookTextColor,
@@ -42,7 +39,7 @@ storiesOf("FormRow", module)
           </Text>
         </FormRow>
         <FormRow preset="bottom">
-          <Text style={TEXT_STYLE_OVERRIDE}>🎉 Footers!</Text>
+          <Text style={TEXT_STYLE_OVERRIDE}> Footers!</Text>
         </FormRow>
       </UseCase>
       <UseCase text="Alternatives" usage="Less commonly used presets.">
@@ -53,9 +50,11 @@ storiesOf("FormRow", module)
           </Text>
         </FormRow>
         <FormRow preset="soloRound">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           <Text style={TEXT_STYLE_OVERRIDE}>I'm round</Text>
         </FormRow>
         <FormRow preset="soloStraight" style={{ marginTop: 10, backgroundColor: "#ffe" }}>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           <Text style={TEXT_STYLE_OVERRIDE}>I'm square and have a custom style.</Text>
         </FormRow>
       </UseCase>

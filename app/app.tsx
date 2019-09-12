@@ -28,8 +28,10 @@ YellowBox.ignoreWarnings([
  * points RN's AsyncStorage at the community one, fixing the warning. Here's the
  * Storybook issue about this: https://github.com/storybookjs/storybook/issues/6078
  */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const ReactNative = require("react-native")
 Object.defineProperty(ReactNative, "AsyncStorage", {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   get(): any {
     return require("@react-native-community/async-storage").default
   },
@@ -59,6 +61,7 @@ export class App extends React.Component<{}, AppState> {
    *
    * @param routeName The currently active route name.
    */
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   canExit(routeName: string) {
     return contains(routeName, DEFAULT_NAVIGATION_CONFIG.exitRoutes)
   }

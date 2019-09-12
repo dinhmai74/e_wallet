@@ -87,15 +87,8 @@ export class WelcomeScreen extends React.Component<WelcomeScreenProps, {}> {
     return (
       <View style={FULL}>
         <Wallpaper />
-        <Screen
-          style={CONTAINER}
-          preset="scroll"
-          backgroundColor={color.transparent}>
-          <Header
-            headerTx="welcomeScreen.poweredBy"
-            style={HEADER}
-            titleStyle={HEADER_TITLE}
-          />
+        <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
+          <Header headerTx="welcomeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
           <Text style={TITLE_WRAPPER}>
             <Text style={TITLE} text="Your new app, " />
             <Text style={ALMOST} text="almost" />
@@ -104,10 +97,15 @@ export class WelcomeScreen extends React.Component<WelcomeScreenProps, {}> {
           <Text style={TITLE} preset="header" tx="welcomeScreen.readyForLaunch" />
           <Image source={bowserLogo} style={BOWSER} />
           <Text style={CONTENT}>
-            This probably isn't what your app is going to look like. Unless your designer handed you this screen and, in that case, congrats! You're ready to ship.
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            This probably isn't what your app is going to look like. Unless your designer handed you
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            this screen and, in that case, congrats! You're ready to ship.
           </Text>
           <Text style={CONTENT}>
-            For everyone else, this is where you'll see a live preview of your fully functioning app using Ignite.
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            For everyone else, this is where you'll see a live preview of your fully functioning app
+            using Ignite.
           </Text>
         </Screen>
         <SafeAreaView style={FOOTER}>
