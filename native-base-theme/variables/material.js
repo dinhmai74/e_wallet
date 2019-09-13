@@ -1,5 +1,4 @@
 // @flow
-
 import color from "color"
 import { Platform, Dimensions, PixelRatio } from "react-native"
 import { PLATFORM } from "./commonColor"

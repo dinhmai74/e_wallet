@@ -17,6 +17,10 @@ import getTheme from "../native-base-theme/components"
 import material from "../native-base-theme/variables/material"
 import Ionicons from "react-native-vector-icons/Ionicons"
 
+import { useScreens } from "react-native-screens"
+
+useScreens()
+
 Ionicons.loadFont()
 
 /**
