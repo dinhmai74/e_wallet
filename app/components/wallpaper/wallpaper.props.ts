@@ -16,4 +16,8 @@ export interface WallpaperProps {
    * One of the different types of wallpaper presets.
    */
   preset?: WallpaperPresets
+
+  linearDirection?: "horizontal" | "vertical"
+  linearStart?: string
+  linearEnd?: string
 }

@@ -32,7 +32,7 @@ export interface ButtonProps extends NativeBase.Button {
   /**
    * One of the different types of text presets.
    */
-  children?: string
+  children?: any
   /**
    * Optional options to pass to i18n. Useful for interpolation
    * as well as explicitly setting locale or translation fallbacks.

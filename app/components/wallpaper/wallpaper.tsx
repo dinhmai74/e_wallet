@@ -1,7 +1,6 @@
-import { Text } from "components/text"
 import React from "react"
 import { Image } from "react-native"
-import { color, palette } from "theme"
+import { color } from "theme"
 import { presets } from "./wallpaper.presets"
 import { WallpaperProps } from "./wallpaper.props"
 import LinearGradient from "react-native-linear-gradient"
@@ -11,25 +10,51 @@ import LinearGradient from "react-native-linear-gradient"
  *
  * This component is a HOC over the built-in React Native one.
  */
-export function Wallpaper(props: WallpaperProps) {
-  // grab the props
-  const { preset = "stretch", style: styleOverride, backgroundImage } = props
+export class Wallpaper extends React.PureComponent<WallpaperProps> {
+  static defaultProps = {
+    linearDirection: "vertical",
+    linearStart: color.linear.start,
+    linearEnd: color.linear.end,
+  }
 
-  // assemble the style
-  const presetToUse = presets[preset] || presets.stretch
-  const style = { ...presetToUse, ...styleOverride }
+  render() {
+    // grab the props
+    const {
+      preset = "stretch",
+      style: styleOverride,
+      backgroundImage,
+      linearDirection,
+      linearEnd,
+      linearStart,
+    } = this.props
 
-  // figure out which image to use
-  const source = backgroundImage
+    // assemble the style
+    const presetToUse = presets[preset] || presets.stretch
+    const style = { ...presetToUse, ...styleOverride }
 
-  if (source) return <Image source={source} style={style} />
+    // figure out which image to use
+    const source = backgroundImage
 
-  return (
-    <LinearGradient
-      start={{ x: 0.5, y: 0.0 }}
-      end={{ x: 0.5, y: 1.0 }}
-      colors={[color.linear.start, color.linear.end]}
-      style={style}
-    />
-  )
+    if (source)
+      return (
+        <Image
+          source={source}
+          // @ts-ignore
+          style={style}
+        />
+      )
+
+    const start = linearDirection === "vertical" ? { x: 0.5, y: 0.0 } : { x: 1, y: 0 }
+    const end = linearDirection === "vertical" ? { x: 0.5, y: 1.0 } : { x: 0, y: 0 }
+
+    return (
+      <LinearGradient
+        start={start}
+        end={end}
+        colors={[linearStart, linearEnd]}
+        // @ts-ignore
+        style={style}
+      />
+    )
+  }
 }

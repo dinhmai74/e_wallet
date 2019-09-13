@@ -15,7 +15,9 @@ import { DEFAULT_NAVIGATION_CONFIG } from "./navigation/navigation-config"
 import { Container, StyleProvider } from "native-base"
 import getTheme from "../native-base-theme/components"
 import material from "../native-base-theme/variables/material"
-import { NavigateService } from "utils"
+import Ionicons from "react-native-vector-icons/Ionicons"
+
+Ionicons.loadFont()
 
 /**
  * Ignore some yellowbox warnings. Some of these are for deprecated functions

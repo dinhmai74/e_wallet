@@ -14,6 +14,11 @@ export const offsets = {
  */
 export type KeyboardOffsets = keyof typeof offsets
 
+const BASE: ViewStyle = {
+  flex: 1,
+  height: "100%",
+}
+
 /**
  * All the variations of screens.
  */
@@ -25,8 +30,7 @@ export const presets = {
   fixed: {
     outer: {
       backgroundColor: color.background,
-      flex: 1,
-      height: "100%",
+      ...BASE,
     } as ViewStyle,
     inner: {
       justifyContent: "flex-start",
@@ -44,8 +48,7 @@ export const presets = {
   scroll: {
     outer: {
       backgroundColor: color.background,
-      flex: 1,
-      height: "100%",
+      ...BASE,
     } as ViewStyle,
     inner: { justifyContent: "flex-start", alignItems: "stretch" } as ViewStyle,
   },

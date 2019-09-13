@@ -5,6 +5,8 @@ import { viewPresets, textPresets } from "./button.presets"
 import { ButtonProps } from "./button.props"
 import { mergeAll, flatten } from "ramda"
 
+export { ButtonProps }
+
 /**
  * For your text displaying needs.
  *

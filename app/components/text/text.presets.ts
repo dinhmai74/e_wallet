@@ -5,8 +5,6 @@ import { color, Fonts } from "theme"
  */
 const BASE: TextStyle = {
   fontFamily: Fonts.type.base,
-  color: color.text,
-  fontSize: 15,
 }
 
 /**
