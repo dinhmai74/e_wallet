@@ -1,19 +1,33 @@
 import * as React from "react"
-import { View, Image, ImageStyle } from "react-native"
+import { View, Image, ImageStyle, StyleSheet } from "react-native"
 import { IconProps } from "./icon.props"
 import { icons } from "./icons"
+import { flatten, mergeAll } from "ramda"
+import { color, metrics } from "theme"
 
 const ROOT: ImageStyle = {
   resizeMode: "contain",
+  backgroundColor: color.transparent,
 }
 
 export function Icon(props: IconProps) {
-  const { style: styleOverride, icon, containerStyle } = props
-  const style: ImageStyle = { ...ROOT, ...styleOverride }
+  const { style: styleOverride, icon, size, bg, color, containerStyle } = props
+  const imageSize = size || metrics.icon.normal
+  const sizeImage = { width: imageSize, height: imageSize }
+  const bgImage = bg && { backgroundColor: bg }
+  const colorImage = color && { tintColor: color }
+
+  // @ts-ignore
+  const style: ImageStyle = mergeAll(flatten([ROOT, sizeImage, colorImage, styleOverride]))
 
   return (
-    <View style={containerStyle}>
-      <Image style={style} source={icons[icon]} />
+    // @ts-ignore
+    <View style={[bgImage, containerStyle]}>
+      <Image
+        style={style}
+        // @ts-ignore
+        source={icons[icon]}
+      />
     </View>
   )
 }

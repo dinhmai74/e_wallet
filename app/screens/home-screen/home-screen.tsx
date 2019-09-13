@@ -1,15 +1,17 @@
 import * as React from "react"
 import { observer } from "mobx-react"
 import { ViewStyle } from "react-native"
-import { Text } from "../../components/text"
-import { Screen } from "../../components/screen"
-import { color } from "../../theme"
+import { Header, Text } from "components"
+import { Screen } from "components"
 import { NavigationScreenProps } from "react-navigation"
+import { View, Wallpaper } from "components"
+import { color } from "theme"
+import { Content } from "native-base"
 
 export interface HomeScreenProps extends NavigationScreenProps<{}> {}
 
 const ROOT: ViewStyle = {
-  backgroundColor: color.palette.black,
+  flex: 6,
 }
 
 // @inject("mobxstuff")
@@ -17,9 +19,15 @@ const ROOT: ViewStyle = {
 export class HomeScreen extends React.Component<HomeScreenProps, {}> {
   render() {
     return (
-      <Screen style={ROOT} preset="scroll">
-        <Text preset="header" tx="homeScreen.header" />
-      </Screen>
+      <View full>
+        <Wallpaper linearDirection={"horizontal"} />
+        <Screen style={ROOT} backgroundColor={color.transparent}>
+          <Header headerTx={"homeScreen_header"} preset={"white"} />
+          <Content style={{ backgroundColor: color.background }}>
+            <Text preset="header" tx="homeScreen_header" />
+          </Content>
+        </Screen>
+      </View>
     )
   }
 }

@@ -1,9 +1,19 @@
 export const en = {
-  "common.ok": "OK!",
-  "common.cancel": "Cancel",
-  "common.back": "Back",
-  "errors.invalidEmail": "Invalid email address.",
+  common_ok: "OK!",
+  common_cancel: "Cancel",
+  common_back: "Back",
+  errors_invalidEmail: "Invalid email address.",
 
-  "homeScreen.header": "Home screen",
+  // screen header
+  homeScreen_header: "Home screen",
+  promotion_header: "Promotion screen",
+  history_header: "History screen",
+  setting_header: "Setting screen",
+
+  // primary bottom tabs name
+  tab_home: "Home",
+  tab_pricetags: "Promotion",
+  tab_person: "History",
+  tab_clock: "Setting",
 }
 export type TranslateKey = keyof typeof en

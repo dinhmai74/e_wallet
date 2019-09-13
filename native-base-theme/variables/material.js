@@ -1,5 +1,4 @@
 // @flow
-
 import color from "color"
 import { Platform, Dimensions, PixelRatio } from "react-native"
 import { PLATFORM } from "./commonColor"
@@ -27,7 +26,7 @@ export default {
   // ActionSheet
   elevation: 4,
   containerTouchableBackgroundColor: "rgba(0,0,0,0.4)",
-  innerTouchableBackgroundColor: "#fff",
+  innerTouchableBackgroundColor: palette.white,
   listItemHeight: 50,
   listItemBorderColor: "transparent",
   marginHorizontal: -15,
@@ -45,7 +44,7 @@ export default {
 
   // Badge
   badgeBg: "#ED1727",
-  badgeColor: "#fff",
+  badgeColor: palette.white,
   badgePadding: 0,
 
   // Button
@@ -102,8 +101,8 @@ export default {
   },
 
   // Card
-  cardDefaultBg: "#fff",
-  cardBorderColor: "#ccc",
+  cardDefaultBg: palette.white,
+  cardBorderColor: Colors.divider,
   cardBorderRadius: 2,
   cardItemPadding: platform === PLATFORM.IOS ? 10 : 12,
 
@@ -117,7 +116,7 @@ export default {
   CheckboxFontSize: 17,
   checkboxBgColor: "#039BE5",
   checkboxSize: 20,
-  checkboxTickColor: "#fff",
+  checkboxTickColor: palette.white,
 
   // Color
   brandPrimary: Colors.primary,
@@ -154,27 +153,27 @@ export default {
 
   // Footer
   footerHeight: 55,
-  footerDefaultBg: "#3F51B5",
+  footerDefaultBg: Colors.transparent,
   footerPaddingBottom: 0,
 
   // FooterTab
-  tabBarTextColor: "#bfc6ea",
+  tabBarTextColor: Colors.dim,
   tabBarTextSize: 11,
-  activeTab: "#fff",
-  sTabBarActiveTextColor: "#007aff",
-  tabBarActiveTextColor: "#fff",
-  tabActiveBgColor: "#3F51B5",
+  activeTab: palette.white,
+  sTabBarActiveTextColor: Colors.primary,
+  tabBarActiveTextColor: Colors.primary,
+  tabActiveBgColor: Colors.footBg,
 
   // Header
-  toolbarBtnColor: "#fff",
-  toolbarDefaultBg: "#3F51B5",
+  toolbarBtnColor: palette.white,
+  toolbarDefaultBg: Colors.primary,
   toolbarHeight: 56,
   toolbarSearchIconSize: 23,
-  toolbarInputColor: "#fff",
+  toolbarInputColor: palette.white,
   searchBarHeight: platform === PLATFORM.IOS ? 30 : 40,
   searchBarInputHeight: platform === PLATFORM.IOS ? 40 : 50,
-  toolbarBtnTextColor: "#fff",
-  toolbarDefaultBorder: "#3F51B5",
+  toolbarBtnTextColor: palette.white,
+  toolbarDefaultBorder: Colors.primary,
   iosStatusbar: "light-content",
   get statusBarColor() {
     return color(this.toolbarDefaultBg)
@@ -220,7 +219,7 @@ export default {
   listItemPadding: 12,
   listNoteColor: "#808080",
   listNoteSize: 13,
-  listItemSelected: "#3F51B5",
+  listItemSelected: Colors.primary,
 
   // Progress Bar
   defaultProgressColor: "#E4202D",
@@ -228,38 +227,38 @@ export default {
 
   // Radio Button
   radioBtnSize: 23,
-  radioSelectedColorAndroid: "#3F51B5",
+  radioSelectedColorAndroid: Colors.primary,
   radioBtnLineHeight: 24,
   get radioColor() {
     return this.brandPrimary
   },
 
   // Segment
-  segmentBackgroundColor: "#3F51B5",
-  segmentActiveBackgroundColor: "#fff",
-  segmentTextColor: "#fff",
-  segmentActiveTextColor: "#3F51B5",
-  segmentBorderColor: "#fff",
-  segmentBorderColorMain: "#3F51B5",
+  segmentBackgroundColor: Colors.primary,
+  segmentActiveBackgroundColor: palette.white,
+  segmentTextColor: palette.white,
+  segmentActiveTextColor: Colors.primary,
+  segmentBorderColor: palette.white,
+  segmentBorderColorMain: Colors.primary,
 
   // Spinner
   defaultSpinnerColor: "#45D56E",
   inverseSpinnerColor: "#1A191B",
 
   // Tab
-  tabDefaultBg: "#3F51B5",
+  tabDefaultBg: Colors.primary,
   topTabBarTextColor: "#b3c7f9",
-  topTabBarActiveTextColor: "#fff",
-  topTabBarBorderColor: "#fff",
-  topTabBarActiveBorderColor: "#fff",
+  topTabBarActiveTextColor: palette.white,
+  topTabBarBorderColor: palette.white,
+  topTabBarActiveBorderColor: palette.white,
 
   // Tabs
   tabBgColor: "#F8F8F8",
   tabFontSize: 15,
 
   // Text
-  textColor: "#000",
-  inverseTextColor: "#fff",
+  textColor: Colors.text,
+  inverseTextColor: palette.white,
   noteFontSize: 14,
   get defaultTextColor() {
     return this.textColor
@@ -269,8 +268,8 @@ export default {
   titleFontfamily: Fonts.type.base,
   titleFontSize: 19,
   subTitleFontSize: 14,
-  subtitleColor: "#FFF",
-  titleFontColor: "#FFF",
+  subtitleColor: palette.white,
+  titleFontColor: palette.white,
 
   // Other
   borderRadiusBase: 2,

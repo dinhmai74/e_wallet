@@ -1,5 +1,5 @@
-import { createStackNavigator } from "react-navigation"
 import { PrimaryNavigator, primaryRoute } from "./primary-navigator"
+import { createStackNavigator } from "react-navigation-stack"
 
 const RouteConfigs = {
   primaryStack: { screen: PrimaryNavigator },

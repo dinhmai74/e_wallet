@@ -21,6 +21,8 @@ export interface ScreenProps {
    * An optional background color
    */
   backgroundColor?: string
+  /* ------------- transparent bg? ------------- */
+  transparent?: boolean
 
   /**
    * An optional status bar setting. Defaults to light-content.

@@ -4,13 +4,20 @@ import { SafeAreaView } from "react-navigation"
 import { ScreenProps } from "./screen.props"
 import { isNonScrolling, offsets, presets } from "./screen.presets"
 import { Content } from "native-base"
+import { mergeAll, flatten } from "ramda"
+import { color } from "theme"
 
 const isIos = Platform.OS === "ios"
 
 function ScreenWithoutScrolling(props: ScreenProps) {
   const preset = presets["fixed"]
   const style = props.style || {}
-  const backgroundStyle = props.backgroundColor ? { backgroundColor: props.backgroundColor } : {}
+  const backgroundStyle = mergeAll(
+    flatten([
+      props.backgroundColor && { backgroundColor: props.backgroundColor },
+      props.transparent && { backgroundColor: color.transparent },
+    ]),
+  )
   const Wrapper = props.unsafe ? View : SafeAreaView
 
   return (
@@ -28,7 +35,12 @@ function ScreenWithoutScrolling(props: ScreenProps) {
 function ScreenWithScrolling(props: ScreenProps) {
   const preset = presets["scroll"]
   const style = props.style || {}
-  const backgroundStyle = props.backgroundColor ? { backgroundColor: props.backgroundColor } : {}
+  const backgroundStyle = mergeAll(
+    flatten([
+      props.backgroundColor && { backgroundColor: props.backgroundColor },
+      props.transparent && { backgroundColor: color.transparent },
+    ]),
+  )
   const Wrapper = props.unsafe ? View : SafeAreaView
 
   return (

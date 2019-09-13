@@ -1,6 +1,7 @@
 import { ViewStyle, TextStyle } from "react-native"
 import { IconTypes } from "../icon"
 import { TranslateKey } from "i18n/lang"
+import { PresetsType } from "components/header/header.presets"
 
 export interface HeaderProps {
   /**
@@ -12,6 +13,9 @@ export interface HeaderProps {
    * header non-i18n
    */
   headerText?: string
+
+  /* ------------- presets type ------------- */
+  preset?: PresetsType
 
   /**
    * Icon that should appear on the left

@@ -1,7 +1,8 @@
 export const palette = {
-  black: "#1d1d1d",
+  black: "#050505",
   white: "#ffffff",
   offWhite: "#e6e6e6",
+  lightWhite: "#f5f6ff",
   whiteSmoke: "#F4F4F4",
   orange: "#FBA928",
   orangeDarker: "#EB9918",
@@ -47,10 +48,13 @@ export const color = {
     middle: "#12D8FA",
     end: "#36D1DC",
   },
+  /* ------------- little dark white bg ------------- */
+  footBg: palette.lightWhite,
   /**
    * The main tinting color.
    */
   primary: palette.lightStateBlue,
+  primaryDarker: palette.orangeDarker,
   secondary: palette.mediumStateBlue,
   brandInfo: palette.blue,
   brandSuccess: palette.green,
@@ -60,17 +64,13 @@ export const color = {
   brandLight: palette.whiteSmoke,
   divider: palette.superGrey,
   /**
-   * The main tinting color, but darker.
-   */
-  primaryDarker: palette.orangeDarker,
-  /**
    * A subtle color used for borders and lines.
    */
   line: palette.offWhite,
   /**
    * The default color of text in many components.
    */
-  text: palette.white,
+  text: palette.black,
   /**
    * Secondary information.
    */

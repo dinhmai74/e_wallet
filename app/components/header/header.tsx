@@ -7,6 +7,7 @@ import { Text } from "../text"
 import { spacing } from "../../theme"
 import { translate } from "../../i18n/"
 import { navigateService } from "utils"
+import { presets } from "components/header/header.presets"
 
 // static styles
 const ROOT: ViewStyle = {
@@ -38,24 +39,27 @@ export class Header extends React.Component<HeaderProps, {}> {
       headerText,
       headerTx,
       titleStyle,
+      preset = "default",
     } = this.props
     const header = headerText || (headerTx && translate(headerTx)) || ""
+
+    const theme = presets[preset]
 
     return (
       <View style={{ ...ROOT, ...this.props.style }}>
         {leftIcon ? (
           <Button preset="link" onPress={onLeftPress}>
-            <Icon icon={leftIcon} />
+            <Icon icon={leftIcon} color={theme.color} />
           </Button>
         ) : (
           <View style={LEFT} />
         )}
         <View style={TITLE_MIDDLE}>
-          <Text style={{ ...TITLE, ...titleStyle }} text={header} />
+          <Text style={{ ...TITLE, ...titleStyle }} text={header} color={theme.color} />
         </View>
         {rightIcon ? (
           <Button preset="link" onPress={onRightPress}>
-            <Icon icon={rightIcon} />
+            <Icon icon={rightIcon} color={theme.color} />
           </Button>
         ) : (
           <View style={RIGHT} />

@@ -1,4 +1,5 @@
 import { ImageStyle } from "react-native"
+import { screen } from "theme"
 
 /**
  * All wallpaper will start off looking like this.
@@ -26,6 +27,14 @@ export const presets = {
     width: null, // Have to set these to null because android ¯\_(ツ)_/¯
     height: null,
   } as ImageStyle,
+  header: {
+    position: "absolute",
+    left: 0,
+    top: 0,
+    right: 0,
+    width: null, // Have to set these to null because android ¯\_(ツ)_/¯
+    height: null,
+  },
 }
 
 /**
