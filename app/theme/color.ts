@@ -13,6 +13,8 @@ export const palette = {
   lightStateBlue: "#5f7cfc",
   mediumStateBlue: "#a78ef1",
   columbiaBlue: "#aaecfe",
+  prussianBlue: "#001433",
+  lightRed: "#EE5F7B",
   blue: "#62B1F6",
   green: "#5cb85c",
   realOrange: "#d9534f",
@@ -53,7 +55,7 @@ export const color = {
   /**
    * The main tinting color.
    */
-  primary: palette.lightStateBlue,
+  primary: palette.lightRed,
   primaryDarker: palette.orangeDarker,
   secondary: palette.mediumStateBlue,
   brandInfo: palette.blue,
