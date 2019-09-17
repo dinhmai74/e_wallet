@@ -15,5 +15,10 @@ export const en = {
   tab_pricetags: "Promotion",
   tab_person: "History",
   tab_clock: "Setting",
+
+  home_card_scan: "Scan",
+  home_card_link_card: "Link card",
+  home_card_recharge_wallet: "Recharge wallet",
+  
 }
 export type TranslateKey = keyof typeof en
