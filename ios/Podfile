@@ -31,6 +31,7 @@ target 'e_wallet' do
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 
   pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   target 'e_walletTests' do
     inherit! :search_paths
