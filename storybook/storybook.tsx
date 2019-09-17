@@ -1,7 +1,9 @@
 import React from "react"
 import { getStorybookUI, configure } from "@storybook/react-native"
 import SplashScreen from "react-native-splash-screen"
-
+import { StyleProvider } from "native-base"
+import getTheme from "../native-base-theme/components"
+import material from "../native-base-theme/variables/material"
 declare var module
 
 configure(() => {
@@ -21,6 +23,10 @@ export class StorybookUIRoot extends React.Component {
     }
   }
   render() {
-    return <StorybookUI />
+    return (
+      <StyleProvider style={getTheme(material)}>
+        <StorybookUI />
+      </StyleProvider>
+    )
   }
 }
