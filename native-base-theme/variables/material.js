@@ -3,6 +3,7 @@ import color from "color"
 import { Platform, Dimensions, PixelRatio } from "react-native"
 import { PLATFORM } from "./commonColor"
 import { color as Colors, Fonts, palette } from "../../app/theme"
+import { normalize } from "react-native-elements"
 
 const deviceHeight = Dimensions.get("window").height
 const deviceWidth = Dimensions.get("window").width
@@ -158,7 +159,7 @@ export default {
 
   // FooterTab
   tabBarTextColor: Colors.dim,
-  tabBarTextSize: 11,
+  tabBarTextSize: normalize(9),
   activeTab: palette.white,
   sTabBarActiveTextColor: Colors.primary,
   tabBarActiveTextColor: Colors.primary,

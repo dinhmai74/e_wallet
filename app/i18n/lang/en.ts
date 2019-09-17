@@ -13,6 +13,7 @@ export const en = {
   // primary bottom tabs name
   tab_home: "Home",
   tab_pricetags: "Promotion",
+  tab_transfer: "Transfer",
   tab_person: "History",
   tab_clock: "Setting",
 }

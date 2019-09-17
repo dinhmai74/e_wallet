@@ -1,13 +1,20 @@
-import { TouchableOpacity, Animated, ViewStyle, StyleSheet } from "react-native"
-import { Button, ButtonProps, Divider, View } from "components"
+import { StyleSheet } from "react-native"
+import { Button, View } from "components"
 import { Footer, FooterTab as NBFooterTab, Icon } from "native-base"
 import * as React from "react"
 import { Text } from "../text"
 import { NavigationBottomTabOptions } from "react-navigation-tabs/lib/typescript/src"
-import { PrimaryTabRoute } from "navigation/primary-navigator"
+import { bottomTabRoute } from "navigation/primary-navigator"
 import { navigateService } from "utils"
 import { SizedBox } from "components/sized-box"
-import { color, metrics } from "theme"
+import { color, metrics, spacing } from "theme"
+import { Icon as EIcon } from "react-native-elements"
+import RBSheet from "react-native-raw-bottom-sheet"
+import Animated from "react-native-reanimated"
+
+interface State {
+  openModal: boolean
+}
 
 export interface FooterTabProps extends NavigationBottomTabOptions {
   [rest: string]: any
@@ -18,23 +25,46 @@ export interface FooterTabProps extends NavigationBottomTabOptions {
  *
  * Component description here for TypeScript tips.
  */
-export class FooterTab extends React.Component<FooterTabProps> {
-  private switchScreen = (screen: PrimaryTabRoute) => {
-    navigateService.navigate(screen)
+
+export class FooterTab extends React.Component<FooterTabProps, State> {
+  private refBottomSheet: any
+  constructor(props: FooterTabProps) {
+    super(props)
+    this.state = {
+      openModal: false,
+    }
   }
+
+  trans = new Animated.Value(0)
 
   render() {
     // grab the props
     const { navigation } = this.props
     const { state } = navigation
-    console.tron.log("state", state)
+    const { routes } = state
     const { index: activeIndex } = state
+    const firstRoutes = routes.slice(0, state.routes.length / 2)
+    const secondRoutes = routes.slice(routes.length / 2, routes.length)
 
     return (
       <Footer>
+        {this.renderBottomSheet()}
         <NBFooterTab>
-          {state.routes.map((route, index) => {
+          {firstRoutes.map((route, index) => {
             return this.renderTab(route, index, activeIndex)
+          })}
+
+          <EIcon
+            size={metrics.icon.small}
+            name={"md-arrow-round-up"}
+            type={"ionicon"}
+            color={color.primary}
+            onPress={this.openModal.bind(this)}
+            reverse
+          />
+
+          {secondRoutes.map((route, index) => {
+            return this.renderTab(route, index + routes.length / 2, activeIndex)
           })}
         </NBFooterTab>
       </Footer>
@@ -44,30 +74,62 @@ export class FooterTab extends React.Component<FooterTabProps> {
   private renderTab = (route, index, activeIndex) => {
     const { routeName } = route
     const active = index === activeIndex
-    const divider: ViewStyle = active && styles.divider
     return (
       <Button
         vertical
         key={index}
+        style={styles.button}
         active={active}
         onPress={this.switchScreen.bind(this, routeName)}
-        style={divider}
       >
+        {active && <View style={styles.divider} />}
         <SizedBox h={4} />
-        <Icon name={`ios-${routeName}`} />
+        <Icon name={`ios-${routeName}`} style={{ fontSize: metrics.icon.small }} />
         <Text
           // @ts-ignore
           tx={`tab_${routeName}`}
+          numberOfLines={1}
         />
         <SizedBox h={1} />
       </Button>
     )
   }
+
+  private switchScreen = (screen: bottomTabRoute) => {
+    navigateService.navigate(screen)
+  }
+
+  private openModal = () => {
+    this.refBottomSheet.open()
+  }
+
+  private renderBottomSheet = () => (
+    <RBSheet
+      ref={ref => {
+        this.refBottomSheet = ref
+      }}
+      height={300}
+      duration={250}
+      customStyles={{
+        container: {
+          justifyContent: "center",
+          alignItems: "center",
+        },
+      }}
+    >
+      <Text>this is bottom sheet</Text>
+    </RBSheet>
+  )
 }
 
 const styles = StyleSheet.create({
   divider: {
-    borderTopColor: color.primary,
-    borderTopWidth: metrics.divider.thick,
+    position: "absolute",
+    backgroundColor: color.primary,
+    height: metrics.divider.thick,
+    left: spacing[2],
+    right: spacing[2],
+    top: 0,
   },
+  button: {},
 })
