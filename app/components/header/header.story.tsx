@@ -9,8 +9,9 @@ declare let module
 
 const VIEWSTYLE = {
   flex: 1,
-  backgroundColor: color.storybookDarkBg,
+  backgroundColor: color.background,
 }
+
 
 storiesOf("Header", module)
   .addDecorator(fn => <StoryScreen>{fn()}</StoryScreen>)
@@ -18,12 +19,15 @@ storiesOf("Header", module)
     <Story>
       <UseCase noPad text="default" usage="The default usage">
         <View style={VIEWSTYLE}>
-          <Header headerTx="secondExampleScreen.howTo" />
+          <Header 
+            // @ts-ignore
+            headerTx="secondExampleScreen.howTo" />
         </View>
       </UseCase>
       <UseCase noPad text="leftIcon" usage="A left nav icon">
         <View style={VIEWSTYLE}>
           <Header
+            // @ts-ignore
             headerTx="secondExampleScreen.howTo"
             leftIcon="back"
             onLeftPress={() => Alert.alert("left nav")}
@@ -33,6 +37,7 @@ storiesOf("Header", module)
       <UseCase noPad text="rightIcon" usage="A right nav icon">
         <View style={VIEWSTYLE}>
           <Header
+            // @ts-ignore
             headerTx="secondExampleScreen.howTo"
             rightIcon="bullet"
             onRightPress={() => Alert.alert("right nav")}
