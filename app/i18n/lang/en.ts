@@ -16,5 +16,30 @@ export const en = {
   tab_transfer: "Transfer",
   tab_person: "History",
   tab_clock: "Setting",
+
+  home_card_scan: "Scan",
+  home_card_link_card: "Link card",
+  home_card_recharge_wallet: "Recharge wallet",
+
+  // item select home card
+ 
+  reCharge_mobile: "Recharge mobile",
+  buy_mobile_card: "Buy mobile card",
+  buy_game_card: "Buy game card",
+  mobile_card: "MOBILE CARD",
+  payment: "PAYMENT",
+  entertainment: "ENTERTAINMENT",
+
+  // hot news
+  beefRepices: 'Beef Repices',
+  ahihi: 'ahihi',
+  numberTest: '245.843',
+  times: 'times'
+
+
+
+
+  
+  
 }
 export type TranslateKey = keyof typeof en
