@@ -7,7 +7,8 @@ export const icons = {
   rechargeMobile: require('./icons8-two_smartphones.png'),
   buyMobileCard: require('./icons8-mobile_payment_copy_2.png'),
   buyGameCard: require('./icons8-nintendo_gamecube_.png'),
-  iconFoward: require('./icons8-forward.png')
+  iconFoward: require('./icons8-forward.png'),
+  beef: require('./beef.png')
 }
 
 export type IconTypes = keyof typeof icons

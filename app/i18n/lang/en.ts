@@ -28,7 +28,16 @@ export const en = {
   buy_game_card: "Buy game card",
   mobile_card: "MOBILE CARD",
   payment: "PAYMENT",
-  entertainment: "ENTERTAINMENT"
+  entertainment: "ENTERTAINMENT",
+
+  // hot news
+  beefRepices: 'Beef Repices',
+  ahihi: 'ahihi',
+  numberTest: '245.843',
+  times: 'times'
+
+
+
 
   
   
