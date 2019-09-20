@@ -5,6 +5,9 @@ import { Text } from "../../components/text"
 import { Screen } from "../../components/screen"
 import { color } from "../../theme"
 import { NavigationScreenProps } from "react-navigation"
+import Voucher from "./voucher/voucher"
+
+
 
 export interface PromotionScreenProps extends NavigationScreenProps<{}> {}
 
@@ -17,6 +20,7 @@ export class PromotionScreen extends React.Component<PromotionScreenProps, {}> {
     return (
       <Screen style={ROOT} preset="scroll">
         <Text preset="header" tx="promotion_header" />
+        {/* <Voucher />  */}
       </Screen>
     )
   }
