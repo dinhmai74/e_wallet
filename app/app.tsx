@@ -16,12 +16,15 @@ import { Container, StyleProvider } from "native-base"
 import getTheme from "../native-base-theme/components"
 import material from "../native-base-theme/variables/material"
 import Ionicons from "react-native-vector-icons/Ionicons"
+import MaterialIcons from "react-native-vector-icons/MaterialIcons"
+
 
 import { useScreens } from "react-native-screens"
 
 useScreens()
 
 Ionicons.loadFont()
+MaterialIcons.loadFont();
 
 /**
  * Ignore some yellowbox warnings. Some of these are for deprecated functions

@@ -18,6 +18,7 @@ export const palette = {
   blue: "#62B1F6",
   green: "#5cb85c",
   realOrange: "#d9534f",
+  navy: "#001433"
 }
 
 /**
@@ -72,7 +73,7 @@ export const color = {
   /**
    * The default color of text in many components.
    */
-  text: palette.black,
+  text: palette.navy,
   /**
    * Secondary information.
    */
