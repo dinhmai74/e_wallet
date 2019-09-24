@@ -15,7 +15,6 @@ storiesOf("ItemHomeCard", module)
         <Card>
           {/* <ItemHomeCard icon="rechargeMobile" tx="reCharge_mobile" onPress={() => {}} /> */}
           <NewsCard title="beefRepices" subTitle="ahihi" number="numberTest" time = "times" icon="iconFoward"/>
-
         </Card>
       </UseCase>
     </Story>

@@ -33,8 +33,16 @@ export const en = {
   // hot news
   beefRepices: 'Beef Repices',
   ahihi: 'ahihi',
+
+
+  // voucher
+  voucher: "VOUCHERS",
+  viewMore: "View more",
+  akinaMountain: "Akina Mountain",
+  japan: "Fukube-ka, Yokohama, Japan",
   numberTest: '245.843',
-  times: 'times'
+  times: 'times',
+  
 
 
 
