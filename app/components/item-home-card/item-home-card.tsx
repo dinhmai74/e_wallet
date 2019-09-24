@@ -23,7 +23,7 @@ export class ItemHomeCard extends React.Component<Props> {
     const dividerColor = { backgroundColor: dividerColorProps }
 
     return (
-      <CardItem style={{ flex: 1 }} onPress={onPress} {...rest}>
+      <CardItem style={{ }} onPress={onPress} {...rest}>
         <View style={[styles.borderLeft, dividerColor]} />
         <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
           <Icon icon={icon} size={metrics.icon.big} />
