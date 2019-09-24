@@ -1,4 +1,4 @@
-import { normalize } from "react-native-elements"
+import {  } from "react-native-elements"
 
 const type = {
   base: "Montserrat-Regular",
@@ -24,30 +24,30 @@ const type = {
 export type FontTypes = keyof typeof type
 
 const size = {
-  h1: normalize(38),
-  h2: normalize(34),
-  h3: normalize(30),
-  h4: normalize(26),
-  h5: normalize(21),
-  h6: normalize(19),
-  s1: normalize(18),
-  s2: normalize(16),
-  c1: normalize(20),
-  c2: normalize(18),
-  label: normalize(20),
-  p1: normalize(17),
-  p2: normalize(15),
-  p3: normalize(13),
-  p4: normalize(11),
-  input: normalize(14),
-  base: normalize(15),
-  regular: normalize(16),
-  medium: normalize(14),
-  small: normalize(12),
-  tiny: normalize(8.5),
-  numPad: normalize(24),
-  button: normalize(20),
-  instructionTitle: normalize(22),
+  h1: (38),
+  h2: (34),
+  h3: (30),
+  h4: (26),
+  h5: (21),
+  h6: (19),
+  s1: (18),
+  s2: (16),
+  c1: (20),
+  c2: (18),
+  label: (20),
+  p1: (17),
+  p2: (15),
+  p3: (13),
+  p4: (11),
+  input: (14),
+  base: (15),
+  regular: (16),
+  medium: (14),
+  small: (12),
+  tiny: (8.5),
+  numPad: (24),
+  button: (20),
+  instructionTitle: (22),
 }
 
 const style = {

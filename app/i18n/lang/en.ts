@@ -37,6 +37,7 @@ export const en = {
 
   // voucher
   voucher: "VOUCHERS",
+  news: "NEWS",
   viewMore: "View more",
   akinaMountain: "Akina Mountain",
   japan: "Fukube-ka, Yokohama, Japan",

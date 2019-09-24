@@ -197,12 +197,12 @@ export default {
   inputBorderColor: "#D9D5DC",
   inputSuccessBorderColor: "#2b8339",
   inputErrorBorderColor: "#ed2f2f",
-  inputHeightBase: 50,
+  inputHeightBase: 40,
   get inputColor() {
-    return this.textColor
+    return Colors.text
   },
   get inputColorPlaceholder() {
-    return "#575757"
+    return Colors.line
   },
 
   // Line Height

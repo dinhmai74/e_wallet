@@ -1,6 +1,7 @@
 // @flow
 
 import variable from './../variables/platform';
+import { getElevation } from 'utils'
 
 export default (variables /* : * */ = variable) => {
   const inputTheme = {
@@ -9,8 +10,8 @@ export default (variables /* : * */ = variable) => {
     },
     height: variables.inputHeightBase,
     color: variables.inputColor,
-    paddingLeft: 5,
-    paddingRight: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
     flex: 1,
     fontSize: variables.inputFontSize
   };
