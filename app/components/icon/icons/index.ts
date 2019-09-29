@@ -10,7 +10,15 @@ export const icons = {
   iconFoward: require('./icons8-forward.png'),
   beef: require('./beef.png'),
   checkIn: require('./checkIn.png'),
-  promotionImage: require('./promotion-image.png')
+  promotionImage: require('./promotion-image.png'),
+  iconLock: require('./ic_lock.png'),
+  iconProfile: require('./profile.png'),
+  iconPrivacy: require('./privacy.png'),
+  iconAbout: require('./about-this-app.png'),
+  iconLanguage: require('./language.png'),
+  iconDisplay: require('./display.png'),
+  iconSharing: require('./sharing.png'),
+  iconTheme: require('./theme.png')
 }
 
 export type IconTypes = keyof typeof icons

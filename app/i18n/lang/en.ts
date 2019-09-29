@@ -46,8 +46,19 @@ export const en = {
   seeAll: "See all",
   
   // home screen
-  hotNews: "Hot news"
-  
+  hotNews: "Hot news",
+  name: "Thanh Loc",
+  phoneNumber: "0769 423 567",
+
+  //setting screen
+  security: "Security",
+  profile: "Profile",
+  privacy: "Privacy",
+  about: "About this app",
+  language: "Language",
+  display: "Display",
+  sharing: "Sharing",
+  theme: "Themes"
 
 
 
