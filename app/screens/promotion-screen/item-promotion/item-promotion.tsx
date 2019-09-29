@@ -1,26 +1,29 @@
 import React, { Component } from 'react'
-import { Icon, Text, Button, View } from 'components'
+import { Icon, Text, Button, View, IconTypes } from 'components'
 import NewsCard from 'components/news-card/news-card'
 import { spacing, Fonts, metrics } from 'theme'
 import { StyleSheet, ImageSourcePropType } from 'react-native'
 import { Card } from 'native-base'
 import { TranslateKey } from 'i18n/lang'
 
+
 interface Props {
     label?: TranslateKey
-    onPress: () => void
+    onPress: () => void,
+    viewMore?: TranslateKey,
+    icon?: IconTypes
 }
 
 export class ItemPromotion extends Component<Props> {
     render() {
-        const { label, onPress } = this.props
+        const { label, onPress, viewMore, icon, ...rest } = this.props
         return (
             <View style={{ flexDirection: 'row' }}>
-                <Text tx={label} style={styles.title} p3 />
+                <Text tx={label} style={styles.title} p2  />
                 <View style={styles.wrapper} >
                     <Button transparent onPress={onPress} >
-                        <Text tx="viewMore" preset="fieldLabel" bold size={Fonts.size.p3} style={{paddingRight: spacing[1]}} />
-                        <Icon icon="iconFoward" size={metrics.icon.tiny} containerStyle={{padding: spacing[0]}} />
+                        <Text tx={viewMore} preset="fieldLabel" bold size={Fonts.size.p2} style={{ paddingRight: spacing[1], color: "#001433" }} />
+                        <Icon icon={icon} size={metrics.icon.tiny} containerStyle={{ padding: spacing[0] }} />
                     </Button>
                 </View>
             </View>
@@ -43,6 +46,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-end',
         flex: 1,
-        paddingRight: spacing[2],   
+        paddingRight: spacing[2],
     }
 })

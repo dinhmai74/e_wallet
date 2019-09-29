@@ -8,7 +8,7 @@ export default class News extends Component {
   render() {
     return (
       <View>
-        <ItemPromotion label="news" onPress={() => {}} />
+        <ItemPromotion label="news" viewMore="viewMore" icon="iconFoward" onPress={() => {}} />
         <Card transparent>
           <NewsCard
             title="akinaMountain"

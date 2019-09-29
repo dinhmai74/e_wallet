@@ -13,8 +13,8 @@ storiesOf("ItemHomeCard", module)
     <Story>
       <UseCase text="Primary" usage="The primary.">
         <Card>
-          {/* <ItemHomeCard icon="rechargeMobile" tx="reCharge_mobile" onPress={() => {}} /> */}
-          <NewsCard title="beefRepices" subTitle="ahihi" number="numberTest" time = "times" icon="iconFoward"/>
+          <ItemHomeCard icon="rechargeMobile" tx="reCharge_mobile" onPress={() => {}} />
+          {/* <NewsCard title="beefRepices" subTitle="ahihi" number="numberTest" time = "times" icon="iconFoward"/> */}
         </Card>
       </UseCase>
     </Story>

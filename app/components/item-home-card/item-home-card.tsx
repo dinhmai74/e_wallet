@@ -23,17 +23,21 @@ export class ItemHomeCard extends React.Component<Props> {
     const dividerColor = { backgroundColor: dividerColorProps }
 
     return (
-      <CardItem style={{ }} onPress={onPress} {...rest}>
-        <View style={[styles.borderLeft, dividerColor]} />
-        <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
-          <Icon icon={icon} size={metrics.icon.big} />
-          <Text tx={tx} style={{ textAlign: "center", paddingLeft: spacing[2] }} p4 />
-        </View>
+      <Card transparent>
+        <CardItem style={{}} onPress={onPress} {...rest} transparent >
+          <View style={[styles.borderLeft, dividerColor]} />
+          <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+            <Icon icon={icon} size={metrics.icon.big} />
+            <Text tx={tx} style={{ textAlign: "center", paddingLeft: spacing[2] }} p4 />
+          </View>
+          <Button transparent style={{ justifyContent: "flex-end", flex: 1 }}>
+            <Icon icon="iconFoward" />
+          </Button>
+        </CardItem>
+      </Card>
 
-        <Button transparent style={{ justifyContent: "flex-end", flex: 1 }}>
-          <Icon icon="iconFoward" />
-        </Button>
-      </CardItem>
+
+
     )
   }
 }

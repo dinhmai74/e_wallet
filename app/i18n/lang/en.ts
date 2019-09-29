@@ -43,6 +43,10 @@ export const en = {
   japan: "Fukube-ka, Yokohama, Japan",
   numberTest: '245.843',
   times: 'times',
+  seeAll: "See all",
+  
+  // home screen
+  hotNews: "Hot news"
   
 
 

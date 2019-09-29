@@ -1,7 +1,7 @@
 import * as React from "react"
 import { observer } from "mobx-react"
 import { ViewStyle } from "react-native"
-import { Header, Text } from "components"
+import { Header, Text, Icon } from "components"
 import { Screen } from "components"
 import { NavigationScreenProps } from "react-navigation"
 import { View, Wallpaper } from "components"
@@ -9,8 +9,10 @@ import { color, spacing } from "theme"
 import { Content } from "native-base"
 import { HomeCard } from "components/home-card"
 import { SegmentedControl } from "components/segmented-control"
+import { Button } from "components/button"
+import ItemNews from "./item-news"
 
-export interface HomeScreenProps extends NavigationScreenProps<{}> {}
+export interface HomeScreenProps extends NavigationScreenProps<{}> { }
 
 const ROOT: ViewStyle = {
   // flex: 6,
@@ -22,14 +24,15 @@ const ROOT: ViewStyle = {
 export class HomeScreen extends React.Component<HomeScreenProps, {}> {
   render() {
     return (
-      <View full>
-        <Screen style={ROOT} backgroundColor={color.transparent}>
-          <Header headerTx={"homeScreen_header"} preset={"white"} />
-          <HomeCard />
-          <SegmentedControl />
-        </Screen>
-        
-      </View>
+
+      <Screen style={ROOT} backgroundColor={color.transparent} preset="scroll">
+        <Header headerTx={"homeScreen_header"} preset={"white"} />
+        <HomeCard />
+        <SegmentedControl />
+        <ItemNews />
+      </Screen>
+
+
     )
   }
 }
