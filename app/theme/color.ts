@@ -19,7 +19,8 @@ export const palette = {
   green: "#5cb85c",
   realOrange: "#d9534f",
   navy: "#001433",
-  blueyGrey: '#91a2bc'
+  blueyGrey: '#91a2bc',
+  warmPink: '#ee5f7b'
 }
 
 /**

@@ -58,7 +58,10 @@ export const en = {
   language: "Language",
   display: "Display",
   sharing: "Sharing",
-  theme: "Themes"
+  theme: "Themes",
+
+  //button
+  signOut: "Sign Out"
 
 
 

@@ -14,14 +14,10 @@ export class ItemSelection extends Component<Props> {
     render() {
         const { icon, title } = this.props
         return (
-            <Card style={styles.container}>
-                <CardItem style={styles.wrapper}>
-                    <Icon icon={icon} style={styles.styleIcon} />
-                    <Text tx={title} />
-                </CardItem>
-            </Card>
-
-
+            <CardItem style={styles.wrapper}>
+                <Icon icon={icon} style={styles.styleIcon} />
+                <Text tx={title} p3 style={styles.styleText} />
+            </CardItem>
         )
     }
 }
@@ -36,11 +32,16 @@ const styles = StyleSheet.create({
         height: 100,
     },
     container: {
-    
+
+    },
+    styleText: {
+        paddingTop: spacing[3],
+        textAlign: 'center',
+        width: 100,
     },
     styleIcon: {
-        paddingBottom: spacing[2],
-        paddingTop: spacing[2]
+        paddingBottom: spacing[4],
+        paddingTop: spacing[2],
     }
 })
 export default ItemSelection
