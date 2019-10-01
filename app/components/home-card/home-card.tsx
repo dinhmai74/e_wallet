@@ -4,8 +4,7 @@ import { Card, CardItem, Body, NativeBase } from "native-base"
 import ScanItem from "./scan-item"
 import LinkCard from "./link-card"
 import RechargeWalletItem from "./recharge-wallet-item"
-export interface HomeCardProps extends NativeBase.Card {
-}
+export interface HomeCardProps extends NativeBase.Card {}
 
 /**
  * Stateless functional component for your needs
@@ -14,13 +13,13 @@ export interface HomeCardProps extends NativeBase.Card {
  */
 export function HomeCard(props: HomeCardProps) {
   // grab the props
-  const {  style, ...rest } = props
+  const { style, ...rest } = props
   return (
     // @ts-ignore
-    <Card style={[style, {flexDirection: 'row', justifyContent: 'center',}]} {...rest} >
-      <ScanItem/>
+    <Card style={[style, { flexDirection: "row", justifyContent: "center" }]} {...rest}>
+      <ScanItem />
       <LinkCard />
-      <RechargeWalletItem/>
+      <RechargeWalletItem />
     </Card>
   )
 }

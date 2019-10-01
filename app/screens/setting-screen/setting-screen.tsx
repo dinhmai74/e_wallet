@@ -15,7 +15,7 @@ export interface SettingScreenProps extends NavigationScreenProps<{}> {}
 
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,
-  paddingHorizontal: spacing[5]
+  paddingHorizontal: spacing[5],
 }
 
 // @inject("mobxstuff")
@@ -27,9 +27,9 @@ export class SettingScreen extends React.Component<SettingScreenProps, {}> {
         <Text preset="header" tx="settingScreen.header" />
         <Info />
         <AllItem />
-        <Image source={icons.promotionImage} style={styles.styleImage}/>
-        <Button style={styles.styleButton} transparent >
-         <Text tx="signOut" style={styles.styleText} />
+        <Image source={icons.promotionImage} style={styles.styleImage} />
+        <Button style={styles.styleButton} transparent>
+          <Text tx="signOut" style={styles.styleText} />
         </Button>
       </Screen>
     )
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 5,
     marginTop: spacing[4],
-    marginBottom: spacing[6]
+    marginBottom: spacing[6],
   },
   styleButton: {
     borderRadius: 10,
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
   },
   styleText: {
-    textAlign: 'center',
-    flex: 1
-  }
+    textAlign: "center",
+    flex: 1,
+  },
 })

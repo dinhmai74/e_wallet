@@ -10,12 +10,10 @@ import News from "./news/news"
 import PromotionCard from "./promotion-card/promotion-card"
 import PromotionSearch from "./promotion-search/promotion-search"
 
-
-
 export interface PromotionScreenProps extends NavigationScreenProps<{}> {}
 
 const ROOT: ViewStyle = {
-  paddingHorizontal: spacing[3]
+  paddingHorizontal: spacing[3],
 }
 
 // @inject("mobxstuff")
@@ -27,7 +25,7 @@ export class PromotionScreen extends React.Component<PromotionScreenProps, {}> {
         <Text preset="header" tx="promotion_header" />
         <PromotionSearch />
         <PromotionCard />
-        <Voucher /> 
+        <Voucher />
         <News />
       </Screen>
     )

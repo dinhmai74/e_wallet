@@ -24,7 +24,7 @@ export class ItemHomeCard extends React.Component<Props> {
 
     return (
       <Card transparent>
-        <CardItem style={{}} onPress={onPress} {...rest} transparent >
+        <CardItem style={{}} onPress={onPress} {...rest} transparent>
           <View style={[styles.borderLeft, dividerColor]} />
           <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
             <Icon icon={icon} size={metrics.icon.big} />
@@ -35,9 +35,6 @@ export class ItemHomeCard extends React.Component<Props> {
           </Button>
         </CardItem>
       </Card>
-
-
-
     )
   }
 }

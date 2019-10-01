@@ -1,4 +1,4 @@
-import {  } from "react-native-elements"
+import {} from "react-native-elements"
 
 const type = {
   base: "Montserrat-Regular",
@@ -24,30 +24,30 @@ const type = {
 export type FontTypes = keyof typeof type
 
 const size = {
-  h1: (38),
-  h2: (34),
-  h3: (30),
-  h4: (26),
-  h5: (21),
-  h6: (19),
-  s1: (18),
-  s2: (16),
-  c1: (20),
-  c2: (18),
-  label: (20),
-  p1: (17),
-  p2: (15),
-  p3: (13),
-  p4: (11),
-  input: (14),
-  base: (15),
-  regular: (16),
-  medium: (14),
-  small: (12),
-  tiny: (8.5),
-  numPad: (24),
-  button: (20),
-  instructionTitle: (22),
+  h1: 38,
+  h2: 34,
+  h3: 30,
+  h4: 26,
+  h5: 21,
+  h6: 19,
+  s1: 18,
+  s2: 16,
+  c1: 20,
+  c2: 18,
+  label: 20,
+  p1: 17,
+  p2: 15,
+  p3: 13,
+  p4: 11,
+  input: 14,
+  base: 15,
+  regular: 16,
+  medium: 14,
+  small: 12,
+  tiny: 8.5,
+  numPad: 24,
+  button: 20,
+  instructionTitle: 22,
 }
 
 const style = {

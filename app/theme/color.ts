@@ -8,7 +8,7 @@ export const palette = {
   orangeDarker: "#EB9918",
   lightGrey: "#939AA4",
   lighterGrey: "#CDD4DA",
-  superGrey: "#ccc",
+  grey: "#ccc",
   angry: "#dd3333",
   lightStateBlue: "#5f7cfc",
   mediumStateBlue: "#a78ef1",
@@ -16,11 +16,15 @@ export const palette = {
   prussianBlue: "#001433",
   lightRed: "#EE5F7B",
   blue: "#62B1F6",
-  green: "#5cb85c",
+  green: "#34c759",
   realOrange: "#d9534f",
   navy: "#001433",
-  blueyGrey: '#91a2bc',
-  warmPink: '#ee5f7b'
+  greyishBrown: "#484848",
+  brownGrey: "#959595",
+  warmPink: "#ee5f7b",
+  paleGrey: "#f7f8f9",
+  blueGrey: "#91a2bc",
+  battleshipGrey36: "rgba(120, 120, 128, 0.36)",
 }
 
 /**
@@ -58,7 +62,7 @@ export const color = {
   /**
    * The main tinting color.
    */
-  primary: palette.lightRed,
+  primary: palette.warmPink,
   primaryDarker: palette.orangeDarker,
   secondary: palette.mediumStateBlue,
   brandInfo: palette.blue,
@@ -67,7 +71,7 @@ export const color = {
   brandWarning: palette.orange,
   brandDark: palette.black,
   brandLight: palette.whiteSmoke,
-  divider: palette.superGrey,
+  divider: palette.grey,
   /**
    * A subtle color used for borders and lines.
    */
@@ -76,6 +80,7 @@ export const color = {
    * The default color of text in many components.
    */
   text: palette.navy,
+  textDescription: palette.blueGrey,
   /**
    * Secondary information.
    */

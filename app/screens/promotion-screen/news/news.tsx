@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Text, View } from "react-native"
+import {  View } from "react-native"
 import ItemPromotion from "../item-promotion/item-promotion"
 import { Card } from "native-base"
 import NewsCard from "components/news-card/news-card"
@@ -26,7 +26,7 @@ export default class News extends Component {
             icon="checkIn"
             imageUrl={require("../../../components/icon/icons/beef.png")}
           />
-           <NewsCard
+          <NewsCard
             title="akinaMountain"
             subTitle="japan"
             number="numberTest"

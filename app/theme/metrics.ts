@@ -38,7 +38,7 @@ export const metrics = {
     logoHeight: width * 0.7,
     smallLogoWidth: width * 0.25,
     smallLogoHeight: (width * 0.25) / 2.3,
-    advertiseWidth: width- spacing[6]*2,
+    advertiseWidth: width - spacing[6] * 2,
     advertiseHeight: 120,
   },
 }

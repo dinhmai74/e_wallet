@@ -15,9 +15,16 @@ export class Item extends Component<Props> {
   render() {
     const { icon, tx, onPress } = this.props
     return (
-      <CardItem  style={{ flexDirection: "column", flex: 1, backgroundColor: 'transparent' }} onPress={onPress}>
-        <Icon icon={icon} size={metrics.icon.large} containerStyle={{paddingBottom: spacing[3]}} />
-        <Text tx={tx} style={{textAlign: 'center'}}/>
+      <CardItem
+        style={{ flexDirection: "column", flex: 1, backgroundColor: "transparent" }}
+        onPress={onPress}
+      >
+        <Icon
+          icon={icon}
+          size={metrics.icon.large}
+          containerStyle={{ paddingBottom: spacing[3] }}
+        />
+        <Text tx={tx} style={{ textAlign: "center" }} />
       </CardItem>
     )
   }

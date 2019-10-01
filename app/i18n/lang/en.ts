@@ -22,7 +22,7 @@ export const en = {
   home_card_recharge_wallet: "Recharge wallet",
 
   // item select home card
- 
+
   reCharge_mobile: "Recharge mobile",
   buy_mobile_card: "Buy mobile card",
   buy_game_card: "Buy game card",
@@ -31,9 +31,8 @@ export const en = {
   entertainment: "ENTERTAINMENT",
 
   // hot news
-  beefRepices: 'Beef Repices',
-  ahihi: 'ahihi',
-
+  beefRepices: "Beef Repices",
+  ahihi: "ahihi",
 
   // voucher
   voucher: "VOUCHERS",
@@ -41,10 +40,10 @@ export const en = {
   viewMore: "View more",
   akinaMountain: "Akina Mountain",
   japan: "Fukube-ka, Yokohama, Japan",
-  numberTest: '245.843',
-  times: 'times',
+  numberTest: "245.843",
+  times: "times",
   seeAll: "See all",
-  
+
   // home screen
   hotNews: "Hot news",
   name: "Thanh Loc",
@@ -61,12 +60,6 @@ export const en = {
   theme: "Themes",
 
   //button
-  signOut: "Sign Out"
-
-
-
-
-  
-  
+  signOut: "Sign Out",
 }
 export type TranslateKey = keyof typeof en

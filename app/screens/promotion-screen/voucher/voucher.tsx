@@ -26,7 +26,7 @@ export default class Voucher extends Component {
             icon="checkIn"
             imageUrl={require("../../../components/icon/icons/beef.png")}
           />
-           <NewsCard
+          <NewsCard
             title="akinaMountain"
             subTitle="japan"
             number="numberTest"

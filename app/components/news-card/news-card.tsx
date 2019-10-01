@@ -13,14 +13,14 @@ interface Props {
   time?: TranslateKey
   icon?: IconTypes
   imageUrl?: ImageSourcePropType
-  style?:string
+  style?: string
 }
 
 export class NewsCard extends Component<Props> {
   render() {
     const { title, subTitle, number, time, icon, imageUrl, style, ...rest } = this.props
     return (
-      <CardItem style={style} {...rest}  >
+      <CardItem style={style} {...rest}>
         <View style={{ flexDirection: "row" }}>
           <Image style={{ width: 100, height: 80, borderRadius: 10 }} source={imageUrl} />
           <View style={{ paddingLeft: spacing[5] }}>

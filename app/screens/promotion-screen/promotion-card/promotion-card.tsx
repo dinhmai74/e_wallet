@@ -1,13 +1,13 @@
 import React, { Component } from "react"
 import { CardItem } from "native-base"
 import { Image, StyleSheet } from "react-native"
-import { spacing, metrics } from "theme"
-import { icons, Icon } from "components"
+import { metrics } from "theme"
+import { icons } from "components"
 
 export class PromotionCard extends Component {
   render() {
     return (
-      <CardItem style={{ justifyContent: "center", }} >
+      <CardItem style={{ justifyContent: "center" }}>
         <Image source={icons.promotionImage} style={styles.styleImaged} />
       </CardItem>
     )
@@ -21,5 +21,5 @@ const styles = StyleSheet.create({
     height: metrics.images.advertiseHeight,
     width: metrics.images.advertiseWidth,
     borderRadius: 8,
-  }
+  },
 })

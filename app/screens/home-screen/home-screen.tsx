@@ -12,11 +12,11 @@ import { SegmentedControl } from "components/segmented-control"
 import { Button } from "components/button"
 import ItemNews from "./item-news"
 
-export interface HomeScreenProps extends NavigationScreenProps<{}> { }
+export interface HomeScreenProps extends NavigationScreenProps<{}> {}
 
 const ROOT: ViewStyle = {
   // flex: 6,
-  paddingHorizontal: spacing[3]
+  paddingHorizontal: spacing[3],
 }
 
 // @inject("mobxstuff")
@@ -24,15 +24,12 @@ const ROOT: ViewStyle = {
 export class HomeScreen extends React.Component<HomeScreenProps, {}> {
   render() {
     return (
-
       <Screen style={ROOT} backgroundColor={color.transparent} preset="scroll">
         <Header headerTx={"homeScreen_header"} preset={"white"} />
         <HomeCard />
         <SegmentedControl />
         <ItemNews />
       </Screen>
-
-
     )
   }
 }
