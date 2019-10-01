@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Text, View, StyleSheet } from "react-native"
+import { StyleSheet } from "react-native"
 import ItemSelection from "./item-selection"
 import { Card } from "native-base"
 import { spacing } from "theme"

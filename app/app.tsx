@@ -4,14 +4,14 @@
 
 import "./i18n"
 import * as React from "react"
-import { AppRegistry, YellowBox } from "react-native"
-import { StatefulNavigator } from "./navigation"
+import { AppRegistry, Platform, YellowBox, UIManager } from "react-native"
+import { StatefulNavigator } from "navigation"
 import { StorybookUIRoot } from "../storybook"
 import { RootStore, setupRootStore } from "./models/root-store"
 import { Provider } from "mobx-react"
 import { BackButtonHandler } from "navigation/back-button-handler"
 import { contains } from "ramda"
-import { DEFAULT_NAVIGATION_CONFIG } from "./navigation/navigation-config"
+import { DEFAULT_NAVIGATION_CONFIG } from "navigation/navigation-config"
 import { Container, StyleProvider } from "native-base"
 import getTheme from "../native-base-theme/components"
 import material from "../native-base-theme/variables/material"
@@ -32,6 +32,7 @@ MaterialIcons.loadFont()
 YellowBox.ignoreWarnings([
   "componentWillMount is deprecated",
   "componentWillReceiveProps is deprecated",
+  "componentWillUpdate is",
 ])
 
 /**

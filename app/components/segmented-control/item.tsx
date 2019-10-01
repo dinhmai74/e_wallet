@@ -1,7 +1,7 @@
 import React, { Component } from "react"
-import { View, StyleSheet } from "react-native"
+import { StyleSheet } from "react-native"
 import { Text } from "../text"
-import { metrics, spacing } from "theme"
+import { color, spacing } from "theme"
 import { TranslateKey } from "i18n/lang"
 import { Button } from "components/button"
 
@@ -12,11 +12,11 @@ interface Props {
 }
 export class Item extends Component<Props> {
   render() {
-    const bg = isRead ? "#001433" : "#959595"
     const { tx, onPress, isRead } = this.props
+    const colors = isRead ? color.textNavy : color.textGrey
     return (
       <Button transparent onPress={onPress}>
-        <Text tx={tx} style={[styles.styledText]} p4 />
+        <Text tx={tx} style={[styles.styledText, { color: colors }]} p4 />
       </Button>
     )
   }

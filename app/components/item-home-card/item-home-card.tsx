@@ -1,9 +1,9 @@
 import * as React from "react"
-import { View, ViewStyle, StyleSheet } from "react-native"
+import { View, StyleSheet } from "react-native"
 import { Text } from "../text"
-import { Card, CardItem, Body, NativeBase } from "native-base"
+import { Card, CardItem, NativeBase } from "native-base"
 import { Icon, IconTypes } from "components/icon"
-import { metrics, spacing } from "theme"
+import { color, metrics, spacing } from "theme"
 import { TranslateKey } from "i18n/lang"
 import { Button } from "components/button"
 
@@ -23,8 +23,8 @@ export class ItemHomeCard extends React.Component<Props> {
     const dividerColor = { backgroundColor: dividerColorProps }
 
     return (
-      <Card transparent>
-        <CardItem style={{}} onPress={onPress} {...rest} transparent>
+      <Card >
+        <CardItem onPress={onPress} {...rest}>
           <View style={[styles.borderLeft, dividerColor]} />
           <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
             <Icon icon={icon} size={metrics.icon.big} />

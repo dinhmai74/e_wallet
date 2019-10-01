@@ -21,7 +21,7 @@ export class Item extends Component<Props> {
       >
         <Icon
           icon={icon}
-          size={metrics.icon.large}
+          size={metrics.icon.normal}
           containerStyle={{ paddingBottom: spacing[3] }}
         />
         <Text tx={tx} style={{ textAlign: "center" }} />

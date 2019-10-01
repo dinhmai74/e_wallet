@@ -11,7 +11,7 @@ export class ItemNews extends Component {
   render() {
     return (
       <View>
-        <Text tx="hotNews" style={styles.title} h5 />
+        <Text tx="hotNews" style={styles.title} h5 preset="title"/>
         <Card style={{ paddingBottom: spacing[2] }} transparent>
           <NewsCard
             title="beefRepices"
@@ -59,7 +59,5 @@ const styles = StyleSheet.create({
     paddingLeft: spacing[1],
     paddingTop: spacing[3],
     paddingBottom: spacing[2],
-    fontWeight: "bold",
-    color: "#353535",
   },
 })

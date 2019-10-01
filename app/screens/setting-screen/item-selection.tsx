@@ -1,7 +1,7 @@
 import React, { Component } from "react"
-import { View, StyleSheet } from "react-native"
+import { StyleSheet } from "react-native"
 import { Icon, Text, IconTypes } from "components"
-import { CardItem, Card } from "native-base"
+import { CardItem } from "native-base"
 import { spacing } from "theme"
 import { TranslateKey } from "i18n/lang"
 

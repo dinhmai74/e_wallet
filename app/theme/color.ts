@@ -79,12 +79,15 @@ export const color = {
   /**
    * The default color of text in many components.
    */
-  text: palette.navy,
+  textNavy: palette.navy,
   textDescription: palette.blueGrey,
+  textGrey: palette.brownGrey,
+  textBlack: palette.greyishBrown,
   /**
    * Secondary information.
    */
   dim: palette.lightGrey,
+  border: palette.paleGrey,
   /**
    * Error messages and icons.
    */

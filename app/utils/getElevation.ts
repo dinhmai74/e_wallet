@@ -1,6 +1,6 @@
 import { Platform } from "react-native"
 
-export const getElevation = (elevation: number = 1) => {
+export const getElevation = (elevation: number = 0.5) => {
   if (Platform.OS === "android") {
     return { elevation }
   }
@@ -13,12 +13,12 @@ export const getElevation = (elevation: number = 1) => {
   }
 
   return {
-    shadowColor: "black",
-    shadowOpacity: 0.1,
-    shadowRadius: elevation / 2,
+    shadowColor: "rgba(0, 0, 0, 0.1)",
     shadowOffset: {
-      height: 1,
       width: 0,
+      height: 1,
     },
+    shadowRadius: 15,
+    shadowOpacity: 1,
   }
 }

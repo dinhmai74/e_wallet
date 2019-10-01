@@ -1,35 +1,32 @@
 // @flow
-
-import variable from './../variables/platform';
+import variable from "./../variables/platform"
+import { getElevation } from "utils"
+import { color } from "theme"
 
 export default (variables /* : * */ = variable) => {
   const cardTheme = {
-    '.transparent': {
+    ".transparent": {
       shadowColor: null,
       shadowOffset: null,
       shadowOpacity: null,
       shadowRadius: null,
       elevation: null,
-      backgroundColor: 'transparent',
-      borderWidth: 0
+      backgroundColor: "transparent",
+      borderWidth: 0,
     },
-    '.noShadow': {
+    ".noShadow": {
       shadowColor: null,
       shadowOffset: null,
       shadowOpacity: null,
-      elevation: null
+      elevation: null,
     },
-    borderWidth: variables.borderWidth,
-    borderRadius: variables.cardBorderRadius,
-    borderColor: variables.cardBorderColor,
-    flexWrap: 'nowrap',
+    flexWrap: "nowrap",
     backgroundColor: variables.cardDefaultBg,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 1,
-    elevation: 1.5
-  };
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: color.border,
+    ...getElevation(),
+  }
 
-  return cardTheme;
-};
+  return cardTheme
+}

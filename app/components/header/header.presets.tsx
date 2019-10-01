@@ -2,7 +2,7 @@ import { color, palette } from "theme"
 
 export const presets = {
   default: {
-    color: color.text,
+    color: color.textNavy,
   },
   white: {
     color: palette.white,

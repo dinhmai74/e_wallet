@@ -44,7 +44,7 @@ export const textPresets = {
   primary: { ...BASE_TEXT, fontSize: 9, color: color.palette.white } as TextStyle,
   link: {
     ...BASE_TEXT,
-    color: color.text,
+    color: color.textBlack,
     paddingHorizontal: 0,
     paddingVertical: 0,
   } as TextStyle,

@@ -3,7 +3,6 @@ import { View } from "react-native"
 import { icons, Text } from "components"
 import { Thumbnail } from "native-base"
 import { spacing, palette } from "theme"
-import { colors } from "react-native-elements"
 
 export class Info extends Component {
   render() {

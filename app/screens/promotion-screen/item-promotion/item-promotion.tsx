@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Icon, Text, Button, View, IconTypes } from "components"
-import { spacing, Fonts, metrics } from "theme"
-import { StyleSheet} from "react-native"
+import { spacing, Fonts, metrics, color } from "theme"
+import { StyleSheet } from "react-native"
 import { TranslateKey } from "i18n/lang"
 
 interface Props {
@@ -24,7 +24,7 @@ export class ItemPromotion extends Component<Props> {
               preset="fieldLabel"
               bold
               size={Fonts.size.p2}
-              style={{ paddingRight: spacing[1], color: "#001433" }}
+              style={{ paddingRight: spacing[1], color: color.textNavy }}
             />
             <Icon icon={icon} size={metrics.icon.tiny} containerStyle={{ padding: spacing[0] }} />
           </Button>

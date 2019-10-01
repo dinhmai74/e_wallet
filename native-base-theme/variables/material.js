@@ -199,7 +199,7 @@ export default {
   inputErrorBorderColor: "#ed2f2f",
   inputHeightBase: 40,
   get inputColor() {
-    return Colors.text
+    return Colors.textBlack
   },
   get inputColorPlaceholder() {
     return Colors.line
@@ -258,7 +258,7 @@ export default {
   tabFontSize: 15,
 
   // Text
-  textColor: Colors.text,
+  textColor: Colors.textBlack,
   inverseTextColor: palette.white,
   noteFontSize: 14,
   get defaultTextColor() {

@@ -50,6 +50,7 @@ export const en = {
   phoneNumber: "0769 423 567",
 
   //setting screen
+  settingScreen_header: "Settings",
   security: "Security",
   profile: "Profile",
   privacy: "Privacy",

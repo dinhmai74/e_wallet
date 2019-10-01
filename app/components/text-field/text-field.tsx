@@ -14,7 +14,7 @@ const CONTAINER: ViewStyle = {
 // the base styling for the TextInput
 const INPUT: TextStyle = {
   fontFamily: Fonts.type.base,
-  color: color.text,
+  color: color.textBlack,
   minHeight: 44,
   fontSize: 18,
   backgroundColor: color.palette.white,

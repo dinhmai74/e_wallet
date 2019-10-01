@@ -1,15 +1,12 @@
 import * as React from "react"
 import { observer } from "mobx-react"
 import { ViewStyle, Image, StyleSheet } from "react-native"
-import { Screen } from "../../components/screen"
-import { color, spacing, palette } from "../../theme"
+import { Screen } from "components/screen"
+import { spacing, palette } from "../../theme"
 import { NavigationScreenProps } from "react-navigation"
 import Info from "./info"
-import ItemSelection from "./item-selection"
 import AllItem from "./all-item"
-import { Thumbnail } from "native-base"
 import { icons, Button, Text } from "components"
-import { colors } from "react-native-elements"
 
 export interface SettingScreenProps extends NavigationScreenProps<{}> {}
 
@@ -24,7 +21,7 @@ export class SettingScreen extends React.Component<SettingScreenProps, {}> {
   render() {
     return (
       <Screen style={ROOT} preset="scroll">
-        <Text preset="header" tx="settingScreen.header" />
+        <Text preset="header" tx="settingScreen_header" />
         <Info />
         <AllItem />
         <Image source={icons.promotionImage} style={styles.styleImage} />
