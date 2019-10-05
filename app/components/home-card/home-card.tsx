@@ -17,7 +17,7 @@ export function HomeCard(props: HomeCardProps) {
         style,
         {
           flexDirection: "row",
-          justifyContent: "center",
+          justifyContent: "space-around",
           paddingTop: spacing[5],
           paddingBottom: spacing[2],
         },

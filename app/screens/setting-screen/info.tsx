@@ -11,7 +11,7 @@ export class Info extends Component {
         <Thumbnail source={icons.promotionImage} />
         <View style={{ paddingLeft: spacing[2] }}>
           <Text tx="name" style={{ color: palette.navy }} bold p1 />
-          <Text tx="phoneNumber" style={{ color: palette.blueyGrey }} p3 />
+          <Text tx="phoneNumber" style={{ color: palette.blueGrey }} p3 />
         </View>
       </View>
     )

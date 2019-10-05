@@ -18,8 +18,8 @@ export const en = {
   tab_clock: "Setting",
 
   home_card_scan: "Scan",
-  home_card_link_card: "Link card",
-  home_card_recharge_wallet: "Recharge wallet",
+  home_card_link_card: "Card",
+  home_card_recharge_wallet: "Voucher",
 
   // item select home card
 
@@ -62,5 +62,20 @@ export const en = {
 
   //button
   signOut: "Sign Out",
+
+  // cash screen
+  cash: "Cash",
+  cashIn: "Cash In",
+  Cashin: "Cash in",
+  cashOut: "Cash out",
+
+  // cash in
+  tenThousand: "10 000",
+  twentyThousand: "20 000",
+  fiftyThousand: "50 000",
+  oneHundredMillion: "100 000",
+  twoHundredMillion: "200 000",
+  fiveHundredMillion: "500 000",
+  confirm: "Confirm",
 }
 export type TranslateKey = keyof typeof en
