@@ -41,8 +41,7 @@ const styles = StyleSheet.create({
     width: 343,
     height: 41,
     marginHorizontal: spacing[6],
-
-    // height: 168,
+    marginBottom: spacing[6],
   },
   styleText: {
     textAlign: "center",
