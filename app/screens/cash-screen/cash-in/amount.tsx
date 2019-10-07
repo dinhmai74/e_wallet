@@ -24,12 +24,11 @@ export class Amount extends Component {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 5,
-    // backgroundColor: "red",
     borderColor: "#cccccc",
-    width: 290,
-    height: 145,
+    width: 310,
+    height: 134,
     flex: 1,
-    marginHorizontal: spacing[6],
+    marginHorizontal: spacing[5],
     marginTop: spacing[6],
   },
 })
