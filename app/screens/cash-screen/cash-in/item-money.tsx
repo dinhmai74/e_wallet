@@ -23,12 +23,11 @@ export class ItemMoney extends Component<Props, {}> {
 
 const styles = StyleSheet.create({
   container: {
-    width: 118,
+    width: 115,
     height: 62,
     borderRadius: 10,
     borderColor: palette.warmPink,
-    marginLeft: spacing[7],
-    marginRight: spacing[5],
+    marginLeft: 39,
     marginTop: spacing[6],
     alignItems: "center",
     justifyContent: "center",

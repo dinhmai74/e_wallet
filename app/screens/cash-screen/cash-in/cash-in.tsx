@@ -37,8 +37,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: palette.warmPink,
     borderWidth: 1,
-    width: 343,
-    height: 41,
     marginHorizontal: spacing[6],
     marginBottom: spacing[6],
   },
