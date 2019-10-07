@@ -5,6 +5,7 @@ import { spacing, color, palette } from "theme"
 import CashIn from "screens/cash-screen/cash-in/cash-in"
 import { TabView, SceneMap, TabBar } from "react-native-tab-view"
 import Animated from "react-native-reanimated"
+import ConfirmCashIn from "screens/confirm-cash-in/confirm-cash-in"
 
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,
@@ -41,7 +42,7 @@ export class CashScreen extends Component {
           navigationState={this.state}
           renderScene={SceneMap({
             first: CashIn,
-            second: CashIn,
+            second: ConfirmCashIn,
           })}
           onIndexChange={index => this.setState({ index })}
           initialLayout={{ width: Dimensions.get("window").width }}

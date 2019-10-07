@@ -5,12 +5,17 @@ import { createStackNavigator } from "react-navigation-stack"
 import { createBottomTabNavigator } from "react-navigation-tabs"
 import { HistoryScreen } from "screens/history-screen"
 import { SettingScreen } from "screens/setting-screen"
+import CashScreen from "screens/cash-screen/cash-screen"
 
 const BottomTabConfig = {
   home: HomeScreen,
   pricetags: PromotionScreen,
   clock: HistoryScreen,
-  person: SettingScreen,
+  person: CashScreen,
+}
+
+const NavigationScreen = {
+  cash: CashScreen,
 }
 
 const TabScreens = createBottomTabNavigator(BottomTabConfig, {
@@ -25,4 +30,5 @@ export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {
   headerMode: "none",
 })
 export type bottomTabRoute = keyof typeof BottomTabConfig
-export type primaryRoute = keyof typeof PrimaryRouteConfig | bottomTabRoute
+export type navigationScreenRoute = keyof typeof NavigationScreen
+export type primaryRoute = keyof typeof PrimaryRouteConfig | bottomTabRoute | navigationScreenRoute

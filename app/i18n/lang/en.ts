@@ -77,5 +77,13 @@ export const en = {
   twoHundredMillion: "200 000",
   fiveHundredMillion: "500 000",
   confirm: "Confirm",
+
+  // confirm cash in
+  titleMoney: "100.000d",
+  labelCharge: "Charge into e wallet",
+  acb: "ACB",
+  talentNumber: "****4157",
+  free: "Free",
+  choseInput: "Chose the input",
 }
 export type TranslateKey = keyof typeof en
