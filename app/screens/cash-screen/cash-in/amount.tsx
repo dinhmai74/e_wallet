@@ -12,7 +12,7 @@ export class Amount extends Component {
           <Text tx="cashIn" s1 color={palette.navy} style={{ paddingLeft: spacing[1] }} />
         </CardItem>
         <View style={{ alignItems: "center", justifyContent: "center" }}>
-          <Item style={{ width: 288, height: 45 }}>
+          <Item style={{ width: 250, height: 45 }}>
             <Input placeholder="Amount" />
           </Item>
         </View>
