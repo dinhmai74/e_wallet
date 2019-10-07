@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     // backgroundColor: "red",
     borderColor: "#cccccc",
-    width: 349,
+    width: 310,
     height: 134,
     flex: 1,
-    marginHorizontal: spacing[6],
+    marginHorizontal: spacing[5],
     marginTop: spacing[6],
     textAlign: "center",
     flexDirection: "column",
@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
   money: {
     color: palette.navy,
     fontSize: 24,
+    paddingBottom: spacing[2],
   },
   charge: {
     color: palette.blueGrey,

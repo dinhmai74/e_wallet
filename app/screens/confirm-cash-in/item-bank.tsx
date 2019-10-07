@@ -18,13 +18,15 @@ export class ItemBank extends Component<Props, {}> {
     return (
       <View style={{ paddingBottom: spacing[2] }}>
         <View style={styles.container}>
-          <Icon icon={icon} size={metrics.images.large} />
-          <View style={styles.wraper}>
-            <View style={styles.bank}>
-              <Text tx={nameBank} style={styles.nameBank} s2 />
-              <Text tx={numberTalent} style={styles.talentNumber} s2 />
+          <View style={{ flexDirection: "row" }}>
+            <Icon icon={icon} size={metrics.icon.large} />
+            <View style={styles.wraper}>
+              <View style={styles.bank}>
+                <Text tx={nameBank} style={styles.nameBank} s2 />
+                <Text tx={numberTalent} style={styles.talentNumber} s2 />
+              </View>
+              <Text tx="free" style={styles.free} p3 />
             </View>
-            <Text tx="free" style={styles.free} p3 />
           </View>
           <View style={styles.styleRadioButton}>
             <RadioButton label="" checked value="Value" onSelect={() => {}} />
@@ -62,11 +64,14 @@ const styles = StyleSheet.create({
     color: palette.green,
   },
   styleRadioButton: {
-    paddingLeft: spacing[9],
+    paddingLeft: 80,
+    justifyContent: "flex-start",
+    // alignItems: "center",
+    flex: 1,
   },
   indicatorStyle: {
     backgroundColor: palette.grey,
-    width: 350,
+    width: 300,
     height: 1,
     marginLeft: spacing[6],
     marginTop: spacing[4],

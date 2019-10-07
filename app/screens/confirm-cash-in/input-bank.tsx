@@ -39,10 +39,11 @@ const styles = StyleSheet.create({
   },
   title: {
     paddingRight: spacing[2],
+    color: palette.blueGrey,
   },
   styleIndicator: {
     backgroundColor: palette.blueGrey,
-    width: 78,
+    width: 65,
     height: 1,
     marginRight: spacing[2],
   },
@@ -50,8 +51,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: palette.warmPink,
     borderWidth: 1,
-    width: 343,
-    height: 41,
     marginHorizontal: spacing[6],
     marginBottom: spacing[6],
   },
