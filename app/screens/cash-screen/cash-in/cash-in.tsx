@@ -4,6 +4,7 @@ import Amount from "screens/cash-screen/cash-in/amount"
 import ItemMoney from "screens/cash-screen/cash-in/item-money"
 import { Button, Text } from "components"
 import { palette, spacing } from "theme"
+import AppButton from "components/app-button/app-button"
 
 export class CashIn extends Component {
   render() {
@@ -19,9 +20,7 @@ export class CashIn extends Component {
           <ItemMoney title="fiveHundredMillion" />
         </View>
         <View style={{ paddingTop: spacing[7] }}>
-          <Button style={styles.styleButton} transparent>
-            <Text tx="confirm" style={styles.styleText} />
-          </Button>
+          <AppButton onPress={() => {}} />
         </View>
       </View>
     )

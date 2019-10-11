@@ -7,6 +7,7 @@ import { NavigationScreenProps } from "react-navigation"
 import Info from "./info"
 import AllItem from "./all-item"
 import { icons, Button, Text } from "components"
+import AppButton from "components/app-button/app-button"
 
 export interface SettingScreenProps extends NavigationScreenProps<{}> {}
 
@@ -25,9 +26,7 @@ export class SettingScreen extends React.Component<SettingScreenProps, {}> {
         <Info />
         <AllItem />
         <Image source={icons.promotionImage} style={styles.styleImage} />
-        <Button style={styles.styleButton} transparent>
-          <Text tx="signOut" style={styles.styleText} />
-        </Button>
+        <AppButton onPress={() => {}} />
       </Screen>
     )
   }
