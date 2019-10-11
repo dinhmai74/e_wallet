@@ -85,5 +85,14 @@ export const en = {
   talentNumber: "****4157",
   free: "Free",
   choseInput: "Chose the input",
+
+  // transfer screen
+  titleTransfer: "Transfer to ATM card",
+  noteTransfer: "Note: * are required field.",
+  information: "Infomation: ",
+  transferToMoney:
+    "To transfer money to an ATM, you need to fill in the serial number on the card surface (usually 16 numbers) without information about the cardholder's name and the receiving bank.",
+  thisIsFast: "This is a fast, safe and convenient 24/7 money transfer service.",
+  onlySupport: "Note: only support ATMs of Vietnamese banks",
 }
 export type TranslateKey = keyof typeof en

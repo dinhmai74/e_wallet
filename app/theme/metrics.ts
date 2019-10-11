@@ -40,5 +40,7 @@ export const metrics = {
     smallLogoHeight: (width * 0.25) / 2.3,
     advertiseWidth: width - spacing[6] * 2,
     advertiseHeight: 120,
+    bankCardWidth: 300,
+    bankCardHeight: 175,
   },
 }

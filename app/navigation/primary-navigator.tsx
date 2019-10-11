@@ -6,11 +6,12 @@ import { createBottomTabNavigator } from "react-navigation-tabs"
 import { HistoryScreen } from "screens/history-screen"
 import { SettingScreen } from "screens/setting-screen"
 import CashScreen from "screens/cash-screen/cash-screen"
+import { Transfer } from "screens/transfer/transfer"
 
 const BottomTabConfig = {
   home: HomeScreen,
   pricetags: PromotionScreen,
-  clock: HistoryScreen,
+  clock: Transfer,
   person: CashScreen,
 }
 

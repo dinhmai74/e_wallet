@@ -20,7 +20,7 @@ export class CashIn extends Component {
           <ItemMoney title="fiveHundredMillion" />
         </View>
         <View style={{ paddingTop: spacing[7] }}>
-          <AppButton onPress={() => {}} />
+          <AppButton onPress={() => {}} style={{ marginHorizontal: spacing[6] }} />
         </View>
       </View>
     )

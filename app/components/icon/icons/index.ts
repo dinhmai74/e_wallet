@@ -20,6 +20,7 @@ export const icons = {
   iconSharing: require("./sharing.png"),
   iconTheme: require("./theme.png"),
   iconBank: require("./item-bank.png"),
+  iconBankCard: require("./bank-card-image.png"),
 }
 
 export type IconTypes = keyof typeof icons

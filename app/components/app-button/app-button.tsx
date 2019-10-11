@@ -4,14 +4,25 @@ import { Text } from "components/text"
 import { StyleSheet } from "react-native"
 import { palette, spacing } from "theme"
 
-interface Props {
-  onPress: () => void
-}
-export class AppButton extends Component<Props, {}> {
+export class AppButton extends Component<any, {}> {
   render() {
-    const { onPress } = this.props
+    const { onPress, style, ...rest } = this.props
     return (
-      <Button style={styles.styleButton} transparent onPress={onPress}>
+      <Button
+        style={[
+          style,
+          {
+            borderRadius: 8,
+            borderColor: palette.warmPink,
+            borderWidth: 1,
+            // marginHorizontal: spacing[6],
+            marginBottom: spacing[6],
+          },
+        ]}
+        transparent
+        onPress={onPress}
+        {...rest}
+      >
         <Text tx="confirm" style={styles.styleText} />
       </Button>
     )

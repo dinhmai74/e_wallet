@@ -19,7 +19,7 @@ export class InputBank extends Component {
         <ItemBank icon="iconBank" nameBank="acb" numberTalent="talentNumber" />
         <ItemBank icon="iconBank" nameBank="acb" numberTalent="talentNumber" />
         <View style={{ paddingTop: spacing[7] }}>
-          <AppButton onPress={() => {}} />
+          <AppButton onPress={() => {}} style={{ marginHorizontal: spacing[6] }} />
         </View>
       </View>
     )
