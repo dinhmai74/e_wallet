@@ -7,11 +7,12 @@ import { HistoryScreen } from "screens/history-screen"
 import { SettingScreen } from "screens/setting-screen"
 import CashScreen from "screens/cash-screen/cash-screen"
 import { Transfer } from "screens/transfer/transfer"
+import { TransferPhoneNumber } from "screens/transfer/transfer-phone-number/transfer-phone-number"
 
 const BottomTabConfig = {
   home: HomeScreen,
   pricetags: PromotionScreen,
-  clock: Transfer,
+  clock: TransferPhoneNumber,
   person: CashScreen,
 }
 
