@@ -1,7 +1,7 @@
 import * as React from "react"
 import { observer } from "mobx-react"
-import { ViewStyle } from "react-native"
-import { Header } from "components"
+import { TextInput, ViewStyle } from "react-native"
+import { Header, View } from "components"
 import { Screen } from "components"
 import { NavigationScreenProps } from "react-navigation"
 import { color, spacing } from "theme"
@@ -18,15 +18,20 @@ const ROOT: ViewStyle = {
 
 // @inject("mobxstuff")
 @observer
-export class HomeScreen extends React.Component<HomeScreenProps, {}> {
+class HomeScreen extends React.Component<HomeScreenProps, {}> {
   render() {
+    const name = "Dinh mai"
     return (
-      <Screen style={ROOT} backgroundColor={color.transparent} preset="scroll">
-        <Header headerTx={"homeScreen_header"} />
-        <HomeCard />
-        <SegmentedControl />
-        <ItemNews />
-      </Screen>
+      <View full>
+        <Header headerText={`Hi, ${name}!`} />
+        <Screen style={ROOT} backgroundColor={color.transparent} preset="scroll">
+          <HomeCard />
+          <SegmentedControl />
+          <ItemNews />
+        </Screen>
+      </View>
     )
   }
 }
+
+export default HomeScreen

@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native"
 import Amount from "screens/cash-screen/cash-in/amount"
 import ItemMoney from "screens/cash-screen/cash-in/item-money"
 import { palette, spacing } from "theme"
-import AppButton from "components/app-button/app-button"
+import { Button } from "components"
 
 export class CashIn extends Component {
   render() {
@@ -19,7 +19,7 @@ export class CashIn extends Component {
           <ItemMoney title="fiveHundredMillion" />
         </View>
         <View style={{ paddingTop: spacing[7] }}>
-          <AppButton onPress={() => {}} style={{ marginHorizontal: spacing[6] }} />
+          <Button onPress={() => {}} style={{ marginHorizontal: spacing[6] }} />
         </View>
       </View>
     )

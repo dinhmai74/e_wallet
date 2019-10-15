@@ -6,8 +6,7 @@ import { spacing, palette } from "../../theme"
 import { NavigationScreenProps } from "react-navigation"
 import Info from "./info"
 import AllItem from "./all-item"
-import { icons, Text } from "components"
-import AppButton from "components/app-button/app-button"
+import { Button, Header, icons, Text, View } from "components"
 
 export interface SettingScreenProps extends NavigationScreenProps<{}> {}
 
@@ -21,13 +20,15 @@ const ROOT: ViewStyle = {
 export class SettingScreen extends React.Component<SettingScreenProps, {}> {
   render() {
     return (
-      <Screen style={ROOT} preset="scroll">
-        <Text preset="header" tx="settingScreen_header" />
-        <Info />
-        <AllItem />
-        <Image source={icons.promotionImage} style={styles.styleImage} />
-        <AppButton onPress={() => {}} />
-      </Screen>
+      <View full>
+        <Header headerTx={"setting_header"} />
+        <Screen style={ROOT} preset="scroll">
+          <Info />
+          <AllItem />
+          <Image source={icons.promotionImage} style={styles.styleImage} />
+          <Button bordered tx={"common_logout"} onPress={() => {}} />
+        </Screen>
+      </View>
     )
   }
 }

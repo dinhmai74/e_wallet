@@ -1,11 +1,14 @@
-import { color, palette } from "theme"
+import { color, palette, spacing } from "theme"
+import { ViewStyle } from "react-native"
+
+const DEFAULT = {
+  marginLeft: spacing[5],
+  paddingTop: spacing[4],
+} as ViewStyle
 
 export const presets = {
   default: {
-    color: color.textNavy,
-  },
-  white: {
-    color: palette.white,
+    ...DEFAULT,
   },
 }
 

@@ -175,7 +175,7 @@ export default {
   searchBarInputHeight: platform === PLATFORM.IOS ? 40 : 50,
   toolbarBtnTextColor: palette.white,
   toolbarDefaultBorder: Colors.primary,
-  iosStatusbar: "light-content",
+  iosStatusbar: "dark-content",
   get statusBarColor() {
     return color(this.toolbarDefaultBg)
       .darken(0.2)
@@ -273,7 +273,7 @@ export default {
   titleFontColor: palette.white,
 
   // Other
-  borderRadiusBase: 2,
+  borderRadiusBase: 8,
   borderWidth: 1 / PixelRatio.getPixelSizeForLayoutSize(1),
   contentPadding: 10,
   dropdownLinkColor: "#414142",

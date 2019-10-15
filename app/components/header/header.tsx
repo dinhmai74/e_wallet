@@ -4,10 +4,11 @@ import { HeaderProps } from "./header.props"
 import { Button } from "../button"
 import { Icon } from "../icon"
 import { Text } from "../text"
-import { spacing } from "../../theme"
-import { translate } from "../../i18n/"
+import { spacing } from "theme"
+import { translate } from "i18n"
 import { navigateService } from "utils"
 import { presets } from "components/header/header.presets"
+import { Header as NBHeader, Title, Body } from "native-base"
 
 // static styles
 const ROOT: ViewStyle = {
@@ -46,25 +47,11 @@ export class Header extends React.Component<HeaderProps, {}> {
     const theme = presets[preset]
 
     return (
-      <View style={{ ...ROOT, ...this.props.style }}>
-        {leftIcon ? (
-          <Button preset="link" onPress={onLeftPress}>
-            <Icon icon={leftIcon} color={theme.color} />
-          </Button>
-        ) : (
-          <View style={LEFT} />
-        )}
-        <View style={TITLE_MIDDLE}>
-          <Text style={{ ...TITLE, ...titleStyle }} text={header} color={theme.color} />
-        </View>
-        {rightIcon ? (
-          <Button preset="link" onPress={onRightPress}>
-            <Icon icon={rightIcon} color={theme.color} />
-          </Button>
-        ) : (
-          <View style={RIGHT} />
-        )}
-      </View>
+      <NBHeader transparent style={theme}>
+        <Body>
+          <Text preset={"header"}>{headerText}</Text>
+        </Body>
+      </NBHeader>
     )
   }
 }

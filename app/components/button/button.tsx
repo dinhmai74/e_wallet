@@ -15,7 +15,7 @@ export { ButtonProps }
 export function Button(props: ButtonProps) {
   // grab the props
   const {
-    preset,
+    preset = "primary",
     tx,
     text,
     style: styleOverride,
@@ -25,9 +25,7 @@ export function Button(props: ButtonProps) {
   } = props
 
   const viewStyle = mergeAll(flatten([preset && viewPresets[preset], styleOverride]))
-  const textStyle = mergeAll(
-    flatten([textPresets[preset] || textPresets.primary, textStyleOverride]),
-  )
+  const textStyle = mergeAll(flatten([textPresets[preset], textStyleOverride]))
 
   const content = children || <Text tx={tx} text={text} style={textStyle} />
 

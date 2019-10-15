@@ -2,8 +2,7 @@ import React, { Component } from "react"
 import { View, StyleSheet } from "react-native"
 import { palette, spacing } from "theme"
 import CustomInput from "screens/transfer/custom-input"
-import { Text } from "components"
-import AppButton from "components/app-button/app-button"
+import { Text, Button } from "components"
 
 export class TextField extends Component {
   render() {
@@ -13,7 +12,7 @@ export class TextField extends Component {
         <CustomInput placeholder="Amount*" />
         <CustomInput placeholder="Transaction Description" />
         <Text tx="noteTransfer" p3 style={styles.styleNote} />
-        <AppButton onPress={() => {}} style={{ flex: 1 }} />
+        <Button bordered onPress={() => {}} style={{ flex: 1 }} />
       </View>
     )
   }

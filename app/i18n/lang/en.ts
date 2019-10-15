@@ -2,6 +2,7 @@ export const en = {
   common_ok: "OK!",
   common_cancel: "Cancel",
   common_back: "Back",
+  common_logout: "Log out",
   errors_invalidEmail: "Invalid email address.",
 
   // screen header
@@ -14,8 +15,8 @@ export const en = {
   tab_home: "Home",
   tab_pricetags: "Promotion",
   tab_transfer: "Transfer",
-  tab_person: "History",
-  tab_clock: "Setting",
+  tab_person: "Setting",
+  tab_clock: "History",
 
   home_card_scan: "Scan",
   home_card_link_card: "Card",
