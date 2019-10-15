@@ -1,13 +1,12 @@
 import React, { Component } from "react"
 import { View, StyleSheet } from "react-native"
-import { Icon, Text } from "components"
+import { Icon, Text, IconTypes } from "components"
 import { palette, spacing, metrics } from "theme"
 import { RadioButton } from "react-native-material-ui"
-import { IconType } from "react-native-elements"
 import { TranslateKey } from "i18n/lang"
 
 interface Props {
-  icon: IconType
+  icon: IconTypes
   nameBank: TranslateKey
   numberTalent?: TranslateKey
 }

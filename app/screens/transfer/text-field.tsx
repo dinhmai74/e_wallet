@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { View, StyleSheet } from "react-native"
-import { Item, Input } from "native-base"
 import { palette, spacing } from "theme"
 import CustomInput from "screens/transfer/custom-input"
 import { Text } from "components"

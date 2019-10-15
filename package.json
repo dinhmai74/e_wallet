@@ -5,6 +5,7 @@
   "scripts": {
     "start": "react-native start",
     "test": "jest",
+    "validate": "npm-run-all compile format",
     "lint": "eslint index.js app --fix --ext .js,.ts,.tsx --ignore-pattern *.stories.tsx",
     "compile": "tsc --noEmit -p . --pretty",
     "format": "npm-run-all format:* lint",
@@ -20,6 +21,11 @@
     "prepare": "npm-run-all patch hack:*",
     "storybook": "storybook start -p 9001 --skip-packager",
     "adb": "adb reverse tcp:9090 tcp:9090 && adb reverse tcp:3000 tcp:3000 && adb reverse tcp:9001 tcp:9001 && adb reverse tcp:8081 tcp:8081"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn validate"
+    }
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.5.1",
@@ -85,6 +91,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-native": "^3.6.0",
     "eslint-plugin-standard": "^4.0.0",
+    "husky": "^3.0.9",
     "ignite-bowser": "^4.6.2",
     "jest": "^24.9.0",
     "jetifier": "^1.6.1",

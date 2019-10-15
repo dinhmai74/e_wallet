@@ -8,6 +8,7 @@ export interface ButtonProps extends NativeBase.Button {
   /**
    * Text which is looked up via i18n.
    */
+  // @ts-ignore
   tx?: TranslateKey
   /**
    * The text to display if not using `tx` or nested components.

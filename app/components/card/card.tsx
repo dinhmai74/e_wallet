@@ -2,13 +2,13 @@ import * as React from "react"
 import { View, ViewStyle } from "react-native"
 import { Card as NBCard, CardItem, StyleProvider } from "native-base"
 import { Text } from "../text"
+import { TranslateKey } from "i18n/lang"
 
 export interface CardProps {
   /**
    * Text which is looked up via i18n.
    */
-  tx?: string
-
+  tx?: TranslateKey
   /**
    * The text to display if not using `tx` or nested components.
    */

@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { View, StyleSheet } from "react-native"
-import { CardItem, Card, Body } from "native-base"
 import { Text } from "components"
 import { spacing, palette } from "theme"
 
@@ -9,7 +8,7 @@ export class InfomationCard extends Component {
     return (
       <View>
         <View>
-          <Text tx="information" s1 bold style={styles.title} s1 />
+          <Text tx="information" s1 bold style={styles.title} />
         </View>
         <View>
           <Text tx="transferToMoney" style={styles.content} bold p3 />

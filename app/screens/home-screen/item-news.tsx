@@ -1,9 +1,7 @@
 import React, { Component } from "react"
 import { View, StyleSheet } from "react-native"
-import ItemPromotion from "screens/promotion-screen/item-promotion/item-promotion"
 import { icons, Button, Text } from "components"
 import NewsCard from "components/news-card/news-card"
-import { ScrollView } from "react-native-gesture-handler"
 import { color, spacing } from "theme"
 import { Card } from "native-base"
 
@@ -11,7 +9,7 @@ export class ItemNews extends Component {
   render() {
     return (
       <View>
-        <Text tx="hotNews" style={styles.title} h5 preset="title"/>
+        <Text tx="hotNews" style={styles.title} h5 preset="title" />
         <Card style={{ paddingBottom: spacing[2] }} transparent>
           <NewsCard
             title="beefRepices"

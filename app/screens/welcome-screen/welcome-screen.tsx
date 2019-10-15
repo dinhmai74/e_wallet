@@ -2,10 +2,8 @@ import * as React from "react"
 import { View, Image, ViewStyle, TextStyle, ImageStyle, SafeAreaView } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
 import { Text } from "../../components/text"
-import { Button } from "../../components/button"
 import { Screen } from "../../components/screen"
 import { Wallpaper } from "../../components/wallpaper"
-import { Header } from "../../components/header"
 import { color, spacing } from "../../theme"
 import { bowserLogo } from "./"
 import { navigateService } from "utils"
@@ -20,19 +18,7 @@ const TEXT: TextStyle = {
   fontFamily: "Montserrat",
 }
 const BOLD: TextStyle = { fontWeight: "bold" }
-const HEADER: TextStyle = {
-  paddingTop: spacing[3],
-  paddingBottom: spacing[4] + spacing[1],
-  paddingHorizontal: 0,
-}
-const HEADER_TITLE: TextStyle = {
-  ...TEXT,
-  ...BOLD,
-  fontSize: 12,
-  lineHeight: 15,
-  textAlign: "center",
-  letterSpacing: 1.5,
-}
+
 const TITLE_WRAPPER: TextStyle = {
   ...TEXT,
   textAlign: "center",
@@ -62,17 +48,7 @@ const CONTENT: TextStyle = {
   lineHeight: 22,
   marginBottom: spacing[5],
 }
-const CONTINUE: ViewStyle = {
-  paddingVertical: spacing[4],
-  paddingHorizontal: spacing[4],
-  backgroundColor: "#5D2555",
-}
-const CONTINUE_TEXT: TextStyle = {
-  ...TEXT,
-  ...BOLD,
-  fontSize: 13,
-  letterSpacing: 2,
-}
+
 const FOOTER: ViewStyle = { backgroundColor: "#20162D" }
 const FOOTER_CONTENT: ViewStyle = {
   paddingVertical: spacing[4],
@@ -82,20 +58,18 @@ const FOOTER_CONTENT: ViewStyle = {
 export interface WelcomeScreenProps extends NavigationScreenProps<{}> {}
 
 export class WelcomeScreen extends React.Component<WelcomeScreenProps, {}> {
-  nextScreen = () => navigateService.navigate("demo")
+  nextScreen = () => navigateService.navigate("bottomStack")
 
   render() {
     return (
       <View style={FULL}>
         <Wallpaper />
         <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
-          <Header headerTx="welcomeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
           <Text style={TITLE_WRAPPER}>
             <Text style={TITLE} text="Your new app, " />
             <Text style={ALMOST} text="almost" />
             <Text style={TITLE} text="!" />
           </Text>
-          <Text style={TITLE} preset="header" tx="welcomeScreen.readyForLaunch" />
           <Image source={bowserLogo} style={BOWSER} />
           <Text style={CONTENT}>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
@@ -110,14 +84,7 @@ export class WelcomeScreen extends React.Component<WelcomeScreenProps, {}> {
           </Text>
         </Screen>
         <SafeAreaView style={FOOTER}>
-          <View style={FOOTER_CONTENT}>
-            <Button
-              style={CONTINUE}
-              textStyle={CONTINUE_TEXT}
-              tx="welcomeScreen.continue"
-              onPress={this.nextScreen}
-            />
-          </View>
+          <View style={FOOTER_CONTENT}></View>
         </SafeAreaView>
       </View>
     )

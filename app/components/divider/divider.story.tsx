@@ -10,7 +10,7 @@ storiesOf("Divider", module)
   .add("Style Presets", () => (
     <Story>
       <UseCase text="Primary" usage="The primary.">
-        <Divider text="Divider" />
+        <Divider />
       </UseCase>
     </Story>
   ))

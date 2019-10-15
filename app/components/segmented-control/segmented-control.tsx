@@ -111,7 +111,7 @@ export class SegmentedControl extends Component<Props, State> {
           })}
         </ScrollView>
 
-        <SegmentedControlListItem data={data} onSwipe={index=>{}}/>
+        <SegmentedControlListItem data={data} onSwipe={index => {}} />
 
         <Button
           transparent

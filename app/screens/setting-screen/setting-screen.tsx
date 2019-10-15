@@ -6,7 +6,7 @@ import { spacing, palette } from "../../theme"
 import { NavigationScreenProps } from "react-navigation"
 import Info from "./info"
 import AllItem from "./all-item"
-import { icons, Button, Text } from "components"
+import { icons, Text } from "components"
 import AppButton from "components/app-button/app-button"
 
 export interface SettingScreenProps extends NavigationScreenProps<{}> {}

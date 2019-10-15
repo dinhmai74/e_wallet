@@ -6,14 +6,14 @@ import { createBottomTabNavigator } from "react-navigation-tabs"
 import { HistoryScreen } from "screens/history-screen"
 import { SettingScreen } from "screens/setting-screen"
 import CashScreen from "screens/cash-screen/cash-screen"
-import { Transfer } from "screens/transfer/transfer"
+import { Transfer } from "screens/transfer"
 import { TransferPhoneNumber } from "screens/transfer/transfer-phone-number/transfer-phone-number"
 
 const BottomTabConfig = {
   home: HomeScreen,
   pricetags: PromotionScreen,
-  clock: TransferPhoneNumber,
-  person: CashScreen,
+  clock: HistoryScreen,
+  person: SettingScreen,
 }
 
 const NavigationScreen = {
@@ -25,7 +25,9 @@ const TabScreens = createBottomTabNavigator(BottomTabConfig, {
 })
 
 const PrimaryRouteConfig = {
-  primaryTabs: TabScreens,
+  bottomStack: TabScreens,
+  transferATM: Transfer,
+  transferPhoneNumber: TransferPhoneNumber,
 }
 
 export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {

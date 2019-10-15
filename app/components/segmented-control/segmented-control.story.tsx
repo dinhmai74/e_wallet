@@ -10,7 +10,7 @@ storiesOf("SegmentedControl", module)
   .add("Style Presets", () => (
     <Story>
       <UseCase text="Primary" usage="The primary.">
-        <SegmentedControl text="SegmentedControl" />
+        <SegmentedControl />
       </UseCase>
     </Story>
   ))

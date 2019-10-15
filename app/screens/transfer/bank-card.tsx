@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Text, View, Image, StyleSheet } from "react-native"
+import { Image, StyleSheet } from "react-native"
 import { CardItem } from "native-base"
 import { icons } from "components"
 import { metrics, spacing } from "theme"

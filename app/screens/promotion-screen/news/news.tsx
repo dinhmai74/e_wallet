@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import {  View } from "react-native"
+import { View } from "react-native"
 import ItemPromotion from "../item-promotion/item-promotion"
 import { Card } from "native-base"
 import NewsCard from "components/news-card/news-card"

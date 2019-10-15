@@ -54,7 +54,7 @@ export class TextField extends React.Component<TextFieldProps, {}> {
 
     return (
       <View style={containerStyle}>
-        <Text preset="fieldLabel" tx={labelTx} text={label} />
+        <Text preset="fieldLabel" text={label} />
         <TextInput
           placeholder={actualPlaceholder}
           placeholderTextColor={color.palette.lighterGrey}

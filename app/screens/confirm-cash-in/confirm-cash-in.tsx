@@ -3,7 +3,6 @@ import { Screen, Text } from "components"
 import { color } from "theme"
 import { ViewStyle } from "react-native"
 import DisplayMoney from "screens/confirm-cash-in/display-money"
-import ItemBank from "screens/confirm-cash-in/item-bank"
 import InputBank from "screens/confirm-cash-in/input-bank"
 
 const ROOT: ViewStyle = {

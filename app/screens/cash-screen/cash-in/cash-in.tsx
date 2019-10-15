@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { View, StyleSheet } from "react-native"
 import Amount from "screens/cash-screen/cash-in/amount"
 import ItemMoney from "screens/cash-screen/cash-in/item-money"
-import { Button, Text } from "components"
 import { palette, spacing } from "theme"
 import AppButton from "components/app-button/app-button"
 

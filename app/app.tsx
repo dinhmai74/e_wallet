@@ -4,7 +4,7 @@
 
 import "./i18n"
 import * as React from "react"
-import { AppRegistry, Platform, YellowBox, UIManager } from "react-native"
+import { AppRegistry, YellowBox} from "react-native"
 import { StatefulNavigator } from "navigation"
 import { StorybookUIRoot } from "../storybook"
 import { RootStore, setupRootStore } from "./models/root-store"

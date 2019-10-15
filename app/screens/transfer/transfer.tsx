@@ -1,8 +1,8 @@
 import * as React from "react"
 import { observer } from "mobx-react"
-import { ViewStyle, Image, StyleSheet } from "react-native"
+import { ViewStyle } from "react-native"
 import { Screen } from "components/screen"
-import { spacing, palette } from "../../theme"
+import { spacing } from "../../theme"
 import { NavigationScreenProps } from "react-navigation"
 import { Text } from "components"
 import BankCard from "screens/transfer/bank-card"
@@ -30,23 +30,3 @@ export class Transfer extends React.Component<SettingScreenProps, {}> {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  styleImage: {
-    height: 130,
-    width: null,
-    flex: 1,
-    borderRadius: 5,
-    marginTop: spacing[4],
-    marginBottom: spacing[6],
-  },
-  styleButton: {
-    borderRadius: 10,
-    borderColor: palette.warmPink,
-    borderWidth: 0.5,
-  },
-  styleText: {
-    textAlign: "center",
-    flex: 1,
-  },
-})

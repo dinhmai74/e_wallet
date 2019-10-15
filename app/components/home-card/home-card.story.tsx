@@ -10,7 +10,7 @@ storiesOf("HomeCard", module)
   .add("Style Presets", () => (
     <Story>
       <UseCase text="Primary" usage="The primary.">
-        <HomeCard text="HomeCard" />
+        <HomeCard />
       </UseCase>
     </Story>
   ))

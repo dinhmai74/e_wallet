@@ -18,7 +18,7 @@ export class HistoryScreen extends React.Component<HistoryScreenProps, {}> {
   render() {
     return (
       <Screen style={ROOT} preset="scroll">
-        <Text preset="header" tx="historyScreen.header" />
+        <Text preset="header" tx="historyScreen_header" />
       </Screen>
     )
   }

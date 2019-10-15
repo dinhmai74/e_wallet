@@ -1,7 +1,7 @@
 import * as React from "react"
 import { storiesOf } from "@storybook/react-native"
 import { StoryScreen, Story, UseCase } from "../../../storybook/views"
-import { View } from "./"
+import { View } from "components/view/view"
 
 declare var module
 
@@ -10,7 +10,7 @@ storiesOf("View", module)
   .add("Style Presets", () => (
     <Story>
       <UseCase text="Primary" usage="The primary.">
-        <View text="View" />
+        <View />
       </UseCase>
     </Story>
   ))

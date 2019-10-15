@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Text, View } from "react-native"
+import { View } from "react-native"
 import CustomInput from "screens/transfer/custom-input"
 import AppButton from "components/app-button/app-button"
 import { spacing } from "theme"

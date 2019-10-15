@@ -1,11 +1,10 @@
 import * as React from "react"
-import { Image, ImageStyle, Platform, TextStyle, View, ViewStyle } from "react-native"
+import { Image, ImageStyle, TextStyle, View, ViewStyle } from "react-native"
 import { NavigationScreenProps } from "react-navigation"
 import { Screen } from "../../components/screen"
 import { Text } from "../../components/text"
 import { Button } from "../../components/button"
 import { Wallpaper } from "../../components/wallpaper"
-import { Header } from "../../components/header"
 import { color, spacing } from "../../theme"
 import { logoIgnite, heart } from "./"
 import { BulletItem } from "../../components/bullet-item"
@@ -28,31 +27,6 @@ const DEMO_TEXT: TextStyle = {
   fontSize: 13,
   letterSpacing: 2,
 }
-const HEADER: TextStyle = {
-  paddingTop: spacing[3],
-  paddingBottom: spacing[5] - 1,
-  paddingHorizontal: 0,
-}
-const HEADER_TITLE: TextStyle = {
-  ...BOLD,
-  fontSize: 12,
-  lineHeight: 15,
-  textAlign: "center",
-  letterSpacing: 1.5,
-}
-const TITLE: TextStyle = {
-  ...BOLD,
-  fontSize: 28,
-  lineHeight: 38,
-  textAlign: "center",
-  marginBottom: spacing[5],
-}
-const TAGLINE: TextStyle = {
-  color: "#BAB6C8",
-  fontSize: 15,
-  lineHeight: 22,
-  marginBottom: spacing[4] + spacing[1],
-}
 const IGNITE: ImageStyle = {
   marginVertical: spacing[6],
   alignSelf: "center",
@@ -72,12 +46,6 @@ const HEART: ImageStyle = {
   width: 10,
   height: 10,
   resizeMode: "contain",
-}
-const HINT: TextStyle = {
-  color: "#BAB6C8",
-  fontSize: 12,
-  lineHeight: 15,
-  marginVertical: spacing[2],
 }
 
 export interface DemoScreenProps extends NavigationScreenProps<{}> {}
@@ -125,24 +93,10 @@ export class DemoScreen extends React.Component<DemoScreenProps, {}> {
       <View style={FULL}>
         <Wallpaper />
         <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
-          <Header
-            headerTx="demoScreen.howTo"
-            leftIcon="back"
-            style={HEADER}
-            titleStyle={HEADER_TITLE}
-          />
-          <Text style={TITLE} preset="header" tx="demoScreen.title" />
-          <Text style={TAGLINE} tx="demoScreen.tagLine" />
           <BulletItem text="Load up Reactotron!  You can inspect your app, view the events, interact, and so much more!" />
           <BulletItem text="Integrated here, Navigation with State, TypeScript, Storybook, Solidarity, and i18n." />
           <View>
-            <Button
-              style={DEMO}
-              textStyle={DEMO_TEXT}
-              tx="demoScreen.reactotron"
-              onPress={this.demoReactotron}
-            />
-            <Text style={HINT} tx={`demoScreen.${Platform.OS}ReactotronHint`} />
+            <Button style={DEMO} textStyle={DEMO_TEXT} onPress={this.demoReactotron} />
           </View>
           <Image source={logoIgnite} style={IGNITE} />
           <View style={LOVE_WRAPPER}>

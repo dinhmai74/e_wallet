@@ -1,6 +1,6 @@
 import * as React from "react"
 import { observer } from "mobx-react"
-import { ViewStyle, Image, StyleSheet } from "react-native"
+import { ViewStyle } from "react-native"
 import { Screen } from "components/screen"
 import { NavigationScreenProps } from "react-navigation"
 import { Text } from "components"
@@ -26,5 +26,3 @@ export class TransferPhoneNumber extends React.Component<any, {}> {
     )
   }
 }
-
-const styles = StyleSheet.create({})

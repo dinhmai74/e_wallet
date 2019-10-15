@@ -97,5 +97,6 @@ export const en = {
 
   //transfer phone number screen
   titleTransferPhoneNumber: "Transfer to phone number ",
+  historyScreen_header: "History",
 }
 export type TranslateKey = keyof typeof en

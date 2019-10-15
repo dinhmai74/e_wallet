@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { View, Image, ImageSourcePropType } from "react-native"
-import { CardItem, Left, Body, Thumbnail, Right } from "native-base"
+import { CardItem } from "native-base"
 import { Text } from "components/text"
 import { Icon, IconTypes } from "components/icon"
 import { spacing, metrics } from "theme"
@@ -13,7 +13,7 @@ interface Props {
   time?: TranslateKey
   icon?: IconTypes
   imageUrl?: ImageSourcePropType
-  style?: string
+  style?: any
 }
 
 export class NewsCard extends Component<Props> {

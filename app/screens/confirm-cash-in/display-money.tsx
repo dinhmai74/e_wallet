@@ -1,6 +1,6 @@
 import React, { Component } from "react"
-import { View, StyleSheet } from "react-native"
-import { Card, CardItem, Item, Label, Input, Content } from "native-base"
+import { StyleSheet } from "react-native"
+import { Card } from "native-base"
 import { spacing, palette } from "theme"
 import { Text } from "components"
 
