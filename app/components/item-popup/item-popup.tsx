@@ -1,29 +1,31 @@
 import React, { Component } from "react"
-import { View, Image, StyleSheet } from "react-native"
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native"
 import { Text } from "components/text"
 import { Icon } from "components/icon"
 import { IconType } from "react-native-elements"
 import { TranslateKey } from "i18n/lang"
 import { spacing, metrics } from "theme"
 import { Left, Right } from "native-base"
+import { Button } from "components/button"
 
 interface Props {
   icon: IconType
   content: TranslateKey
+  onPress: () => void
 }
 
 export class ItemPopup extends Component<Props, {}> {
   render() {
-    const { icon, content } = this.props
+    const { icon, content, onPress } = this.props
     return (
       <View style={styles.container}>
         <View style={styles.wraper}>
           <Icon icon={icon} style={{ marginRight: spacing[2] }} size={metrics.icon.normal} />
           <Text tx={content} p2 bold />
         </View>
-        <View style={{ paddingRight: spacing[4] }}>
+        <TouchableOpacity style={{ paddingRight: spacing[2] }} onPress={onPress}>
           <Icon icon="iconFoward" />
-        </View>
+        </TouchableOpacity>
       </View>
     )
   }
@@ -32,7 +34,7 @@ export class ItemPopup extends Component<Props, {}> {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    paddingBottom: spacing[4],
+    paddingBottom: spacing[5],
     paddingLeft: spacing[2],
     justifyContent: "space-between",
   },
@@ -40,7 +42,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignSelf: "center",
     justifyContent: "center",
-    paddingLeft: spacing[4],
+    paddingLeft: spacing[2],
   },
 })
 

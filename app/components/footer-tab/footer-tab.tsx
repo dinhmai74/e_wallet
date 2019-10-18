@@ -38,6 +38,15 @@ export class FooterTab extends React.Component<FooterTabProps, State> {
 
   trans = new Animated.Value(0)
 
+  goTransferATMCard = () => {
+    navigateService.navigate("transferATM")
+    this.refBottomSheet.close()
+  }
+
+  goTransferPhoneNumber = () => {
+    navigateService.navigate("transferPhoneNumber")
+    this.refBottomSheet.close()
+  }
   render() {
     // grab the props
     const { navigation } = this.props
@@ -127,9 +136,17 @@ export class FooterTab extends React.Component<FooterTabProps, State> {
           bold
         />
         <View style={{ paddingTop: spacing[5] }}>
-          <ItemPopup icon="iconBankAccount" content="transferBankAccount" />
-          <ItemPopup icon="iconAtmCard" content="transferAtmCard" />
-          <ItemPopup icon="iconMobileNumber" content="transferMobileNumber" />
+          <ItemPopup icon="iconBankAccount" content="transferBankAccount" onPress={() => {}} />
+          <ItemPopup
+            icon="iconAtmCard"
+            content="transferAtmCard"
+            onPress={this.goTransferATMCard}
+          />
+          <ItemPopup
+            icon="iconMobileNumber"
+            content="transferMobileNumber"
+            onPress={this.goTransferPhoneNumber}
+          />
         </View>
       </RBSheet>
     </View>
