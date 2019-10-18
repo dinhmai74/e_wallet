@@ -2,20 +2,25 @@ import React, { Component } from "react"
 import { ViewStyle, Dimensions, StyleSheet, View, TouchableOpacity } from "react-native"
 import { Screen, Text } from "components"
 import { spacing, color, palette } from "theme"
-import CashIn from "screens/cash-screen/cash-in/cash-in"
 import { TabView, SceneMap, TabBar } from "react-native-tab-view"
 import Animated from "react-native-reanimated"
-import ConfirmCashIn from "screens/confirm-cash-in/confirm-cash-in"
+import { ScanCodeScreen } from "screens/scan-screen/scan-code-screen"
+import { MyQRScreen } from "screens/scan-screen/my-qr-screen"
+import { ScanMobileCard } from "screens/scan-screen/scan-mobile-card"
 
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,
   // paddingHorizontal: spacing[2],
 }
 
-export class CashScreen extends Component {
+export class ScanScreen extends Component {
   state = {
     index: 0,
-    routes: [{ key: "first", title: "Cash in" }, { key: "second", title: "Cash out" }],
+    routes: [
+      { key: "first", title: "Scan Code" },
+      { key: "second", title: "My QR" },
+      { key: "third", title: "Scan Mobile Card" },
+    ],
     title: {
       color: "black",
     },
@@ -41,8 +46,9 @@ export class CashScreen extends Component {
         <TabView
           navigationState={this.state}
           renderScene={SceneMap({
-            first: CashIn,
-            second: ConfirmCashIn,
+            first: ScanCodeScreen,
+            second: MyQRScreen,
+            third: ScanMobileCard,
           })}
           onIndexChange={index => this.setState({ index })}
           initialLayout={{ width: Dimensions.get("window").width }}
@@ -59,16 +65,17 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 13,
     // fontWeight: "bold",
-    margin: 8,
+    textAlign: "center",
   },
   tabbar: {
     backgroundColor: "transparent",
-    marginLeft: spacing[8],
+    // marginLeft: spacing[8],
   },
   tab: {
     opacity: 1,
     width: 120,
-    justifyContent: "flex-end",
+    justifyContent: "center",
+    alignItems: "center",
   },
 })
-export default CashScreen
+export default ScanScreen

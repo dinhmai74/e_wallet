@@ -11,7 +11,7 @@ import { color, metrics, spacing } from "theme"
 import { Icon as EIcon } from "react-native-elements"
 import RBSheet from "react-native-raw-bottom-sheet"
 import Animated from "react-native-reanimated"
-import ItemPopup from "components/item-popup/item-popup"
+import { ItemPopup } from "components/item-popup"
 
 interface State {
   openModal: boolean

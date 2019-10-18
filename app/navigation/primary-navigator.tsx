@@ -9,6 +9,7 @@ import CashScreen from "screens/cash-screen/cash-screen"
 import { Transfer } from "screens/transfer"
 import { TransferPhoneNumber } from "screens/transfer/transfer-phone-number/transfer-phone-number"
 import ConfirmCashIn from "screens/confirm-cash-in/confirm-cash-in"
+import { ScanScreen } from "screens/scan-screen"
 
 const BottomTabConfig = {
   home: HomeScreen,
@@ -31,6 +32,7 @@ const PrimaryRouteConfig = {
   transferPhoneNumber: TransferPhoneNumber,
   cashScreen: CashScreen,
   confirmCashIn: ConfirmCashIn,
+  scanScreen: ScanScreen,
 }
 
 export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {
