@@ -6,7 +6,7 @@ import { navigateService } from "utils"
 
 export interface LinkCardScreenProps {}
 export class LinkCard extends Component<LinkCardScreenProps, {}> {
-  goCashScreen = () => navigateService.navigate("cash")
+  goCashScreen = () => navigateService.navigate("cashScreen")
   render() {
     return (
       <TouchableOpacity onPress={this.goCashScreen}>

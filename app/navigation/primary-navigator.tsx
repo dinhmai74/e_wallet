@@ -8,6 +8,7 @@ import { SettingScreen } from "screens/setting-screen"
 import CashScreen from "screens/cash-screen/cash-screen"
 import { Transfer } from "screens/transfer"
 import { TransferPhoneNumber } from "screens/transfer/transfer-phone-number/transfer-phone-number"
+import ConfirmCashIn from "screens/confirm-cash-in/confirm-cash-in"
 
 const BottomTabConfig = {
   home: HomeScreen,
@@ -28,6 +29,8 @@ const PrimaryRouteConfig = {
   bottomStack: TabScreens,
   transferATM: Transfer,
   transferPhoneNumber: TransferPhoneNumber,
+  cashScreen: CashScreen,
+  confirmCashIn: ConfirmCashIn,
 }
 
 export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {
@@ -35,4 +38,4 @@ export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {
 })
 export type bottomTabRoute = keyof typeof BottomTabConfig
 export type navigationScreenRoute = keyof typeof NavigationScreen
-export type primaryRoute = keyof typeof PrimaryRouteConfig | bottomTabRoute | navigationScreenRoute
+export type primaryRoute = keyof typeof PrimaryRouteConfig | bottomTabRoute

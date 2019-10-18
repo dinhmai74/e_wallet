@@ -99,5 +99,10 @@ export const en = {
   //transfer phone number screen
   titleTransferPhoneNumber: "Transfer to phone number ",
   historyScreen_header: "History",
+
+  // popup transfer
+  transferBankAccount: "Transfer to another bank account",
+  transferMobileNumber: "Transfer to another mobile number",
+  transferAtmCard: "Transfer to another ATM card",
 }
 export type TranslateKey = keyof typeof en

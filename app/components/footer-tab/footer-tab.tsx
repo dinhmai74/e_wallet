@@ -11,6 +11,7 @@ import { color, metrics, spacing } from "theme"
 import { Icon as EIcon } from "react-native-elements"
 import RBSheet from "react-native-raw-bottom-sheet"
 import Animated from "react-native-reanimated"
+import ItemPopup from "components/item-popup/item-popup"
 
 interface State {
   openModal: boolean
@@ -104,21 +105,34 @@ export class FooterTab extends React.Component<FooterTabProps, State> {
   }
 
   private renderBottomSheet = () => (
-    <RBSheet
-      ref={ref => {
-        this.refBottomSheet = ref
-      }}
-      height={300}
-      duration={250}
-      customStyles={{
-        container: {
-          justifyContent: "center",
-          alignItems: "center",
-        },
-      }}
-    >
-      <Text>this is bottom sheet</Text>
-    </RBSheet>
+    <View>
+      <RBSheet
+        ref={ref => {
+          this.refBottomSheet = ref
+        }}
+        height={250}
+        duration={250}
+        customStyles={{
+          container: {
+            // justifyContent: "center",
+            // alignItems: "center",
+            borderRadius: 8,
+          },
+        }}
+      >
+        <Text
+          tx="tab_transfer"
+          style={{ paddingTop: spacing[5], paddingLeft: spacing[4] }}
+          s1
+          bold
+        />
+        <View style={{ paddingTop: spacing[5] }}>
+          <ItemPopup icon="iconBankAccount" content="transferBankAccount" />
+          <ItemPopup icon="iconAtmCard" content="transferAtmCard" />
+          <ItemPopup icon="iconMobileNumber" content="transferMobileNumber" />
+        </View>
+      </RBSheet>
+    </View>
   )
 }
 

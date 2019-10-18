@@ -4,8 +4,12 @@ import Amount from "screens/cash-screen/cash-in/amount"
 import ItemMoney from "screens/cash-screen/cash-in/item-money"
 import { palette, spacing } from "theme"
 import { Button } from "components"
+import { navigateService } from "utils"
 
 export class CashIn extends Component {
+  gotoConfirmCashIn = () => {
+    navigateService.navigate("confirmCashIn")
+  }
   render() {
     return (
       <View>
@@ -19,7 +23,11 @@ export class CashIn extends Component {
           <ItemMoney title="fiveHundredMillion" />
         </View>
         <View style={{ paddingTop: spacing[7] }}>
-          <Button onPress={() => {}} style={{ marginHorizontal: spacing[6] }} />
+          <Button
+            onPress={this.gotoConfirmCashIn}
+            style={{ marginHorizontal: spacing[6] }}
+            tx="confirm"
+          />
         </View>
       </View>
     )
