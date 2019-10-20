@@ -12,7 +12,7 @@ export class TextField extends Component {
         <CustomInput placeholder="Amount*" />
         <CustomInput placeholder="Transaction Description" />
         <Text tx="noteTransfer" p3 style={styles.styleNote} />
-        <Button bordered onPress={() => {}} style={{ flex: 1 }} />
+        <Button bordered onPress={() => {}} style={{ flex: 1 }} tx="confirm" />
       </View>
     )
   }

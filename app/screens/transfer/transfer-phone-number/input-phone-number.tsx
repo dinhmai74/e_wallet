@@ -9,7 +9,13 @@ export class InputPhoneNumber extends Component {
     return (
       <View style={{ paddingTop: spacing[5] }}>
         <CustomInput placeholder="Phone Number" />
-        <Button bordered preset="primary" onPress={() => {}} style={{ marginTop: spacing[4] }} />
+        <Button
+          bordered
+          preset="primary"
+          onPress={() => {}}
+          style={{ marginTop: spacing[4] }}
+          tx="confirm"
+        />
       </View>
     )
   }
