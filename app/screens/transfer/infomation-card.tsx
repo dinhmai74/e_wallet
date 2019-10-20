@@ -6,7 +6,7 @@ import { spacing, palette } from "theme"
 export class InfomationCard extends Component {
   render() {
     return (
-      <View>
+      <View style={{ paddingTop: spacing[4] }}>
         <View>
           <Text tx="information" s1 bold style={styles.title} />
         </View>
