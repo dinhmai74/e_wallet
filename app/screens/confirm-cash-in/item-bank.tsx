@@ -2,18 +2,29 @@ import React, { Component } from "react"
 import { View, StyleSheet } from "react-native"
 import { Icon, Text, IconTypes } from "components"
 import { palette, spacing, metrics } from "theme"
-import { RadioButton } from "react-native-material-ui"
 import { TranslateKey } from "i18n/lang"
+import { RadioButton } from "react-native-material-ui"
 
 interface Props {
   icon: IconTypes
   nameBank: TranslateKey
   numberTalent?: TranslateKey
 }
+interface State {
+  checked: boolean
+}
 
-export class ItemBank extends Component<Props, {}> {
+export class ItemBank extends Component<Props, State> {
+  constructor(props) {
+    super(props)
+    this.state = {
+      checked: false,
+    }
+  }
   render() {
     const { icon, nameBank, numberTalent } = this.props
+    const { checked } = this.state
+
     return (
       <View style={{ paddingBottom: spacing[2] }}>
         <View style={styles.container}>
@@ -28,7 +39,14 @@ export class ItemBank extends Component<Props, {}> {
             </View>
           </View>
           <View style={styles.styleRadioButton}>
-            <RadioButton label="" checked value="Value" onSelect={() => {}} />
+            <RadioButton
+              label=""
+              checked={this.state.checked}
+              value="Value"
+              onCheck={checked => this.setState({ checked })}
+              onSelect={() => {}}
+              color="blue"
+            />
           </View>
         </View>
         <View style={styles.indicatorStyle}></View>

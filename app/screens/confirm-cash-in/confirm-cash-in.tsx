@@ -1,13 +1,13 @@
 import React, { Component } from "react"
 import { Screen, Text } from "components"
-import { color } from "theme"
+import { color, spacing } from "theme"
 import { ViewStyle } from "react-native"
 import DisplayMoney from "screens/confirm-cash-in/display-money"
 import InputBank from "screens/confirm-cash-in/input-bank"
 
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,
-  // paddingHorizontal: spacing[2],
+  paddingHorizontal: spacing[5],
 }
 
 export class ConfirmCashIn extends Component {

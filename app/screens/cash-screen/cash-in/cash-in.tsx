@@ -1,34 +1,40 @@
 import React, { Component } from "react"
-import { View, StyleSheet } from "react-native"
+import { StyleSheet, ViewStyle } from "react-native"
 import Amount from "screens/cash-screen/cash-in/amount"
 import ItemMoney from "screens/cash-screen/cash-in/item-money"
 import { palette, spacing } from "theme"
-import { Button } from "components"
+import { Button, View, Screen } from "components"
 import { navigateService } from "utils"
 
+const ROOT: ViewStyle = {
+  // backgroundColor: color.palette.black,
+  paddingHorizontal: spacing[5],
+}
 export class CashIn extends Component {
   gotoConfirmCashIn = () => {
     navigateService.navigate("confirmCashIn")
   }
   render() {
     return (
-      <View>
-        <Amount />
-        <View style={styles.wraper}>
-          <ItemMoney title="tenThousand" />
-          <ItemMoney title="twentyThousand" />
-          <ItemMoney title="fiftyThousand" />
-          <ItemMoney title="oneHundredMillion" />
-          <ItemMoney title="twoHundredMillion" />
-          <ItemMoney title="fiveHundredMillion" />
-        </View>
-        <View style={{ paddingTop: spacing[7] }}>
+      <View full>
+        <Screen style={ROOT} preset="scroll">
+          <Amount />
+          <View style={styles.wraper}>
+            <ItemMoney title="tenThousand" />
+            <ItemMoney title="twentyThousand" />
+            <ItemMoney title="fiftyThousand" />
+            <ItemMoney title="oneHundredMillion" />
+            <ItemMoney title="twoHundredMillion" />
+            <ItemMoney title="fiveHundredMillion" />
+          </View>
           <Button
             onPress={this.gotoConfirmCashIn}
             style={{ marginHorizontal: spacing[6] }}
             tx="confirm"
+            transparent
+            bordered
           />
-        </View>
+        </Screen>
       </View>
     )
   }
@@ -38,6 +44,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     flex: 1,
+    paddingBottom: spacing[7],
+    paddingLeft: spacing[1],
   },
   styleButton: {
     borderRadius: 8,

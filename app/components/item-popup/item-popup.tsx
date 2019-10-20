@@ -1,15 +1,12 @@
 import React, { Component } from "react"
 import { View, Image, StyleSheet, TouchableOpacity } from "react-native"
 import { Text } from "components/text"
-import { Icon } from "components/icon"
-import { IconType } from "react-native-elements"
+import { Icon, IconTypes } from "components/icon"
 import { TranslateKey } from "i18n/lang"
 import { spacing, metrics } from "theme"
-import { Left, Right } from "native-base"
-import { Button } from "components/button"
 
 interface Props {
-  icon: IconType
+  icon: IconTypes
   content: TranslateKey
   onPress: () => void
 }

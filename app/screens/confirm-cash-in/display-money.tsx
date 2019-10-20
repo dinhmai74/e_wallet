@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     width: 310,
     height: 134,
     flex: 1,
-    marginHorizontal: spacing[5],
+    marginHorizontal: spacing[4],
     marginTop: spacing[6],
     textAlign: "center",
     flexDirection: "column",

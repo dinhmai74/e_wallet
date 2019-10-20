@@ -3,7 +3,6 @@ import { View, StyleSheet } from "react-native"
 import { Text, Button } from "components"
 import { palette, spacing } from "theme"
 import ItemBank from "screens/confirm-cash-in/item-bank"
-
 export class InputBank extends Component {
   render() {
     return (
@@ -18,7 +17,13 @@ export class InputBank extends Component {
         <ItemBank icon="iconBank" nameBank="acb" numberTalent="talentNumber" />
         <ItemBank icon="iconBank" nameBank="acb" numberTalent="talentNumber" />
         <View style={{ paddingTop: spacing[7] }}>
-          <Button bordered onPress={() => {}} style={{ marginHorizontal: spacing[6] }} />
+          <Button
+            bordered
+            onPress={() => {}}
+            style={{ marginHorizontal: spacing[6] }}
+            tx="confirm"
+            transparent
+          />
         </View>
       </View>
     )
@@ -32,7 +37,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingLeft: spacing[2],
+    paddingLeft: spacing[1],
     paddingBottom: spacing[4],
   },
   title: {
