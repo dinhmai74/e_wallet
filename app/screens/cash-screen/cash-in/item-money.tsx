@@ -1,20 +1,40 @@
 import React, { Component } from "react"
 import { CardItem, Card } from "native-base"
 import { Text } from "components"
-import { StyleSheet } from "react-native"
+import { StyleSheet, TouchableOpacity, TouchableHighlight } from "react-native"
 import { palette, spacing } from "theme"
 import { TranslateKey } from "i18n/lang"
 interface Props {
   title: TranslateKey
   style?: any
+  onPress: () => void
 }
-export class ItemMoney extends Component<Props, {}> {
+interface States {
+  colorItem: boolean
+}
+
+export class ItemMoney extends Component<Props, States> {
+  constructor(props) {
+    super(props)
+    this.state = {
+      colorItem: true,
+    }
+  }
+  choseMoney = () => {
+    this.setState({
+      colorItem: false,
+    })
+  }
   render() {
-    const { title, style, ...rest } = this.props
+    const { title, style, onPress, ...rest } = this.props
+    const { colorItem } = this.state
+    const styledItem = colorItem ? styles.container : styles.highlightItem
     return (
-      <Card style={[style, styles.container]} {...rest}>
+      <Card style={[style, styledItem]} {...rest}>
         <CardItem>
-          <Text tx={title} style={styles.styledText} s1 />
+          <TouchableOpacity onPress={this.choseMoney}>
+            <Text tx={title} style={styles.styledText} s1 />
+          </TouchableOpacity>
         </CardItem>
       </Card>
     )
@@ -26,8 +46,8 @@ const styles = StyleSheet.create({
     width: 115,
     height: 62,
     borderRadius: 10,
-    borderColor: palette.warmPink,
-    marginLeft: 39,
+    borderColor: palette.grey,
+    marginLeft: 35,
     marginTop: spacing[6],
     alignItems: "center",
     justifyContent: "center",
@@ -35,6 +55,16 @@ const styles = StyleSheet.create({
   styledText: {
     textAlign: "center",
     color: palette.warmPink,
+  },
+  highlightItem: {
+    width: 115,
+    height: 62,
+    borderRadius: 10,
+    borderColor: palette.warmPink,
+    marginLeft: 35,
+    marginTop: spacing[6],
+    alignItems: "center",
+    justifyContent: "center",
   },
 })
 
