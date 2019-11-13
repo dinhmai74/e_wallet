@@ -104,5 +104,22 @@ export const en = {
   transferBankAccount: "Transfer to another bank account",
   transferMobileNumber: "Transfer to another mobile number",
   transferAtmCard: "Transfer to another ATM card",
+
+  // train ticket screen
+  titleTrainTicketScreen: "Buy Train Ticket",
+  typeTicket: "train ticket type: ",
+  roundTrip: "Round trip",
+  oneWay: "One way",
+  goTransit: "Go transit",
+  arrivalTransit: "Arrival transit",
+  dateDepartment: "Date of  department",
+  dayOn: "Day on",
+  numberTicket: "Number ticket",
+  numberChair: "Number chair",
+
+  // pay internet
+  internetBillPayment: "Internet bill payment",
+  fpt: "FPT",
+  pay: "Pay",
 }
 export type TranslateKey = keyof typeof en
