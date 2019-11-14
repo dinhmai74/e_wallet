@@ -3,7 +3,7 @@ import { ViewStyle } from "react-native"
 
 const DEFAULT = {
   marginLeft: spacing[5],
-  paddingTop: spacing[4],
+  paddingTop: spacing[6],
 } as ViewStyle
 
 export const presets = {

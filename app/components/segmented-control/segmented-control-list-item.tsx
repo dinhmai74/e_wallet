@@ -21,7 +21,7 @@ export class SegmentedControlListItem extends Component<Props> {
           return (
             <Animatable.View animation={"fadeIn"} key={id}>
               <ItemHomeCard icon={icon} onPress={callBack} tx={title} dividerColor={color} />
-              <SizedBox h={2} />
+              <SizedBox h={3} />
             </Animatable.View>
           )
         })}
