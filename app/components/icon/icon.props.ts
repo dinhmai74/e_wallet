@@ -33,5 +33,5 @@ export interface IconProps {
    */
   bg?: string
 
-  onPress?: ()=> void
+  onPress?: () => void
 }

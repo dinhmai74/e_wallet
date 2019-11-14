@@ -48,6 +48,6 @@ const styles = StyleSheet.create({
     width: 1,
   },
   cardItem: {
-    paddingVertical: spacing[1]
+    paddingVertical: spacing[1],
   },
 })
