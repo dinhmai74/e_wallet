@@ -2,8 +2,9 @@ import React, { Component } from "react"
 import { CardItem, Card } from "native-base"
 import { Text } from "components"
 import { StyleSheet, TouchableOpacity, TouchableHighlight } from "react-native"
-import { palette, spacing } from "theme"
+import { palette, spacing, color } from "theme"
 import { TranslateKey } from "i18n/lang"
+import { colors } from "react-native-elements"
 interface Props {
   title: TranslateKey
   style?: any
@@ -14,8 +15,8 @@ interface States {
 }
 
 export class ItemMoney extends Component<Props, States> {
-  static defaultProps={
-    onPress: ()=> {}
+  static defaultProps = {
+    onPress: () => {},
   }
 
   constructor(props) {
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
     width: 115,
     height: 62,
     borderRadius: 10,
-    borderColor: palette.grey,
+    borderColor: color.border,
     marginLeft: 35,
     marginTop: spacing[6],
     alignItems: "center",
@@ -58,13 +59,13 @@ const styles = StyleSheet.create({
   },
   styledText: {
     textAlign: "center",
-    color: palette.warmPink,
+    color: color.primary,
   },
   highlightItem: {
     width: 115,
     height: 62,
     borderRadius: 10,
-    borderColor: palette.warmPink,
+    borderColor: color.primary,
     marginLeft: 35,
     marginTop: spacing[6],
     alignItems: "center",
