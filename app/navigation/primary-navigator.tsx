@@ -10,7 +10,6 @@ import { Transfer } from "screens/transfer"
 import { TransferPhoneNumber } from "screens/transfer/transfer-phone-number/transfer-phone-number"
 import ConfirmCashIn from "screens/confirm-cash-in/confirm-cash-in"
 import { ScanScreen } from "screens/scan-screen"
-import TrainTicketScreen from "screens/train-ticket-screen/train-ticket-screen"
 import { PayInternet } from "screens/pay-internet/pay-internet"
 
 const BottomTabConfig = {
@@ -35,7 +34,6 @@ const PrimaryRouteConfig = {
   cashScreen: CashScreen,
   confirmCashIn: ConfirmCashIn,
   scanScreen: ScanScreen,
-  trainTicketScreen: TrainTicketScreen,
   payInternet: PayInternet,
 }
 

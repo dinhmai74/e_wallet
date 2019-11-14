@@ -7,13 +7,17 @@ import { TranslateKey } from "i18n/lang"
 interface Props {
   title: TranslateKey
   style?: any
-  onPress: () => void
+  onPress?: () => void
 }
 interface States {
   colorItem: boolean
 }
 
 export class ItemMoney extends Component<Props, States> {
+  static defaultProps={
+    onPress: ()=> {}
+  }
+
   constructor(props) {
     super(props)
     this.state = {
