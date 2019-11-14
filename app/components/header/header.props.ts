@@ -14,6 +14,8 @@ export interface HeaderProps {
    */
   headerText?: string
 
+  content?: any
+
   /* ------------- presets type ------------- */
   preset?: PresetsType
 

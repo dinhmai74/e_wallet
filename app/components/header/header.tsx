@@ -1,9 +1,7 @@
 import * as React from "react"
 import { View, ViewStyle, TextStyle } from "react-native"
 import { HeaderProps } from "./header.props"
-import { Button } from "../button"
-import { Icon } from "../icon"
-import { Text } from "../text"
+import { Text, SizedBox, Icon, Button } from ".."
 import { spacing } from "theme"
 import { translate } from "i18n"
 import { navigateService } from "utils"
@@ -31,15 +29,24 @@ export class Header extends React.Component<HeaderProps, {}> {
   static defaultProps = {
     onLeftPress: navigateService.goBack,
   }
+
+  renderLeftIcon = () => {
+    const { leftIcon, onLeftPress } = this.props
+    if (leftIcon) {
+      return <Icon icon={leftIcon} onPress={onLeftPress} />
+    }
+
+    return null
+  }
+
   render() {
     const {
-      onLeftPress,
       onRightPress,
       rightIcon,
-      leftIcon,
       headerText,
       headerTx,
       titleStyle,
+      content,
       preset = "default",
     } = this.props
     const header = headerText || (headerTx && translate(headerTx)) || ""
@@ -48,9 +55,11 @@ export class Header extends React.Component<HeaderProps, {}> {
 
     return (
       <NBHeader transparent style={theme}>
+        {this.renderLeftIcon()}
         <Body>
           <Text preset={"header"}>{headerText}</Text>
         </Body>
+        {content}
       </NBHeader>
     )
   }

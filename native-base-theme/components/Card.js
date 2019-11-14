@@ -22,7 +22,7 @@ export default (variables /* : * */ = variable) => {
     },
     flexWrap: "nowrap",
     backgroundColor: variables.cardDefaultBg,
-    borderRadius: 5,
+    borderRadius: 10,
     borderWidth: 1,
     borderColor: color.border,
     ...getElevation(),

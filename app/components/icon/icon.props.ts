@@ -32,4 +32,6 @@ export interface IconProps {
    * background icon
    */
   bg?: string
+
+  onPress?: () => void
 }
