@@ -25,6 +25,7 @@ export const palette = {
   paleGrey: "#f7f8f9",
   blueGrey: "#91a2bc",
   battleshipGrey36: "rgba(120, 120, 128, 0.36)",
+  shadowBlack: "#000000",
 }
 
 /**

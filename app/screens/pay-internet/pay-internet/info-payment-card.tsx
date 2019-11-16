@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { View, Image, StyleSheet } from "react-native"
 import { Card, CardItem, Left } from "native-base"
 import { icons, Text, Button } from "components"
-import { spacing } from "theme"
+import { spacing, palette } from "theme"
 
 export class InfoPaymentCard extends Component {
   render() {
@@ -15,6 +15,7 @@ export class InfoPaymentCard extends Component {
           <Text tx="fpt" />
           <Text tx="name" />
         </CardItem>
+
         <Button bordered onPress={() => {}} tx="pay" transparent style={styles.styledButton} />
       </Card>
     )
@@ -28,22 +29,25 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",
-    marginLeft: spacing[3],
-    marginRight: spacing[3],
     marginTop: spacing[5],
+    shadowColor: palette.shadowBlack,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowRadius: 10,
+    shadowOpacity: 1,
   },
   styledImage: {
-    width: 74,
-    height: 55,
-    backgroundColor: "red",
+    width: 65,
+    height: 50,
   },
   content: {
     flexDirection: "column",
-    marginRight: spacing[3],
   },
   styledButton: {
-    width: 91,
-    height: 32,
-    marginRight: spacing[2],
+    width: 85,
+    height: 30,
+    marginRight: spacing[4],
   },
 })
