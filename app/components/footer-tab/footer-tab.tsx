@@ -132,7 +132,7 @@ export class FooterTab extends React.Component<FooterTabProps, State> {
         <Text
           tx="tab_transfer"
           style={{ paddingTop: spacing[5], paddingLeft: spacing[4] }}
-          s1
+          t1
           bold
         />
         <View style={{ paddingTop: spacing[5] }}>

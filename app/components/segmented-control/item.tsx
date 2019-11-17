@@ -16,7 +16,7 @@ export class Item extends Component<Props> {
     const colors = isRead ? color.textNavy : color.textGrey
     return (
       <Button transparent onPress={onPress}>
-        <Text tx={tx} style={[styles.styledText, { color: colors }]} p4 />
+        <Text tx={tx} style={[styles.styledText, { color: colors }]} b2 />
       </Button>
     )
   }

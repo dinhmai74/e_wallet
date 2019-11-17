@@ -16,7 +16,7 @@ export class ItemSelection extends Component<Props> {
     return (
       <CardItem style={styles.wrapper}>
         <Icon icon={icon} style={styles.styleIcon} />
-        <Text tx={title} p3 style={styles.styleText} />
+        <Text tx={title} b2 style={styles.styleText} />
       </CardItem>
     )
   }

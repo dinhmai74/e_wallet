@@ -1,3 +1,4 @@
+require("../app/components/check-box/check-box.story")
 require("../app/components/segmented-control/segmented-control.story")
 require("../app/components/item-home-card/item-home-card.story")
 require("../app/components/home-card/home-card.story")

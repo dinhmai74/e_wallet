@@ -16,14 +16,14 @@ export class ItemPromotion extends Component<Props> {
     const { label, onPress, viewMore, icon, ...rest } = this.props
     return (
       <View style={{ flexDirection: "row", ...rest }}>
-        <Text tx={label} style={styles.title} p2 />
+        <Text tx={label} style={styles.title} b1 />
         <View style={styles.wrapper}>
           <Button transparent onPress={onPress}>
             <Text
               tx={viewMore}
               preset="fieldLabel"
               bold
-              size={Fonts.size.p2}
+              b1
               style={{ paddingRight: spacing[1], color: color.textNavy }}
             />
             <Icon icon={icon} size={metrics.icon.tiny} containerStyle={{ padding: spacing[0] }} />

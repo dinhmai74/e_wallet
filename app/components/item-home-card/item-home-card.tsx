@@ -1,5 +1,5 @@
 import * as React from "react"
-import { View, StyleSheet } from "react-native"
+import { View, StyleSheet, TouchableOpacity } from "react-native"
 import { Text } from "../text"
 import { Card, CardItem, NativeBase } from "native-base"
 import { Icon, IconTypes } from "components/icon"
@@ -17,6 +17,7 @@ export class ItemHomeCard extends React.Component<Props> {
   static defaultProps = {
     dividerColor: "#ec7836",
   }
+
   render() {
     // grab the props
     const { icon, tx, dividerColor: dividerColorProps, onPress, ...rest } = this.props
@@ -24,16 +25,18 @@ export class ItemHomeCard extends React.Component<Props> {
 
     return (
       <Card style={styles.cardItem}>
-        <CardItem onPress={onPress} {...rest} style={styles.cardItem}>
-          <View style={[styles.borderLeft, dividerColor]} />
-          <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
-            <Icon icon={icon} size={metrics.icon.big} />
-            <Text tx={tx} style={{ textAlign: "center", paddingLeft: spacing[2] }} p4 />
-          </View>
-          <Button transparent style={{ justifyContent: "flex-end", flex: 1 }}>
-            <Icon icon="iconFoward" />
-          </Button>
-        </CardItem>
+        <TouchableOpacity onPress={onPress}>
+          <CardItem onPress={onPress} {...rest} style={styles.cardItem}>
+            <View style={[styles.borderLeft, dividerColor]} />
+            <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+              <Icon icon={icon} size={metrics.icon.big} />
+              <Text tx={tx} style={{ textAlign: "center", paddingLeft: spacing[2] }} b2 />
+            </View>
+            <Button onPress={onPress} transparent style={{ justifyContent: "flex-end", flex: 1 }}>
+              <Icon icon="iconFoward" />
+            </Button>
+          </CardItem>
+        </TouchableOpacity>
       </Card>
     )
   }

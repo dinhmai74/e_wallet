@@ -35,7 +35,7 @@ export function Icon(props: IconProps) {
   }
 
   const renderTouchableIcon = () => {
-    return <TouchableOpacity onPress={onPress}>{renderIcon}</TouchableOpacity>
+    return <TouchableOpacity onPress={onPress}>{renderIcon()}</TouchableOpacity>
   }
 
   if (onPress) return renderTouchableIcon()

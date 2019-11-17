@@ -38,7 +38,7 @@ export class ItemMoney extends Component<Props, States> {
       <Card style={[style, styledItem]} {...rest}>
         <CardItem>
           <TouchableOpacity onPress={this.choseMoney}>
-            <Text tx={title} style={styles.styledText} s1 />
+            <Text tx={title} style={styles.styledText} t1 />
           </TouchableOpacity>
         </CardItem>
       </Card>

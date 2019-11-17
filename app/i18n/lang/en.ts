@@ -30,6 +30,8 @@ export const en = {
   mobile_card: "MOBILE CARD",
   payment: "PAYMENT",
   entertainment: "ENTERTAINMENT",
+  transport: "TRANSPORT",
+  transport_buy_train: "Buy train ticket",
 
   // hot news
   beefRepices: "Beef Repices",
@@ -121,5 +123,11 @@ export const en = {
   internetBillPayment: "Internet bill payment",
   fpt: "FPT",
   pay: "Pay",
+
+  // train
+  trainTicket_title: "Buy train ticket",
+  trainTicket_type: "Type:",
+  trainTicket_oneWay: "One way",
+  trainTicket_roundTrip: "Round-trip",
 }
 export type TranslateKey = keyof typeof en
