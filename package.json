@@ -59,6 +59,7 @@
     "react-navigation-tabs": "^2.5.1",
     "reactotron-mst": "^3.1.1",
     "reactotron-react-native": "^4.0.0-beta.1",
+    "styled-components": "^4.4.1",
     "validate.js": "0.13.1",
     "yup": "^0.27.0"
   },
@@ -194,7 +195,7 @@
   },
   "rnpm": {
     "assets": [
-    	"./app/theme/fonts"
+      "./app/theme/fonts"
     ]
-}
+  }
 }

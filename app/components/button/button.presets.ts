@@ -4,13 +4,7 @@ import { color, spacing } from "theme"
 /**
  * All text will start off looking like this.
  */
-const BASE_VIEW: ViewStyle = {
-  paddingVertical: spacing[2],
-  paddingHorizontal: spacing[2],
-  borderRadius: 4,
-  justifyContent: "center",
-  alignItems: "center",
-}
+const BASE_VIEW: ViewStyle = {}
 
 const BASE_TEXT: TextStyle = {
   paddingHorizontal: spacing[3],
@@ -25,10 +19,7 @@ export const viewPresets = {
   /**
    * A smaller piece of secondard information.
    */
-  primary: {
-    alignItems: "center",
-    justifyContent: "center",
-  } as ViewStyle,
+  primary: {} as ViewStyle,
 
   /**
    * A button without extras.

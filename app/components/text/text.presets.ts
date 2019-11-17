@@ -5,9 +5,7 @@ import { color, Fonts } from "theme"
  */
 const BASE: TextStyle = {
   fontFamily: Fonts.type.base,
-  color: color.textNavy,
 }
-
 const BOLD: TextStyle = {
   fontFamily: Fonts.type.bold,
 }

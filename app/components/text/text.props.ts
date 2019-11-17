@@ -11,9 +11,13 @@ export interface TextProps extends NativeBase.Text {
    */
   children?: React.ReactNode
 
+  // 24
   h1?: boolean
+  // 16
   b1?: boolean
+  // 12
   b2?: boolean
+  // 18
   t1?: boolean
 
   /**

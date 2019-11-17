@@ -142,7 +142,7 @@ export default {
   // Font
   DefaultFontSize: 16,
   fontFamily: Fonts.type.base,
-  fontSizeBase: 15,
+  fontSizeBase: 16,
   get fontSizeH1() {
     return this.fontSizeBase * 1.8
   },
@@ -259,7 +259,7 @@ export default {
   tabFontSize: 15,
 
   // Text
-  textColor: Colors.textBlack,
+  textColor: Colors.textNavy,
   inverseTextColor: palette.white,
   noteFontSize: 14,
   get defaultTextColor() {
@@ -274,7 +274,7 @@ export default {
   titleFontColor: palette.white,
 
   // Other
-  borderRadiusBase: 8,
+  borderRadiusBase: 6,
   borderWidth: 1 / PixelRatio.getPixelSizeForLayoutSize(1),
   contentPadding: 10,
   dropdownLinkColor: "#414142",
