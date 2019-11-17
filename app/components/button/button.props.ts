@@ -44,4 +44,6 @@ export interface ButtonProps extends NativeBase.Button {
 
   full?: boolean
   rounded?: boolean
+
+  disabled?: boolean
 }
