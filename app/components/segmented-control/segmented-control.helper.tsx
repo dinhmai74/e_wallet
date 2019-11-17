@@ -15,7 +15,7 @@ export class HomeFunctionItem implements HomeFunctionItemModel {
     this.icon = val.icon
     this.title = val.title
     this.color = val.color
-    this.route= val.route
+    this.route = val.route
   }
 }
 

@@ -28,7 +28,7 @@ export interface CheckBoxProps {
 export function CheckBox(props: CheckBoxProps) {
   // grab the props
   const { tx, text, style, ...rest } = props
-  const textStyle = { }
+  const textStyle = {}
 
   return (
     <View style={style} {...rest}>

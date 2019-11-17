@@ -1,5 +1,5 @@
 import { ViewStyle } from "react-native"
-import { TranslateKey } from "i18n/lang";
+import { TranslateKey } from "i18n/lang"
 
 export interface CheckboxProps {
   /**
@@ -30,7 +30,7 @@ export interface CheckboxProps {
   /**
    * The i18n lookup key.
    */
-  tx?: TranslateKey 
+  tx?: TranslateKey
 
   /**
    * Multiline or clipped single line?
