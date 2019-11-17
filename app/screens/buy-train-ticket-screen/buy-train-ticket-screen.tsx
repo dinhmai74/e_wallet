@@ -215,8 +215,10 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
 
             console.tron.log(" errors ", errors)
             return (
-              <Screen style={ROOT}>
-                <Screen preset="scroll">{this.renderForm(bag)}</Screen>
+              <Screen>
+                <Screen transparent preset="scroll" style={ROOT}>
+                  {this.renderForm(bag)}
+                </Screen>
 
                 <Button
                   tx="confirm"
@@ -224,7 +226,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
                   full
                   disabled={true}
                   onPress={bag.handleSubmit}
-                  style={{ marginBottom: spacing[4] }}
+                  style={{ marginHorizontal: spacing[6], marginBottom: spacing[3] }}
                 />
               </Screen>
             )
