@@ -18,7 +18,7 @@ export class ItemPopup extends Component<Props, {}> {
       <View style={styles.container}>
         <View style={styles.wraper}>
           <Icon icon={icon} style={{ marginRight: spacing[2] }} size={metrics.icon.normal} />
-          <Text tx={content} p2 bold />
+          <Text tx={content} b1 bold />
         </View>
         <TouchableOpacity style={{ paddingRight: spacing[2] }} onPress={onPress}>
           <Icon icon="iconFoward" />

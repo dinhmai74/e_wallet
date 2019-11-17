@@ -109,15 +109,16 @@ export default {
 
   // CheckBox
   CheckboxRadius: 0,
-  CheckboxBorderWidth: 2,
-  CheckboxPaddingLeft: 2,
+  CheckboxBorderWidth: 1,
+  CheckboxPaddingLeft: 3,
   CheckboxPaddingBottom: 5,
   CheckboxIconSize: 16,
   CheckboxIconMarginTop: 1,
   CheckboxFontSize: 17,
-  checkboxBgColor: "#039BE5",
+  checkboxBgColor: Colors.white,
+  checkboxUnTickColor: Colors.dim,
   checkboxSize: 20,
-  checkboxTickColor: palette.white,
+  checkboxTickColor: Colors.primary,
 
   // Color
   brandPrimary: Colors.primary,
@@ -168,7 +169,7 @@ export default {
   // Header
   toolbarBtnColor: palette.white,
   toolbarDefaultBg: Colors.primary,
-  toolbarHeight: 56,
+  toolbarHeight: 70,
   toolbarSearchIconSize: 23,
   toolbarInputColor: palette.white,
   searchBarHeight: platform === PLATFORM.IOS ? 30 : 40,

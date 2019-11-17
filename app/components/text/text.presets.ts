@@ -5,6 +5,7 @@ import { color, Fonts } from "theme"
  */
 const BASE: TextStyle = {
   fontFamily: Fonts.type.base,
+  color: color.textNavy,
 }
 
 const BOLD: TextStyle = {
@@ -45,8 +46,9 @@ export const presets = {
   /**
    * A smaller piece of secondard information.
    */
-  primary: { ...BASE, fontSize: Fonts.size.p1, color: color.primary } as TextStyle,
+  primary: { ...BASE, fontSize: Fonts.size.b1, color: color.primary } as TextStyle,
   secondary: { ...BASE, fontSize: 9, color: color.dim } as TextStyle,
+  ...Fonts.style,
 }
 
 /**

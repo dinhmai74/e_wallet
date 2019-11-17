@@ -9,7 +9,7 @@ export class Amount extends Component {
     return (
       <Card style={styles.container}>
         <CardItem header>
-          <Text tx="cashIn" s1 color={palette.navy} style={{ paddingLeft: spacing[1] }} />
+          <Text tx="cashIn" t1 color={palette.navy} style={{ paddingLeft: spacing[1] }} />
         </CardItem>
         <View style={{ alignItems: "center", justifyContent: "center" }}>
           <Item style={{ width: 250, height: 45 }}>

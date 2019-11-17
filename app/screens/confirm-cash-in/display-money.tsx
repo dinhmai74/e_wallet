@@ -9,7 +9,7 @@ export class DisplayMoney extends Component {
     return (
       <Card style={styles.container}>
         <Text tx="titleMoney" style={styles.money} />
-        <Text tx="labelCharge" style={styles.charge} s2 />
+        <Text tx="labelCharge" style={styles.charge} b1 />
       </Card>
     )
   }

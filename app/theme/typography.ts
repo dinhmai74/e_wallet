@@ -1,127 +1,58 @@
-import {} from "react-native-elements"
+import { color } from "theme/color"
 
 const type = {
-  base: "Montserrat-Regular",
-  black: "Montserrat-Black",
-  blackItalic: "Montserrat-BlackItalic",
-  bold: "Montserrat-Bold",
-  boldItalic: "Montserrat-BoldItalic",
-  extraBold: "Montserrat-ExtraBold",
-  extraBoldItalic: "Montserrat-ExtraBoldItalic",
-  extraLight: "Montserrat-ExtraLight",
-  extraLightItalic: "Montserrat-ExtraLightItalic",
-  italic: "Montserrat-Italic",
-  light: "Montserrat-Light",
-  lightItalic: "Montserrat-LightItalic",
-  medium: "Montserrat-Medium",
-  mediumItalic: "Montserrat-MediumItalic",
-  semiBold: "Montserrat-SemiBold",
-  semiBoldItalic: "Montserrat-SemiBoldItalic",
-  thin: "Montserrat-Thin",
-  thinItalic: "Montserrat-ThinItalic",
+  base: "Poppins-Regular",
+  black: "Poppins-Black",
+  blackItalic: "Poppins-BlackItalic",
+  bold: "Poppins-Bold",
+  boldItalic: "Poppins-BoldItalic",
+  extraBold: "Poppins-ExtraBold",
+  extraBoldItalic: "Poppins-ExtraBoldItalic",
+  extraLight: "Poppins-ExtraLight",
+  extraLightItalic: "Poppins-ExtraLightItalic",
+  italic: "Poppins-Italic",
+  light: "Poppins-Light",
+  lightItalic: "Poppins-LightItalic",
+  regular: "Poppins-Regular",
+  medium: "Poppins-Medium",
+  mediumItalic: "Poppins-MediumItalic",
+  semiBold: "Poppins-SemiBold",
+  semiBoldItalic: "Poppins-SemiBoldItalic",
+  thin: "Poppins-Thin",
+  thinItalic: "Poppins-ThinItalic",
 }
 
 export type FontTypes = keyof typeof type
 
 const size = {
-  h1: 38,
-  h2: 34,
-  h3: 30,
-  h4: 26,
-  h5: 21,
-  h6: 19,
-  s1: 18,
-  s2: 16,
-  c1: 20,
-  c2: 18,
-  label: 20,
-  p1: 17,
-  p2: 15,
-  p3: 13,
-  p4: 11,
-  input: 14,
-  base: 15,
-  regular: 16,
-  medium: 14,
-  small: 12,
-  tiny: 8.5,
-  numPad: 24,
-  button: 20,
-  instructionTitle: 22,
+  h1: 24,
+  b1: 16,
+  b2: 12,
+  t1: 18,
+}
+
+const BASE = {
+  fontFamily: type.base,
+  fontSize: size.b1,
+  color: color.textNavy,
 }
 
 const style = {
   h1: {
-    fontFamily: type.base,
+    ...BASE,
     fontSize: size.h1,
   },
-  h2: {
-    fontFamily: type.base,
-    fontSize: size.h2,
+  b1: {
+    ...BASE,
+    fontSize: size.b1,
   },
-  h3: {
-    fontFamily: type.base,
-    fontSize: size.h3,
+  b2: {
+    ...BASE,
+    fontSize: size.b2,
   },
-  h4: {
-    fontFamily: type.base,
-    fontSize: size.h4,
-  },
-  h5: {
-    fontFamily: type.base,
-    fontSize: size.h5,
-  },
-  h5Bold: {
-    fontFamily: type.bold,
-    fontSize: size.h5,
-  },
-  h6: {
-    fontFamily: type.base,
-    fontSize: size.h6,
-  },
-  h6Bold: {
-    fontFamily: type.bold,
-    fontSize: size.h6,
-  },
-  normal: {
-    fontFamily: type.base,
-    fontSize: size.regular,
-  },
-  normalBold: {
-    fontFamily: type.bold,
-    fontSize: size.regular,
-  },
-  instructionTitle: {
-    fontFamily: type.base,
-    fontSize: size.instructionTitle,
-  },
-  description: {
-    fontFamily: type.base,
-    fontSize: size.medium,
-  },
-  descriptionBold: {
-    fontFamily: type.bold,
-    fontSize: size.medium,
-  },
-  textInput: {
-    fontFamily: type.base,
-    fontSize: size.input,
-  },
-  numPad: {
-    fontFamily: type.base,
-    fontSize: size.numPad,
-  },
-  button: {
-    fontFamily: type.base,
-    fontSize: size.button,
-  },
-  small: {
-    fontFamily: type.base,
-    fontSize: size.small,
-  },
-  smallBold: {
-    fontFamily: type.bold,
-    fontSize: size.small,
+  t1: {
+    ...BASE,
+    fontSize: size.t1,
   },
 }
 

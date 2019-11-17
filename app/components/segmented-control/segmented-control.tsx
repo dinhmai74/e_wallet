@@ -6,8 +6,8 @@ import { Text } from "components/text"
 import { color, spacing } from "theme"
 import SegmentedControlListItem from "components/segmented-control/segmented-control-list-item"
 import { HomeFunctionItemModel } from "models/home-function-item.model"
-
 import _ from "lodash"
+import { navigateService } from "utils"
 
 interface Props {}
 
@@ -31,7 +31,7 @@ export class SegmentedControl extends Component<Props, State> {
         id: 0,
         title: "reCharge_mobile",
         icon: "rechargeMobile",
-        callBack: () => {},
+        route: "home",
         color: "#EC7836",
       },
       {
@@ -39,7 +39,7 @@ export class SegmentedControl extends Component<Props, State> {
         title: "reCharge_mobile",
         icon: "rechargeMobile",
         color: "#009ea6",
-        callBack: () => {},
+        route: "home",
       },
     ],
     [
@@ -48,7 +48,7 @@ export class SegmentedControl extends Component<Props, State> {
         title: "reCharge_mobile",
         icon: "rechargeMobile",
         color: "#000000",
-        callBack: () => {},
+        route: "home",
       },
     ],
     [
@@ -57,7 +57,16 @@ export class SegmentedControl extends Component<Props, State> {
         title: "reCharge_mobile",
         icon: "rechargeMobile",
         color: "#000000",
-        callBack: () => {},
+        route: "home",
+      },
+    ],
+    [
+      {
+        id: 4,
+        title: "transport_buy_train",
+        icon: "train",
+        color: "#028120",
+        route: "BuyTrainTicketScreen",
       },
     ],
   ]
@@ -93,7 +102,7 @@ export class SegmentedControl extends Component<Props, State> {
     },
     {
       id: 3,
-      tx: "mobile_card",
+      tx: "transport",
       onPress: () => {
         this.onChangeCategory(3)
       },
@@ -111,7 +120,7 @@ export class SegmentedControl extends Component<Props, State> {
           })}
         </ScrollView>
 
-        <SegmentedControlListItem data={data} onSwipe={index => {}} />
+        <SegmentedControlListItem data={data} />
 
         <Button
           transparent

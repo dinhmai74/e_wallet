@@ -106,4 +106,5 @@ export const color = {
    * white background
    */
   storybookTextColor: palette.black,
+  checkboxInactive: palette.blueGrey,
 }
