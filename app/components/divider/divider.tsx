@@ -16,6 +16,7 @@ export interface DividerProps extends EProps {
 export class Divider extends React.PureComponent<DividerProps> {
   static defaultProps = {
     color: color.divider,
+    height: 1,
   }
 
   render() {
