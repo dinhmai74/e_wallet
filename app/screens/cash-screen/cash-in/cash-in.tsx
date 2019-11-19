@@ -59,7 +59,7 @@ export class CashIn extends Component {
     })
   }
 
-  renderRow = (dat,i )=> {
+  renderRow = (dat, i) => {
     const { selected } = this.state
     return (
       <View
@@ -94,9 +94,9 @@ export class CashIn extends Component {
           <SizedBox h={5} />
           <Amount />
           <View style={styles.wraper}>
-            {data.map((datum,i )=> {
+            {data.map((datum, i) => {
               // This will render a row for each data element.
-              return this.renderRow(datum,i)
+              return this.renderRow(datum, i)
             })}
           </View>
           <Button
