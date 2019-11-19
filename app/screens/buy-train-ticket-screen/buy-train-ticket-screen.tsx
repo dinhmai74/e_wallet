@@ -1,22 +1,25 @@
 import * as React from "react"
 import { observer } from "mobx-react"
 import { ViewStyle } from "react-native"
-import { Button, Checkbox, SizedBox, Text, Screen } from "components"
-import { color, spacing, metrics } from "theme"
+import DateTimePicker from "react-native-modal-datetime-picker"
 import { NavigationScreenProps } from "react-navigation"
-import { Header, View, Divider } from "components"
-import Modal from "react-native-modal"
+import styled from "styled-components"
+import * as Yup from "yup"
 import { Card as NBCard, CardItem, Body, Left, Right, Row } from "native-base"
 import { Formik, FormikProps } from "formik"
-import * as Yup from "yup"
-import styled from "styled-components"
 import { Icon } from "react-native-elements"
+import Modal from "react-native-modal"
+import { produce } from "immer"
+import { TouchableOpacity } from "react-native-gesture-handler"
+import moment from "moment"
+
+import { Button, Checkbox, SizedBox, Text, Screen } from "components"
+import { color, spacing, metrics } from "theme"
+import { Header, View, Divider } from "components"
 import { translate } from "i18n"
 import StationModalContent from "./components/StationModalContent"
 import RightItem from "./components/RightItem"
 import LeftText from "./components/LeftText"
-import { TouchableOpacity } from "react-native-gesture-handler"
-import { produce } from "immer"
 import CardItemWithModal from "screens/buy-train-ticket-screen/components/CardItemWithModal"
 
 export interface BuyTrainTicketScreenProps extends NavigationScreenProps<{}> {}
@@ -152,6 +155,10 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
   }
 
   renderChoseDate = ({ values }: FormikProps<FormValues>) => {
+    let date = values.departDate
+    if (moment(date).isValid()) date = moment(date).format("DD/MM/YYYY")
+
+    console.tron.log(" values ", values)
     return (
       <Card>
         <CardItemWithModal
@@ -245,6 +252,15 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
             }}
           />
         </Modal>
+
+        <DateTimePicker
+          isVisible={modal.departDate}
+          onConfirm={date => {
+            setFieldValue("departDate", date)
+            this.changeModalState("departDate", false)
+          }}
+          onCancel={this.changeModalState.bind(this, "departDate", false)}
+        />
       </>
     )
   }

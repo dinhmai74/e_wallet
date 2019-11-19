@@ -1,18 +1,29 @@
 import React, { Component } from "react"
-import { ViewStyle, Dimensions, StyleSheet, View, TouchableOpacity } from "react-native"
-import { Screen, Text } from "components"
+import { ViewStyle, Dimensions, StyleSheet, TouchableOpacity } from "react-native"
+import { Screen, Text, View, Header } from "components"
 import { spacing, color, palette } from "theme"
 import CashIn from "screens/cash-screen/cash-in/cash-in"
 import { TabView, SceneMap, TabBar } from "react-native-tab-view"
 import Animated from "react-native-reanimated"
 import ConfirmCashIn from "screens/confirm-cash-in/confirm-cash-in"
+import DisplayMoney from "screens/confirm-cash-in/display-money"
+import InputBank from "screens/confirm-cash-in/input-bank"
+
+function Empty() {
+  return (
+    <Screen style={ROOT} backgroundColor={color.transparent} preset="scroll">
+      <DisplayMoney style={{ opacity: 0 }} />
+      <InputBank style={{ opacity: 0 }} />
+    </Screen>
+  )
+}
 
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,
   // paddingHorizontal: spacing[2],
 }
 
-export class CashScreen extends Component {
+class CashScreen extends Component {
   state = {
     index: 0,
     routes: [{ key: "first", title: "Cash in" }, { key: "second", title: "Cash out" }],
@@ -20,10 +31,12 @@ export class CashScreen extends Component {
       color: "black",
     },
   }
+
   renderLabel = props => ({ route, focused, index }) => {
     const color = focused ? "#353535" : "#cccccc"
     return <Animated.Text style={[styles.label, { color }]}>{route.title}</Animated.Text>
   }
+
   renderHeader = props => (
     <TabBar
       {...props}
@@ -34,21 +47,24 @@ export class CashScreen extends Component {
       style={styles.tabbar}
     />
   )
+
   render() {
     return (
-      <Screen style={ROOT} backgroundColor={color.transparent} preset="scroll">
-        <Text preset="header" tx="cash" />
-        <TabView
-          navigationState={this.state}
-          renderScene={SceneMap({
-            first: CashIn,
-            second: ConfirmCashIn,
-          })}
-          onIndexChange={index => this.setState({ index })}
-          initialLayout={{ width: Dimensions.get("window").width }}
-          renderTabBar={this.renderHeader}
-        />
-      </Screen>
+      <View full>
+        <Header leftIcon={"back"} headerTx="cash" style={{ height: 5 }} />
+        <Screen style={ROOT} backgroundColor={color.transparent} preset="scroll">
+          <TabView
+            navigationState={this.state}
+            renderScene={SceneMap({
+              first: CashIn,
+              second: Empty,
+            })}
+            onIndexChange={index => this.setState({ index })}
+            initialLayout={{ width: Dimensions.get("window").width }}
+            renderTabBar={this.renderHeader}
+          />
+        </Screen>
+      </View>
     )
   }
 }

@@ -31,6 +31,7 @@ export class Header extends React.Component<HeaderProps, {}> {
       headerTx,
       titleStyle,
       content,
+      style,
       preset = "default",
     } = this.props
     const title = headerText || (headerTx && translate(headerTx)) || ""
@@ -38,7 +39,7 @@ export class Header extends React.Component<HeaderProps, {}> {
     const theme = presets[preset]
 
     return (
-      <NBHeader transparent style={theme}>
+      <NBHeader transparent style={[theme, style]}>
         <View style={styles.row}>
           {this.renderLeftIcon()}
           <SizedBox w={2} />
@@ -54,6 +55,7 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     justifyContent: "flex-start",
+    alignItems: "center",
     flex: 1,
   },
 })

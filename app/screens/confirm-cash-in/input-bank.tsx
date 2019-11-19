@@ -1,12 +1,17 @@
 import React, { Component } from "react"
-import { View, StyleSheet } from "react-native"
+import { View, ViewStyle, StyleSheet } from "react-native"
 import { Text, Button } from "components"
 import { palette, spacing } from "theme"
 import ItemBank from "screens/confirm-cash-in/item-bank"
-export class InputBank extends Component {
+
+interface Props {
+  style?: ViewStyle
+}
+
+export class InputBank extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, this.props.style]}>
         <View style={styles.wraper}>
           <View style={styles.styleIndicator}></View>
           <Text tx="choseInput" style={styles.title} />
