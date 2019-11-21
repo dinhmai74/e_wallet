@@ -23,13 +23,9 @@ export class Amount extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 5,
-    borderColor: "#cccccc",
-    width: 310,
-    height: 134,
-    flex: 1,
-    marginHorizontal: spacing[4],
-    marginTop: spacing[6],
+    paddingVertical: spacing[6],
+    paddingHorizontal: spacing[4],
+    paddingBottom: spacing[8],
   },
 })
 export default Amount

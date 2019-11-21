@@ -20,10 +20,6 @@ const BottomTabConfig = {
   person: SettingScreen,
 }
 
-const NavigationScreen = {
-  cash: CashScreen,
-}
-
 const TabScreens = createBottomTabNavigator(BottomTabConfig, {
   tabBarComponent: FooterTab,
 })
@@ -43,5 +39,4 @@ export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {
   headerMode: "none",
 })
 export type bottomTabRoute = keyof typeof BottomTabConfig
-export type navigationScreenRoute = keyof typeof NavigationScreen
 export type primaryRoute = keyof typeof PrimaryRouteConfig | bottomTabRoute

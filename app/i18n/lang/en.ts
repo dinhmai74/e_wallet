@@ -142,5 +142,6 @@ export const en = {
   trainTicket_seatType: "Seat type:",
   trainTicket_note:
     "Note*: Children under 6 do not need to buy tickets. Each adult can sit with up to 2 children",
+  trainTicket_choseOriginStation: "Chose origin station",
 }
 export type TranslateKey = keyof typeof en

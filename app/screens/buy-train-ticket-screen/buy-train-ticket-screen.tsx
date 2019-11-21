@@ -1,16 +1,26 @@
 import * as React from "react"
 import { observer } from "mobx-react"
 import { ViewStyle } from "react-native"
-import { Button, Checkbox, SizedBox, Text, Screen } from "components"
-import { color, spacing, metrics } from "theme"
+import DateTimePicker from "react-native-modal-datetime-picker"
 import { NavigationScreenProps } from "react-navigation"
-import { Header, View } from "components"
+import styled from "styled-components"
+import * as Yup from "yup"
 import { Card as NBCard, CardItem, Body, Left, Right, Row } from "native-base"
 import { Formik, FormikProps } from "formik"
-import * as Yup from "yup"
-import styled from "styled-components"
 import { Icon } from "react-native-elements"
+import Modal from "react-native-modal"
+import { produce } from "immer"
+import { TouchableOpacity } from "react-native-gesture-handler"
+import moment from "moment"
+
+import { Button, Checkbox, SizedBox, Text, Screen } from "components"
+import { color, spacing, metrics } from "theme"
+import { Header, View, Divider } from "components"
 import { translate } from "i18n"
+import StationModalContent from "./components/StationModalContent"
+import RightItem from "./components/RightItem"
+import LeftText from "./components/LeftText"
+import CardItemWithModal from "screens/buy-train-ticket-screen/components/CardItemWithModal"
 
 export interface BuyTrainTicketScreenProps extends NavigationScreenProps<{}> {}
 
@@ -18,6 +28,11 @@ const ROOT: ViewStyle = { paddingHorizontal: spacing[6] }
 
 const Card = styled(NBCard)`
   padding-vertical: ${spacing[4]}px;
+`
+
+const StyledChoseStationRow = styled(TouchableOpacity)`
+  flex-direction: row;
+  align-items: center;
 `
 
 const validationSchema = Yup.object().shape({
@@ -59,9 +74,29 @@ const initVal: FormValues = {
   seatType: SeatType.standard,
 }
 
+interface State {
+  modal: {
+    originStation?: boolean
+    destinationStation?: boolean
+    departDate?: boolean
+    returnDate?: boolean
+    totalTicket?: boolean
+  }
+}
+
 // @inject("mobxstuff")
 @observer
-export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenProps, {}> {
+export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenProps, State> {
+  state = {
+    modal: {
+      originStation: false,
+      destinationStation: false,
+      departDate: false,
+      returnDate: false,
+      totalTicket: false,
+    },
+  }
+
   onSubmit = (values: FormValues) => {
     console.tron.log("values", values)
   }
@@ -80,9 +115,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
     return (
       <Card>
         <CardItem>
-          <Left>
-            <Text b1 color={color.textNavy} tx="trainTicket_type" />
-          </Left>
+          <LeftText tx="trainTicket_type" />
           <Right>
             <Row>
               <Checkbox
@@ -106,56 +139,39 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
   renderChoseStation = ({ values }: FormikProps<FormValues>) => {
     return (
       <Card>
-        <CardItem style={{ justifyContent: "space-between" }}>
-          <Left>
-            <Text preset="b2" tx="trainTicket_originStation" />
-          </Left>
-          <Right>
-            <Row style={{ alignItems: "center" }}>
-              <Text
-                b2
-                color={color.textDescription}
-                // @ts-ignore
-                tx={values.originStation}
-              />
-              {this.renderIconRightArrow()}
-            </Row>
-          </Right>
-        </CardItem>
+        <CardItemWithModal
+          leftTx="trainTicket_originStation"
+          rightTx={values.originStation}
+          onPress={this.changeModalState.bind(this, "originStation", true)}
+        />
 
-        <CardItem style={{ justifyContent: "space-between" }}>
-          <Left>
-            <Text preset="b2" tx="trainTicket_destinationStation" />
-          </Left>
-          <Right>
-            <Row style={{ alignItems: "center" }}>
-              <Text
-                b2
-                color={color.textDescription}
-                // @ts-ignore
-                tx={values.originStation}
-              />
-              {this.renderIconRightArrow()}
-            </Row>
-          </Right>
-        </CardItem>
+        <CardItemWithModal
+          leftTx="trainTicket_destinationStation"
+          rightTx={values.destinationStation}
+          onPress={this.changeModalState.bind(this, "destinationStation", true)}
+        />
       </Card>
     )
   }
 
   renderChoseDate = ({ values }: FormikProps<FormValues>) => {
+    let date = values.departDate
+    if (moment(date).isValid()) date = moment(date).format("DD/MM/YYYY")
+
+    console.tron.log(" values ", values)
     return (
       <Card>
-        <CardItem>
-          <Left>
-            <Text tx="trainTicket_departDate" b2 />
-          </Left>
-        </CardItem>
-        <CardItem>
-          <Left>
-            <Text tx="trainTicket_returnDate" b2 />
-          </Left>
-        </CardItem>
+        <CardItemWithModal
+          leftTx="trainTicket_departDate"
+          rightTx={values.departDate}
+          onPress={this.changeModalState.bind(this, "departDate", true)}
+        />
+
+        <CardItemWithModal
+          leftTx="trainTicket_returnDate"
+          rightTx={values.returnDate}
+          onPress={this.changeModalState.bind(this, "returnDate", true)}
+        />
       </Card>
     )
   }
@@ -164,14 +180,10 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
     return (
       <Card>
         <CardItem>
-          <Left>
-            <Text tx="trainTicket_totalTicket" b2 />
-          </Left>
+          <LeftText tx="trainTicket_totalTicket" />
         </CardItem>
         <CardItem>
-          <Left>
-            <Text tx="trainTicket_seatType" b2 />
-          </Left>
+          <LeftText tx="trainTicket_seatType" />
         </CardItem>
       </Card>
     )
@@ -195,6 +207,59 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
           fontType="italic"
           color={color.textDescription}
           style={{ textAlign: "center", paddingHorizontal: spacing[4] }}
+        />
+      </>
+    )
+  }
+
+  changeModalState = (modal: string, val: boolean = true) => {
+    console.tron.log("  close")
+    this.setState(preState => {
+      return produce(preState, stateCopy => {
+        stateCopy.modal[modal] = val
+      })
+    })
+  }
+
+  renderModals = ({ values, setFieldValue }: FormikProps<FormValues>) => {
+    const { modal } = this.state
+    return (
+      <>
+        <Modal
+          isVisible={modal.originStation}
+          onBackdropPress={this.changeModalState.bind(this, "originStation", false)}
+          onBackButtonPress={this.changeModalState.bind(this, "originStation", false)}
+        >
+          <StationModalContent
+            selectedVal={values.originStation}
+            onPress={val => {
+              this.changeModalState("originStation", false)
+              setFieldValue("originStation", val)
+            }}
+          />
+        </Modal>
+
+        <Modal
+          isVisible={modal.destinationStation}
+          onBackdropPress={this.changeModalState.bind(this, "destinationStation", false)}
+          onBackButtonPress={this.changeModalState.bind(this, "destinationStation", false)}
+        >
+          <StationModalContent
+            selectedVal={values.destinationStation}
+            onPress={val => {
+              this.changeModalState("destinationStation", false)
+              setFieldValue("destinationStation", val)
+            }}
+          />
+        </Modal>
+
+        <DateTimePicker
+          isVisible={modal.departDate}
+          onConfirm={date => {
+            setFieldValue("departDate", date)
+            this.changeModalState("departDate", false)
+          }}
+          onCancel={this.changeModalState.bind(this, "departDate", false)}
         />
       </>
     )
@@ -228,6 +293,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
                   onPress={bag.handleSubmit}
                   style={{ marginHorizontal: spacing[6], marginBottom: spacing[3] }}
                 />
+                {this.renderModals(bag)}
               </Screen>
             )
           }}
