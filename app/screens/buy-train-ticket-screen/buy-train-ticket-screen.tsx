@@ -165,25 +165,25 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
     )
   }
 
-  renderChoseStation = ({ values, setFieldTouched }: FormikProps<TrainFormValues>) => {
+  renderChoseStation = ({ values }: FormikProps<TrainFormValues>) => {
     return (
       <Card>
         <CardItemWithModal
           leftTx="trainTicket_originStation"
           rightTx={values.originStation}
-          onPress={this.changeModalState.bind(this, "originStation", setFieldTouched, true)}
+          onPress={this.changeModalState.bind(this, "originStation", true)}
         />
 
         <CardItemWithModal
           leftTx="trainTicket_destinationStation"
           rightTx={values.destinationStation}
-          onPress={this.changeModalState.bind(this, "destinationStation", setFieldTouched, true)}
+          onPress={this.changeModalState.bind(this, "destinationStation", true)}
         />
       </Card>
     )
   }
 
-  renderChoseDate = ({ values, setFieldTouched }: FormikProps<TrainFormValues>) => {
+  renderChoseDate = ({ values }: FormikProps<TrainFormValues>) => {
     let departDate = values.departDate
     let returnDate = values.returnDate
     if (moment(departDate).isValid()) departDate = moment(departDate).format("DD / MM / YYYY")
@@ -194,20 +194,20 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
         <CardItemWithModal
           leftTx="trainTicket_departDate"
           rightTx={departDate}
-          onPress={this.changeModalState.bind(this, "departDate", setFieldTouched, true)}
+          onPress={this.changeModalState.bind(this, "departDate", true)}
         />
 
         <CardItemWithModal
           leftTx="trainTicket_returnDate"
           rightTx={returnDate}
-          onPress={this.changeModalState.bind(this, "returnDate", setFieldTouched, true)}
+          onPress={this.changeModalState.bind(this, "returnDate", true)}
           disabled={values.ticketType == TicketType.oneWay}
         />
       </Card>
     )
   }
 
-  renderChoseSeat = ({ values, setFieldValue, setFieldTouched }: FormikProps<TrainFormValues>) => {
+  renderChoseSeat = ({ values, setFieldValue }: FormikProps<TrainFormValues>) => {
     let totalTicket = "trainTicket_amount"
     if (values.totalTicket.adult > 0 || values.totalTicket.children > 0) {
       totalTicket = `${values.totalTicket.adult} Adult - ${values.totalTicket.children} Children`
@@ -217,7 +217,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
         <CardItemWithModal
           leftTx={"trainTicket_totalTicket"}
           rightTx={totalTicket}
-          onPress={this.changeModalState.bind(this, "totalTicket", setFieldTouched, true)}
+          onPress={this.changeModalState.bind(this, "totalTicket", true)}
         />
         <CardItem>
           <LeftText tx="trainTicket_seatType" />
@@ -265,8 +265,8 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
     )
   }
 
-  changeModalState = (modal: string, setFieldTouched, val: boolean = true) => {
-    setFieldTouched(modal, true)
+  changeModalState = (modal: string, val: boolean = true) => {
+    if (this.setFieldTouched) this.setFieldTouched(modal, true)
     this.setState(preState => {
       return produce(preState, stateCopy => {
         stateCopy.modal[modal] = val
@@ -274,34 +274,24 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
     })
   }
 
-  submitTotalTicketValue = (setFieldValue, setFieldTouched, val) => {
-    this.changeModalState("totalTicket", setFieldTouched, false)
+  submitTotalTicketValue = (setFieldValue, val) => {
+    this.changeModalState("totalTicket", false)
     setFieldValue("totalTicket", val)
   }
 
-  renderModals = ({ setFieldTouched, values, setFieldValue }: FormikProps<TrainFormValues>) => {
+  renderModals = ({ values, setFieldValue }: FormikProps<TrainFormValues>) => {
     const { modal } = this.state
     return (
       <>
         <Modal
           isVisible={modal.originStation}
-          onBackdropPress={this.changeModalState.bind(
-            this,
-            "originStation",
-            setFieldTouched,
-            false,
-          )}
-          onBackButtonPress={this.changeModalState.bind(
-            this,
-            "originStation",
-            setFieldTouched,
-            false,
-          )}
+          onBackdropPress={this.changeModalState.bind(this, "originStation", false)}
+          onBackButtonPress={this.changeModalState.bind(this, "originStation", false)}
         >
           <StationModalContent
             selectedVal={values.originStation}
             onPress={val => {
-              this.changeModalState("originStation", setFieldTouched, false)
+              this.changeModalState("originStation", false)
               setFieldValue("originStation", val)
             }}
           />
@@ -309,23 +299,13 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
 
         <Modal
           isVisible={modal.destinationStation}
-          onBackdropPress={this.changeModalState.bind(
-            this,
-            "destinationStation",
-            setFieldTouched,
-            false,
-          )}
-          onBackButtonPress={this.changeModalState.bind(
-            this,
-            "destinationStation",
-            setFieldTouched,
-            false,
-          )}
+          onBackdropPress={this.changeModalState.bind(this, "destinationStation", false)}
+          onBackButtonPress={this.changeModalState.bind(this, "destinationStation", false)}
         >
           <StationModalContent
             selectedVal={values.destinationStation}
             onPress={val => {
-              this.changeModalState("destinationStation", setFieldTouched, false)
+              this.changeModalState("destinationStation", false)
               setFieldValue("destinationStation", val)
             }}
           />
@@ -335,9 +315,9 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
           isVisible={modal.departDate}
           onConfirm={date => {
             setFieldValue("departDate", date)
-            this.changeModalState("departDate", setFieldTouched, false)
+            this.changeModalState("departDate", false)
           }}
-          onCancel={this.changeModalState.bind(this, "departDate", setFieldTouched, false)}
+          onCancel={this.changeModalState.bind(this, "departDate", false)}
         />
 
         <DateTimePicker
@@ -346,21 +326,16 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
             setFieldValue("returnDate", date)
             this.changeModalState("returnDate", false)
           }}
-          onCancel={this.changeModalState.bind(this, "returnDate", setFieldTouched, false)}
+          onCancel={this.changeModalState.bind(this, "returnDate", false)}
         />
 
         <TotalTicketModal
           isVisible={modal.totalTicket}
-          onBackdropPress={this.changeModalState.bind(this, "totalTicket", setFieldTouched, false)}
-          onBackButtonPress={this.changeModalState.bind(
-            this,
-            "totalTicket",
-            setFieldTouched,
-            false,
-          )}
+          onBackdropPress={this.changeModalState.bind(this, "totalTicket", false)}
+          onBackButtonPress={this.changeModalState.bind(this, "totalTicket", false)}
           value={values.totalTicket}
           onSubmit={val => {
-            this.submitTotalTicketValue(setFieldValue, setFieldTouched, val)
+            this.submitTotalTicketValue(setFieldValue, val)
           }}
         />
       </>
