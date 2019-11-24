@@ -3,6 +3,7 @@ export const en = {
   common_cancel: "Cancel",
   common_back: "Back",
   common_logout: "Log out",
+  common_confirm: "Confirm",
   errors_invalidEmail: "Invalid email address.",
 
   // screen header
@@ -143,5 +144,8 @@ export const en = {
   trainTicket_note:
     "Note*: Children under 6 do not need to buy tickets. Each adult can sit with up to 2 children",
   trainTicket_choseOriginStation: "Chose origin station",
+  trainTicket_passengers: "Passengers",
+  trainTicket_adult: "Adult",
+  trainTicket_children: "Children",
 }
 export type TranslateKey = keyof typeof en

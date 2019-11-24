@@ -12,6 +12,7 @@ import Modal from "react-native-modal"
 import { produce } from "immer"
 import { TouchableOpacity } from "react-native-gesture-handler"
 import moment from "moment"
+import _ from "lodash"
 
 import { Button, Checkbox, SizedBox, Text, Screen } from "components"
 import { color, spacing, metrics } from "theme"
@@ -21,6 +22,7 @@ import StationModalContent from "./components/StationModalContent"
 import RightItem from "./components/RightItem"
 import LeftText from "./components/LeftText"
 import CardItemWithModal from "screens/buy-train-ticket-screen/components/CardItemWithModal"
+import TotalTicketModal from "screens/buy-train-ticket-screen/components/TotalTicketModal"
 
 export interface BuyTrainTicketScreenProps extends NavigationScreenProps<{}> {}
 
@@ -36,8 +38,28 @@ const StyledChoseStationRow = styled(TouchableOpacity)`
 `
 
 const validationSchema = Yup.object().shape({
-  originStation: Yup.string().test("passwords-match", "notChose", function(value) {
+  originStation: Yup.string().test("chose originStation", "notChose_originStation", function(
+    value,
+  ) {
     return value !== CHOSE_STATION
+  }),
+  destinationStation: Yup.string().test(
+    "chose destinationStation",
+    "notChose_DesinationStation",
+    function(value) {
+      return value !== CHOSE_STATION
+    },
+  ),
+  departDate: Yup.string().test("chose departDate", "notChose_departDate", function(val) {
+    return moment(val).isValid()
+  }),
+  returnDate: Yup.string().test("chose return date", "notChose_returnDate", function(val) {
+    if (this.parent.ticketType === TicketType.oneWay) return true
+    return moment(val).isValid()
+  }),
+  totalTicket: Yup.object().test("chose totalTicket", "notChose_totalTicket", function(val) {
+    console.tron.log(" val total", val)
+    return val.adult > 0 || val.children > 0
   }),
 })
 
@@ -51,26 +73,34 @@ enum SeatType {
   firstClass,
 }
 
-interface FormValues {
+export type TotalTicket = {
+  adult: number
+  children: number
+}
+
+interface TrainFormValues {
   ticketType: TicketType
   originStation: string
   destinationStation: string
   departDate: string
   returnDate: string
-  totalTicket: string
+  totalTicket: TotalTicket
   seatType: SeatType
 }
 
 const CHOSE_STATION = "trainTicket_choseStation"
 const DEFAULT_DATE = "trainTicket_ddMMYYYY"
 
-const initVal: FormValues = {
+const initVal: TrainFormValues = {
   ticketType: TicketType.oneWay,
   originStation: CHOSE_STATION,
   destinationStation: CHOSE_STATION,
   departDate: DEFAULT_DATE,
   returnDate: DEFAULT_DATE,
-  totalTicket: "trainTicket_amount",
+  totalTicket: {
+    adult: 0,
+    children: 0,
+  },
   seatType: SeatType.standard,
 }
 
@@ -97,21 +127,14 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
     },
   }
 
-  onSubmit = (values: FormValues) => {
+  setFieldTouched = null
+
+  onSubmit = (values: TrainFormValues) => {
     console.tron.log("values", values)
   }
 
-  renderIconRightArrow = () => (
-    <Icon
-      size={metrics.icon.tiny}
-      name="chevron-thin-right"
-      type="entypo"
-      color={color.textDescription}
-    />
-  )
-
   /* ------------- render ------------- */
-  renderChoseType = ({ values, setFieldValue }: FormikProps<FormValues>) => {
+  renderChoseType = ({ values, setFieldValue, setFieldTouched }: FormikProps<TrainFormValues>) => {
     return (
       <Card>
         <CardItem>
@@ -121,13 +144,19 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
               <Checkbox
                 tx="trainTicket_oneWay"
                 value={values.ticketType === TicketType.oneWay}
-                onToggle={val => setFieldValue("ticketType", TicketType.oneWay)}
+                onToggle={val => {
+                  setFieldValue("ticketType", TicketType.oneWay)
+                  setFieldTouched("ticketType", true)
+                }}
               />
               <SizedBox w={4} />
               <Checkbox
                 tx="trainTicket_roundTrip"
                 value={values.ticketType === TicketType.roundTrip}
-                onToggle={val => setFieldValue("ticketType", TicketType.roundTrip)}
+                onToggle={val => {
+                  setFieldValue("ticketType", TicketType.roundTrip)
+                  setFieldTouched("ticketType", true)
+                }}
               />
             </Row>
           </Right>
@@ -136,60 +165,84 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
     )
   }
 
-  renderChoseStation = ({ values }: FormikProps<FormValues>) => {
+  renderChoseStation = ({ values, setFieldTouched }: FormikProps<TrainFormValues>) => {
     return (
       <Card>
         <CardItemWithModal
           leftTx="trainTicket_originStation"
           rightTx={values.originStation}
-          onPress={this.changeModalState.bind(this, "originStation", true)}
+          onPress={this.changeModalState.bind(this, "originStation", setFieldTouched, true)}
         />
 
         <CardItemWithModal
           leftTx="trainTicket_destinationStation"
           rightTx={values.destinationStation}
-          onPress={this.changeModalState.bind(this, "destinationStation", true)}
+          onPress={this.changeModalState.bind(this, "destinationStation", setFieldTouched, true)}
         />
       </Card>
     )
   }
 
-  renderChoseDate = ({ values }: FormikProps<FormValues>) => {
-    let date = values.departDate
-    if (moment(date).isValid()) date = moment(date).format("DD/MM/YYYY")
-
+  renderChoseDate = ({ values, setFieldTouched }: FormikProps<TrainFormValues>) => {
+    let departDate = values.departDate
+    let returnDate = values.returnDate
+    if (moment(departDate).isValid()) departDate = moment(departDate).format("DD / MM / YYYY")
+    if (moment(returnDate).isValid()) returnDate = moment(returnDate).format("DD / MM / YYYY")
     console.tron.log(" values ", values)
     return (
       <Card>
         <CardItemWithModal
           leftTx="trainTicket_departDate"
-          rightTx={values.departDate}
-          onPress={this.changeModalState.bind(this, "departDate", true)}
+          rightTx={departDate}
+          onPress={this.changeModalState.bind(this, "departDate", setFieldTouched, true)}
         />
 
         <CardItemWithModal
           leftTx="trainTicket_returnDate"
-          rightTx={values.returnDate}
-          onPress={this.changeModalState.bind(this, "returnDate", true)}
+          rightTx={returnDate}
+          onPress={this.changeModalState.bind(this, "returnDate", setFieldTouched, true)}
+          disabled={values.ticketType == TicketType.oneWay}
         />
       </Card>
     )
   }
 
-  renderChoseSeat = ({ values }: FormikProps<FormValues>) => {
+  renderChoseSeat = ({ values, setFieldValue, setFieldTouched }: FormikProps<TrainFormValues>) => {
+    let totalTicket = "trainTicket_amount"
+    if (values.totalTicket.adult > 0 || values.totalTicket.children > 0) {
+      totalTicket = `${values.totalTicket.adult} Adult - ${values.totalTicket.children} Children`
+    }
     return (
       <Card>
-        <CardItem>
-          <LeftText tx="trainTicket_totalTicket" />
-        </CardItem>
+        <CardItemWithModal
+          leftTx={"trainTicket_totalTicket"}
+          rightTx={totalTicket}
+          onPress={this.changeModalState.bind(this, "totalTicket", setFieldTouched, true)}
+        />
         <CardItem>
           <LeftText tx="trainTicket_seatType" />
+
+          <Right>
+            <Row>
+              <Checkbox
+                tx="trainTicket_standard"
+                value={values.seatType === SeatType.standard}
+                onToggle={val => setFieldValue("seatType", SeatType.standard)}
+              />
+              <SizedBox w={4} />
+              <Checkbox
+                tx="trainTicket_firstClass"
+                value={values.seatType === SeatType.firstClass}
+                onToggle={val => setFieldValue("seatType", SeatType.firstClass)}
+              />
+            </Row>
+          </Right>
         </CardItem>
       </Card>
     )
   }
 
-  renderForm = (formikBag: FormikProps<FormValues>) => {
+  renderForm = (formikBag: FormikProps<TrainFormValues>) => {
     console.tron.log(" formikBag.values ", formikBag.values)
     return (
       <>
@@ -212,8 +265,8 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
     )
   }
 
-  changeModalState = (modal: string, val: boolean = true) => {
-    console.tron.log("  close")
+  changeModalState = (modal: string, setFieldTouched, val: boolean = true) => {
+    setFieldTouched(modal, true)
     this.setState(preState => {
       return produce(preState, stateCopy => {
         stateCopy.modal[modal] = val
@@ -221,19 +274,34 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
     })
   }
 
-  renderModals = ({ values, setFieldValue }: FormikProps<FormValues>) => {
+  submitTotalTicketValue = (setFieldValue, setFieldTouched, val) => {
+    this.changeModalState("totalTicket", setFieldTouched, false)
+    setFieldValue("totalTicket", val)
+  }
+
+  renderModals = ({ setFieldTouched, values, setFieldValue }: FormikProps<TrainFormValues>) => {
     const { modal } = this.state
     return (
       <>
         <Modal
           isVisible={modal.originStation}
-          onBackdropPress={this.changeModalState.bind(this, "originStation", false)}
-          onBackButtonPress={this.changeModalState.bind(this, "originStation", false)}
+          onBackdropPress={this.changeModalState.bind(
+            this,
+            "originStation",
+            setFieldTouched,
+            false,
+          )}
+          onBackButtonPress={this.changeModalState.bind(
+            this,
+            "originStation",
+            setFieldTouched,
+            false,
+          )}
         >
           <StationModalContent
             selectedVal={values.originStation}
             onPress={val => {
-              this.changeModalState("originStation", false)
+              this.changeModalState("originStation", setFieldTouched, false)
               setFieldValue("originStation", val)
             }}
           />
@@ -241,13 +309,23 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
 
         <Modal
           isVisible={modal.destinationStation}
-          onBackdropPress={this.changeModalState.bind(this, "destinationStation", false)}
-          onBackButtonPress={this.changeModalState.bind(this, "destinationStation", false)}
+          onBackdropPress={this.changeModalState.bind(
+            this,
+            "destinationStation",
+            setFieldTouched,
+            false,
+          )}
+          onBackButtonPress={this.changeModalState.bind(
+            this,
+            "destinationStation",
+            setFieldTouched,
+            false,
+          )}
         >
           <StationModalContent
             selectedVal={values.destinationStation}
             onPress={val => {
-              this.changeModalState("destinationStation", false)
+              this.changeModalState("destinationStation", setFieldTouched, false)
               setFieldValue("destinationStation", val)
             }}
           />
@@ -257,9 +335,33 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
           isVisible={modal.departDate}
           onConfirm={date => {
             setFieldValue("departDate", date)
-            this.changeModalState("departDate", false)
+            this.changeModalState("departDate", setFieldTouched, false)
           }}
-          onCancel={this.changeModalState.bind(this, "departDate", false)}
+          onCancel={this.changeModalState.bind(this, "departDate", setFieldTouched, false)}
+        />
+
+        <DateTimePicker
+          isVisible={modal.returnDate}
+          onConfirm={date => {
+            setFieldValue("returnDate", date)
+            this.changeModalState("returnDate", false)
+          }}
+          onCancel={this.changeModalState.bind(this, "returnDate", setFieldTouched, false)}
+        />
+
+        <TotalTicketModal
+          isVisible={modal.totalTicket}
+          onBackdropPress={this.changeModalState.bind(this, "totalTicket", setFieldTouched, false)}
+          onBackButtonPress={this.changeModalState.bind(
+            this,
+            "totalTicket",
+            setFieldTouched,
+            false,
+          )}
+          value={values.totalTicket}
+          onSubmit={val => {
+            this.submitTotalTicketValue(setFieldValue, setFieldTouched, val)
+          }}
         />
       </>
     )
@@ -275,10 +377,12 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
           validationSchema={validationSchema}
           onSubmit={this.onSubmit}
         >
-          {(bag: FormikProps<FormValues>) => {
-            const { isSubmitting, errors } = bag
+          {(bag: FormikProps<TrainFormValues>) => {
+            const { isSubmitting, errors, touched, setFieldTouched } = bag
 
-            console.tron.log(" errors ", errors)
+            if (!this.setFieldTouched) this.setFieldTouched = this.setFieldTouched
+
+            let disabled = !_.isEmpty(errors) || _.isEmpty(touched) || isSubmitting
             return (
               <Screen>
                 <Screen transparent preset="scroll" style={ROOT}>
@@ -289,7 +393,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
                   tx="confirm"
                   primary
                   full
-                  disabled={true}
+                  disabled={disabled}
                   onPress={bag.handleSubmit}
                   style={{ marginHorizontal: spacing[6], marginBottom: spacing[3] }}
                 />

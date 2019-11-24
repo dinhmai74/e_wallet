@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.5.1",
+    "@types/yup": "^0.26.24",
     "apisauce": "1.0.3",
     "formik": "^2.0.4",
     "i18n-js": "^3.0.11",
