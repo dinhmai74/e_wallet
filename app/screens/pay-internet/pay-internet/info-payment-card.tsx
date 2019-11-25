@@ -15,7 +15,9 @@ export class InfoPaymentCard extends Component {
           <Text tx="fpt" />
           <Text tx="name" />
         </CardItem>
-        <Button bordered onPress={() => {}} tx="pay" transparent style={styles.styledButton} />
+        <View style={{ justifyContent: "center" }}>
+          <Button bordered onPress={() => {}} tx="pay" transparent style={styles.styledButton} />
+        </View>
       </Card>
     )
   }
@@ -45,8 +47,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   styledButton: {
-    width: 85,
-    height: 30,
     marginRight: spacing[4],
+    textAlign: "center",
   },
 })

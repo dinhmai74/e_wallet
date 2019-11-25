@@ -19,13 +19,15 @@ export class Wallet extends Component {
             <Text tx="moneyTest" style={{ color: palette.navy }} b1 />
           </CardItem>
         </CardItem>
-        <Button
-          onPress={() => {}}
-          tx="change"
-          transparent
-          style={styles.styledButton}
-          textStyle={{ color: palette.blueGrey, fontSize: 16 }}
-        />
+        <View style={{ justifyContent: "center" }}>
+          <Button
+            onPress={() => {}}
+            transparent
+            tx="pay"
+            style={styles.styledButton}
+            textStyle={{ color: palette.blueGrey, fontSize: 16 }}
+          />
+        </View>
       </Card>
     )
   }
@@ -37,15 +39,8 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "space-between",
     flexDirection: "row",
-    alignItems: "center",
+    alignSelf: "center",
     marginTop: spacing[3],
-    shadowColor: palette.shadowBlack,
-    shadowOffset: {
-      width: 0,
-      height: 0,
-    },
-    shadowRadius: 10,
-    shadowOpacity: 1,
   },
   styledImage: {
     width: 45,
@@ -55,9 +50,5 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     textAlign: "left",
   },
-  styledButton: {
-    width: 85,
-    height: 30,
-    flex: 1,
-  },
+  styledButton: {},
 })

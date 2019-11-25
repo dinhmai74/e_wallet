@@ -29,6 +29,7 @@ export class PayInternet extends Component {
           <View style={{ paddingTop: 500 }}>
             <Button
               bordered
+              full
               onPress={this.goToConfirmTransaction}
               style={{ marginHorizontal: spacing[3], backgroundColor: palette.warmPink }}
             >

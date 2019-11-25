@@ -30,7 +30,12 @@ export class ConfirmTrasactionPayInternet extends Component {
               <Text tx="moneyTest" b1 color={palette.navy} />
             </Right>
           </View>
-          <Button bordered onPress={() => {}} style={{ backgroundColor: palette.warmPink }}>
+          <Button
+            bordered
+            full
+            onPress={() => {}}
+            style={{ backgroundColor: palette.warmPink, marginBottom: spacing[5] }}
+          >
             <Text tx="confirm" style={{ color: palette.white }} />
           </Button>
         </Screen>
