@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "space-between",
     flexDirection: "row",
-    alignSelf: "center",
     marginTop: spacing[3],
   },
   styledImage: {
