@@ -124,6 +124,23 @@ export const en = {
   fpt: "FPT",
   pay: "Pay",
 
+  confirmTransaction: "Confirm transaction",
+
+  // confirm transaction pay internet
+  wallet: "Wallet",
+  testWallet: "Test wallet",
+  change: "Change",
+  internet: "Internet",
+  customerID: "Customer Id: ",
+  customerIDTest: "ABC123",
+  transactionID: "TransactionId: ",
+  transactionIDTest: "PAMC12178",
+  transactionFree: "Transaction Free: ",
+  total: "Total",
+  continue: "Continue",
+  moneyTest: "2.400.000d",
+  info: "Info",
+  dateInternet: "Internet - 12/2019",
   // train
   trainTicket_title: "Buy train ticket",
   trainTicket_type: "Type:",
