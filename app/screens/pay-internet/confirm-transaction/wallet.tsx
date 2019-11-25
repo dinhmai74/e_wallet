@@ -4,31 +4,41 @@ import { Card, CardItem, Left } from "native-base"
 import { icons, Text, Button } from "components"
 import { spacing, palette } from "theme"
 
-export class InfoPaymentCard extends Component {
+export class Wallet extends Component {
   render() {
     return (
       <Card style={styles.container}>
         <CardItem style={{}}>
-          <Image source={icons.iconFpt} style={styles.styledImage} />
+          <Image source={icons.iconWalletTransaction} style={styles.styledImage} />
+          <CardItem style={styles.content}>
+            <Text
+              tx="testWallet"
+              style={{ color: palette.blueGrey, paddingBottom: spacing[2] }}
+              s2
+            />
+            <Text tx="moneyTest" style={{ color: palette.navy }} s2 />
+          </CardItem>
         </CardItem>
-        <CardItem style={styles.content}>
-          <Text tx="fpt" />
-          <Text tx="name" />
-        </CardItem>
-        <Button bordered onPress={() => {}} tx="pay" transparent style={styles.styledButton} />
+        <Button
+          onPress={() => {}}
+          tx="change"
+          transparent
+          style={styles.styledButton}
+          textStyle={{ color: palette.blueGrey, fontSize: 16 }}
+        />
       </Card>
     )
   }
 }
 
-export default InfoPaymentCard
+export default Wallet
 
 const styles = StyleSheet.create({
   container: {
     justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",
-    marginTop: spacing[6],
+    marginTop: spacing[3],
     shadowColor: palette.shadowBlack,
     shadowOffset: {
       width: 0,
@@ -38,15 +48,16 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
   },
   styledImage: {
-    width: 65,
-    height: 50,
+    width: 45,
+    height: 45,
   },
   content: {
     flexDirection: "column",
+    textAlign: "left",
   },
   styledButton: {
     width: 85,
     height: 30,
-    marginRight: spacing[4],
+    flex: 1,
   },
 })

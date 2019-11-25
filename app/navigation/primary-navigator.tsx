@@ -11,6 +11,7 @@ import { TransferPhoneNumber } from "screens/transfer/transfer-phone-number/tran
 import ConfirmCashIn from "screens/confirm-cash-in/confirm-cash-in"
 import { ScanScreen } from "screens/scan-screen"
 import { PayInternet } from "screens/pay-internet/pay-internet"
+import { ConfirmTrasactionPayInternet } from "screens/pay-internet/confirm-transaction"
 
 const BottomTabConfig = {
   home: HomeScreen,
@@ -35,6 +36,7 @@ const PrimaryRouteConfig = {
   confirmCashIn: ConfirmCashIn,
   scanScreen: ScanScreen,
   payInternet: PayInternet,
+  confrimTransactionPayInternet: ConfirmTrasactionPayInternet,
 }
 
 export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {

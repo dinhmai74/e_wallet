@@ -25,6 +25,7 @@ export const icons = {
   iconAtmCard: require("./icon-atm-card.png"),
   iconMobileNumber: require("./icon-mobile-number.png"),
   iconFpt: require("./icon-fpt.jpg"),
+  iconWalletTransaction: require("./icon-wallet-transaction.png"),
 }
 
 export type IconTypes = keyof typeof icons
