@@ -1,15 +1,19 @@
 import React, { Component } from "react"
-import { StyleSheet } from "react-native"
+import { StyleSheet, ViewStyle } from "react-native"
 import { Card } from "native-base"
 import { spacing, palette } from "theme"
 import { Text } from "components"
 
-export class DisplayMoney extends Component {
+interface Props {
+  style?: ViewStyle
+}
+
+export class DisplayMoney extends Component<Props> {
   render() {
     return (
-      <Card style={styles.container}>
+      <Card style={[styles.container, this.props.style]}>
         <Text tx="titleMoney" style={styles.money} />
-        <Text tx="labelCharge" style={styles.charge} s2 />
+        <Text tx="labelCharge" style={styles.charge} b1 />
       </Card>
     )
   }

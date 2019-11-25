@@ -24,10 +24,10 @@ export class ConfirmTrasactionPayInternet extends Component {
           <InformationCard />
           <View style={{ flexDirection: "row", paddingTop: spacing[5], paddingBottom: spacing[5] }}>
             <Left>
-              <Text tx="total" s2 color={palette.blueGrey} />
+              <Text tx="total" b1 color={palette.blueGrey} />
             </Left>
             <Right>
-              <Text tx="moneyTest" s2 color={palette.navy} />
+              <Text tx="moneyTest" b1 color={palette.navy} />
             </Right>
           </View>
           <Button bordered onPress={() => {}} style={{ backgroundColor: palette.warmPink }}>

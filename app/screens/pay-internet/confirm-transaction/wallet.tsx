@@ -14,9 +14,9 @@ export class Wallet extends Component {
             <Text
               tx="testWallet"
               style={{ color: palette.blueGrey, paddingBottom: spacing[2] }}
-              s2
+              b1
             />
-            <Text tx="moneyTest" style={{ color: palette.navy }} s2 />
+            <Text tx="moneyTest" style={{ color: palette.navy }} b1 />
           </CardItem>
         </CardItem>
         <Button

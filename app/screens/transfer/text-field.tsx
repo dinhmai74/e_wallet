@@ -11,7 +11,7 @@ export class TextField extends Component {
         <CustomInput placeholder="ATM Account Number*" />
         <CustomInput placeholder="Amount*" />
         <CustomInput placeholder="Transaction Description" />
-        <Text tx="noteTransfer" p3 style={styles.styleNote} />
+        <Text tx="noteTransfer" b2 style={styles.styleNote} />
         <Button bordered onPress={() => {}} style={{ flex: 1 }} tx="confirm" />
       </View>
     )

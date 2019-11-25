@@ -12,16 +12,13 @@ import ConfirmCashIn from "screens/confirm-cash-in/confirm-cash-in"
 import { ScanScreen } from "screens/scan-screen"
 import { PayInternet } from "screens/pay-internet/pay-internet"
 import { ConfirmTrasactionPayInternet } from "screens/pay-internet/confirm-transaction"
+import { BuyTrainTicketScreen } from "screens/buy-train-ticket-screen"
 
 const BottomTabConfig = {
   home: HomeScreen,
   pricetags: PromotionScreen,
   clock: HistoryScreen,
   person: SettingScreen,
-}
-
-const NavigationScreen = {
-  cash: CashScreen,
 }
 
 const TabScreens = createBottomTabNavigator(BottomTabConfig, {
@@ -37,11 +34,11 @@ const PrimaryRouteConfig = {
   scanScreen: ScanScreen,
   payInternet: PayInternet,
   confrimTransactionPayInternet: ConfirmTrasactionPayInternet,
+  BuyTrainTicketScreen,
 }
 
 export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {
   headerMode: "none",
 })
 export type bottomTabRoute = keyof typeof BottomTabConfig
-export type navigationScreenRoute = keyof typeof NavigationScreen
 export type primaryRoute = keyof typeof PrimaryRouteConfig | bottomTabRoute

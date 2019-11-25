@@ -10,42 +10,42 @@ export class InformationCard extends Component {
     return (
       <Card>
         <CardItem style={styles.inforInternet}>
-          <Text tx="moneyTest" style={styles.money} s1 />
-          <Text tx="dateInternet" style={styles.money} s1 />
+          <Text tx="moneyTest" style={styles.money} t1 />
+          <Text tx="dateInternet" style={styles.money} b1 />
         </CardItem>
         <View style={styles.styleIndicator} />
         <View />
         <CardItem style={styles.inforCard}>
           <Image source={icons.iconFpt} style={styles.icon} />
           <View style={styles.inforCard}>
-            <Text tx="fpt" s2 color={palette.navy} />
-            <Text tx="name" s2 color={palette.navy} />
+            <Text tx="fpt" b1 color={palette.navy} />
+            <Text tx="name" b1 color={palette.navy} />
           </View>
         </CardItem>
         <View style={styles.styleIndicator} />
         <CardItem style={styles.wrapperContent}>
           <View style={styles.inforDetail}>
             <Left>
-              <Text tx="customerID" s2 color={palette.blueGrey} />
+              <Text tx="customerID" b1 color={palette.blueGrey} />
             </Left>
             <Right>
-              <Text tx="customerIDTest" s2 color={palette.navy} />
+              <Text tx="customerIDTest" b1 color={palette.navy} />
             </Right>
           </View>
           <View style={styles.inforDetail}>
             <Left>
-              <Text tx="transactionID" s2 color={palette.blueGrey} />
+              <Text tx="transactionID" b1 color={palette.blueGrey} />
             </Left>
             <Right>
-              <Text tx="transactionIDTest" s2 color={palette.navy} />
+              <Text tx="transactionIDTest" b1 color={palette.navy} />
             </Right>
           </View>
           <View style={styles.inforDetail}>
             <Left>
-              <Text tx="transactionFree" s2 color={palette.blueGrey} />
+              <Text tx="transactionFree" b1 color={palette.blueGrey} />
             </Left>
             <Right>
-              <Text tx="free" s2 color={palette.navy} />
+              <Text tx="free" b1 color={palette.navy} />
             </Right>
           </View>
         </CardItem>

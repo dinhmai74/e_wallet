@@ -9,7 +9,7 @@ export class ItemNews extends Component {
   render() {
     return (
       <View>
-        <Text tx="hotNews" style={styles.title} h5 preset="title" />
+        <Text tx="hotNews" style={styles.title} preset="title" />
         <Card style={{ paddingBottom: spacing[2] }} transparent>
           <NewsCard
             title="beefRepices"

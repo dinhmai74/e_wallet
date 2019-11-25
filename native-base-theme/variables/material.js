@@ -109,15 +109,16 @@ export default {
 
   // CheckBox
   CheckboxRadius: 0,
-  CheckboxBorderWidth: 2,
-  CheckboxPaddingLeft: 2,
+  CheckboxBorderWidth: 1,
+  CheckboxPaddingLeft: 3,
   CheckboxPaddingBottom: 5,
   CheckboxIconSize: 16,
   CheckboxIconMarginTop: 1,
   CheckboxFontSize: 17,
-  checkboxBgColor: "#039BE5",
+  checkboxBgColor: Colors.white,
+  checkboxUnTickColor: Colors.dim,
   checkboxSize: 20,
-  checkboxTickColor: palette.white,
+  checkboxTickColor: Colors.primary,
 
   // Color
   brandPrimary: Colors.primary,
@@ -141,7 +142,7 @@ export default {
   // Font
   DefaultFontSize: 16,
   fontFamily: Fonts.type.base,
-  fontSizeBase: 15,
+  fontSizeBase: 16,
   get fontSizeH1() {
     return this.fontSizeBase * 1.8
   },
@@ -168,7 +169,7 @@ export default {
   // Header
   toolbarBtnColor: palette.white,
   toolbarDefaultBg: Colors.primary,
-  toolbarHeight: 56,
+  toolbarHeight: 70,
   toolbarSearchIconSize: 23,
   toolbarInputColor: palette.white,
   searchBarHeight: platform === PLATFORM.IOS ? 30 : 40,
@@ -258,7 +259,7 @@ export default {
   tabFontSize: 15,
 
   // Text
-  textColor: Colors.textBlack,
+  textColor: Colors.textNavy,
   inverseTextColor: palette.white,
   noteFontSize: 14,
   get defaultTextColor() {
@@ -273,7 +274,7 @@ export default {
   titleFontColor: palette.white,
 
   // Other
-  borderRadiusBase: 8,
+  borderRadiusBase: 6,
   borderWidth: 1 / PixelRatio.getPixelSizeForLayoutSize(1),
   contentPadding: 10,
   dropdownLinkColor: "#414142",

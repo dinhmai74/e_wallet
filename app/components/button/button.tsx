@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Text } from "../text"
+import { Text, View } from ".."
 import { Button as NBButton } from "native-base"
 import { viewPresets, textPresets } from "./button.presets"
 import { ButtonProps } from "./button.props"
@@ -21,16 +21,19 @@ export function Button(props: ButtonProps) {
     style: styleOverride,
     textStyle: textStyleOverride,
     children,
+    disabled,
     ...rest
   } = props
 
-  const viewStyle = mergeAll(flatten([preset && viewPresets[preset], styleOverride]))
+  const viewStyle = mergeAll(
+    flatten([preset && viewPresets[preset], styleOverride, disabled && { opacity: 0.3 }]),
+  )
   const textStyle = mergeAll(flatten([textPresets[preset], textStyleOverride]))
 
   const content = children || <Text tx={tx} text={text} style={textStyle} />
 
   return (
-    <NBButton style={viewStyle} {...rest}>
+    <NBButton disabled={disabled} style={[viewStyle]} {...rest}>
       {content}
     </NBButton>
   )

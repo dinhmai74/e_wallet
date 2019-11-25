@@ -32,10 +32,10 @@ export class ItemBank extends Component<Props, State> {
             <Icon icon={icon} size={metrics.icon.large} />
             <View style={styles.wraper}>
               <View style={styles.bank}>
-                <Text tx={nameBank} style={styles.nameBank} s2 />
-                <Text tx={numberTalent} style={styles.talentNumber} s2 />
+                <Text tx={nameBank} style={styles.nameBank} b1 />
+                <Text tx={numberTalent} style={styles.talentNumber} b1 />
               </View>
-              <Text tx="free" style={styles.free} p3 />
+              <Text tx="free" style={styles.free} b1 />
             </View>
           </View>
           <View style={styles.styleRadioButton}>

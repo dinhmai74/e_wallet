@@ -9,7 +9,7 @@ export class Amount extends Component {
     return (
       <Card style={styles.container}>
         <CardItem header>
-          <Text tx="cashIn" s1 color={palette.navy} style={{ paddingLeft: spacing[1] }} />
+          <Text tx="cashIn" t1 color={palette.navy} style={{ paddingLeft: spacing[1] }} />
         </CardItem>
         <View style={{ alignItems: "center", justifyContent: "center" }}>
           <Item style={{ width: 250, height: 45 }}>
@@ -23,13 +23,9 @@ export class Amount extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 5,
-    borderColor: "#cccccc",
-    width: 310,
-    height: 134,
-    flex: 1,
-    marginHorizontal: spacing[4],
-    marginTop: spacing[6],
+    paddingVertical: spacing[6],
+    paddingHorizontal: spacing[4],
+    paddingBottom: spacing[8],
   },
 })
 export default Amount

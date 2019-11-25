@@ -25,7 +25,7 @@ export class NewsCard extends Component<Props> {
           <Image style={{ width: 100, height: 80, borderRadius: 10 }} source={imageUrl} />
           <View style={{ paddingLeft: spacing[5] }}>
             <Text tx={title} style={{ fontWeight: "bold", paddingBottom: spacing[2] }} />
-            <Text tx={subTitle} style={{ color: "#656565", paddingBottom: spacing[2] }} p4 />
+            <Text tx={subTitle} style={{ color: "#656565", paddingBottom: spacing[2] }} b2 />
             <View style={{ flexDirection: "row" }}>
               <Icon
                 icon={icon}
@@ -33,8 +33,8 @@ export class NewsCard extends Component<Props> {
                 color="#959595"
                 size={metrics.icon.small}
               />
-              <Text tx={number} style={{ paddingRight: spacing[1], color: "#e05a67" }} p3 />
-              <Text tx={time} style={{ color: "#696969" }} p4 />
+              <Text tx={number} style={{ paddingRight: spacing[1], color: "#e05a67" }} b1 />
+              <Text tx={time} style={{ color: "#696969" }} b2 />
             </View>
           </View>
         </View>

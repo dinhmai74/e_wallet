@@ -8,12 +8,12 @@ export class InfomationCard extends Component {
     return (
       <View style={{ paddingTop: spacing[4] }}>
         <View>
-          <Text tx="information" s1 bold style={styles.title} />
+          <Text tx="information" t1 bold style={styles.title} />
         </View>
         <View>
-          <Text tx="transferToMoney" style={styles.content} bold p3 />
-          <Text tx="thisIsFast" style={styles.content} bold p3 />
-          <Text tx="onlySupport" style={styles.content} bold p3 />
+          <Text tx="transferToMoney" style={styles.content} bold b2 />
+          <Text tx="thisIsFast" style={styles.content} bold b2 />
+          <Text tx="onlySupport" style={styles.content} bold b2 />
         </View>
       </View>
     )

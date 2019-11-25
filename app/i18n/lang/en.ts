@@ -30,6 +30,8 @@ export const en = {
   mobile_card: "MOBILE CARD",
   payment: "PAYMENT",
   entertainment: "ENTERTAINMENT",
+  transport: "TRANSPORT",
+  transport_buy_train: "Buy train ticket",
 
   // hot news
   beefRepices: "Beef Repices",
@@ -139,5 +141,24 @@ export const en = {
   moneyTest: "2.400.000d",
   info: "Info",
   dateInternet: "Internet - 12/2019",
+  // train
+  trainTicket_title: "Buy train ticket",
+  trainTicket_type: "Type:",
+  trainTicket_oneWay: "One way",
+  trainTicket_roundTrip: "Round-trip",
+  trainTicket_originStation: "Origin station:",
+  trainTicket_destinationStation: "Destination station:",
+  trainTicket_choseStation: "Chose station",
+  trainTicket_ddMMYYYY: "DD/MM/YYYY",
+  trainTicket_amount: "Amount",
+  trainTicket_standard: "Standard",
+  trainTicket_firstClass: "First class",
+  trainTicket_departDate: "Depart date:",
+  trainTicket_returnDate: "Return date:",
+  trainTicket_totalTicket: "Total ticket:",
+  trainTicket_seatType: "Seat type:",
+  trainTicket_note:
+    "Note*: Children under 6 do not need to buy tickets. Each adult can sit with up to 2 children",
+  trainTicket_choseOriginStation: "Chose origin station",
 }
 export type TranslateKey = keyof typeof en
