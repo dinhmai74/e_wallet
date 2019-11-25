@@ -23,7 +23,7 @@ export class Wallet extends Component {
           <Button
             onPress={() => {}}
             transparent
-            tx="pay"
+            tx="change"
             style={styles.styledButton}
             textStyle={{ color: palette.blueGrey, fontSize: 16 }}
           />
