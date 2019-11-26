@@ -29,6 +29,7 @@ export const icons = {
   train: require("./icons8-train.png"),
   check: require("./icons8-checkmark.png"),
   calendar: require("./icons8-calendar.png"),
+  iconSucces: require("./success.png"),
 }
 
 export type IconTypes = keyof typeof icons

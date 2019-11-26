@@ -6,17 +6,23 @@ import { TranslateKey } from "i18n/lang"
 
 interface Props {
   title?: TranslateKey
+  style?: any
 }
 
 export class Indicator extends Component<Props, {}> {
   render() {
-    const { title } = this.props
+    const { title, style } = this.props
     return (
       <View style={styles.container}>
         <View style={styles.wraper}>
-          <View style={styles.styleIndicator}></View>
-          <Text tx={title} style={styles.title} />
-          <View style={styles.styleIndicator}></View>
+          <View
+            style={[
+              style,
+              { backgroundColor: palette.blueGrey, marginRight: spacing[2], height: 1 },
+            ]}
+          ></View>
+          <Text tx={title} style={{ paddingRight: spacing[2] }} t1 />
+          <View style={[style, { backgroundColor: palette.blueGrey, height: 1 }]}></View>
         </View>
       </View>
     )

@@ -136,7 +136,7 @@ export const en = {
   transactionID: "TransactionId: ",
   transactionIDTest: "PAMC12178",
   transactionFree: "Transaction Free: ",
-  total: "Total",
+  total: "Total: ",
   continue: "Continue",
   moneyTest: "2.400.000d",
   info: "Info",
@@ -160,5 +160,18 @@ export const en = {
   trainTicket_note:
     "Note*: Children under 6 do not need to buy tickets. Each adult can sit with up to 2 children",
   trainTicket_choseOriginStation: "Chose origin station",
+
+  //  pay internet transaction successfull
+  paymentInfo: "Payment Info",
+  transactionSuccessfull: "Transaction Successfull",
+  transactionInfo: "Transaction Info",
+  transactionType: "Transaction type",
+  internetPayment: "Internet payment",
+  customer: "Customer ",
+  month: "Month ",
+  monthTest: "12",
+  walletInfo: "Wallet Info",
+  surPlus: "Surplus",
+  payAnotherBill: "Pay another bill",
 }
 export type TranslateKey = keyof typeof en
