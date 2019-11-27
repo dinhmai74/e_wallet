@@ -125,6 +125,23 @@ export const en = {
   fpt: "FPT",
   pay: "Pay",
 
+  confirmTransaction: "Confirm transaction",
+
+  // confirm transaction pay internet
+  wallet: "Wallet",
+  testWallet: "Test wallet",
+  change: "Change",
+  internet: "Internet",
+  customerID: "Customer Id: ",
+  customerIDTest: "ABC123",
+  transactionID: "TransactionId: ",
+  transactionIDTest: "PAMC12178",
+  transactionFree: "Transaction Free: ",
+  total: "Total: ",
+  continue: "Continue",
+  moneyTest: "2.400.000d",
+  info: "Info",
+  dateInternet: "Internet - 12/2019",
   // train
   trainTicket_title: "Buy train ticket",
   trainTicket_type: "Type:",
@@ -150,5 +167,18 @@ export const en = {
   buyTrainTicketSelectPosScreen_header: "Chose position",
   buyTrainTicketSelectPosScreen_carriage: "Carriage",
   buyTrainTicketSelectPosScreen_seatPos: "Seat position",
+
+  //  pay internet transaction successfull
+  paymentInfo: "Payment Info",
+  transactionSuccessfull: "Transaction Successfull",
+  transactionInfo: "Transaction Info",
+  transactionType: "Transaction type",
+  internetPayment: "Internet payment",
+  customer: "Customer ",
+  month: "Month ",
+  monthTest: "12",
+  walletInfo: "Wallet Info",
+  surPlus: "Surplus",
+  payAnotherBill: "Pay another bill",
 }
 export type TranslateKey = keyof typeof en

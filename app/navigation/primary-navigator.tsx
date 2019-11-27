@@ -1,4 +1,4 @@
-import { FooterTab } from "components"
+import { FooterTab, TransactionSuccessfull } from "components"
 import { HomeScreen } from "screens/home-screen"
 import { PromotionScreen } from "screens/promotion-screen"
 import { createStackNavigator } from "react-navigation-stack"
@@ -11,8 +11,11 @@ import { TransferPhoneNumber } from "screens/transfer/transfer-phone-number/tran
 import ConfirmCashIn from "screens/confirm-cash-in/confirm-cash-in"
 import { ScanScreen } from "screens/scan-screen"
 import { PayInternet } from "screens/pay-internet/pay-internet"
+import { ConfirmTrasactionPayInternet } from "screens/pay-internet/confirm-transaction"
 import { BuyTrainTicketScreen } from "screens/buy-train-ticket-screen"
 import { BuyTrainTicketSelectPosScreen } from "screens/buy-train-ticket_select_pos-screen"
+import PayInternetSuccessfull from "screens/pay-internet/pay-internet-successfull/pay-internet-successfull"
+// import TransactionSuccessfull from "components/transaction-successfull/transaction-successful"
 
 const BottomTabConfig = {
   home: HomeScreen,
@@ -33,8 +36,11 @@ const PrimaryRouteConfig = {
   confirmCashIn: ConfirmCashIn,
   scanScreen: ScanScreen,
   payInternet: PayInternet,
+  confrimTransactionPayInternet: ConfirmTrasactionPayInternet,
   BuyTrainTicketScreen,
   BuyTrainTicketSelectPosScreen,
+  transactionSuccess: TransactionSuccessfull,
+  payInternetSuccessfull: PayInternetSuccessfull,
 }
 
 export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {

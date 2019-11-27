@@ -3,6 +3,7 @@ import { Screen, Text, Button, View } from "components"
 import { color, spacing, palette } from "theme"
 import { ViewStyle, StatusBar, Platform, StyleSheet } from "react-native"
 import InfoPaymentCard from "screens/pay-internet/pay-internet/info-payment-card"
+import { navigateService } from "utils"
 
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,
@@ -16,17 +17,20 @@ const ROOT: ViewStyle = {
 // )
 
 export class PayInternet extends Component {
+  goToConfirmTransaction = () => {
+    navigateService.navigate("confrimTransactionPayInternet")
+  }
   render() {
     return (
       <View full>
         <Screen style={ROOT} backgroundColor={color.transparent} preset="scroll">
-          {/* <MyStatusBar backgroundColor="#ECE9E9" barStyle="light-content" /> */}
-          <Text preset="header" tx="internetBillPayment" />
+          <Text preset="header" tx="internetBillPayment" style={{ paddingTop: 30 }} />
           <InfoPaymentCard />
-          <View style={{ paddingTop: 300 }}>
+          <View style={{ paddingTop: 500 }}>
             <Button
               bordered
-              onPress={() => {}}
+              full
+              onPress={this.goToConfirmTransaction}
               style={{ marginHorizontal: spacing[3], backgroundColor: palette.warmPink }}
             >
               <Text tx="confirm" style={{ color: palette.white }} />
