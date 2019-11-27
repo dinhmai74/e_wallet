@@ -58,7 +58,6 @@ const validationSchema = Yup.object().shape({
     return moment(val).isValid()
   }),
   totalTicket: Yup.object().test("chose totalTicket", "notChose_totalTicket", function(val) {
-    console.tron.log(" val total", val)
     return val.adult > 0 || val.children > 0
   }),
 })
@@ -104,6 +103,16 @@ const initVal: TrainFormValues = {
   seatType: SeatType.standard,
 }
 
+const initErr = {
+  ticketType: false,
+  originStation: true,
+  destinationStation: true,
+  departDate: true,
+  returnDate: false,
+  totalTicket: true,
+  seatType: false,
+}
+
 interface State {
   modal: {
     originStation?: boolean
@@ -129,9 +138,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
 
   setFieldTouched = null
 
-  onSubmit = (values: TrainFormValues) => {
-    console.tron.log("values", values)
-  }
+  onSubmit = (values: TrainFormValues) => {}
 
   /* ------------- render ------------- */
   renderChoseType = ({ values, setFieldValue, setFieldTouched }: FormikProps<TrainFormValues>) => {
@@ -188,7 +195,6 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
     let returnDate = values.returnDate
     if (moment(departDate).isValid()) departDate = moment(departDate).format("DD / MM / YYYY")
     if (moment(returnDate).isValid()) returnDate = moment(returnDate).format("DD / MM / YYYY")
-    console.tron.log(" values ", values)
     return (
       <Card>
         <CardItemWithModal
@@ -227,13 +233,13 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
               <Checkbox
                 tx="trainTicket_standard"
                 value={values.seatType === SeatType.standard}
-                onToggle={val => setFieldValue("seatType", SeatType.standard)}
+                onToggle={() => setFieldValue("seatType", SeatType.standard)}
               />
               <SizedBox w={4} />
               <Checkbox
                 tx="trainTicket_firstClass"
                 value={values.seatType === SeatType.firstClass}
-                onToggle={val => setFieldValue("seatType", SeatType.firstClass)}
+                onToggle={() => setFieldValue("seatType", SeatType.firstClass)}
               />
             </Row>
           </Right>
@@ -243,7 +249,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
   }
 
   renderForm = (formikBag: FormikProps<TrainFormValues>) => {
-    console.tron.log(" formikBag.values ", formikBag.values)
+    console.tron.log(" formikBag.errors ", formikBag.errors)
     return (
       <>
         {this.renderChoseType(formikBag)}
@@ -266,7 +272,6 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
   }
 
   changeModalState = (modal: string, val: boolean = true) => {
-    if (this.setFieldTouched) this.setFieldTouched(modal, true)
     this.setState(preState => {
       return produce(preState, stateCopy => {
         stateCopy.modal[modal] = val
@@ -274,9 +279,8 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
     })
   }
 
-  submitTotalTicketValue = (setFieldValue, val) => {
+  submitTotalTicketValue = val => {
     this.changeModalState("totalTicket", false)
-    setFieldValue("totalTicket", val)
   }
 
   renderModals = ({ values, setFieldValue }: FormikProps<TrainFormValues>) => {
@@ -335,7 +339,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
           onBackButtonPress={this.changeModalState.bind(this, "totalTicket", false)}
           value={values.totalTicket}
           onSubmit={val => {
-            this.submitTotalTicketValue(setFieldValue, val)
+            this.submitTotalTicketValue(val)
           }}
         />
       </>
@@ -349,15 +353,15 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
         <SizedBox h={6} />
         <Formik
           initialValues={initVal}
+          // @ts-ignore
+          initialErrors={initErr}
           validationSchema={validationSchema}
           onSubmit={this.onSubmit}
         >
           {(bag: FormikProps<TrainFormValues>) => {
-            const { isSubmitting, errors, touched, setFieldTouched } = bag
+            const { isSubmitting, errors } = bag
 
-            if (!this.setFieldTouched) this.setFieldTouched = this.setFieldTouched
-
-            let disabled = !_.isEmpty(errors) || _.isEmpty(touched) || isSubmitting
+            let disabled = !_.isEmpty(errors) || isSubmitting
             return (
               <Screen>
                 <Screen transparent preset="scroll" style={ROOT}>
