@@ -8,7 +8,7 @@ export interface ViewProps {
    * The text to display if not using `tx` or nested components.
    */
   preset?: ViewType
-  children?: JSX.Element | JSX.Element[]
+  children?: any
   full?: boolean
   flex?: number
   /**
@@ -27,7 +27,7 @@ export const viewPresets = {
   },
   col: BASE,
 }
-export type ViewType = keyof typeof presets
+export type ViewType = keyof typeof viewPresets
 
 /**
  * Stateless functional component for your needs
@@ -44,8 +44,8 @@ export class View extends React.PureComponent<ViewProps> {
     const style = mergeAll(
       flatten([viewPresets[preset], full && { flex: 1 }, flex && { flex }, styleOverride]),
     )
-
     return (
+      // @ts-ignore
       <RNView style={style} {...rest}>
         {children}
       </RNView>

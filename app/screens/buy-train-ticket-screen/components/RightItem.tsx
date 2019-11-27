@@ -14,12 +14,13 @@ const StyledChoseStationRow = styled(TouchableOpacity)`
 interface Props {
   tx: string
   onPress?: (id: string, val: boolean) => void
+  disabled?: boolean
 }
 
-export function RightItem({ tx, onPress }: Props) {
+export function RightItem({ tx, onPress, disabled }: Props) {
   return (
     <Right>
-      <StyledChoseStationRow onPress={onPress}>
+      <StyledChoseStationRow onPress={onPress} disabled={disabled}>
         <Text
           b2
           color={color.textDescription}

@@ -46,4 +46,5 @@ export interface ButtonProps extends NativeBase.Button {
   rounded?: boolean
 
   disabled?: boolean
+  loading?: boolean
 }

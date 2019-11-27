@@ -7,16 +7,18 @@ interface Props {
   leftTx: string
   rightTx: string
   onPress?: (id: string, val: boolean) => void
+  disabled?: boolean
 }
 
-export function CardItemWithModal({ leftTx, rightTx, onPress }: Props) {
+export function CardItemWithModal({ leftTx, rightTx, onPress, disabled }: Props) {
+  const opacity = disabled ? 0.3 : 1
   return (
-    <CardItem style={{ justifyContent: "space-between" }}>
+    <CardItem style={{ justifyContent: "space-between", opacity }}>
       <LeftText
         // @ts-ignore
         tx={leftTx}
       />
-      <RightItem tx={rightTx} onPress={onPress} />
+      <RightItem tx={rightTx} onPress={onPress} disabled={disabled} />
     </CardItem>
   )
 }

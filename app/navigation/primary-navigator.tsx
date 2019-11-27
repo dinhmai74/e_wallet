@@ -13,6 +13,7 @@ import { ScanScreen } from "screens/scan-screen"
 import { PayInternet } from "screens/pay-internet/pay-internet"
 import { ConfirmTrasactionPayInternet } from "screens/pay-internet/confirm-transaction"
 import { BuyTrainTicketScreen } from "screens/buy-train-ticket-screen"
+import { BuyTrainTicketSelectPosScreen } from "screens/buy-train-ticket_select_pos-screen"
 import PayInternetSuccessfull from "screens/pay-internet/pay-internet-successfull/pay-internet-successfull"
 // import TransactionSuccessfull from "components/transaction-successfull/transaction-successful"
 
@@ -37,6 +38,7 @@ const PrimaryRouteConfig = {
   payInternet: PayInternet,
   confrimTransactionPayInternet: ConfirmTrasactionPayInternet,
   BuyTrainTicketScreen,
+  BuyTrainTicketSelectPosScreen,
   transactionSuccess: TransactionSuccessfull,
   payInternetSuccessfull: PayInternetSuccessfull,
 }

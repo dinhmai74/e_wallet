@@ -29,6 +29,9 @@ export const icons = {
   train: require("./icons8-train.png"),
   check: require("./icons8-checkmark.png"),
   calendar: require("./icons8-calendar.png"),
+  add: require("./add.png"),
+  minus: require("./minus.png"),
+  seat: require("./seat.png"),
   iconSucces: require("./success.png"),
 }
 
