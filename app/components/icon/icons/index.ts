@@ -30,6 +30,7 @@ export const icons = {
   calendar: require("./icons8-calendar.png"),
   add: require("./add.png"),
   minus: require("./minus.png"),
+  seat: require("./seat.png"),
 }
 
 export type IconTypes = keyof typeof icons

@@ -5,9 +5,8 @@ import DateTimePicker from "react-native-modal-datetime-picker"
 import { NavigationScreenProps } from "react-navigation"
 import styled from "styled-components"
 import * as Yup from "yup"
-import { Card as NBCard, CardItem, Body, Left, Right, Row } from "native-base"
+import { Card as NBCard, CardItem, Right, Row } from "native-base"
 import { Formik, FormikProps } from "formik"
-import { Icon } from "react-native-elements"
 import Modal from "react-native-modal"
 import { produce } from "immer"
 import { TouchableOpacity } from "react-native-gesture-handler"
@@ -15,14 +14,13 @@ import moment from "moment"
 import _ from "lodash"
 
 import { Button, Checkbox, SizedBox, Text, Screen } from "components"
-import { color, spacing, metrics } from "theme"
-import { Header, View, Divider } from "components"
-import { translate } from "i18n"
+import { color, spacing } from "theme"
+import { Header, View } from "components"
 import StationModalContent from "./components/StationModalContent"
-import RightItem from "./components/RightItem"
 import LeftText from "./components/LeftText"
 import CardItemWithModal from "screens/buy-train-ticket-screen/components/CardItemWithModal"
 import TotalTicketModal from "screens/buy-train-ticket-screen/components/TotalTicketModal"
+import { navigateService } from "utils"
 
 export interface BuyTrainTicketScreenProps extends NavigationScreenProps<{}> {}
 
@@ -30,11 +28,6 @@ const ROOT: ViewStyle = { paddingHorizontal: spacing[6] }
 
 const Card = styled(NBCard)`
   padding-vertical: ${spacing[4]}px;
-`
-
-const StyledChoseStationRow = styled(TouchableOpacity)`
-  flex-direction: row;
-  align-items: center;
 `
 
 const validationSchema = Yup.object().shape({
@@ -121,6 +114,7 @@ interface State {
     returnDate?: boolean
     totalTicket?: boolean
   }
+  loading: boolean
 }
 
 // @inject("mobxstuff")
@@ -134,11 +128,27 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
       returnDate: false,
       totalTicket: false,
     },
+    loading: false,
   }
 
   setFieldTouched = null
 
-  onSubmit = (values: TrainFormValues) => {}
+  onSubmit = (val, bag: FormikProps<TrainFormValues>) => {
+    this.setState({
+      loading: true,
+    })
+
+    setTimeout(() => {
+      this.setState(
+        {
+          loading: false,
+        },
+        () => {
+          navigateService.navigate("BuyTrainTicketSelectPosScreen", { formVal: val })
+        },
+      )
+    }, 2000)
+  }
 
   /* ------------- render ------------- */
   renderChoseType = ({ values, setFieldValue, setFieldTouched }: FormikProps<TrainFormValues>) => {
@@ -249,7 +259,6 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
   }
 
   renderForm = (formikBag: FormikProps<TrainFormValues>) => {
-    console.tron.log(" formikBag.errors ", formikBag.errors)
     return (
       <>
         {this.renderChoseType(formikBag)}
@@ -279,8 +288,9 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
     })
   }
 
-  submitTotalTicketValue = val => {
+  submitTotalTicketValue = (val, setFieldValue) => {
     this.changeModalState("totalTicket", false)
+    setFieldValue("totalTicket", val)
   }
 
   renderModals = ({ values, setFieldValue }: FormikProps<TrainFormValues>) => {
@@ -339,7 +349,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
           onBackButtonPress={this.changeModalState.bind(this, "totalTicket", false)}
           value={values.totalTicket}
           onSubmit={val => {
-            this.submitTotalTicketValue(val)
+            this.submitTotalTicketValue(val, setFieldValue)
           }}
         />
       </>
@@ -350,7 +360,6 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
     return (
       <View full>
         <Header headerTx="trainTicket_title" leftIcon="back" />
-        <SizedBox h={6} />
         <Formik
           initialValues={initVal}
           // @ts-ignore
@@ -361,9 +370,10 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
           {(bag: FormikProps<TrainFormValues>) => {
             const { isSubmitting, errors } = bag
 
-            let disabled = !_.isEmpty(errors) || isSubmitting
+            let disabled = !_.isEmpty(errors) || isSubmitting || this.state.loading
             return (
               <Screen>
+                <SizedBox h={6} />
                 <Screen transparent preset="scroll" style={ROOT}>
                   {this.renderForm(bag)}
                 </Screen>
@@ -372,6 +382,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
                   tx="confirm"
                   primary
                   full
+                  loading={this.state.loading}
                   disabled={disabled}
                   onPress={bag.handleSubmit}
                   style={{ marginHorizontal: spacing[6], marginBottom: spacing[3] }}

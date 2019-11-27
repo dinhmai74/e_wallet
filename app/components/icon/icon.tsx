@@ -1,10 +1,12 @@
 import * as React from "react"
 import { View, Image, ImageStyle, StyleSheet } from "react-native"
-import { IconProps } from "./icon.props"
+import { IconProps } from "components"
 import { icons } from "./icons"
 import { flatten, mergeAll } from "ramda"
 import { color, metrics } from "theme"
 import { TouchableOpacity } from "react-native-gesture-handler"
+
+export * from "./icon.props"
 
 const ROOT: ImageStyle = {
   resizeMode: "contain",

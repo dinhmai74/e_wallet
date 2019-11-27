@@ -8,7 +8,7 @@ export interface ViewProps {
    * The text to display if not using `tx` or nested components.
    */
   preset?: ViewType
-  children?: JSX.Element | JSX.Element[]
+  children?: any
   full?: boolean
   flex?: number
   /**

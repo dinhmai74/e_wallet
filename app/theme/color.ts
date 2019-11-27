@@ -4,7 +4,7 @@ export const palette = {
   offWhite: "#e6e6e6",
   lightWhite: "#f5f6ff",
   whiteSmoke: "#F4F4F4",
-  orange: "#FBA928",
+  orange: "#f7b500",
   orangeDarker: "#EB9918",
   lightGrey: "#939AA4",
   lighterGrey: "#CDD4DA",
@@ -65,14 +65,14 @@ export const color = {
    */
   primary: palette.warmPink,
   primaryDarker: palette.orangeDarker,
-  secondary: palette.mediumStateBlue,
+  secondary: palette.navy,
   brandInfo: palette.blue,
   brandSuccess: palette.green,
   brandDanger: palette.realOrange,
   brandWarning: palette.orange,
   brandDark: palette.black,
   brandLight: palette.whiteSmoke,
-  divider: palette.grey,
+  divider: palette.blueGrey,
   /**
    * A subtle color used for borders and lines.
    */
@@ -93,6 +93,7 @@ export const color = {
    * Error messages and icons.
    */
   error: palette.angry,
+  grey: palette.grey,
 
   /**
    * Storybook background for Text stories, or any stories where
@@ -107,4 +108,9 @@ export const color = {
    */
   storybookTextColor: palette.black,
   checkboxInactive: palette.blueGrey,
+
+  /* ------------- seat trains ------------- */
+  chosen: palette.orange,
+  busy: palette.navy,
+  empty: palette.grey,
 }

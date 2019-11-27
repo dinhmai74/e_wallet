@@ -12,6 +12,7 @@ import ConfirmCashIn from "screens/confirm-cash-in/confirm-cash-in"
 import { ScanScreen } from "screens/scan-screen"
 import { PayInternet } from "screens/pay-internet/pay-internet"
 import { BuyTrainTicketScreen } from "screens/buy-train-ticket-screen"
+import { BuyTrainTicketSelectPosScreen } from "screens/buy-train-ticket_select_pos-screen"
 
 const BottomTabConfig = {
   home: HomeScreen,
@@ -33,6 +34,7 @@ const PrimaryRouteConfig = {
   scanScreen: ScanScreen,
   payInternet: PayInternet,
   BuyTrainTicketScreen,
+  BuyTrainTicketSelectPosScreen,
 }
 
 export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {

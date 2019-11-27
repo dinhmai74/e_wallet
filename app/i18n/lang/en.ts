@@ -147,5 +147,8 @@ export const en = {
   trainTicket_passengers: "Passengers",
   trainTicket_adult: "Adult",
   trainTicket_children: "Children",
+  buyTrainTicketSelectPosScreen_header: "Chose position",
+  buyTrainTicketSelectPosScreen_carriage: "Carriage",
+  buyTrainTicketSelectPosScreen_seatPos: "Seat position",
 }
 export type TranslateKey = keyof typeof en

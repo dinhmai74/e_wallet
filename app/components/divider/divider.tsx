@@ -8,11 +8,6 @@ export interface DividerProps extends EProps {
   height?: number
 }
 
-/**
- * Stateless functional component for your needs
- *
- * Component description here for TypeScript tips.
- */
 export class Divider extends React.PureComponent<DividerProps> {
   static defaultProps = {
     color: color.divider,

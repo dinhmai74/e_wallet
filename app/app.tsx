@@ -33,6 +33,7 @@ YellowBox.ignoreWarnings([
   "componentWillMount is deprecated",
   "componentWillReceiveProps is deprecated",
   "componentWillUpdate is",
+  "Deprecation",
 ])
 
 /**
