@@ -1,3 +1,4 @@
+require("../app/components/total-row/total-row.story")
 require("../app/components/app-loading/app-loading.story")
 require("../app/components/underline-text/underline-text.story")
 require("../app/components/segmented-control/segmented-control.story")

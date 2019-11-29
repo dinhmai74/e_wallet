@@ -1,11 +1,14 @@
 import React, { useEffect, useCallback, useState } from "react"
 import { StyleSheet, ViewStyle } from "react-native"
-import { ColDivider, Header, Screen, SizedBox, View, Button } from "components"
+import { ColDivider, Header, Screen, SizedBox, View, Button, showToast } from "components"
 import { color, spacing } from "theme"
 import { NavigationScreenProps } from "react-navigation"
 import Carriage from "screens/buy-train-ticket_select_pos-screen/components/Carriage"
-import { custom } from "mobx-state-tree/dist/types/utility-types/custom"
 import Seat from "screens/buy-train-ticket_select_pos-screen/components/Seat"
+import { NoticeRow } from "screens/buy-train-ticket_select_pos-screen/components/NoticeRow"
+import Notice from "screens/buy-train-ticket_select_pos-screen/components/Notice"
+import { TotalRow } from "components/total-row"
+import { formatMoney } from "utils"
 
 export interface BuyTrainTicketSelectPosScreenProps extends NavigationScreenProps<{}> {}
 
@@ -14,31 +17,56 @@ const ROOT: ViewStyle = {
   paddingHorizontal: spacing[6],
 }
 
-// @inject("mobxstuff")
-export function BuyTrainTicketSelectPosScreen() {
+export const BuyTrainTicketSelectPosScreen = (props: BuyTrainTicketSelectPosScreenProps) => {
   const [carriageVal, setCarriageVal] = useState(1)
-  const [seatVal, setSeatVal] = useState("-1")
+  const [seatVal, setSeatVal] = useState([])
 
+  // @ts-ignore
+  const formVal = props.navigation.getParam("formVal", {})
   const onChangeCarriage = useCallback(val => setCarriageVal(val), [setCarriageVal])
-  const onChangeSeat = useCallback(val => setSeatVal(val), [setSeatVal])
+  const onChangeSeat = useCallback(
+    val => {
+      setSeatVal(pre => {
+        if (pre.indexOf(val) > -1) {
+          return pre.filter(v => v != val)
+        } else {
+          // @ts-ignore
+          const totalSeat = formVal.totalTicket.children + formVal.totalTicket.adult
+          if (pre.length >= totalSeat) {
+            showToast("buyTrainTicketSelectPosScreen_youHaveSelectedSufficient", "warning")
+            return pre
+          }
+          return [...pre, val]
+        }
+      })
+    },
+    [setSeatVal],
+  )
 
-  useEffect(() => {
-    setSeatVal("-1")
-  }, [carriageVal])
+  const totalMoney = formatMoney(seatVal.length * formVal.seatType * 300000, 0)
 
   return (
     <View full>
       <Header headerTx="buyTrainTicketSelectPosScreen_header" leftIcon="back" />
-      <Screen style={ROOT} >
+      <Screen style={ROOT}>
         <SizedBox h={5} />
         <View full preset={"row"}>
           <Carriage onPress={onChangeCarriage} value={carriageVal} />
           <ColDivider style={styles.divider} />
-          <Seat onPress={onChangeSeat} value={seatVal} />
+          <Seat
+            onPress={onChangeSeat}
+            selectedSeats={seatVal}
+            selectedCarriage={carriageVal.toString()}
+          />
         </View>
       </Screen>
       <View style={styles.footer}>
+        <Notice />
+        <SizedBox h={2} />
+        <TotalRow value={totalMoney} />
+        <SizedBox h={4} />
         <Button tx={"common_confirm"} full />
+        <SizedBox h={4} />
       </View>
     </View>
   )
