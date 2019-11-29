@@ -1,5 +1,4 @@
 import * as React from "react"
-import { observer } from "mobx-react"
 import { ViewStyle } from "react-native"
 import DateTimePicker from "react-native-modal-datetime-picker"
 import { NavigationScreenProps } from "react-navigation"
@@ -9,7 +8,6 @@ import { Card as NBCard, CardItem, Right, Row } from "native-base"
 import { Formik, FormikProps } from "formik"
 import Modal from "react-native-modal"
 import { produce } from "immer"
-import { TouchableOpacity } from "react-native-gesture-handler"
 import moment from "moment"
 import _ from "lodash"
 
@@ -23,6 +21,8 @@ import TotalTicketModal from "screens/buy-train-ticket-screen/components/TotalTi
 import { navigateService } from "utils"
 
 export interface BuyTrainTicketScreenProps extends NavigationScreenProps<{}> {}
+
+const FORMAT_DATE = "DD / MM / YYYY"
 
 const ROOT: ViewStyle = { paddingHorizontal: spacing[6] }
 
@@ -44,25 +44,27 @@ const validationSchema = Yup.object().shape({
     },
   ),
   departDate: Yup.string().test("chose departDate", "notChose_departDate", function(val) {
-    return moment(val).isValid()
+    return true
+    // return moment(val).isValid()
   }),
   returnDate: Yup.string().test("chose return date", "notChose_returnDate", function(val) {
-    if (this.parent.ticketType === TicketType.oneWay) return true
-    return moment(val).isValid()
+    return true
+    // if (this.parent.ticketType === TicketType.oneWay) return true
+    // return moment(val).isValid()
   }),
   totalTicket: Yup.object().test("chose totalTicket", "notChose_totalTicket", function(val) {
     return val.adult > 0 || val.children > 0
   }),
 })
 
-enum TicketType {
+export enum TicketType {
   oneWay,
   roundTrip,
 }
 
 enum SeatType {
-  standard,
-  firstClass,
+  standard = 1,
+  firstClass = 1.5,
 }
 
 export type TotalTicket = {
@@ -70,7 +72,7 @@ export type TotalTicket = {
   children: number
 }
 
-interface TrainFormValues {
+export interface TrainFormValues {
   ticketType: TicketType
   originStation: string
   destinationStation: string
@@ -84,11 +86,11 @@ const CHOSE_STATION = "trainTicket_choseStation"
 const DEFAULT_DATE = "trainTicket_ddMMYYYY"
 
 const initVal: TrainFormValues = {
-  ticketType: TicketType.oneWay,
+  ticketType: 0,
   originStation: CHOSE_STATION,
   destinationStation: CHOSE_STATION,
-  departDate: DEFAULT_DATE,
-  returnDate: DEFAULT_DATE,
+  departDate: undefined,
+  returnDate: undefined,
   totalTicket: {
     adult: 0,
     children: 0,
@@ -117,8 +119,6 @@ interface State {
   loading: boolean
 }
 
-// @inject("mobxstuff")
-@observer
 export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenProps, State> {
   state = {
     modal: {
@@ -201,10 +201,10 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
   }
 
   renderChoseDate = ({ values }: FormikProps<TrainFormValues>) => {
-    let departDate = values.departDate
-    let returnDate = values.returnDate
-    if (moment(departDate).isValid()) departDate = moment(departDate).format("DD / MM / YYYY")
-    if (moment(returnDate).isValid()) returnDate = moment(returnDate).format("DD / MM / YYYY")
+    let departDate =
+      values.departDate === undefined ? DEFAULT_DATE : moment(values.departDate).format(FORMAT_DATE)
+    let returnDate =
+      values.returnDate === undefined ? DEFAULT_DATE : moment(values.returnDate).format(FORMAT_DATE)
     return (
       <Card>
         <CardItemWithModal
@@ -328,7 +328,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
         <DateTimePicker
           isVisible={modal.departDate}
           onConfirm={date => {
-            setFieldValue("departDate", date)
+            setFieldValue("departDate", new Date(date))
             this.changeModalState("departDate", false)
           }}
           onCancel={this.changeModalState.bind(this, "departDate", false)}
@@ -337,7 +337,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
         <DateTimePicker
           isVisible={modal.returnDate}
           onConfirm={date => {
-            setFieldValue("returnDate", date)
+            setFieldValue("returnDate", new Date(date))
             this.changeModalState("returnDate", false)
           }}
           onCancel={this.changeModalState.bind(this, "returnDate", false)}
@@ -357,6 +357,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
   }
 
   render() {
+    console.tron.log("this.props", this.props)
     return (
       <View full>
         <Header headerTx="trainTicket_title" leftIcon="back" />

@@ -4,6 +4,7 @@ export const en = {
   common_back: "Back",
   common_logout: "Log out",
   common_confirm: "Confirm",
+  common_total: "Total",
   errors_invalidEmail: "Invalid email address.",
 
   // screen header
@@ -167,6 +168,13 @@ export const en = {
   buyTrainTicketSelectPosScreen_header: "Chose position",
   buyTrainTicketSelectPosScreen_carriage: "Carriage",
   buyTrainTicketSelectPosScreen_seatPos: "Seat position",
+  buyTrainTicketSelectPosScreen_yourChose: "Your chose",
+  buyTrainTicketSelectPosScreen_empty: "Empty",
+  buyTrainTicketSelectPosScreen_wasBooked: "Was booked",
+  buyTrainTicketSelectPosScreen_yourSelectingWasBooked: "You selected a booked seat",
+  buyTrainTicketSelectPosScreen_youHaveSelectedSufficient: "You have selected sufficient seat",
+
+  buyTrainTicketChoseTimeScreen_header: "Chose train",
 
   //  pay internet transaction successfull
   paymentInfo: "Payment Info",
