@@ -8,7 +8,7 @@ import Seat from "screens/buy-train-ticket_select_pos-screen/components/Seat"
 import { NoticeRow } from "screens/buy-train-ticket_select_pos-screen/components/NoticeRow"
 import Notice from "screens/buy-train-ticket_select_pos-screen/components/Notice"
 import { TotalRow } from "components/total-row"
-import { formatMoney } from "utils"
+import { formatMoney, navigateService } from "utils"
 
 export interface BuyTrainTicketSelectPosScreenProps extends NavigationScreenProps<{}> {}
 
@@ -23,6 +23,7 @@ export const BuyTrainTicketSelectPosScreen = (props: BuyTrainTicketSelectPosScre
 
   // @ts-ignore
   const formVal = props.navigation.getParam("formVal", {})
+  const totalSeat = formVal.totalTicket.children + formVal.totalTicket.adult
   const onChangeCarriage = useCallback(val => setCarriageVal(val), [setCarriageVal])
   const onChangeSeat = useCallback(
     val => {
@@ -31,7 +32,6 @@ export const BuyTrainTicketSelectPosScreen = (props: BuyTrainTicketSelectPosScre
           return pre.filter(v => v != val)
         } else {
           // @ts-ignore
-          const totalSeat = formVal.totalTicket.children + formVal.totalTicket.adult
           if (pre.length >= totalSeat) {
             showToast("buyTrainTicketSelectPosScreen_youHaveSelectedSufficient", "warning")
             return pre
@@ -65,7 +65,16 @@ export const BuyTrainTicketSelectPosScreen = (props: BuyTrainTicketSelectPosScre
         <SizedBox h={2} />
         <TotalRow value={totalMoney} />
         <SizedBox h={4} />
-        <Button tx={"common_confirm"} full />
+        <Button
+          tx={"common_confirm"}
+          full
+          disabled={seatVal.length < totalSeat}
+          onPress={() =>
+            navigateService.navigate("BuyTrainTicketFillInfoScreen", {
+              formVal: { ...formVal, seatVal },
+            })
+          }
+        />
         <SizedBox h={4} />
       </View>
     </View>

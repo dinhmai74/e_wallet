@@ -1,16 +1,16 @@
 import * as React from "react"
 import { storiesOf } from "@storybook/react-native"
 import { StoryScreen, Story, UseCase } from "../../../storybook/views"
-import { SizedBox } from "./"
+import { AppInputHideo } from "./"
 
 declare var module
 
-storiesOf("SizedBox", module)
+storiesOf("AppInputHideo", module)
   .addDecorator(fn => <StoryScreen>{fn()}</StoryScreen>)
   .add("Style Presets", () => (
     <Story>
       <UseCase text="Primary" usage="The primary.">
-        <SizedBox h={1} />
+        <AppInputHideo onChangeText={val=>console.tron.log('change val', val)} />
       </UseCase>
     </Story>
   ))

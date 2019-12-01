@@ -144,10 +144,10 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
           loading: false,
         },
         () => {
-          navigateService.navigate("BuyTrainTicketSelectPosScreen", { formVal: val })
+          navigateService.navigate("BuyTrainTicketChoseTimeScreen", { formVal: val })
         },
       )
-    }, 2000)
+    }, 1000)
   }
 
   /* ------------- render ------------- */
@@ -166,7 +166,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
                   setFieldTouched("ticketType", true)
                 }}
               />
-              <SizedBox w={4} />
+              <SizedBox w={4} h={1} />
               <Checkbox
                 tx="trainTicket_roundTrip"
                 value={values.ticketType === TicketType.roundTrip}
@@ -245,7 +245,7 @@ export class BuyTrainTicketScreen extends React.Component<BuyTrainTicketScreenPr
                 value={values.seatType === SeatType.standard}
                 onToggle={() => setFieldValue("seatType", SeatType.standard)}
               />
-              <SizedBox w={4} />
+              <SizedBox w={4} h={1} />
               <Checkbox
                 tx="trainTicket_firstClass"
                 value={values.seatType === SeatType.firstClass}
