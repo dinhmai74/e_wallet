@@ -15,6 +15,8 @@ import { ConfirmTrasactionPayInternet } from "screens/pay-internet/confirm-trans
 import { BuyTrainTicketScreen } from "screens/buy-train-ticket-screen"
 import { BuyTrainTicketSelectPosScreen } from "screens/buy-train-ticket_select_pos-screen"
 import PayInternetSuccessfull from "screens/pay-internet/pay-internet-successfull/pay-internet-successfull"
+import { BuyTrainTicketChoseTimeScreen } from "screens/buy-train-ticket-chose-time-screen"
+import { BuyTrainTicketFillInfoScreen } from "screens/buy-train-ticket-fill-info-screen"
 // import TransactionSuccessfull from "components/transaction-successfull/transaction-successful"
 
 const BottomTabConfig = {
@@ -39,6 +41,8 @@ const PrimaryRouteConfig = {
   confrimTransactionPayInternet: ConfirmTrasactionPayInternet,
   BuyTrainTicketScreen,
   BuyTrainTicketSelectPosScreen,
+  BuyTrainTicketChoseTimeScreen,
+  BuyTrainTicketFillInfoScreen,
   transactionSuccess: TransactionSuccessfull,
   payInternetSuccessfull: PayInternetSuccessfull,
 }

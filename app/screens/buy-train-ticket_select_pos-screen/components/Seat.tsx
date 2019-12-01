@@ -63,7 +63,7 @@ const Seat = ({ selectedCarriage, selectedSeats, onPress }: Props) => {
                 }}
                 color={c}
               />
-              {val % 2 === 0 && <SizedBox w={5} />}
+              {val % 2 === 0 && <SizedBox w={5} h={1} />}
             </React.Fragment>
           )
         })}

@@ -2,6 +2,7 @@ import { presets } from "components/text/text.presets"
 import * as React from "react"
 import { StyleSheet, View as RNView, ViewStyle } from "react-native"
 import { flatten, mergeAll } from "ramda"
+import { spacing } from "theme"
 
 export interface ViewProps {
   /**
@@ -26,6 +27,13 @@ export const viewPresets = {
     flexDirection: "row",
   },
   col: BASE,
+  footer: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    padding: spacing[6],
+  },
 }
 export type ViewType = keyof typeof viewPresets
 

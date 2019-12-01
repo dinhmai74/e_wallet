@@ -66,6 +66,7 @@ export const color = {
   primary: palette.warmPink,
   primaryDarker: palette.orangeDarker,
   secondary: palette.navy,
+  description: palette.blueGrey,
   brandInfo: palette.blue,
   brandSuccess: palette.green,
   brandDanger: palette.realOrange,

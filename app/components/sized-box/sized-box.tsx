@@ -5,7 +5,7 @@ import { mergeAll, flatten } from "ramda"
 
 export interface SizedBoxProps extends ViewProps {
   /* ------------- height of box ------------- */
-  h?: Spacing
+  h: Spacing
   /* ------------- width of box ------------- */
   w?: Spacing
   /* ------------- bg of box ------------- */

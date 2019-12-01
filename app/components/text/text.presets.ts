@@ -46,6 +46,8 @@ export const presets = {
    */
   primary: { ...BASE, fontSize: Fonts.size.b1, color: color.primary } as TextStyle,
   secondary: { ...BASE, fontSize: 9, color: color.dim } as TextStyle,
+  right: { ...BASE, textAlign: "right" },
+  center: { ...BASE, textAlign: "center" },
   ...Fonts.style,
 }
 

@@ -33,6 +33,7 @@ export const icons = {
   minus: require("./minus.png"),
   seat: require("./seat.png"),
   iconSucces: require("./success.png"),
+  mapDark: require("./mapDark.png"),
 }
 
 export type IconTypes = keyof typeof icons

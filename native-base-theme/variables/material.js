@@ -194,16 +194,16 @@ export default {
   iconHeaderSize: 24,
 
   // InputGroup
-  inputFontSize: 17,
-  inputBorderColor: "#D9D5DC",
+  inputFontSize: 14,
+  inputBorderColor: Colors.divider,
   inputSuccessBorderColor: "#2b8339",
   inputErrorBorderColor: "#ed2f2f",
   inputHeightBase: 40,
   get inputColor() {
-    return Colors.textBlack
+    return Colors.textNavy
   },
   get inputColorPlaceholder() {
-    return Colors.line
+    return Colors.textGrey
   },
 
   // Line Height

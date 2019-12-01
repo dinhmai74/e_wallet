@@ -42,7 +42,7 @@ export class Header extends React.Component<HeaderProps, {}> {
       <NBHeader transparent style={[theme, style]}>
         <View style={styles.row}>
           {this.renderLeftIcon()}
-          <SizedBox w={2} />
+          <SizedBox w={2} h={1} />
           <Text preset={"header"}>{title}</Text>
         </View>
         {content}

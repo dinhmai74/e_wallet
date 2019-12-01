@@ -34,6 +34,7 @@ export const metrics = {
     small: 20,
     medium: 40,
     large: 60,
+    giant: 200,
     logoWidth: width * 0.6,
     logoHeight: width * 0.7,
     smallLogoWidth: width * 0.25,

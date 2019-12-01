@@ -20,6 +20,15 @@ export default (variables /* : * */ = variable) => {
       shadowOpacity: null,
       elevation: null,
     },
+    ".selected": {
+      backgroundColor: variables.brandPrimary,
+      "NativeBase.CardItem": {
+        backgroundColor: variables.brandPrimary,
+        "NativeBase.Text": {
+          color: variables.brandLight,
+        },
+      },
+    },
     flexWrap: "nowrap",
     backgroundColor: variables.cardDefaultBg,
     borderRadius: 10,
