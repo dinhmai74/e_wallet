@@ -5,6 +5,7 @@ import { onSnapshot } from "mobx-state-tree"
 import { ReactotronConfig, DEFAULT_REACTOTRON_CONFIG } from "./reactotron-config"
 import { mst } from "reactotron-mst"
 import { clear } from "../../utils/storage"
+import { Platform } from "react-native"
 
 // Teach TypeScript about the bad things we want to do.
 declare global {
@@ -13,6 +14,65 @@ declare global {
      * Hey, it's Reactotron if we're in dev, and no-ops if we're in prod.
      */
     tron: typeof Tron
+    tlog: any
+  }
+}
+
+console.tlog = tlog
+const _TAG_NAME = "TING"
+
+function tlog(tagName, preview, ...params) {
+  if (__DEV__) {
+    console.log(`[${_TAG_NAME}]:${Platform.OS.toUpperCase()}`, tagName, preview, params)
+  } else {
+    return
+  }
+
+  if (tagName && preview && typeof tagName === "string" && typeof preview === "object") {
+    if (__DEV__) {
+      Tron.display({
+        name: `[${_TAG_NAME}]:${Platform.OS.toUpperCase()}-` + tagName,
+        preview: JSON.stringify(preview),
+        value: preview,
+      })
+    } else {
+      console.warn("TLOG", tagName)
+    }
+
+    return
+  }
+
+  if (tagName && typeof tagName !== "string" && typeof tagName !== "undefined") {
+    if (__DEV__) {
+      Tron.display({
+        name: `[${_TAG_NAME}]:${Platform.OS.toUpperCase()}`,
+        preview: JSON.stringify(tagName),
+        value: tagName,
+      })
+    } else {
+      console.warn("TLOG", tagName)
+    }
+
+    return
+  }
+
+  let mTagName = tagName && typeof tagName !== "undefined" ? JSON.stringify(tagName) : "TLOG"
+  if (__DEV__) {
+    let mPreview =
+      preview && typeof preview !== "undefined" ? JSON.stringify(preview) : JSON.stringify(params)
+
+    let mValue = params.length == 1 ? params[0] : params
+    if (params.length === 0) {
+      mValue = mPreview
+    }
+
+    Tron.display({
+      name: `[${_TAG_NAME}]:${Platform.OS.toUpperCase()}-` + mTagName,
+      preview: mPreview,
+      value: mValue,
+    })
+  } else {
+    console.warn(mTagName, preview && typeof preview !== "undefined" ? preview : "", params)
   }
 }
 

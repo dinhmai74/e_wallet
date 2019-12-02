@@ -44,7 +44,16 @@ export interface InfoFormVal {
   reseller: ResellerInfoForm
 }
 
-const validationSchema = Yup.object().shape({})
+const validationSchema = Yup.object().shape({
+  reseller: Yup.object().shape({
+    name: Yup.string().required(),
+    passport: Yup.string().required(),
+    email: Yup.string()
+      .email()
+      .required(),
+    phone: Yup.string().required(),
+  }),
+})
 
 // @inject("mobxstuff")
 @observer
@@ -91,13 +100,16 @@ export class BuyTrainTicketFillInfoScreen extends React.Component<Props, State> 
 
   onSubmit = (values, bag) => {}
 
+  togglePassengersContent = () => {
+    this.setState(pre => ({ showPassengersCardContent: !pre.showPassengersCardContent }))
+  }
+
   /* ------------- renders ------------- */
 
   renderPassengersInfo = (bag: FormikProps<InfoFormVal>) => {
     const { values, setFieldValue } = bag
     const { data, showPassengersCardContent } = this.state
     const { seatVal } = data
-    console.tron.log("values", values)
 
     return seatVal.map((val, idx) => {
       return (
@@ -122,12 +134,39 @@ export class BuyTrainTicketFillInfoScreen extends React.Component<Props, State> 
     return (
       <Formik
         initialValues={initFormVal}
+        // @ts-ignore
+        initialErrors={
+          {
+            reseller: ({
+              email: true,
+              name: true,
+              passport: true,
+              phone: true,
+            } as unknown) as ResellerInfoForm,
+          } as InfoFormVal
+        }
+        // @ts-ignore
+        initialTouched={{
+          reseller: ({
+            email: false,
+            name: false,
+            passport: false,
+            phone: false,
+          } as unknown) as ResellerInfoForm,
+        }}
         onSubmit={this.onSubmit}
         validationSchema={validationSchema}
       >
         {(bag: FormikProps<InfoFormVal>) => {
-          const { errors } = bag
+          const { errors, values, touched } = bag
+          console.tlog("touched", touched)
+          console.tlog("errors.res", errors.reseller)
           const disableButton = !_.isEmpty(errors)
+          let touchedReseller =
+            touched.reseller.passport &&
+            touched.reseller.name &&
+            touched.reseller.email &&
+            touched.reseller.phone
           return (
             <View full>
               <Header headerTx={"buyTrainTicketFillInfoScreen_header"} leftIcon={"back"} />
@@ -146,8 +185,13 @@ export class BuyTrainTicketFillInfoScreen extends React.Component<Props, State> 
 
                   <SizedBox h={2} />
                   <ResellerCard
-                    value={bag.values.reseller}
-                    onChange={v => bag.setFieldValue("reseller", v)}
+                    errors={touchedReseller ? errors.reseller : undefined}
+                    onChange={(v, fieldName) => {
+                      // @ts-ignore
+                      bag.setFieldValue(`reseller.${fieldName}`, v)
+                      // @ts-ignore
+                      bag.setFieldTouched(`reseller.${fieldName}`, true)
+                    }}
                   />
                 </Screen>
               </ScrollView>
@@ -160,10 +204,6 @@ export class BuyTrainTicketFillInfoScreen extends React.Component<Props, State> 
         }}
       </Formik>
     )
-  }
-
-  togglePassengersContent = () => {
-    this.setState(pre => ({ showPassengersCardContent: !pre.showPassengersCardContent }))
   }
 }
 
