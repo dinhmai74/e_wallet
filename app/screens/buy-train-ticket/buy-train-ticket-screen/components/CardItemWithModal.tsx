@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { CardItem } from "native-base"
-import LeftText from "screens/buy-train-ticket-screen/components/LeftText"
-import RightItem from "screens/buy-train-ticket-screen/components/RightItem"
+import LeftText from "screens/buy-train-ticket/buy-train-ticket-screen/components/LeftText"
+import RightItem from "screens/buy-train-ticket/buy-train-ticket-screen/components/RightItem"
 
 interface Props {
   leftTx: string

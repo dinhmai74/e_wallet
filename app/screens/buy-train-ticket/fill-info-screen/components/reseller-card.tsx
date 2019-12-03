@@ -3,7 +3,7 @@ import { SizedBox, Text, View } from "components"
 import { TextWithDecoration } from "components/text-with-decoration"
 import { Card, CardItem, Input, Item } from "native-base"
 import { translate } from "i18n"
-import { InputCardItem } from "screens/buy-train-ticket-fill-info-screen/components/InputCardItem"
+import { InputCardItem } from "screens/buy-train-ticket/fill-info-screen/components/InputCardItem"
 
 interface Props {
   errors: any

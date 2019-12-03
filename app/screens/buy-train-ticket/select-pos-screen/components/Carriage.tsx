@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { SizedBox, Text, View } from "components"
-import CarriageButton from "screens/buy-train-ticket_select_pos-screen/components/CarriageButton"
 import { useEffect, useRef } from "react"
 import { StyleSheet } from "react-native"
+import CarriageButton from "screens/buy-train-ticket/select-pos-screen/components/CarriageButton"
 
 interface Props {
   onPress?: (val: string) => void

@@ -7,7 +7,7 @@ import { NavigationScreenProps } from "react-navigation"
 import {
   ChoseTimeCard,
   TimeValue,
-} from "screens/buy-train-ticket-chose-time-screen/components/ChoseTimeCard"
+} from "screens/buy-train-ticket/chose-time-screen/components/ChoseTimeCard"
 import { navigateService } from "utils"
 
 interface Props extends NavigationScreenProps<{}> {}

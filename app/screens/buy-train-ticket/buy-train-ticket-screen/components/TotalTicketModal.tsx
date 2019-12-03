@@ -4,7 +4,7 @@ import Modal from "react-native-modal"
 import { color, spacing } from "theme"
 import { Button, Text, View, SizedBox } from "components"
 import TicketRow from "./TicketRow"
-import { TotalTicket } from "screens/buy-train-ticket-screen/buy-train-ticket-screen"
+import { TotalTicket } from "screens/buy-train-ticket/buy-train-ticket-screen/buy-train-ticket-screen"
 
 interface Props {
   isVisible: boolean

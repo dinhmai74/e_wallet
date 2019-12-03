@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { StyleSheet, Text, View } from "react-native"
 import { color, spacing } from "theme"
-import { NoticeRow } from "screens/buy-train-ticket_select_pos-screen/components/NoticeRow"
 import { SizedBox } from "components"
+import { NoticeRow } from "screens/buy-train-ticket/select-pos-screen/components/NoticeRow"
 
 interface Props {}
 
