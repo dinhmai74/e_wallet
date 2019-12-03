@@ -3,8 +3,12 @@ import { View, Image, StyleSheet } from "react-native"
 import { Card, CardItem, Left } from "native-base"
 import { icons, Text, Button } from "components"
 import { spacing, palette } from "theme"
+import { navigateService } from "utils"
 
 export class InfoPaymentCard extends Component {
+  goToBuyGameCardScreen = () => {
+    navigateService.navigate("buyGameCardScreen")
+  }
   render() {
     return (
       <Card style={styles.container}>
@@ -16,7 +20,13 @@ export class InfoPaymentCard extends Component {
           <Text tx="name" />
         </CardItem>
         <View style={{ justifyContent: "center" }}>
-          <Button bordered onPress={() => {}} tx="pay" transparent style={styles.styledButton} />
+          <Button
+            bordered
+            onPress={this.goToBuyGameCardScreen}
+            tx="pay"
+            transparent
+            style={styles.styledButton}
+          />
         </View>
       </Card>
     )
