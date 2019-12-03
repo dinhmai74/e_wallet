@@ -176,6 +176,9 @@ export const en = {
   trainTicket_children: "Children",
   trainTicket_passengersInfo: "Passenger Info",
   trainTicket_resellerInfo: "Reseller Info",
+  trainTicket_wallet: "Wallet",
+  trainTicket_info: "Ticket's info",
+
   buyTrainTicketSelectPosScreen_header: "Chose position",
   buyTrainTicketSelectPosScreen_carriage: "Carriage",
   buyTrainTicketSelectPosScreen_seatPos: "Seat position",
@@ -187,6 +190,7 @@ export const en = {
   buyTrainTicketConfirmPassengerInfoScreen_header: "Confirm passenger info",
   buyTrainTicketChoseTimeScreen_header: "Chose train",
   buyTrainTicketFillInfoScreen_header: "Fill info",
+  buyTrainTicketConfirmTransactionScreen_header: "Confirm transaction",
 
   //  pay internet transaction successfull
   paymentInfo: "Payment Info",
