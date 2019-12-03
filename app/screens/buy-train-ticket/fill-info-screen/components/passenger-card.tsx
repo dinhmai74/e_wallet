@@ -5,7 +5,7 @@ import { color, spacing } from "theme"
 import { StyleSheet } from "react-native"
 import { TouchableOpacity } from "react-native-gesture-handler"
 import { translate } from "i18n"
-import { InputCardItem } from "screens/buy-train-ticket-fill-info-screen/components/InputCardItem"
+import { InputCardItem } from "screens/buy-train-ticket/fill-info-screen/components/InputCardItem"
 
 export interface PassengerInfo {
   name: string

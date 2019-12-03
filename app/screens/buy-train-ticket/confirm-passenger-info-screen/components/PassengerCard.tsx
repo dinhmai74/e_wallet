@@ -2,8 +2,8 @@ import React from "react"
 import _ from "lodash"
 import { TextWithDecoration } from "components/text-with-decoration"
 import { Card } from "native-base"
-import CardItemWithText from "screens/buy-train-ticket-fill-info-screen/components/CardItemWithText"
-import { InfoFormVal } from "screens/buy-train-ticket-fill-info-screen"
+import CardItemWithText from "screens/buy-train-ticket/fill-info-screen/components/CardItemWithText"
+import { InfoFormVal } from "screens/buy-train-ticket/fill-info-screen"
 import { SizedBox } from "components"
 
 interface Props {

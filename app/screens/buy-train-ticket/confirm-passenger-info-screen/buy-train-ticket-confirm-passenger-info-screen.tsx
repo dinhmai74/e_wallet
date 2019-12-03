@@ -6,12 +6,12 @@ import _ from "lodash"
 import { Screen } from "components"
 import { color, spacing } from "theme"
 import { NavigationScreenProps } from "react-navigation"
-import { InfoFormVal, TrainTicketValueWithPos } from "screens/buy-train-ticket-fill-info-screen"
-import { TicketType, TotalTicket } from "screens/buy-train-ticket-screen"
+import { InfoFormVal, TrainTicketValueWithPos } from "screens/buy-train-ticket/fill-info-screen"
+import { TicketType, TotalTicket } from "screens/buy-train-ticket/buy-train-ticket-screen"
 import { AppLoading } from "components/app-loading"
 import { Card } from "native-base"
 import { PassengerCard } from "./components/PassengerCard"
-import { TrainInfoCard } from "screens/buy-train-ticket-confirm-passenger-info-screen/components/TrainInfoCard"
+import { TrainInfoCard } from "screens/buy-train-ticket/confirm-passenger-info-screen/components/TrainInfoCard"
 
 interface Props extends NavigationScreenProps<{}> {}
 

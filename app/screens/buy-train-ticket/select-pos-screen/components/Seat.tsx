@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { Text, View } from "components"
-import SeatIcon from "screens/buy-train-ticket_select_pos-screen/components/SeatIcon"
 import { SizedBox, showToast } from "components"
 import { metrics, color } from "theme"
 import { ScrollView } from "react-native"
+import SeatIcon from "screens/buy-train-ticket/select-pos-screen/components/SeatIcon"
 
 interface Props {
   selectedSeats: string[]

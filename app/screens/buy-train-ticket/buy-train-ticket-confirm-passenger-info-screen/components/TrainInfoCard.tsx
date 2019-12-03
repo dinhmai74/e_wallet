@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import { TrainTicketValueWithPos } from "screens/buy-train-ticket-fill-info-screen"
 import { Card, CardItem } from "native-base"
-import { Icon, Text, View, SizedBox } from "components"
-import { buyTrainTimeData } from "screens/buy-train-ticket-chose-time-screen"
+import { SizedBox, Icon, Text } from "components"
+import { TrainTicketValueWithPos } from "screens/buy-train-ticket/fill-info-screen"
+import { buyTrainTimeData } from "screens/buy-train-ticket/chose-time-screen"
 
 interface Props {
   data: TrainTicketValueWithPos
@@ -11,8 +11,6 @@ interface Props {
 export const TrainInfoCard = ({ data }: Props) => {
   const { destinationStation, originStation, selectedTrainId } = data
 
-  console.tlog("selectedTrainId", selectedTrainId)
-  console.tlog("buyTrainTimeData", buyTrainTimeData)
   const trainTimeInfo = buyTrainTimeData.filter(val => val.id === selectedTrainId)
   const { time, id, number } = trainTimeInfo[0]
 

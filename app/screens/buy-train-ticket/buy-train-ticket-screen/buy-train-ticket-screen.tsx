@@ -16,8 +16,8 @@ import { color, spacing } from "theme"
 import { Header, View } from "components"
 import StationModalContent from "./components/StationModalContent"
 import LeftText from "./components/LeftText"
-import CardItemWithModal from "screens/buy-train-ticket-screen/components/CardItemWithModal"
-import TotalTicketModal from "screens/buy-train-ticket-screen/components/TotalTicketModal"
+import CardItemWithModal from "screens/buy-train-ticket/buy-train-ticket-screen/components/CardItemWithModal"
+import TotalTicketModal from "screens/buy-train-ticket/buy-train-ticket-screen/components/TotalTicketModal"
 import { navigateService } from "utils"
 
 export interface BuyTrainTicketScreenProps extends NavigationScreenProps<{}> {}

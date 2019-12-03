@@ -3,12 +3,11 @@ import { StyleSheet, ViewStyle } from "react-native"
 import { ColDivider, Header, Screen, SizedBox, View, Button, showToast } from "components"
 import { color, spacing } from "theme"
 import { NavigationScreenProps } from "react-navigation"
-import Carriage from "screens/buy-train-ticket_select_pos-screen/components/Carriage"
-import Seat from "screens/buy-train-ticket_select_pos-screen/components/Seat"
-import { NoticeRow } from "screens/buy-train-ticket_select_pos-screen/components/NoticeRow"
-import Notice from "screens/buy-train-ticket_select_pos-screen/components/Notice"
 import { TotalRow } from "components/total-row"
 import { formatMoney, navigateService } from "utils"
+import Notice from "screens/buy-train-ticket/select-pos-screen/components/Notice"
+import Carriage from "screens/buy-train-ticket/select-pos-screen/components/Carriage"
+import Seat from "screens/buy-train-ticket/select-pos-screen/components/Seat"
 
 export interface BuyTrainTicketSelectPosScreenProps extends NavigationScreenProps<{}> {}
 
