@@ -200,5 +200,11 @@ export const en = {
   walletInfo: "Wallet Info",
   surPlus: "Surplus",
   payAnotherBill: "Pay another bill",
+
+  // buy game card screen
+  buyGameCardTitle: "Buy game card",
+  nameCardTest: "Buy Garena card",
+  discount: "DISCOUNT 3%",
+  nameCardTestt: "Buy Garena carddddd",
 }
 export type TranslateKey = keyof typeof en
