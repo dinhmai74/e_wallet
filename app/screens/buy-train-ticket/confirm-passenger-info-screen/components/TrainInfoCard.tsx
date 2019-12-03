@@ -11,8 +11,6 @@ interface Props {
 export const TrainInfoCard = ({ data }: Props) => {
   const { destinationStation, originStation, selectedTrainId } = data
 
-  console.tlog("selectedTrainId", selectedTrainId)
-  console.tlog("buyTrainTimeData", buyTrainTimeData)
   const trainTimeInfo = buyTrainTimeData.filter(val => val.id === selectedTrainId)
   const { time, id, number } = trainTimeInfo[0]
 
