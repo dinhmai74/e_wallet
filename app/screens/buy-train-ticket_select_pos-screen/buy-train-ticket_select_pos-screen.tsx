@@ -43,7 +43,7 @@ export const BuyTrainTicketSelectPosScreen = (props: BuyTrainTicketSelectPosScre
     [setSeatVal],
   )
 
-  const totalMoney = formatMoney(seatVal.length * formVal.seatType * 300000, 0)
+  const totalMoney = seatVal.length * formVal.seatType * 300000
 
   return (
     <View full>
@@ -63,7 +63,7 @@ export const BuyTrainTicketSelectPosScreen = (props: BuyTrainTicketSelectPosScre
       <View style={styles.footer}>
         <Notice />
         <SizedBox h={2} />
-        <TotalRow value={totalMoney} />
+        <TotalRow value={`${totalMoney}`} />
         <SizedBox h={4} />
         <Button
           tx={"common_confirm"}

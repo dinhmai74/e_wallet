@@ -34,7 +34,6 @@ export function Button({
 
   return (
     <NBButton disabled={disabled} style={[viewStyle]} {...rest}>
-      <AppLoading color={loadingColor} style={styles.loading} />
       {content}
     </NBButton>
   )

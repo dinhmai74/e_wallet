@@ -184,7 +184,7 @@ export const en = {
   buyTrainTicketSelectPosScreen_wasBooked: "Was booked",
   buyTrainTicketSelectPosScreen_yourSelectingWasBooked: "You selected a booked seat",
   buyTrainTicketSelectPosScreen_youHaveSelectedSufficient: "You have selected sufficient seat",
-
+  buyTrainTicketConfirmPassengerInfoScreen_header: "Confirm passenger info",
   buyTrainTicketChoseTimeScreen_header: "Chose train",
   buyTrainTicketFillInfoScreen_header: "Fill info",
 

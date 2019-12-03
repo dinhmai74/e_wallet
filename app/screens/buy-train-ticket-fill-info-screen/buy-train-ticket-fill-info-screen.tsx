@@ -12,6 +12,7 @@ import { TrainFormValues } from "screens/buy-train-ticket-screen"
 import { Formik, FormikProps } from "formik"
 import { ResellerCard } from "screens/buy-train-ticket-fill-info-screen/components/reseller-card"
 import * as Yup from "yup"
+import { navigateService } from "utils"
 
 interface Props extends NavigationScreenProps<{}> {}
 
@@ -20,7 +21,7 @@ const ROOT: ViewStyle = {
   paddingHorizontal: spacing[6],
 }
 
-interface TrainTicketValueWithPos extends TrainFormValues {
+export interface TrainTicketValueWithPos extends TrainFormValues {
   seatVal: string[]
   selectedTrainId: string
 }
@@ -129,7 +130,7 @@ export class BuyTrainTicketFillInfoScreen extends React.Component<Props, State> 
   }
 
   render() {
-    const { initFormVal, showPassengersCardContent } = this.state
+    const { data, initFormVal, showPassengersCardContent } = this.state
     const buttonTx = showPassengersCardContent ? "common_hide" : "common_show"
     return (
       <Formik
@@ -159,8 +160,6 @@ export class BuyTrainTicketFillInfoScreen extends React.Component<Props, State> 
       >
         {(bag: FormikProps<InfoFormVal>) => {
           const { errors, values, touched } = bag
-          console.tlog("touched", touched)
-          console.tlog("errors.res", errors.reseller)
           const disableButton = !_.isEmpty(errors)
           let touchedReseller =
             touched.reseller.passport &&
@@ -197,7 +196,17 @@ export class BuyTrainTicketFillInfoScreen extends React.Component<Props, State> 
               </ScrollView>
               <SizedBox h={8} />
               <View preset={"footer"}>
-                <Button tx={"confirm"} full disabled={disableButton} />
+                <Button
+                  tx={"confirm"}
+                  full
+                  disabled={disableButton}
+                  onPress={() => {
+                    navigateService.navigate("BuyTrainTicketConfirmPassengerInfoScreen", {
+                      ticketInfo: data,
+                      passengerInfo: values,
+                    })
+                  }}
+                />
               </View>
             </View>
           )
