@@ -9,6 +9,7 @@ import { TextWithDecoration } from "components/text-with-decoration"
 import { WalletSelection } from "components/wallet-selection"
 import InfoCard from "screens/buy-train-ticket/confirm-transaction-screen/InfoCard"
 import { AppLoading } from "components/app-loading"
+import { navigateService } from "utils"
 
 interface Props extends NavigationScreenProps<{}> {}
 
@@ -51,7 +52,7 @@ export class BuyTrainTicketConfirmTransactionScreen extends React.Component<Prop
           <TextWithDecoration tx="trainTicket_wallet" />
           <WalletSelection />
           <SizedBox h={6} />
-          <TextWithDecoration tx="trainTicket_info" />
+          <TextWithDecoration tx="trainTicket_ticketInfo" />
           <SizedBox h={6} />
           {!ticketInfo || !passengerInfo ? (
             <AppLoading isVisible={true} />
@@ -64,7 +65,17 @@ export class BuyTrainTicketConfirmTransactionScreen extends React.Component<Prop
           <SizedBox h={4} />
           <TotalRow value={`600000`} />
           <SizedBox h={4} />
-          <Button full tx="common_confirm" bordered />
+          <Button
+            full
+            tx="common_confirm"
+            bordered
+            onPress={() =>
+              navigateService.navigate("BuyTrainTicketSuccessfulScreen", {
+                ticketInfo,
+                passengerInfo,
+              })
+            }
+          />
         </View>
       </View>
     )
