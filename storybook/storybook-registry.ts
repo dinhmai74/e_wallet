@@ -1,3 +1,5 @@
+require("../app/components/wallet-info/wallet-info.story")
+require("../app/components/transaction-successful-card/transaction-successful-card.story")
 require("../app/components/text-input-with-icon/text-input-with-icon.story")
 require("../app/components/app-input-hideo/app-input-hideo.story")
 require("../app/components/app-input-field/app-input-field.story")

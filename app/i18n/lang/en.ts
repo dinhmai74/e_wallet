@@ -14,6 +14,10 @@ export const en = {
   common_info: "Information....",
   common_show: "Show",
   common_hide: "Hide",
+  common_buyAnotherTicket: "Buy another ticket",
+  common_type: "Type",
+  common_timeStart: "Time start",
+  common_trainNumber: "Train number",
   errors_invalidEmail: "Invalid email address.",
 
   // screen header
@@ -177,7 +181,8 @@ export const en = {
   trainTicket_passengersInfo: "Passenger Info",
   trainTicket_resellerInfo: "Reseller Info",
   trainTicket_wallet: "Wallet",
-  trainTicket_info: "Ticket's info",
+  trainTicket_walletInfo: "Wallet info",
+  trainTicket_ticketInfo: "Ticket info",
 
   buyTrainTicketSelectPosScreen_header: "Chose position",
   buyTrainTicketSelectPosScreen_carriage: "Carriage",
@@ -191,6 +196,7 @@ export const en = {
   buyTrainTicketChoseTimeScreen_header: "Chose train",
   buyTrainTicketFillInfoScreen_header: "Fill info",
   buyTrainTicketConfirmTransactionScreen_header: "Confirm transaction",
+  buyTrainTicketSuccessfulScreen_header : "Purchased ticket info",
 
   //  pay internet transaction successfull
   paymentInfo: "Payment Info",

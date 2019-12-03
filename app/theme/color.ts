@@ -87,6 +87,7 @@ export const color = {
   textDescription: palette.blueGrey,
   textGrey: palette.brownGrey,
   textBlack: palette.greyishBrown,
+  textGreen: palette.green,
   /**
    * Secondary information.
    */
@@ -116,4 +117,5 @@ export const color = {
   chosen: palette.orange,
   busy: palette.navy,
   empty: palette.grey,
+
 }

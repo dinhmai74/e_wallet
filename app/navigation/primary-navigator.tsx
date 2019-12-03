@@ -19,6 +19,7 @@ import {
   BuyTrainTicketFillInfoScreen,
   BuyTrainTicketSelectPosScreen,
   BuyTrainTicketConfirmPassengerInfoScreen,
+  BuyTrainTicketSuccessfulScreen
 } from "screens/buy-train-ticket"
 import PayInternetSuccessfull from "screens/pay-internet/pay-internet-successfull/pay-internet-successfull"
 import { BuyGameCardScreen } from "screens/buy-game-card-screen/buy-game-card-screen"
@@ -50,6 +51,7 @@ const PrimaryRouteConfig = {
   BuyTrainTicketChoseTimeScreen,
   BuyTrainTicketFillInfoScreen,
   BuyTrainTicketConfirmTransactionScreen,
+  BuyTrainTicketSuccessfulScreen,
   transactionSuccess: TransactionSuccessfull,
   payInternetSuccessfull: PayInternetSuccessfull,
   buyGameCardScreen: BuyGameCardScreen,
