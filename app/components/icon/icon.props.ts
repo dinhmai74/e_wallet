@@ -17,6 +17,7 @@ export interface IconProps {
    * The name of the icon
    */
   icon?: IconTypes
+  source?: any
 
   /**
    * size of icon

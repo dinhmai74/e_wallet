@@ -88,11 +88,13 @@ export const color = {
   textGrey: palette.brownGrey,
   textBlack: palette.greyishBrown,
   textGreen: palette.green,
+  textWhite: palette.white,
   /**
    * Secondary information.
    */
   dim: palette.lightGrey,
   border: palette.paleGrey,
+  borderBlue: palette.blueGrey,
   /**
    * Error messages and icons.
    */
@@ -117,5 +119,6 @@ export const color = {
   chosen: palette.orange,
   busy: palette.navy,
   empty: palette.grey,
+
 
 }
