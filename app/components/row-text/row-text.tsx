@@ -17,17 +17,16 @@ export interface RowTextProps {
  */
 export function RowText(props: RowTextProps) {
   // grab the props
-  const { left, right, style, ...rest } = props
-  const textStyle = {}
+  const { left, right, style, leftColor, rightColor } = props
 
   return (
-    <View preset={"row"} style={{ justifyContent: "space-between" }}>
+    <View preset={"row"} style={{ justifyContent: "space-between", ...style }}>
       {/*
       // @ts-ignore*/}
-      <Text tx={left} />
+      <Text tx={left} color={leftColor} />
       {/*
       // @ts-ignore*/}
-      <Text tx={right} />
+      <Text tx={right} color={rightColor} />
     </View>
   )
 }

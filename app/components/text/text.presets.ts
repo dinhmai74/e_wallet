@@ -29,7 +29,7 @@ export const presets = {
   /**
    * Large headers.
    */
-  header: { ...BOLD, fontSize: 24, color: color.textNavy } as TextStyle,
+  header: { ...BASE, fontSize: 24, color: color.textNavy } as TextStyle,
 
   /**
    * title card item

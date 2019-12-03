@@ -1,3 +1,4 @@
+require("../app/components/app-loading/app-loading.story")
 require("../app/components/text-input-with-icon/text-input-with-icon.story")
 require("../app/components/app-input-hideo/app-input-hideo.story")
 require("../app/components/app-input-field/app-input-field.story")

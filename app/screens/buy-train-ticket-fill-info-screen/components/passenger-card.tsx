@@ -23,7 +23,6 @@ export const PassengerCard = ({ showContent, label, value, onChange }: Props) =>
   const [show, setShow] = useState(false)
   const [name, setname] = useState("")
   const [passport, setpassport] = useState("")
-  const refPassport = useRef()
   useEffect(() => {
     setShow(showContent)
   }, [showContent])
@@ -32,6 +31,7 @@ export const PassengerCard = ({ showContent, label, value, onChange }: Props) =>
     return (
       <>
         <InputCardItem
+          value={value.name}
           placeholder={translate("common_name")}
           onChangeText={val => {
             setname(val)
@@ -39,6 +39,7 @@ export const PassengerCard = ({ showContent, label, value, onChange }: Props) =>
           }}
         />
         <InputCardItem
+          value={value.passport}
           placeholder={translate("common_passport")}
           onChangeText={val => {
             setpassport(val)
@@ -51,9 +52,7 @@ export const PassengerCard = ({ showContent, label, value, onChange }: Props) =>
 
   const renderCollapse = () => {
     let tx = "common_info"
-    // eslint-disable-next-line react/prop-types
     if (value.name) {
-      // eslint-disable-next-line react/prop-types
       tx = `${value.name} - ${value.passport}`
     }
     return (

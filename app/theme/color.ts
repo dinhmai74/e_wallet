@@ -26,6 +26,7 @@ export const palette = {
   blueGrey: "#91a2bc",
   battleshipGrey36: "rgba(120, 120, 128, 0.36)",
   shadowBlack: "#000000",
+  dimBlack: "rgba(0,0,0,0.3)",
 }
 
 /**
@@ -74,6 +75,7 @@ export const color = {
   brandDark: palette.black,
   brandLight: palette.whiteSmoke,
   divider: palette.blueGrey,
+  backdrop: palette.dimBlack,
   /**
    * A subtle color used for borders and lines.
    */
