@@ -196,7 +196,7 @@ export const en = {
   buyTrainTicketChoseTimeScreen_header: "Chose train",
   buyTrainTicketFillInfoScreen_header: "Fill info",
   buyTrainTicketConfirmTransactionScreen_header: "Confirm transaction",
-  buyTrainTicketSuccessfulScreen_header : "Purchased ticket info",
+  buyTrainTicketSuccessfulScreen_header: "Purchased ticket info",
 
   //  pay internet transaction successfull
   paymentInfo: "Payment Info",
@@ -211,6 +211,13 @@ export const en = {
   surPlus: "Surplus",
   payAnotherBill: "Pay another bill",
 
+  // buy phone card screen
+  buyPhoneCard: "Buy phone card",
+  card: "Card",
+  chooseProvider: "Choose Provider",
+  denominations: "Denominations",
+  amount: "Amount",
+  buy: "Buy",
   // buy game card screen
   buyGameCardTitle: "Buy game card",
   nameCardTest: "Buy Garena card",
