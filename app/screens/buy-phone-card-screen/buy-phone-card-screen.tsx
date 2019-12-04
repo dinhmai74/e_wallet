@@ -1,7 +1,7 @@
 import * as React from "react"
 import { observer } from "mobx-react"
 import { ViewStyle } from "react-native"
-import { Text } from "components"
+import { Text, Header } from "components"
 import { Screen } from "components"
 import { spacing } from "theme"
 import { NavigationScreenProps } from "react-navigation"
@@ -22,7 +22,7 @@ export class BuyPhoneCardScreen extends React.Component<BuyPhoneCardScreenProps,
   render() {
     return (
       <Screen style={ROOT} preset="scroll">
-        <Text preset="header" tx="promotion_header" style={{ paddingTop: spacing[6] }} />
+        <Header headerTx="buyPhoneCard" style={{ paddingTop: spacing[6] }} leftIcon="back" />
         <PromotionSearch />
         <CategoryCard />
         <DenominationCard />
