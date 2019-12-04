@@ -21,7 +21,7 @@ export class Indicator extends Component<Props, {}> {
               { backgroundColor: palette.blueGrey, marginRight: spacing[2], height: 1 },
             ]}
           ></View>
-          <Text tx={title} style={{ paddingRight: spacing[2] }} t1 />
+          <Text tx={title} style={{ paddingRight: spacing[2] }} t1 color={palette.blueGrey} />
           <View style={[style, { backgroundColor: palette.blueGrey, height: 1 }]}></View>
         </View>
       </View>
@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingLeft: spacing[1],
-    paddingBottom: spacing[4],
   },
   title: {
     paddingRight: spacing[2],

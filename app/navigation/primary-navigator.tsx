@@ -15,6 +15,7 @@ import { ConfirmTrasactionPayInternet } from "screens/pay-internet/confirm-trans
 import { BuyTrainTicketScreen } from "screens/buy-train-ticket-screen"
 import { BuyTrainTicketSelectPosScreen } from "screens/buy-train-ticket_select_pos-screen"
 import PayInternetSuccessfull from "screens/pay-internet/pay-internet-successfull/pay-internet-successfull"
+import { BuyPhoneCardScreen } from "screens/buy-phone-card-screen"
 // import TransactionSuccessfull from "components/transaction-successfull/transaction-successful"
 
 const BottomTabConfig = {
@@ -41,6 +42,7 @@ const PrimaryRouteConfig = {
   BuyTrainTicketSelectPosScreen,
   transactionSuccess: TransactionSuccessfull,
   payInternetSuccessfull: PayInternetSuccessfull,
+  buyPhoneCardScreen: BuyPhoneCardScreen,
 }
 
 export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {

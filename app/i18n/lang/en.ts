@@ -180,5 +180,13 @@ export const en = {
   walletInfo: "Wallet Info",
   surPlus: "Surplus",
   payAnotherBill: "Pay another bill",
+
+  // buy phone card screen
+  buyPhoneCard: "Buy phone card",
+  card: "Card",
+  chooseProvider: "Choose Provider",
+  denominations: "Denominations",
+  amount: "Amount",
+  buy: "Buy",
 }
 export type TranslateKey = keyof typeof en

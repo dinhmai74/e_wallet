@@ -47,6 +47,7 @@ const validationSchema = Yup.object().shape({
     return moment(val).isValid()
   }),
   returnDate: Yup.string().test("chose return date", "notChose_returnDate", function(val) {
+  // @ts-ignore
     if (this.parent.ticketType === TicketType.oneWay) return true
     return moment(val).isValid()
   }),
