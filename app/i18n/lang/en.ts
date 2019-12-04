@@ -4,6 +4,20 @@ export const en = {
   common_back: "Back",
   common_logout: "Log out",
   common_confirm: "Confirm",
+  common_total: "Total",
+  common_time: "Time",
+  common_number: "Number",
+  common_name: "Name",
+  common_passport: "CMND/ Passport / GLPX",
+  common_email: "Email",
+  common_phone: "Phone number",
+  common_info: "Information....",
+  common_show: "Show",
+  common_hide: "Hide",
+  common_buyAnotherTicket: "Buy another ticket",
+  common_type: "Type",
+  common_timeStart: "Time start",
+  common_trainNumber: "Train number",
   errors_invalidEmail: "Invalid email address.",
 
   // screen header
@@ -164,9 +178,25 @@ export const en = {
   trainTicket_passengers: "Passengers",
   trainTicket_adult: "Adult",
   trainTicket_children: "Children",
+  trainTicket_passengersInfo: "Passenger Info",
+  trainTicket_resellerInfo: "Reseller Info",
+  trainTicket_wallet: "Wallet",
+  trainTicket_walletInfo: "Wallet info",
+  trainTicket_ticketInfo: "Ticket info",
+
   buyTrainTicketSelectPosScreen_header: "Chose position",
   buyTrainTicketSelectPosScreen_carriage: "Carriage",
   buyTrainTicketSelectPosScreen_seatPos: "Seat position",
+  buyTrainTicketSelectPosScreen_yourChose: "Your chose",
+  buyTrainTicketSelectPosScreen_empty: "Empty",
+  buyTrainTicketSelectPosScreen_wasBooked: "Was booked",
+  buyTrainTicketSelectPosScreen_yourSelectingWasBooked: "You selected a booked seat",
+  buyTrainTicketSelectPosScreen_youHaveSelectedSufficient: "You have selected sufficient seat",
+  buyTrainTicketConfirmPassengerInfoScreen_header: "Confirm passenger info",
+  buyTrainTicketChoseTimeScreen_header: "Chose train",
+  buyTrainTicketFillInfoScreen_header: "Fill info",
+  buyTrainTicketConfirmTransactionScreen_header: "Confirm transaction",
+  buyTrainTicketSuccessfulScreen_header: "Purchased ticket info",
 
   //  pay internet transaction successfull
   paymentInfo: "Payment Info",
@@ -188,5 +218,10 @@ export const en = {
   denominations: "Denominations",
   amount: "Amount",
   buy: "Buy",
+  // buy game card screen
+  buyGameCardTitle: "Buy game card",
+  nameCardTest: "Buy Garena card",
+  discount: "DISCOUNT 3%",
+  nameCardTestt: "Buy Garena carddddd",
 }
 export type TranslateKey = keyof typeof en

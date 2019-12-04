@@ -103,7 +103,7 @@ export default (variables /* : * */ = variable) => {
       "NativeBase.IconNB": {
         color: variables.brandLight,
       },
-      backgroundColor: variables.buttonDisabledBg,
+      opacity: 0.3,
     },
     ".bordered": {
       ".dark": {

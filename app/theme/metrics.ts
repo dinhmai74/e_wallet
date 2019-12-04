@@ -23,17 +23,30 @@ export const metrics = {
     thick: 3,
   },
   icon: {
+    // 14
     tiny: 14,
+    // 18
     small: 18,
+    // 24
     normal: 24,
+    // 32
     big: 32,
+    // 45
     large: 45,
+    // 50
     xl: 50,
   },
   images: {
+    // 20
     small: 20,
+    // 40
     medium: 40,
+    // 60
     large: 60,
+    // 120
+    xl: 120,
+    // 200
+    giant: 200,
     logoWidth: width * 0.6,
     logoHeight: width * 0.7,
     smallLogoWidth: width * 0.25,

@@ -39,6 +39,9 @@ export const icons = {
   iconVietnammobile: require("./icon-vietnammobile.png"),
   iconDecrement: require("./icon-decrement.png"),
   iconIncrement: require("./icon-add.png"),
+  mapDark: require("./mapDark.png"),
+  iconLongRightArrow: require("./icons8-long_arrow_right.png"),
+  iconClose: require("./cross.png"),
 }
 
 export type IconTypes = keyof typeof icons

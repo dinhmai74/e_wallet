@@ -26,6 +26,7 @@ export const palette = {
   blueGrey: "#91a2bc",
   battleshipGrey36: "rgba(120, 120, 128, 0.36)",
   shadowBlack: "#000000",
+  dimBlack: "rgba(0,0,0,0.3)",
 }
 
 /**
@@ -66,6 +67,7 @@ export const color = {
   primary: palette.warmPink,
   primaryDarker: palette.orangeDarker,
   secondary: palette.navy,
+  description: palette.blueGrey,
   brandInfo: palette.blue,
   brandSuccess: palette.green,
   brandDanger: palette.realOrange,
@@ -73,6 +75,7 @@ export const color = {
   brandDark: palette.black,
   brandLight: palette.whiteSmoke,
   divider: palette.blueGrey,
+  backdrop: palette.dimBlack,
   /**
    * A subtle color used for borders and lines.
    */
@@ -84,6 +87,7 @@ export const color = {
   textDescription: palette.blueGrey,
   textGrey: palette.brownGrey,
   textBlack: palette.greyishBrown,
+  textGreen: palette.green,
   /**
    * Secondary information.
    */
@@ -113,4 +117,5 @@ export const color = {
   chosen: palette.orange,
   busy: palette.navy,
   empty: palette.grey,
+
 }

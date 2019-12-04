@@ -1,14 +1,24 @@
 import * as React from "react"
-import { ActivityIndicator, ActivityIndicatorProperties } from "react-native"
-import { color } from "theme"
+import { ActivityIndicator } from "react-native"
+import Modal from "react-native-modal"
+import { color as Colors } from "theme"
 
-export function AppLoading(props: ActivityIndicatorProperties) {
-  // grab the props
+export interface AppLoadingProps {
+  isVisible: boolean
+  color?: string
+  hasBackdrop?: boolean
+}
 
-  return <ActivityIndicator {...props} />
+export function AppLoading(props: AppLoadingProps) {
+  const { isVisible, color, ...rest } = props
+
+  return (
+    <Modal isVisible={isVisible} backdropColor={Colors.backdrop} {...rest}>
+      <ActivityIndicator size="large" color={color} />
+    </Modal>
+  )
 }
 
 AppLoading.defaultProps = {
-  color: color.palette.white,
-  size: "small",
+  color: Colors.primary,
 }

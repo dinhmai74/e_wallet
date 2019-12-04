@@ -10,7 +10,7 @@ storiesOf("SizedBox", module)
   .add("Style Presets", () => (
     <Story>
       <UseCase text="Primary" usage="The primary.">
-        <SizedBox />
+        <SizedBox h={1} />
       </UseCase>
     </Story>
   ))

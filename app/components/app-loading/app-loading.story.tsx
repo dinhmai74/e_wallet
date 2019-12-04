@@ -10,7 +10,7 @@ storiesOf("AppLoading", module)
   .add("Style Presets", () => (
     <Story>
       <UseCase text="Primary" usage="The primary.">
-        <AppLoading />
+        <AppLoading isVisible={true} />
       </UseCase>
     </Story>
   ))

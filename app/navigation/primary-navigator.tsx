@@ -12,10 +12,18 @@ import ConfirmCashIn from "screens/confirm-cash-in/confirm-cash-in"
 import { ScanScreen } from "screens/scan-screen"
 import { PayInternet } from "screens/pay-internet/pay-internet"
 import { ConfirmTrasactionPayInternet } from "screens/pay-internet/confirm-transaction"
-import { BuyTrainTicketScreen } from "screens/buy-train-ticket-screen"
-import { BuyTrainTicketSelectPosScreen } from "screens/buy-train-ticket_select_pos-screen"
+import {
+  BuyTrainTicketScreen,
+  BuyTrainTicketConfirmTransactionScreen,
+  BuyTrainTicketChoseTimeScreen,
+  BuyTrainTicketFillInfoScreen,
+  BuyTrainTicketSelectPosScreen,
+  BuyTrainTicketConfirmPassengerInfoScreen,
+  BuyTrainTicketSuccessfulScreen,
+} from "screens/buy-train-ticket"
 import PayInternetSuccessfull from "screens/pay-internet/pay-internet-successfull/pay-internet-successfull"
 import { BuyPhoneCardScreen } from "screens/buy-phone-card-screen"
+import { BuyGameCardScreen } from "screens/buy-game-card-screen/buy-game-card-screen"
 // import TransactionSuccessfull from "components/transaction-successfull/transaction-successful"
 
 const BottomTabConfig = {
@@ -40,9 +48,15 @@ const PrimaryRouteConfig = {
   confrimTransactionPayInternet: ConfirmTrasactionPayInternet,
   BuyTrainTicketScreen,
   BuyTrainTicketSelectPosScreen,
+  BuyTrainTicketConfirmPassengerInfoScreen,
+  BuyTrainTicketChoseTimeScreen,
+  BuyTrainTicketFillInfoScreen,
+  BuyTrainTicketConfirmTransactionScreen,
+  BuyTrainTicketSuccessfulScreen,
   transactionSuccess: TransactionSuccessfull,
   payInternetSuccessfull: PayInternetSuccessfull,
   buyPhoneCardScreen: BuyPhoneCardScreen,
+  buyGameCardScreen: BuyGameCardScreen,
 }
 
 export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {

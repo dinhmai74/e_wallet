@@ -12,7 +12,7 @@ import { Provider } from "mobx-react"
 import { BackButtonHandler } from "navigation/back-button-handler"
 import { contains } from "ramda"
 import { DEFAULT_NAVIGATION_CONFIG } from "navigation/navigation-config"
-import { Container, StyleProvider } from "native-base"
+import { Container, StyleProvider, Root } from "native-base"
 import getTheme from "../native-base-theme/components"
 import material from "../native-base-theme/variables/material"
 import Ionicons from "react-native-vector-icons/Ionicons"
@@ -101,15 +101,17 @@ export class App extends React.Component<{}, AppState> {
     const { navigationStore, ...otherStores } = rootStore
 
     return (
-      <StyleProvider style={getTheme(material)}>
-        <Container>
-          <Provider rootStore={rootStore} navigationStore={navigationStore} {...otherStores}>
-            <BackButtonHandler canExit={this.canExit}>
-              <StatefulNavigator />
-            </BackButtonHandler>
-          </Provider>
-        </Container>
-      </StyleProvider>
+      <Root>
+        <StyleProvider style={getTheme(material)}>
+          <Container>
+            <Provider rootStore={rootStore} navigationStore={navigationStore} {...otherStores}>
+              <BackButtonHandler canExit={this.canExit}>
+                <StatefulNavigator />
+              </BackButtonHandler>
+            </Provider>
+          </Container>
+        </StyleProvider>
+      </Root>
     )
   }
 }
