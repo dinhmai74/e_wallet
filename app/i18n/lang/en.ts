@@ -216,5 +216,11 @@ export const en = {
   nameCardTest: "Buy Garena card",
   discount: "DISCOUNT 3%",
   nameCardTestt: "Buy Garena carddddd",
+
+  // movie
+  movie_releaseDate: "Release date:",
+  movie_2d: "2D",
+  movie_digital: "Digital",
+  movie_minutes: "minutes",
 }
 export type TranslateKey = keyof typeof en

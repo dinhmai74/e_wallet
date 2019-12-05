@@ -48,7 +48,7 @@ export const metrics = {
     // 200
     giant: 200,
     // 500
-    sliderHeight: 180,
+    sliderHeight: 140,
     // 150
     sliderWidth: 300,
     logoWidth: width * 0.6,
@@ -57,8 +57,11 @@ export const metrics = {
     smallLogoHeight: (width * 0.25) / 2.3,
     advertiseWidth: width - spacing[6] * 2,
     advertiseHeight: 120,
+    movieAvt:{
+      width: 100,
+      height: 150
+    },
     bankCardWidth: 300,
     bankCardHeight: 175,
-
   },
 }

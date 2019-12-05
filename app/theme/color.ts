@@ -119,6 +119,5 @@ export const color = {
   chosen: palette.orange,
   busy: palette.navy,
   empty: palette.grey,
-
-
+  black: palette.black,
 }
