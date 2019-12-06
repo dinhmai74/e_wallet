@@ -20,7 +20,9 @@ export class CategoryCard extends Component {
     const { selected } = this.state
     return (
       <View>
-        <Indicator title="chooseProvider" style={{ width: 80 }} />
+        <View style={{ paddingTop: spacing[5] }}>
+          <Indicator title="chooseProvider" style={{ width: 80 }} />
+        </View>
         <ScrollView horizontal style={{ marginTop: spacing[4] }}>
           <Card style={styles.styleCard}>
             <Button transparent bordered={!selected} onPress={this.handlePress.bind(this)}>

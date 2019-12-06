@@ -1,7 +1,7 @@
 import * as React from "react"
 import { observer } from "mobx-react"
 import { ViewStyle } from "react-native"
-import { Text, Header, Button, View, TransactionDetail } from "components"
+import { Text, Header, Button, View, TransactionDetail, TransactionSuccessfull } from "components"
 import { Screen } from "components"
 import { spacing } from "theme"
 import NoteBuyPhoneCardInfo from "screens/buy-phone-card-screen/buy-phone-card-info-screen/note-buy-phone-card-info"
@@ -11,31 +11,25 @@ const ROOT: ViewStyle = {}
 
 // @inject("mobxstuff")
 @observer
-export class BuyPhoneCardInfoScreen extends React.Component<any, {}> {
-  goTransactionSuccess = () => {
-    const numberCard = this.props.navigation.getParam("numberCard", {})
-    const amount = this.props.navigation.getParam("selected", {})
-    const totalCost = this.props.navigation.getParam("totalCost", {})
-    navigateService.navigate("buyPhoneCardSuccessScreen", {
-      numberCard: numberCard,
-      amount: amount,
-      totalCost: totalCost,
-    })
+export class BuyPhoneCardSuccessScreen extends React.Component<any, {}> {
+  goBackBuyCard = () => {
+    navigateService.navigate("buyPhoneCardScreen")
   }
 
   render() {
     const numberCard = this.props.navigation.getParam("numberCard", {})
-    const amount = this.props.navigation.getParam("selected", {})
+    const amount = this.props.navigation.getParam("amount", {})
     const totalCost = this.props.navigation.getParam("totalCost", {})
     return (
       <Screen style={ROOT} preset="scroll">
         <Header
-          headerTx="buyPhoneCardInfoTitle"
+          headerTx="titleBuyPhoneCardSuccessScreen"
           style={{ paddingTop: spacing[6] }}
           leftIcon="back"
         />
-        <TransactionDetail
-          labelLineFirst="common_type"
+        <TransactionSuccessfull
+          titleInfo="transactionInfo"
+          labelLineFirst="transactionType"
           titleLineFirst="buyPhoneCard"
           labelLineSecond="denominations"
           titleLineSecond={numberCard}
@@ -46,9 +40,8 @@ export class BuyPhoneCardInfoScreen extends React.Component<any, {}> {
           labelLineFifth="totalCost"
           titleLineFifth={totalCost}
         />
-        <NoteBuyPhoneCardInfo />
-        <View style={{ paddingHorizontal: spacing[5], paddingTop: spacing[7] }}>
-          <Button tx="confirm" full bordered onPress={this.goTransactionSuccess} />
+        <View style={{ paddingHorizontal: spacing[5], paddingTop: spacing[6] }}>
+          <Button tx="buyAnotherCard" full bordered onPress={this.goBackBuyCard} />
         </View>
       </Screen>
     )

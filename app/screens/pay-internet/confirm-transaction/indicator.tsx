@@ -30,9 +30,7 @@ export class Indicator extends Component<Props, {}> {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingTop: spacing[6],
-  },
+  container: {},
   wraper: {
     flexDirection: "row",
     alignItems: "center",
