@@ -13,12 +13,12 @@ import { translate } from "i18n"
 import styled from "styled-components"
 import { generalDateFormat } from "utils"
 
-enum MovieDimensionType {
+export enum MovieDimensionType {
   "2D",
   "3D",
 }
 
-enum MovieDigitalType {
+export enum MovieDigitalType {
   Digital,
 }
 
@@ -30,19 +30,22 @@ export interface MovieNormalCardProps {
   id: string
   title: string
   dimensionType: MovieDimensionType
-  digitalType: MovieDimensionType
+  digitalType: MovieDigitalType
   duration: number
   source: any
   stars: number
   releaseDate: string | Date | Moment
   onPress?: (id: string) => void
+  containerStyle?: any
 }
 
 const calcStars = point => {
-  let divideResult = 10 / point
-  let fullStars = Math.floor(5 - divideResult)
-  let noneStars = Math.floor(divideResult)
-  let halfStars = 5 - fullStars - noneStars
+  const maxStars = 5
+  let divideResult = point / 2
+  let fullStars = Math.floor(divideResult)
+  let halfStars = Math.ceil(divideResult - fullStars)
+  let noneStars = maxStars - fullStars - halfStars
+
   return { fullStars, noneStars, halfStars }
 }
 
@@ -58,10 +61,11 @@ export function MovieNormalCard(props: MovieNormalCardProps) {
     digitalType,
     dimensionType,
     duration,
+    containerStyle,
   } = props
-  const infoText = `${dimensionType} | ${MovieDimensionType[digitalType]} | ${duration} ${translate(
-    "movie_minutes",
-  )}`
+  const infoText = `${MovieDimensionType[dimensionType]}  |  ${
+    MovieDigitalType[digitalType]
+  }  |  ${duration} ${translate("movie_minutes")}`
 
   const starsRow = () => {
     let result = calcStars(stars)
@@ -76,13 +80,13 @@ export function MovieNormalCard(props: MovieNormalCardProps) {
       renderStars.push("iconEmptyStar")
     }
     return (
-      <View preset={"row"}>
-        <Icon icon={"iconMovieCheck"} />
+      <View preset={"row"} style={{ alignItems: "center" }}>
+        <Icon icon={"iconMovieCheck"} size={metrics.icon.small} />
         <SizedBox h={1} w={2} />
         <Text color={color.chosen}>{stars}</Text>
         {renderStars.map((val, key) => (
           <React.Fragment key={key}>
-            <SizedBox h={1} w={1}/>
+            <SizedBox h={1} w={1} />
             <Icon icon={val} size={metrics.icon.small} />
           </React.Fragment>
         ))}
@@ -90,10 +94,12 @@ export function MovieNormalCard(props: MovieNormalCardProps) {
     )
   }
 
-  // @ts-ignore
   return (
     <TouchableOpacity onPress={() => onPress(id)}>
-      <View style={styles.container}>
+      <View
+        // @ts-ignore
+        style={[styles.container, containerStyle]}
+      >
         <Image style={styles.avt} source={source} />
 
         <View style={styles.content}>

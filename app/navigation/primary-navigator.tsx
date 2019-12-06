@@ -23,6 +23,7 @@ import {
 } from "screens/buy-train-ticket"
 import PayInternetSuccessfull from "screens/pay-internet/pay-internet-successfull/pay-internet-successfull"
 import { BuyGameCardScreen } from "screens/buy-game-card-screen/buy-game-card-screen"
+import { BuyTrainMovieTicketGeneralScreen } from "screens/buy-train-movie-ticket/general-screen"
 // import TransactionSuccessfull from "components/transaction-successfull/transaction-successful"
 
 const BottomTabConfig = {
@@ -55,6 +56,7 @@ const PrimaryRouteConfig = {
   transactionSuccess: TransactionSuccessfull,
   payInternetSuccessfull: PayInternetSuccessfull,
   buyGameCardScreen: BuyGameCardScreen,
+  BuyTrainMovieTicketGeneralScreen
 }
 
 export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {

@@ -19,12 +19,12 @@ export interface AppSearchBarProps {
  */
 export function AppSearchBar(props: AppSearchBarProps) {
   // grab the props
-  const { placeholder, style, ...rest } = props
+  const { placeholder, style,containerStyle, ...rest } = props
 
   const placeholderTx = translate(placeholder)
 
   return (
-    <View style={[styles.container]}>
+    <View style={[styles.container, containerStyle]}>
       <Icon icon={"iconSearch"} />
       <SizedBox h={1} w={3} />
       <TextInput

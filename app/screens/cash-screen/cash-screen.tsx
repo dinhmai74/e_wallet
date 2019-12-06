@@ -51,7 +51,7 @@ class CashScreen extends Component {
   render() {
     return (
       <View full>
-        <Header leftIcon={"back"} headerTx="cash" style={{ height: 5 }} />
+        <Header leftIcon={"back"} headerTx="cash" />
         <Screen style={ROOT} backgroundColor={color.transparent} preset="scroll">
           <TabView
             navigationState={this.state}
