@@ -14,7 +14,7 @@ const ROOT: ImageStyle = {
 }
 
 export function Icon(props: IconProps) {
-  const { style: styleOverride, icon, size, bg, color, containerStyle, onPress } = props
+  const { style: styleOverride, icon, size, bg, color, containerStyle, onPress, source} = props
   const imageSize = size || metrics.icon.normal
   const sizeImage = { width: imageSize, height: imageSize }
   const bgImage = bg && { backgroundColor: bg }
@@ -30,7 +30,7 @@ export function Icon(props: IconProps) {
         <Image
           style={style}
           // @ts-ignore
-          source={icons[icon]}
+          source={source || icons[icon]}
         />
       </View>
     )

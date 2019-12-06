@@ -230,5 +230,13 @@ export const en = {
   totalCost: "Total cost",
   transactionDetail: "Transaction's detail",
   noteBuyPhoneCardInfo: "Note: Please check your info carefully before going next step.",
+  // movie
+  movie_releaseDate: "Release date:",
+  movie_2d: "2D",
+  movie_digital: "Digital",
+  movie_minutes: "minutes",
+  movie_nowShowing: "Now showing",
+  movieTicket: "Movie ticket",
+  buyTrainMovieTicketGeneralScreen_header: "Buy movie ticket",
 }
 export type TranslateKey = keyof typeof en

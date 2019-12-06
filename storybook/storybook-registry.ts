@@ -1,3 +1,6 @@
+require("../app/components/buy-movie-ticket/movie-normal-card/movie-normal-card.story")
+require("../app/components/buy-movie-ticket/hot-firm-card/hot-firm-card.story")
+require("../app/components/app-search-bar/app-search-bar.story")
 require("../app/components/wallet-info/wallet-info.story")
 require("../app/components/transaction-successful-card/transaction-successful-card.story")
 require("../app/components/text-input-with-icon/text-input-with-icon.story")

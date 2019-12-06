@@ -6,6 +6,7 @@ import { color } from "theme"
 export interface DividerProps extends EProps {
   color?: string
   height?: number
+  width?: any
 }
 
 export class Divider extends React.PureComponent<DividerProps> {
@@ -16,9 +17,14 @@ export class Divider extends React.PureComponent<DividerProps> {
 
   render() {
     // grab the props
-    const { height, color, style, ...rest } = this.props
+    const { height, color, style, width, ...rest } = this.props
     const dStyle = mergeAll(
-      flatten([color && { backgroundColor: color }, height && { height }, style]),
+      flatten([
+        color && { backgroundColor: color },
+        height && { height },
+        width && { width },
+        style,
+      ]),
     )
 
     return <EDivider style={dStyle} {...rest} />
