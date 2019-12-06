@@ -36,17 +36,9 @@ export class PayInternetSuccessfull extends Component {
             labelLineFourth="total"
             titleLineFourth="moneyTest"
           />
-          <Button
-            bordered
-            full
-            onPress={this.goBackPayAnotherBill}
-            style={{
-              // backgroundColor: palette.warmPink,
-              marginHorizontal: spacing[4],
-            }}
-          >
-            <Text tx="payAnotherBill" style={{ color: palette.warmPink }} />
-          </Button>
+          <View style={{ paddingHorizontal: spacing[5], paddingTop: spacing[8] }}>
+            <Button bordered full onPress={this.goBackPayAnotherBill} tx="payAnotherBill" />
+          </View>
         </Screen>
       </View>
     )

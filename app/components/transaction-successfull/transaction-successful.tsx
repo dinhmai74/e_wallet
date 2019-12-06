@@ -4,8 +4,9 @@ import { Card, CardItem, Left, Right } from "native-base"
 import { icons } from "components/icon"
 import Indicator from "screens/pay-internet/confirm-transaction/indicator"
 import { Text } from "components/text"
-import { palette, spacing } from "theme"
+import { palette, spacing, color, metrics } from "theme"
 import { TranslateKey } from "i18n/lang"
+import { Icon, SizedBox } from "components"
 
 interface Props {
   titleInfo?: TranslateKey
@@ -39,18 +40,20 @@ export class TransactionSuccessfull extends Component<Props, {}> {
       styleCard,
     } = this.props
     return (
-      <View style={{ paddingBottom: spacing[9] }}>
-        <Card style={styles.styledCard}>
-          <Image source={icons.iconSucces} style={{ paddingBottom: spacing[3] }} />
-          <Text
-            tx="transactionSuccessfull"
-            b1
-            color={palette.green}
-            style={{ paddingBottom: spacing[4] }}
-          />
+      <View>
+        <Card style={{ marginHorizontal: spacing[4] }}>
+          <CardItem style={styles.item}>
+            <Icon icon={"iconSucces"} size={metrics.images.xl} style={{ alignSelf: "center" }} />
+          </CardItem>
+          <CardItem style={styles.item}>
+            <Text tx={"transactionSuccessfull"} color={color.textGreen} />
+          </CardItem>
+          <SizedBox h={4} />
         </Card>
         <CardItem style={styles.wrapperContent}>
-          <Indicator title={titleInfo} style={{ width: 82 }} />
+          <View style={{ paddingTop: spacing[5], paddingBottom: spacing[5] }}>
+            <Indicator title={titleInfo} style={{ width: 82 }} />
+          </View>
           <View style={styles.inforDetail}>
             <Left>
               <Text tx={labelLineFirst} b1 color={palette.blueGrey} />
@@ -93,7 +96,9 @@ export class TransactionSuccessfull extends Component<Props, {}> {
               </Right>
             </View>
           )}
-          <Indicator title="walletInfo" style={{ width: 105 }} />
+          <View style={{ paddingTop: spacing[2], paddingBottom: spacing[3] }}>
+            <Indicator title="walletInfo" style={{ width: 105 }} />
+          </View>
           <View style={styles.inforDetail}>
             <Left>
               <Text tx="surPlus" b1 color={palette.blueGrey} />
@@ -120,6 +125,9 @@ const styles = StyleSheet.create({
   inforDetail: {
     flexDirection: "row",
     paddingBottom: spacing[2],
+  },
+  item: {
+    justifyContent: "center",
   },
 })
 

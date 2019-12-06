@@ -154,7 +154,9 @@ export class DenominationCard extends Component {
     return (
       <View full>
         <Screen style={ROOT}>
-          <Indicator title="denominations" style={{ width: 85 }} />
+          <View style={{ paddingTop: spacing[5] }}>
+            <Indicator title="denominations" style={{ width: 85 }} />
+          </View>
           <View style={styles.wraper}>
             {data.map((data, i) => {
               // This will render a row for each data element.

@@ -230,6 +230,11 @@ export const en = {
   totalCost: "Total cost",
   transactionDetail: "Transaction's detail",
   noteBuyPhoneCardInfo: "Note: Please check your info carefully before going next step.",
+
+  // buy phone card success screen
+  titleBuyPhoneCardSuccessScreen: "Buy card success",
+  buyAnotherCard: "Buy another card",
+
   // movie
   movie_releaseDate: "Release date:",
   movie_2d: "2D",
