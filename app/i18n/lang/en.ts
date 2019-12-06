@@ -224,6 +224,12 @@ export const en = {
   discount: "DISCOUNT 3%",
   nameCardTestt: "Buy Garena carddddd",
 
+  // buy phone card info screen
+  buyPhoneCardInfoTitle: "Transaction info",
+  transactionFee: "Transaction fee",
+  totalCost: "Total cost",
+  transactionDetail: "Transaction's detail",
+  noteBuyPhoneCardInfo: "Note: Please check your info carefully before going next step.",
   // movie
   movie_releaseDate: "Release date:",
   movie_2d: "2D",
@@ -231,6 +237,6 @@ export const en = {
   movie_minutes: "minutes",
   movie_nowShowing: "Now showing",
   movieTicket: "Movie ticket",
-  buyTrainMovieTicketGeneralScreen_header: "Buy movie ticket"
+  buyTrainMovieTicketGeneralScreen_header: "Buy movie ticket",
 }
 export type TranslateKey = keyof typeof en
