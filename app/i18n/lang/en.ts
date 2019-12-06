@@ -223,5 +223,12 @@ export const en = {
   nameCardTest: "Buy Garena card",
   discount: "DISCOUNT 3%",
   nameCardTestt: "Buy Garena carddddd",
+
+  // buy phone card info screen
+  buyPhoneCardInfoTitle: "Transaction info",
+  transactionFee: "Transaction fee",
+  totalCost: "Total cost",
+  transactionDetail: "Transaction's detail",
+  noteBuyPhoneCardInfo: "Note: Please check your info carefully before going next step.",
 }
 export type TranslateKey = keyof typeof en
