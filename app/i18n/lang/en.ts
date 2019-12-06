@@ -223,5 +223,14 @@ export const en = {
   nameCardTest: "Buy Garena card",
   discount: "DISCOUNT 3%",
   nameCardTestt: "Buy Garena carddddd",
+
+  // movie
+  movie_releaseDate: "Release date:",
+  movie_2d: "2D",
+  movie_digital: "Digital",
+  movie_minutes: "minutes",
+  movie_nowShowing: "Now showing",
+  movieTicket: "Movie ticket",
+  buyTrainMovieTicketGeneralScreen_header: "Buy movie ticket"
 }
 export type TranslateKey = keyof typeof en

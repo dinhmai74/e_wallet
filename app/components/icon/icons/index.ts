@@ -42,6 +42,15 @@ export const icons = {
   mapDark: require("./mapDark.png"),
   iconLongRightArrow: require("./icons8-long_arrow_right.png"),
   iconClose: require("./cross.png"),
+  iconSearch: require("./icons8-search.png"),
+  bgMantera: require("./mantera.png"),
+  avtNextThreeDays: require('./next_three_days.png'),
+  iconArrowRight: require("./arrow-right.png"),
+  iconMovieCheck: require("./icon_movie_check.png"),
+  iconFullStar: require("./Star.png"),
+  iconEmptyStar: require("./star_empty.png"),
+  iconHalfStar: require("./half_star.png"),
+  iconMovie: require("./movie.png")
 }
 
 export type IconTypes = keyof typeof icons

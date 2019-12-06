@@ -41,7 +41,11 @@ export class BuyTrainTicketSuccessfulScreen extends React.Component<Props, {}> {
     console.tlog("passenger", passengerInfo)
     return (
       <View full>
-        <Header headerTx={"buyTrainTicketSuccessfulScreen_header"} leftIcon={"iconClose"} />
+        <Header
+          headerTx={"buyTrainTicketSuccessfulScreen_header"}
+          leftIcon={"iconClose"}
+          onLeftPress={() => navigateService.navigate("BuyTrainTicketScreen")}
+        />
 
         <Screen style={ROOT} preset="scroll">
           <SizedBox h={6} />

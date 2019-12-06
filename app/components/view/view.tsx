@@ -49,8 +49,9 @@ export class View extends React.PureComponent<ViewProps> {
   render() {
     // grab the props
     const { full, children, flex, preset, style: styleOverride, ...rest } = this.props
-    const style = mergeAll(
-      flatten([viewPresets[preset], full && { flex: 1 }, flex && { flex }, styleOverride]),
+    let style: any
+    style = mergeAll(
+      flatten([ viewPresets[preset], full && {flex: 1}, flex && {flex}, styleOverride ]),
     )
     return (
       // @ts-ignore
