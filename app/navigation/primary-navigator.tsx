@@ -25,8 +25,8 @@ import PayInternetSuccessfull from "screens/pay-internet/pay-internet-successful
 import { BuyPhoneCardScreen } from "screens/buy-phone-card-screen"
 import { BuyGameCardScreen } from "screens/buy-game-card-screen/buy-game-card-screen"
 import { BuyPhoneCardInfoScreen } from "screens/buy-phone-card-screen/buy-phone-card-info-screen"
-import { BuyTrainMovieTicketGeneralScreen } from "screens/buy-train-movie-ticket/general-screen"
 import { BuyPhoneCardSuccessScreen } from "screens/buy-phone-card-screen/buy-phone-card-success-screen"
+import { BuyMovieTicketGeneralScreen } from "screens/buy-movie-ticket/general-screen"
 // import TransactionSuccessfull from "components/transaction-successfull/transaction-successful"
 
 const BottomTabConfig = {
@@ -61,7 +61,7 @@ const PrimaryRouteConfig = {
   buyPhoneCardScreen: BuyPhoneCardScreen,
   buyGameCardScreen: BuyGameCardScreen,
   buyPhoneCardInfoScreen: BuyPhoneCardInfoScreen,
-  BuyTrainMovieTicketGeneralScreen,
+  BuyMovieTicketGeneralScreen,
   buyPhoneCardSuccessScreen: BuyPhoneCardSuccessScreen,
 }
 

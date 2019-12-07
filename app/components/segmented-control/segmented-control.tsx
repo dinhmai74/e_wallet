@@ -57,7 +57,7 @@ export class SegmentedControl extends Component<Props, State> {
         title: "movieTicket",
         icon: "iconMovie",
         color: "#000000",
-        route: "BuyTrainMovieTicketGeneralScreen",
+        route: "BuyMovieTicketGeneralScreen",
       },
     ],
     [
