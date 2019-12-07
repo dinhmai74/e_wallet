@@ -4,12 +4,12 @@ import { HotMovieData, MovieModel } from "components/buy-movie-ticket/hot-firm-c
 import _ from "lodash"
 import { MovieNormalCard } from "components/buy-movie-ticket/movie-normal-card"
 import { spacing } from "theme"
+import { navigateService } from "utils"
 
 interface Props {}
 
-const MovieData: MovieModel[] = [
+export const MovieData: MovieModel[] = [
   ...HotMovieData,
-
   {
     id: "5202faa8-d326-4633-8fbf-61c741ed833f",
     title: "Extra ordinary",
@@ -22,19 +22,25 @@ const MovieData: MovieModel[] = [
     duration: 180,
     releaseDate: "2020-01-18",
     stars: 8,
+    director: "Lettie Wise",
+    cast:
+      "Lenora Boyd, Cynthia Flowers, Harold Reeves, Antonio Warner, Isabelle Wallace,Harriett Sanchez , Connor Wolfe, Winifred Lyons, Ann Wallace",
   },
   {
-    id:"97dab2ea-62dc-4817-8e2b-dfbefd02cb76",
+    id: "97dab2ea-62dc-4817-8e2b-dfbefd02cb76",
     title: "Charlies angles",
     source: {
       uri:
-      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/christmas-day-movies-charlies-angels-1567050231.jpg?crop=0.9891196834817012xw:1xh;center,top&resize=480:*"
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/christmas-day-movies-charlies-angels-1567050231.jpg?crop=0.9891196834817012xw:1xh;center,top&resize=480:*",
     },
     digitalType: 0,
     dimensionType: 1,
     duration: 180,
     releaseDate: "2020-01-18",
     stars: 6,
+    director: "Jeff Taylor",
+    cast:
+      "Josie Lewis, Sally Maxwell, Aiden Ballard, Bertie Torres, Louise Lane,Bill Hunter , Callie Peters",
   },
 ]
 
@@ -42,7 +48,12 @@ export const GeneralCard = ({  }: Props) => {
   const renderMovies = () => {
     return _.map(MovieData, (movie: MovieModel, idx) => {
       return (
-        <MovieNormalCard containerStyle={{ marginVertical: spacing[4] }} key={idx} {...movie} />
+        <MovieNormalCard
+          onPress={id => navigateService.navigate("BuyMovieTicketDetailScreen", { id })}
+          containerStyle={{ marginVertical: spacing[4] }}
+          key={idx}
+          {...movie}
+        />
       )
     })
   }

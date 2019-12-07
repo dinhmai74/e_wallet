@@ -115,7 +115,7 @@ export default {
   CheckboxIconSize: 16,
   CheckboxIconMarginTop: 1,
   CheckboxFontSize: 17,
-  checkboxBgColor: Colors.white,
+  checkboxBgColor: palette.white,
   checkboxUnTickColor: Colors.dim,
   checkboxSize: 20,
   checkboxTickColor: Colors.primary,
@@ -248,15 +248,15 @@ export default {
   inverseSpinnerColor: "#1A191B",
 
   // Tab
-  tabDefaultBg: Colors.primary,
-  topTabBarTextColor: "#b3c7f9",
-  topTabBarActiveTextColor: palette.white,
+  tabDefaultBg: Colors.transparent,
+  topTabBarTextColor: Colors.textGrey,
+  topTabBarActiveTextColor: Colors.textNavy,
   topTabBarBorderColor: palette.white,
-  topTabBarActiveBorderColor: palette.white,
+  topTabBarActiveBorderColor: Colors.primary,
 
   // Tabs
-  tabBgColor: "#F8F8F8",
-  tabFontSize: 15,
+  tabBgColor: Colors.transparent,
+  tabFontSize: 18,
 
   // Text
   textColor: Colors.textNavy,

@@ -34,6 +34,7 @@ YellowBox.ignoreWarnings([
   "componentWillReceiveProps is deprecated",
   "componentWillUpdate is",
   "Deprecation",
+  "Task orph"
 ])
 
 /**

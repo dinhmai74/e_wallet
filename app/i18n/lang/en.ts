@@ -242,6 +242,12 @@ export const en = {
   movie_minutes: "minutes",
   movie_nowShowing: "Now showing",
   movieTicket: "Movie ticket",
+  movie_showTimes: "Show times",
+  movie_info: "Infomation",
+  movie_place: "Place: ",
+  movie_time: "Time: ",
+  movie_cast: "Cast : ",
+  movie_director: "Director : ",
   buyTrainMovieTicketGeneralScreen_header: "Buy movie ticket",
 }
 export type TranslateKey = keyof typeof en

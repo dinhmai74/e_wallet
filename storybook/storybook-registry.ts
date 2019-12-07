@@ -1,3 +1,8 @@
+require("../app/components/app-youtube/app-youtube.story")
+require("../app/components/buy-movie-ticket/movie-info-text/movie-info-text.story")
+require("../app/components/buy-movie-ticket/movie-place-row/movie-place-row.story")
+require("../app/components/buy-movie-ticket/movie-time-picker/movie-time-picker.story")
+require("../app/components/app-tabs/app-tabs.story")
 require("../app/components/buy-movie-ticket/movie-normal-card/movie-normal-card.story")
 require("../app/components/buy-movie-ticket/hot-firm-card/hot-firm-card.story")
 require("../app/components/app-search-bar/app-search-bar.story")

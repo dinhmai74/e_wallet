@@ -9,6 +9,7 @@ import { Header, SizedBox, View } from "components"
 import { AppSearchBar } from "components/app-search-bar"
 import { HotFirmCard } from "components/buy-movie-ticket/hot-firm-card"
 import { GeneralCard } from "screens/buy-movie-ticket/general-screen/components/general-card"
+import { navigateService } from "utils"
 
 export interface BuyMovieTicketGeneralScreenProps extends NavigationScreenProps<{}> {}
 
@@ -39,7 +40,9 @@ export class BuyMovieTicketGeneralScreen extends React.Component<
               placeholder={"Movie..."}
             />
             <SizedBox h={5} />
-            <HotFirmCard />
+            <HotFirmCard
+              onPress={id => navigateService.navigate("BuyMovieTicketDetailScreen", { id })}
+            />
             <SizedBox h={5} />
 
             <View style={ROOT}>
