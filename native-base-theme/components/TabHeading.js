@@ -28,7 +28,6 @@ export default (variables /* : * */ = variable) => {
     '.active': {
       'NativeBase.Text': {
         color: variables.topTabBarActiveTextColor,
-        fontWeight: '600'
       },
       'NativeBase.Icon': {
         color: variables.topTabBarActiveTextColor

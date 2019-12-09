@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Text } from "../text"
 import { View } from "components"
-import { formatMoney } from "utils"
+import { formatMoney, unitTx } from "utils"
 import { color } from "theme"
 
 export interface TotalRowProps {
@@ -22,7 +22,7 @@ export function TotalRow(props: TotalRowProps) {
       />
       <View preset={"row"}>
         <Text text={formatMoney(value, 0)} />
-        <Text text={"đ"} />
+        <Text text={unitTx} />
       </View>
     </View>
   )

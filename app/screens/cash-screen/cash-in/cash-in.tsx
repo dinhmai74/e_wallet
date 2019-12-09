@@ -4,7 +4,7 @@ import Amount from "screens/cash-screen/cash-in/amount"
 import ItemMoney from "screens/cash-screen/cash-in/item-money"
 import { palette, spacing } from "theme"
 import { Button, View, Screen, SizedBox } from "components"
-import { navigateService } from "utils"
+import { formatMoney, navigateService } from "utils"
 import produce from "immer"
 import { Footer } from "native-base"
 
@@ -14,35 +14,6 @@ const ROOT: ViewStyle = {
 }
 
 const data = [[10000, 20000], [50000, 100000], [200000, 500000]]
-
-// @ts-ignore
-function formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
-  try {
-    decimalCount = Math.abs(decimalCount)
-    decimalCount = isNaN(decimalCount) ? 2 : decimalCount
-
-    const negativeSign = amount < 0 ? "-" : ""
-
-    let i = parseInt((amount = Math.abs(Number(amount) || 0).toFixed(decimalCount))).toString()
-    let j = i.length > 3 ? i.length % 3 : 0
-
-    return (
-      negativeSign +
-      (j ? i.substr(0, j) + thousands : "") +
-      i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) +
-      // @ts-ignore
-      (decimalCount
-        ? decimal +
-          // @ts-ignore
-          Math.abs(amount - i)
-            .toFixed(decimalCount)
-            .slice(2)
-        : "")
-    )
-  } catch (e) {
-    console.log(e)
-  }
-}
 
 export class CashIn extends Component {
   state = {
@@ -135,4 +106,6 @@ const styles = StyleSheet.create({
   },
 })
 
+
 export default CashIn
+

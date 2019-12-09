@@ -32,6 +32,7 @@ export const icons = {
   add: require("./icon-add.png"),
   minus: require("./minus.png"),
   seat: require("./seat.png"),
+  seatCouple: require('./seat_couple.png'),
   iconSucces: require("./success.png"),
   iconViettel: require("./icon-viettel.png"),
   iconMobiPhone: require("./icon-mobifone.jpg"),
@@ -46,12 +47,17 @@ export const icons = {
   iconSearch: require("./icons8-search.png"),
   bgMantera: require("./mantera.png"),
   avtNextThreeDays: require("./next_three_days.png"),
-  iconArrowRight: require("./arrow-right.png"),
+  iconArrowRight: require("./icons8-forward.png"),
   iconMovieCheck: require("./icon_movie_check.png"),
   iconFullStar: require("./Star.png"),
   iconEmptyStar: require("./star_empty.png"),
   iconHalfStar: require("./half_star.png"),
   iconMovie: require("./movie.png"),
+  iconCompass: require("./icons8-compass.png"),
+  iconTime: require("./icons8-time.png"),
+  iconTicket: require("./icons8-ticket.png"),
+  iconExpandArrow: require("./icons8-expand_arrow.png"),
+  iconScreen: require("./icon_screen.png")
   iconGarena: require("./icon-garena.png"),
 }
 

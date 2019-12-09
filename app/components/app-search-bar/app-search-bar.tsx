@@ -19,13 +19,15 @@ export interface AppSearchBarProps {
  */
 export function AppSearchBar(props: AppSearchBarProps) {
   // grab the props
-  const { placeholder, style,containerStyle, ...rest } = props
+  const { placeholder, style, containerStyle, ...rest } = props
 
   const placeholderTx = translate(placeholder)
 
   return (
     <View style={[styles.container, containerStyle]}>
-      <Icon icon={"iconSearch"} />
+      <View style={{ justifyContent: "center" }}>
+        <Icon icon={"iconSearch"} style={styles.icon} />
+      </View>
       <SizedBox h={1} w={3} />
       <TextInput
         placeholder={placeholderTx}
@@ -42,6 +44,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingHorizontal: spacing[4],
     paddingVertical: spacing[2],
+    justifyContent: "center",
     borderWidth: 0.5,
     borderColor: color.borderBlue,
     borderRadius: 20,
@@ -49,5 +52,8 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     color: color.textNavy,
+  },
+  icon: {
+    alignSelf: "center",
   },
 })

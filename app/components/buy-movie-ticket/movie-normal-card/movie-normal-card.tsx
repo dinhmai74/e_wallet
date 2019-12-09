@@ -37,6 +37,9 @@ export interface MovieNormalCardProps {
   releaseDate: string | Date | Moment
   onPress?: (id: string) => void
   containerStyle?: any
+  haveDivider?: boolean
+  disabled?: boolean
+  [rest: string]: any
 }
 
 const calcStars = point => {
@@ -62,6 +65,8 @@ export function MovieNormalCard(props: MovieNormalCardProps) {
     dimensionType,
     duration,
     containerStyle,
+    haveDivider,
+    disabled,
   } = props
   const infoText = `${MovieDimensionType[dimensionType]}  |  ${
     MovieDigitalType[digitalType]
@@ -95,7 +100,7 @@ export function MovieNormalCard(props: MovieNormalCardProps) {
   }
 
   return (
-    <TouchableOpacity onPress={() => onPress(id)}>
+    <TouchableOpacity activeOpacity={disabled ? 1 : 0} onPress={() => onPress(id)}>
       <View
         // @ts-ignore
         style={[styles.container, containerStyle]}
@@ -117,17 +122,21 @@ export function MovieNormalCard(props: MovieNormalCardProps) {
           </View>
         </View>
 
-        <View style={styles.arrowWrapper}>
+        <View
+          // @ts-ignore
+          style={[styles.arrowWrapper, { opacity: haveDivider ? 1 : 0 }]}
+        >
           <Icon icon={"iconArrowRight"} />
         </View>
       </View>
-      <Divider width={"100%"} />
+      {haveDivider && <Divider width={"100%"} />}
     </TouchableOpacity>
   )
 }
 
 MovieNormalCard.defaultProps = {
   onPress: () => {},
+  haveDivider: true,
 }
 
 const styles = StyleSheet.create({

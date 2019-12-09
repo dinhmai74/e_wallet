@@ -125,7 +125,8 @@ export class Reactotron {
   constructor(config: ReactotronConfig = DEFAULT_REACTOTRON_CONFIG) {
     // merge the passed in config with some defaults
     this.config = {
-      host: "localhost",
+      // host: "localhost",
+      host: "192.168.1.11",
       useAsyncStorage: true,
       ...config,
       state: {

@@ -35,4 +35,7 @@ export interface IconProps {
   bg?: string
 
   onPress?: () => void
+  onLongPress?: () => void
+  disabled?: boolean
+  opacityDisable?: number
 }

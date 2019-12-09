@@ -19,6 +19,11 @@ export const en = {
   common_timeStart: "Time start",
   common_trainNumber: "Train number",
   errors_invalidEmail: "Invalid email address.",
+  common_emptySeat: "Empty seat",
+  common_emptySeatVIP: "Empty VIP seat",
+  common_wasBooked:"Was booked",
+  common_coupleSeat: "Couple seat",
+  common_screen: "Screen",
 
   // screen header
   homeScreen_header: "Home screen",
@@ -242,6 +247,16 @@ export const en = {
   movie_minutes: "minutes",
   movie_nowShowing: "Now showing",
   movieTicket: "Movie ticket",
+  movie_showTimes: "Show times",
+  movie_info: "Infomation",
+  movie_place: "Place: ",
+  movie_time: "Time: ",
+  movie_cast: "Cast : ",
+  movie_director: "Director : ",
+  movie_adult: "Adult 2D",
+  movie_adultVIP: "Adult 2D Vip",
+  movie_adultCouple: "Adult Couple 2D",
+  movie_choseSeat: "Chose seat:",
   buyTrainMovieTicketGeneralScreen_header: "Buy movie ticket",
 
   // select game card  screen

@@ -26,7 +26,7 @@ export function TransactionSuccessfulCard(props: TransactionSuccessfulCardProps)
       <CardItem style={styles.item}>
         <Text tx={"transactionSuccessfull"} color={color.textGreen} />
       </CardItem>
-      <SizedBox h={4}/>
+      <SizedBox h={4} />
     </Card>
   )
 }
