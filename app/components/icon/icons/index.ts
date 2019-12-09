@@ -58,6 +58,7 @@ export const icons = {
   iconTicket: require("./icons8-ticket.png"),
   iconExpandArrow: require("./icons8-expand_arrow.png"),
   iconScreen: require("./icon_screen.png")
+  iconGarena: require("./icon-garena.png"),
 }
 
 export type IconTypes = keyof typeof icons

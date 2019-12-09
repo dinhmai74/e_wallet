@@ -258,5 +258,9 @@ export const en = {
   movie_adultCouple: "Adult Couple 2D",
   movie_choseSeat: "Chose seat:",
   buyTrainMovieTicketGeneralScreen_header: "Buy movie ticket",
+
+  // select game card  screen
+  buyCardGarena: "Buy card garena",
+  textDiscount: "3% discount",
 }
 export type TranslateKey = keyof typeof en
