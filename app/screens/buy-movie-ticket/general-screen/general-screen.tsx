@@ -30,7 +30,7 @@ export class BuyMovieTicketGeneralScreen extends React.Component<
           headerTx={"buyTrainMovieTicketGeneralScreen_header"}
           leftIcon={"back"}
           style={{
-            marginBottom: spacing[2],
+            marginBottom: spacing[4],
           }}
         />
         <Screen preset="fixed">

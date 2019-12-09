@@ -48,9 +48,9 @@ export const metrics = {
     // 200
     giant: 200,
     // 500
-    sliderHeight: 300,
+    sliderHeight: scaledSize(250),
     // 150
-    sliderWidth: 200,
+    sliderWidth: scaledSize(200),
     logoWidth: width * 0.6,
     logoHeight: width * 0.7,
     smallLogoWidth: width * 0.25,
