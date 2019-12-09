@@ -9345,6 +9345,11 @@ url-parse-lax@^1.0.0:
   dependencies:
     prepend-http "^1.0.1"
 
+use-immer@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/use-immer/-/use-immer-0.3.5.tgz#e9aa5a4e82ef7eab4fced977d4daa1c3ef466725"
+  integrity sha512-0CNaJ/CtnF8/OmM4NBG7R0rhWMMQtgXPmWbakv8CK5z8dXeMaBYValFDXpkjBnToknjKJZuEPcoUZYd0rnQL2Q==
+
 use-subscription@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/use-subscription/-/use-subscription-1.0.0.tgz#25ed2161f75e9f6bd8c5c4acfe6087bfebfbfef4"

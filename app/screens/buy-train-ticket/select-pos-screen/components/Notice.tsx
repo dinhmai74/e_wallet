@@ -1,19 +1,18 @@
 import React, { useState } from "react"
 import { StyleSheet, Text, View } from "react-native"
 import { color, spacing } from "theme"
-import { SizedBox } from "components"
-import { NoticeRow } from "screens/buy-train-ticket/select-pos-screen/components/NoticeRow"
+import { SizedBox, NoticeSeatRow } from "components"
 
 interface Props {}
 
 export const Notice = ({  }: Props) => {
   return (
     <View style={styles.container}>
-      <NoticeRow color={color.empty} tx={"buyTrainTicketSelectPosScreen_empty"} />
+      <NoticeSeatRow color={color.empty} tx={"buyTrainTicketSelectPosScreen_empty"} />
       <SizedBox h={4} />
-      <NoticeRow color={color.busy} tx={"buyTrainTicketSelectPosScreen_wasBooked"} />
+      <NoticeSeatRow color={color.busy} tx={"buyTrainTicketSelectPosScreen_wasBooked"} />
       <SizedBox h={4} />
-      <NoticeRow color={color.chosen} tx={"buyTrainTicketSelectPosScreen_yourChose"} />
+      <NoticeSeatRow color={color.chosen} tx={"buyTrainTicketSelectPosScreen_yourChose"} />
     </View>
   )
 }

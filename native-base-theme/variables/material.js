@@ -168,7 +168,7 @@ export default {
 
   // Header
   toolbarBtnColor: palette.white,
-  toolbarDefaultBg: Colors.primary,
+  toolbarDefaultBg: palette.white,
   toolbarHeight: 70,
   toolbarSearchIconSize: 23,
   toolbarInputColor: palette.white,

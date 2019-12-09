@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { Text, View } from "react-native"
 import { MovieInfoText } from "components/buy-movie-ticket/movie-info-text"
-import { MovieModel } from "components/buy-movie-ticket/hot-firm-card"
 import { SizedBox } from "components"
 import { translate } from "i18n"
 import { color } from "theme"
+import { MovieModel } from "screens/buy-movie-ticket/MovieData"
 
 interface Props {
   movie: MovieModel

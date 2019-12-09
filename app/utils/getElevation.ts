@@ -1,6 +1,6 @@
 import { Platform } from "react-native"
 
-export const getElevation = (elevation: number = 0.5) => {
+export const getElevation = (elevation: number = 2) => {
   if (Platform.OS === "android") {
     return { elevation }
   }

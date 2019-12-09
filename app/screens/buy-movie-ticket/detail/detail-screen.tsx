@@ -3,8 +3,6 @@ import { observer } from "mobx-react"
 import { NavigationScreenProps } from "react-navigation"
 import { ViewStyle } from "react-native"
 import { View, Screen, Header, SizedBox, Text } from "components"
-import { MovieData } from "screens/buy-movie-ticket/general-screen/components/general-card"
-import { MovieModel } from "components/buy-movie-ticket/hot-firm-card"
 import { AppLoading } from "components/app-loading"
 import {
   MovieDigitalType,
@@ -17,6 +15,7 @@ import { spacing } from "theme"
 import { Card, Icon, Tab, TabHeading, Tabs } from "native-base"
 import { BuyMovieTicketShowTimeScreen } from "screens/buy-movie-ticket/detail/show-time-screen/show-time-screen"
 import { BuyMovieTicketInfoScreen } from "screens/buy-movie-ticket/detail/Info/buy-movie-ticket-info-screen"
+import { MovieData, MovieModel } from "screens/buy-movie-ticket/MovieData"
 
 interface Props extends NavigationScreenProps<{}> {}
 

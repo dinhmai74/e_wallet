@@ -2,7 +2,7 @@ import { presets } from "components/text/text.presets"
 import * as React from "react"
 import { StyleSheet, View as RNView, ViewStyle } from "react-native"
 import { flatten, mergeAll } from "ramda"
-import { spacing } from "theme"
+import { color, spacing } from "theme"
 
 export interface ViewProps {
   /**
@@ -34,6 +34,9 @@ export const viewPresets = {
     bottom: 0,
     padding: spacing[6],
   },
+  footerScroll:{
+    padding: spacing[6]
+  },
 }
 export type ViewType = keyof typeof viewPresets
 
@@ -51,7 +54,7 @@ export class View extends React.PureComponent<ViewProps> {
     const { full, children, flex, preset, style: styleOverride, ...rest } = this.props
     let style: any
     style = mergeAll(
-      flatten([ viewPresets[preset], full && {flex: 1}, flex && {flex}, styleOverride ]),
+      flatten([viewPresets[preset], full && { flex: 1 }, flex && { flex }, styleOverride]),
     )
     return (
       // @ts-ignore

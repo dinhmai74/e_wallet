@@ -10,9 +10,9 @@ interface Props {
   passengerCounts: number
 }
 
-let names: string[] =[]
+let names: string[] = []
 
-const StyledRowText=(props)=> <RowText leftColor={color.description} {...props}/>
+const StyledRowText = props => <RowText leftColor={color.description} {...props} />
 
 export const TicketInfo = ({ ticketInfo, passengerCounts }: Props) => {
   const {
@@ -27,7 +27,6 @@ export const TicketInfo = ({ ticketInfo, passengerCounts }: Props) => {
     totalTicket,
   } = ticketInfo
 
-
   const trainTimeInfo = buyTrainTimeData.filter(val => val.id === selectedTrainId)
   const { time, id, number } = trainTimeInfo[0]
 
@@ -41,7 +40,7 @@ export const TicketInfo = ({ ticketInfo, passengerCounts }: Props) => {
       <SizedBox h={2} />
       <StyledRowText left={"common_trainNumber"} right={number} />
       <SizedBox h={2} />
-      <StyledRowText left={"total"} right={formatMoney(passengerCounts*300000,0)+ "d"} />
+      <StyledRowText left={"total"} right={formatMoney(passengerCounts * 300000, 0) + "d"} />
     </>
   )
 }

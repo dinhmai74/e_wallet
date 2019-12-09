@@ -5,7 +5,7 @@ import { color, metrics, screen } from "theme"
 import { icons, Text } from "components"
 import { getElevation } from "utils"
 import { Moment } from "moment"
-import { MovieDigitalType, MovieDimensionType } from "components/buy-movie-ticket/movie-normal-card"
+import { HotMovieData, MovieModel } from "screens/buy-movie-ticket/MovieData"
 
 const itemWidth = metrics.images.sliderWidth
 const itemHeight = metrics.images.sliderHeight
@@ -13,66 +13,6 @@ const itemHeight = metrics.images.sliderHeight
 export interface HotFirmCardProps {
   onPress?: (id) => void
 }
-
-export interface MovieModel {
-  id: string
-  title: string
-  dimensionType: MovieDimensionType
-  digitalType: MovieDigitalType
-  duration: number
-  source: any
-  stars: number
-  releaseDate: string | Date | Moment
-  director: string
-  cast: string
-}
-
-export const HotMovieData: MovieModel[] = [
-  {
-    id: "49b48aa1-2261-4b30-9454-0da5ee37520f",
-    title: "Mantera",
-    source: icons.bgMantera,
-    digitalType: 0,
-    dimensionType: 0,
-    duration: 120,
-    releaseDate: "2020-01-20",
-    stars: 7,
-    director: "Ada Byrd",
-    cast:
-      "Marie Perkins, Lawrence Poole, Ola Jones, Rosa Harris, Cameron Pittman, Ronnie Blake, Lawrence Stewart, Ella Erickson, Donald Carr, Johnny Parsons",
-  },
-  {
-    id: "75a7c68b-533a-41dc-9c15-ad1afd846d3b",
-    title: "Moon light",
-    source: {
-      uri: "https://images-na.ssl-images-amazon.com/images/I/71rNJQ2g-EL._SY679_.jpg",
-    },
-    digitalType: 0,
-    dimensionType: 0,
-    duration: 180,
-    releaseDate: "2020-01-17",
-    stars: 9,
-    director: "Robert Goodman",
-    cast:
-      " Samuel Christensen, Essie Hunter, Andrew Vega, Hulda Phelps, Melvin Miles, Amelia Hansen, Rachel Barber, Maria McCormick, Flora Vega",
-  },
-  {
-    id: "f2ea7616-5ecc-468c-9fda-0ecd689490ac",
-    title: "Wow",
-    source: {
-      uri:
-        "https://cdn.cnn.com/cnnnext/dam/assets/140327194124-himym-cast-horizontal-large-gallery.jpg",
-    },
-    digitalType: 0,
-    dimensionType: 1,
-    duration: 180,
-    releaseDate: "2020-01-19",
-    stars: 10,
-    director: "Nathaniel Ingram",
-    cast:
-      "Hunter Moody, Justin McBride, Jerry Adams, Mabelle Williams, Ernest Klein, Ora James, Irene Spencer, Pauline Moran, Josephine Griffith, Betty Steele, Mark Wade",
-  },
-]
 
 export function HotFirmCard(props: HotFirmCardProps) {
   const { onPress } = props
@@ -129,7 +69,7 @@ export function HotFirmCard(props: HotFirmCardProps) {
   return (
     <View style={styles.container}>
       <Carousel
-        layout={"tinder"}
+        // layout={"tinder"}
         sliderWidth={metrics.screen.width}
         sliderHeight={itemHeight}
         containerCustomStyle={styles.slider}

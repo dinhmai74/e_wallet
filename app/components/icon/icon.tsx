@@ -14,7 +14,19 @@ const ROOT: ImageStyle = {
 }
 
 export function Icon(props: IconProps) {
-  const { style: styleOverride, icon, size, bg, color, containerStyle, onPress, source} = props
+  const {
+    style: styleOverride,
+    icon,
+    size,
+    bg,
+    color,
+    containerStyle,
+    onPress,
+    source,
+    onLongPress,
+    disabled,
+    opacityDisable,
+  } = props
   const imageSize = size || metrics.icon.normal
   const sizeImage = { width: imageSize, height: imageSize }
   const bgImage = bg && { backgroundColor: bg }
@@ -26,7 +38,7 @@ export function Icon(props: IconProps) {
   const renderIcon = () => {
     return (
       // @ts-ignore
-      <View style={[bgImage, containerStyle]}>
+      <View style={[bgImage, containerStyle, { opacity: disabled ? opacityDisable : 1 }]}>
         <Image
           style={style}
           // @ts-ignore
@@ -37,10 +49,19 @@ export function Icon(props: IconProps) {
   }
 
   const renderTouchableIcon = () => {
-    return <TouchableOpacity onPress={onPress}>{renderIcon()}</TouchableOpacity>
+    return (
+      <TouchableOpacity onPress={onPress} onLongPress={onLongPress}>
+        {renderIcon()}
+      </TouchableOpacity>
+    )
   }
 
-  if (onPress) return renderTouchableIcon()
+  if (onPress && !disabled) return renderTouchableIcon()
 
   return renderIcon()
+}
+
+Icon.defaultProps = {
+  disabled: false,
+  opacityDisable: 0.3,
 }

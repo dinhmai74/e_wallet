@@ -16,7 +16,7 @@ storiesOf("MoviePlaceRow", module)
           onPress={() => alert("123")}
           id={"64c12e38-e962-42e6-ac5b-e5c80735195e"}
           title={"nguyen du"}
-        />
+         times={[]}/>
       </UseCase>
     </Story>
   ))

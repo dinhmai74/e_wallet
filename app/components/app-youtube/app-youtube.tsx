@@ -2,7 +2,7 @@ import * as React from "react"
 import YouTube from "react-native-youtube"
 import { View } from "components"
 import { AppLoading } from "components/app-loading"
-import { ActivityIndicator, StyleSheet } from "react-native"
+import { ActivityIndicator, Platform, StyleSheet } from "react-native"
 import Modal from "react-native-modal"
 import { color } from "theme"
 import { useState } from "react"
@@ -19,11 +19,14 @@ export function AppYoutube(props: AppYoutubeProps) {
     <View>
       <YouTube
         videoId={videoId} // The YouTube video ID
+        apiKey={videoId}
         loop // control whether the video should loop when ended
         onReady={e => setReady(true)}
-        style={{ alignSelf: "stretch", height: 150, ...style }}
+        style={{ alignSelf: "stretch", height: 250, ...style }}
       />
-      {!ready && <ActivityIndicator size="large" color={color.primary} style={styles.loading} />}
+      {!ready && Platform.OS === "ios" && (
+        <ActivityIndicator size="large" color={color.primary} style={styles.loading} />
+      )}
     </View>
   )
 }
