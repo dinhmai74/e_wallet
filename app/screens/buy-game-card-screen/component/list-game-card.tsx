@@ -6,7 +6,8 @@ import { Icon, IconTypes, icons } from "components/icon"
 import { spacing, metrics } from "theme"
 import { TranslateKey } from "i18n/lang"
 import { Button, ItemGameCardProps, ItemGameCard } from "components"
-import { FlatList } from "react-native-gesture-handler"
+import { FlatList, ScrollView, TouchableOpacity } from "react-native-gesture-handler"
+import _ from "lodash"
 
 export const ListGameCardData: ItemGameCardProps[] = [
   { title: "nameCardTest", subTitle: "discount", imageUrl: icons.beef },
@@ -22,23 +23,20 @@ export const ListGameCardData: ItemGameCardProps[] = [
 
 export class ListGameCard extends Component {
   renderItem = () => {
-    return (
-      <ItemGameCard
-        title={ListGameCardData[0].title}
-        subTitle={ListGameCardData[0].subTitle}
-        imageUrl={ListGameCardData[0].imageUrl}
-      />
-    )
+    return _.map(ListGameCardData, (gameCard: ItemGameCardProps, idx) => {
+      return (
+        <ItemGameCard
+          key={idx}
+          title={gameCard.title}
+          subTitle={gameCard.subTitle}
+          imageUrl={gameCard.imageUrl}
+        />
+      )
+    })
   }
+
   render() {
-    return (
-      <FlatList
-        data={ListGameCardData}
-        renderItem={this.renderItem}
-        keyExtractor={(item, index) => index.toString()}
-        style={{ paddingHorizontal: spacing[4] }}
-      />
-    )
+    return <ScrollView>{this.renderItem()}</ScrollView>
   }
 }
 

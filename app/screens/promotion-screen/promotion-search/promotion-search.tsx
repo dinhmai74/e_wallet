@@ -6,7 +6,7 @@ import { View } from "react-native"
 export class PromotionSearch extends Component {
   render() {
     return (
-      <View style={{ paddingHorizontal: spacing[3] }}>
+      <View style={{ paddingHorizontal: spacing[3], paddingBottom: spacing[5] }}>
         <Item rounded style={{ paddingHorizontal: spacing[3] }}>
           <Icon name="ios-search" style={{ color: color.line }} />
           <Input

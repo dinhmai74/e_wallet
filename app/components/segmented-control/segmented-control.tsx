@@ -36,10 +36,10 @@ export class SegmentedControl extends Component<Props, State> {
       },
       {
         id: 1,
-        title: "reCharge_mobile",
+        title: "buyGameCardTitle",
         icon: "rechargeMobile",
         color: "#009ea6",
-        route: "home",
+        route: "buyGameCardScreen",
       },
     ],
     [

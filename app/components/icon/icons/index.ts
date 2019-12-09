@@ -52,6 +52,7 @@ export const icons = {
   iconEmptyStar: require("./star_empty.png"),
   iconHalfStar: require("./half_star.png"),
   iconMovie: require("./movie.png"),
+  iconGarena: require("./icon-garena.png"),
 }
 
 export type IconTypes = keyof typeof icons
