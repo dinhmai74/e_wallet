@@ -8,6 +8,7 @@ import {
   ItemGameCard,
   ItemGameCardProps,
   Header,
+  SizedBox,
 } from "components"
 import { color, spacing, palette } from "theme"
 import { ViewStyle, StatusBar, Platform, StyleSheet } from "react-native"
@@ -22,15 +23,15 @@ const ROOT: ViewStyle = {
 }
 
 export class BuyGameCardScreen extends Component {
-  goToConfirmTransaction = () => {
-    navigateService.navigate("confrimTransactionPayInternet")
-  }
   render() {
     return (
       <View full>
         <Header headerTx="buyGameCardTitle" leftIcon="back" />
-        <PromotionSearch />
-        <ListGameCard />
+        <Screen>
+          <SizedBox h={5}/>
+          <PromotionSearch />
+          <ListGameCard />
+        </Screen>
       </View>
     )
   }

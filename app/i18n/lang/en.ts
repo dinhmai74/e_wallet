@@ -1,3 +1,5 @@
+
+
 export const en = {
   common_ok: "OK!",
   common_cancel: "Cancel",
@@ -268,5 +270,10 @@ export const en = {
   // select game card  screen
   buyCardGarena: "Buy card garena",
   textDiscount: "3% discount",
+
+  // transfer to phone number
+  recent: "Recent",
+  AccountInfo: "Account Info: ",
+  message: "Message: "
 }
 export type TranslateKey = keyof typeof en

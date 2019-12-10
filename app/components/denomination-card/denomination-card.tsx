@@ -1,14 +1,12 @@
 import React, { Component } from "react"
 import { StyleSheet, ViewStyle } from "react-native"
-import Amount from "screens/cash-screen/cash-in/amount"
-import ItemMoney from "screens/cash-screen/cash-in/item-money"
 import { palette, spacing } from "theme"
 import { Button, View, Screen, SizedBox, Text, icons, Icon } from "components"
 import { navigateService } from "utils"
 import produce from "immer"
 import { Footer, Left, Right } from "native-base"
 import Indicator from "screens/pay-internet/confirm-transaction/indicator"
-import { thisExpression } from "@babel/types"
+
 
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,
@@ -46,7 +44,12 @@ function formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
   }
 }
 
-export class DenominationCard extends Component {
+interface Props {
+  titlePhoneCard?: string
+  titleGameCard?: string
+}
+
+export class DenominationCard extends Component<Props, {}> {
   state = {
     selected: -1,
     numberCard: 0,
@@ -144,11 +147,22 @@ export class DenominationCard extends Component {
   goBuyPhoneCardInfoScreen = () => {
     const { numberCard, selected } = this.state
     const totalCost = formatMoney(numberCard * selected, 0)
-    navigateService.navigate("buyPhoneCardInfoScreen", {
-      selected: formatMoney(numberCard, 0),
-      totalCost: totalCost,
-      numberCard: formatMoney(selected, 0),
-    })
+    const { titleGameCard, titlePhoneCard } = this.props
+    if (titlePhoneCard) {
+      navigateService.navigate("buyPhoneCardInfoScreen", {
+        selected: formatMoney(numberCard, 0),
+        totalCost: totalCost,
+        numberCard: formatMoney(selected, 0),
+        type: "Buy phone card",
+      })
+    } else if (titleGameCard) {
+      navigateService.navigate("buyPhoneCardInfoScreen", {
+        selected: formatMoney(numberCard, 0),
+        totalCost: totalCost,
+        numberCard: formatMoney(selected, 0),
+        type: "Buy card garena",
+      })
+    }
   }
   render() {
     return (
@@ -175,7 +189,12 @@ export class DenominationCard extends Component {
           {this.renderAmount()}
           {this.renderTotal()}
           <View style={{ paddingTop: spacing[4] }}>
-            <Button tx="buy" full bordered onPress={this.goBuyPhoneCardInfoScreen} />
+            <Button
+              tx="buy"
+              full
+              bordered
+              onPress={this.goBuyPhoneCardInfoScreen}
+            />
           </View>
         </Screen>
       </View>

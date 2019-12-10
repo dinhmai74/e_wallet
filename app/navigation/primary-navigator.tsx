@@ -1,4 +1,4 @@
-import { FooterTab, TransactionSuccessfull } from "components"
+import { FooterTab, TransactionSuccessfull, SuccessBuyCardScreen } from "components"
 import { HomeScreen } from "screens/home-screen"
 import { PromotionScreen } from "screens/promotion-screen"
 import { createStackNavigator } from "react-navigation-stack"
@@ -33,8 +33,10 @@ import {
   BuyMovieTicketConfirmTransactionScreen,
   BuyMovieTicketTransactionSuccessfulScreen,
 } from "screens/buy-movie-ticket"
+
 import { SelectGameCardScreen } from "screens/buy-game-card-screen/select-game-card-screen"
-// import TransactionSuccessfull from "components/transaction-successfull/transaction-successful"
+import { InfoBuyCardScreen } from "components/info-buy-card-screen/info-buy-card-screen"
+import { ConfirmTransferPhoneNumber } from "screens/transfer/confirm-transfer-phone-number"
 
 const BottomTabConfig = {
   home: HomeScreen,
@@ -67,14 +69,15 @@ const PrimaryRouteConfig = {
   payInternetSuccessfull: PayInternetSuccessfull,
   buyPhoneCardScreen: BuyPhoneCardScreen,
   buyGameCardScreen: BuyGameCardScreen,
-  buyPhoneCardInfoScreen: BuyPhoneCardInfoScreen,
-  buyPhoneCardSuccessScreen: BuyPhoneCardSuccessScreen,
+  buyPhoneCardInfoScreen: InfoBuyCardScreen,
+  buyPhoneCardSuccessScreen: SuccessBuyCardScreen,
   BuyMovieTicketGeneralScreen,
   BuyMovieTicketDetailScreen,
   BuyMovieTicketDetailSelectAmountScreen,
   BuyMovieTicketConfirmTransactionScreen,
   BuyMovieTicketTransactionSuccessfulScreen,
   selectGameCardScreen: SelectGameCardScreen,
+  confirmTransferToPhoneNumber: ConfirmTransferPhoneNumber
 }
 
 export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {

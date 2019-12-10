@@ -20,7 +20,7 @@ export class CategoryCard extends Component {
     const { selected } = this.state
     return (
       <View>
-        <View style={{ paddingTop: spacing[5] }}>
+        <View style={{ paddingTop: spacing[2] }}>
           <Indicator title="chooseProvider" style={{ width: 80 }} />
         </View>
         <ScrollView horizontal style={{ marginTop: spacing[4] }}>

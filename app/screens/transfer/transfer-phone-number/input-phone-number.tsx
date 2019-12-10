@@ -1,24 +1,138 @@
 import React, { Component } from "react"
-import { View } from "react-native"
-import CustomInput from "screens/transfer/custom-input"
-import { spacing } from "theme"
-import { Button } from "components"
+import { View, StyleSheet } from "react-native"
+import { spacing, palette } from "theme"
+import { Button, Text, RecentPhoneNumber } from "components"
+import CustomInput from "../custom-input"
+import Indicator from "screens/pay-internet/confirm-transaction/indicator"
+import { Item, Input } from "native-base"
+import { navigateService } from "utils"
 
-export class InputPhoneNumber extends Component {
+interface State {
+  phoneNumber: string
+  amount: string
+  transactionDescription: string
+}
+
+// @ts-ignore
+function formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
+  try {
+    decimalCount = Math.abs(decimalCount)
+    decimalCount = isNaN(decimalCount) ? 2 : decimalCount
+
+    const negativeSign = amount < 0 ? "-" : ""
+
+    let i = parseInt((amount = Math.abs(Number(amount) || 0).toFixed(decimalCount))).toString()
+    let j = i.length > 3 ? i.length % 3 : 0
+
+    return (
+      negativeSign +
+      (j ? i.substr(0, j) + thousands : "") +
+      i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) +
+      // @ts-ignore
+      (decimalCount
+        ? decimal +
+          // @ts-ignore
+          Math.abs(amount - i)
+            .toFixed(decimalCount)
+            .slice(2)
+        : "")
+    )
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+function formatPhoneNumber(phoneNumberString) {
+  var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+  var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+  if (match) {
+    return '(' + match[1] + ') ' + match[2] + '-' + match[3]
+  }
+  return null
+}
+
+export class InputPhoneNumber extends Component<{}, State> {
+  constructor(props) {
+    super(props)
+    this.state = {
+      phoneNumber: "",
+      amount: "",
+      transactionDescription: "",
+    }
+  }
+  goConfirmTransfer = () => {
+    const { phoneNumber, amount, transactionDescription } = this.state
+    navigateService.navigate("confirmTransferToPhoneNumber", {
+      phoneNumber: formatPhoneNumber(phoneNumber),
+      amount: formatMoney(amount, 0),
+      transactionDescription: transactionDescription
+    })
+  }
   render() {
+    const { phoneNumber, amount, transactionDescription } = this.state
     return (
       <View style={{ paddingTop: spacing[5] }}>
-        <CustomInput placeholder="Phone Number" />
-        <Button
-          bordered
-          preset="primary"
-          onPress={() => {}}
-          style={{ marginTop: spacing[4] }}
-          tx="confirm"
-        />
+        <Item style={{ marginBottom: spacing[5] }}>
+          <Input
+            placeholder={"Phone number*"}
+            placeholderTextColor={palette.grey}
+            style={styles.styleInput}
+            onChangeText={phoneNumber => this.setState({ phoneNumber })}
+            value={phoneNumber}
+            keyboardType="number-pad"
+          />
+        </Item>
+        <Item style={{ marginBottom: spacing[5] }}>
+          <Input
+            placeholder={"Amount*"}
+            placeholderTextColor={palette.grey}
+            style={styles.styleInput}
+            onChangeText={amount => this.setState({ amount })}
+            value={amount}
+            keyboardType="number-pad"
+          />
+        </Item>
+        <Item style={{ marginBottom: spacing[5] }}>
+          <Input
+            placeholder={"Transaction description"}
+            placeholderTextColor={palette.grey}
+            style={styles.styleInput}
+            onChangeText= {transactionDescription => {this.setState({transactionDescription})}}
+            value={transactionDescription}
+          />
+        </Item>
+        <Text tx="noteTransfer" t1 style={styles.styleNote} />
+        <Indicator title="recent" style={{ width: 125 }} />
+        <RecentPhoneNumber phoneNumber="0769 423 567" />
+        <RecentPhoneNumber phoneNumber="01269 423 567" />
+        <View style={{ paddingTop: 160 }}>
+          <Button
+            bordered
+            preset="primary"
+            onPress={this.goConfirmTransfer}
+            tx="tab_transfer"
+            full
+          />
+        </View>
       </View>
     )
   }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: spacing[3],
+    flex: 1,
+  },
+  styleNote: {
+    color: palette.blueGrey,
+    paddingBottom: spacing[6],
+    paddingTop: spacing[4],
+    paddingLeft: spacing[2],
+  },
+  styleInput: {
+    // paddingBottom: spacing[2],
+    fontSize: 14,
+  },
+})
 export default InputPhoneNumber
