@@ -23,7 +23,7 @@ export class SelectGameCardScreen extends React.Component<any, {}> {
         <Screen style={ROOT} preset="scroll">
           <SizedBox h={6} />
           <CardDiscount />
-          <DenominationCard />
+          <DenominationCard titleGameCard="buyGameCardTitle" />
         </Screen>
       </View>
     )

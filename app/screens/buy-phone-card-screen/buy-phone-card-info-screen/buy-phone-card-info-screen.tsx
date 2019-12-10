@@ -16,10 +16,12 @@ export class BuyPhoneCardInfoScreen extends React.Component<any, {}> {
     const numberCard = this.props.navigation.getParam("numberCard", {})
     const amount = this.props.navigation.getParam("selected", {})
     const totalCost = this.props.navigation.getParam("totalCost", {})
+    const type = this.props.navigation.getParam("type", {})
     navigateService.navigate("buyPhoneCardSuccessScreen", {
       numberCard: numberCard,
       amount: amount,
       totalCost: totalCost,
+      type: type
     })
   }
 
@@ -27,6 +29,8 @@ export class BuyPhoneCardInfoScreen extends React.Component<any, {}> {
     const numberCard = this.props.navigation.getParam("numberCard", {})
     const amount = this.props.navigation.getParam("selected", {})
     const totalCost = this.props.navigation.getParam("totalCost", {})
+    const type = this.props.navigation.getParam("type", {});
+    console.log("dasdasd", type);
     return (
       <View full>
         <Header
@@ -38,7 +42,7 @@ export class BuyPhoneCardInfoScreen extends React.Component<any, {}> {
           <SizedBox h={6} />
           <TransactionDetail
             labelLineFirst="common_type"
-            titleLineFirst="buyPhoneCard"
+            titleLineFirst={type}
             labelLineSecond="denominations"
             titleLineSecond={numberCard}
             labelLineThird="amount"

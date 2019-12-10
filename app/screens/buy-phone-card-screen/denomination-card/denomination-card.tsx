@@ -46,7 +46,12 @@ function formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
   }
 }
 
-export class DenominationCard extends Component {
+interface Props {
+  titlePhoneCard?: string
+  titleGameCard?: string
+}
+
+export class DenominationCard extends Component<Props, {}> {
   state = {
     selected: -1,
     numberCard: 0,
@@ -144,11 +149,22 @@ export class DenominationCard extends Component {
   goBuyPhoneCardInfoScreen = () => {
     const { numberCard, selected } = this.state
     const totalCost = formatMoney(numberCard * selected, 0)
-    navigateService.navigate("buyPhoneCardInfoScreen", {
-      selected: formatMoney(numberCard, 0),
-      totalCost: totalCost,
-      numberCard: formatMoney(selected, 0),
-    })
+    const { titleGameCard, titlePhoneCard } = this.props
+    if (titlePhoneCard) {
+      navigateService.navigate("buyPhoneCardInfoScreen", {
+        selected: formatMoney(numberCard, 0),
+        totalCost: totalCost,
+        numberCard: formatMoney(selected, 0),
+        type: "Buy phone card",
+      })
+    } else if (titleGameCard) {
+      navigateService.navigate("buyPhoneCardInfoScreen", {
+        selected: formatMoney(numberCard, 0),
+        totalCost: totalCost,
+        numberCard: formatMoney(selected, 0),
+        type: "Buy card garena",
+      })
+    }
   }
   render() {
     return (
@@ -175,7 +191,12 @@ export class DenominationCard extends Component {
           {this.renderAmount()}
           {this.renderTotal()}
           <View style={{ paddingTop: spacing[4] }}>
-            <Button tx="buy" full bordered onPress={this.goBuyPhoneCardInfoScreen} />
+            <Button
+              tx="buy"
+              full
+              bordered
+              onPress={this.goBuyPhoneCardInfoScreen}
+            />
           </View>
         </Screen>
       </View>

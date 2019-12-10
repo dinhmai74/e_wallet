@@ -27,7 +27,7 @@ export class BuyPhoneCardScreen extends React.Component<BuyPhoneCardScreenProps,
           <SizedBox h={6} />
           <PromotionSearch />
           <CategoryCard />
-          <DenominationCard />
+          <DenominationCard titlePhoneCard="buyPhoneCard"/>
         </Screen>
       </View>
     )
