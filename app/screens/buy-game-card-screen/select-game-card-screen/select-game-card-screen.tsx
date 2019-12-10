@@ -1,7 +1,7 @@
 import * as React from "react"
 import { observer } from "mobx-react"
 import { ViewStyle } from "react-native"
-import { Text, Header } from "components"
+import { Text, Header, View, SizedBox } from "components"
 import { Screen } from "components"
 import { spacing } from "theme"
 import { NavigationScreenProps } from "react-navigation"
@@ -18,11 +18,14 @@ const ROOT: ViewStyle = {
 export class SelectGameCardScreen extends React.Component<any, {}> {
   render() {
     return (
-      <Screen style={ROOT} preset="scroll">
+      <View full>
         <Header headerTx="buyCardGarena" leftIcon="back" />
-        <CardDiscount />
-        <DenominationCard />
-      </Screen>
+        <Screen style={ROOT} preset="scroll">
+          <SizedBox h={6} />
+          <CardDiscount />
+          <DenominationCard />
+        </Screen>
+      </View>
     )
   }
 }
