@@ -1,3 +1,4 @@
+require("../app/components/surplus/surplus.story")
 require("../app/components/app-youtube/app-youtube.story")
 require("../app/components/buy-movie-ticket/movie-info-text/movie-info-text.story")
 require("../app/components/buy-movie-ticket/movie-place-row/movie-place-row.story")

@@ -21,7 +21,7 @@ export const en = {
   errors_invalidEmail: "Invalid email address.",
   common_emptySeat: "Empty seat",
   common_emptySeatVIP: "Empty VIP seat",
-  common_wasBooked:"Was booked",
+  common_wasBooked: "Was booked",
   common_coupleSeat: "Couple seat",
   common_screen: "Screen",
 
@@ -257,6 +257,12 @@ export const en = {
   movie_adultVIP: "Adult 2D Vip",
   movie_adultCouple: "Adult Couple 2D",
   movie_choseSeat: "Chose seat:",
+  movie_receiverInfo: "Receiver's Info",
+  movie_name: "Movie's name:",
+  movie_theater: "Theater:",
+  movie_room: "Room:",
+  movie_seat: "Seat:",
+
   buyTrainMovieTicketGeneralScreen_header: "Buy movie ticket",
 
   // select game card  screen

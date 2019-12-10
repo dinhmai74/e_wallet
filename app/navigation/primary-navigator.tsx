@@ -26,9 +26,13 @@ import { BuyPhoneCardScreen } from "screens/buy-phone-card-screen"
 import { BuyGameCardScreen } from "screens/buy-game-card-screen/buy-game-card-screen"
 import { BuyPhoneCardInfoScreen } from "screens/buy-phone-card-screen/buy-phone-card-info-screen"
 import { BuyPhoneCardSuccessScreen } from "screens/buy-phone-card-screen/buy-phone-card-success-screen"
-import { BuyMovieTicketGeneralScreen } from "screens/buy-movie-ticket/general-screen"
-import { BuyMovieTicketDetailScreen } from "screens/buy-movie-ticket/detail/detail-screen"
-import { BuyMovieTicketDetailSelectAmountScreen } from "screens/buy-movie-ticket/detail/select-amount-screen"
+import {
+  BuyMovieTicketGeneralScreen,
+  BuyMovieTicketDetailScreen,
+  BuyMovieTicketDetailSelectAmountScreen,
+  BuyMovieTicketConfirmTransactionScreen,
+  BuyMovieTicketTransactionSuccessfulScreen,
+} from "screens/buy-movie-ticket"
 import { SelectGameCardScreen } from "screens/buy-game-card-screen/select-game-card-screen"
 // import TransactionSuccessfull from "components/transaction-successfull/transaction-successful"
 
@@ -68,6 +72,8 @@ const PrimaryRouteConfig = {
   BuyMovieTicketGeneralScreen,
   BuyMovieTicketDetailScreen,
   BuyMovieTicketDetailSelectAmountScreen,
+  BuyMovieTicketConfirmTransactionScreen,
+  BuyMovieTicketTransactionSuccessfulScreen,
   selectGameCardScreen: SelectGameCardScreen,
 }
 

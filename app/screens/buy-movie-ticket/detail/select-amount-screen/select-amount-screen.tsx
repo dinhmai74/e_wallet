@@ -13,6 +13,7 @@ import * as Yup from "yup"
 import _ from "lodash"
 import { ChoseSeatCard } from "screens/buy-movie-ticket/detail/select-amount-screen/components/ChoseSeatCard"
 import Modal from "react-native-modal"
+import { navigateService } from "utils"
 
 interface Props extends NavigationInjectedProps<{}> {}
 interface State {
@@ -80,7 +81,25 @@ export class BuyMovieTicketDetailSelectAmountScreen extends React.Component<Prop
 
   /* ------------- methods ------------- */
 
-  onSubmit = (val, bag) => {}
+  onSubmit = (val, bag) => {
+    const { movie, place } = this.state
+    const { adultCouple, seat, adultVIP, adult } = val
+
+    let totalVal =
+      adultVIP * MovieTicketRice.adultVIP +
+      adultCouple * MovieTicketRice.adultCouple +
+      adult * MovieTicketRice.adult
+    //@ts-ignore
+    const timeId = this.props.navigation.getParam("timeId", "")
+
+    navigateService.navigate("BuyMovieTicketConfirmTransactionScreen", {
+      seats: seat,
+      totalAmount: totalVal,
+      movie,
+      place,
+      timeId,
+    })
+  }
 
   onAmountChange = (bag: FormikProps<MovieAmountFormModel>, fieldName, val) => {
     const { values, setFieldValue } = bag
@@ -150,7 +169,7 @@ export class BuyMovieTicketDetailSelectAmountScreen extends React.Component<Prop
         <View preset={"footerScroll"}>
           <TotalRow value={totalVal + ""} />
           <SizedBox h={4} />
-          <Button tx={"confirm"} full disabled={disableConfirm} />
+          <Button tx={"confirm"} full disabled={disableConfirm} onPress={bag.handleSubmit} />
         </View>
       </View>
     )

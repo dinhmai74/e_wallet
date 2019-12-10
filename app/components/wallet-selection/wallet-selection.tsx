@@ -1,7 +1,7 @@
 import * as React from "react"
 import { View, ViewStyle, StyleSheet } from "react-native"
 import { Text } from "../text"
-import { Card, CardItem } from "native-base"
+import { Card, CardItem, Right } from "native-base"
 import { Button, Icon, icons, SizedBox } from "components"
 import { color, metrics, palette, spacing } from "theme"
 
@@ -29,8 +29,7 @@ export function WalletSelection(props: WalletSelectionProps) {
           <SizedBox h={2} />
           <Text text="3.000.000đ" />
         </CardItem>
-      </CardItem>
-      <View style={{ justifyContent: "center" }}>
+
         <Button
           onPress={onPress}
           transparent
@@ -38,7 +37,7 @@ export function WalletSelection(props: WalletSelectionProps) {
           style={styles.styledButton}
           textStyle={{ color: palette.blueGrey, fontSize: 16 }}
         />
-      </View>
+      </CardItem>
     </Card>
   )
 }
@@ -49,13 +48,12 @@ WalletSelection.defaultProps = {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "space-between",
-    flexDirection: "row",
     marginTop: spacing[3],
+    paddingRight: spacing[4],
   },
   content: {
     flexDirection: "column",
     alignItems: "flex-start",
   },
-  styledButton: {},
+  styledButton: { marginRight: spacing[4], alignSelf: "center" },
 })
