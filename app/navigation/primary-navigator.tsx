@@ -29,6 +29,7 @@ import { BuyMovieTicketDetailScreen } from "screens/buy-movie-ticket/detail/deta
 import { BuyMovieTicketDetailSelectAmountScreen } from "screens/buy-movie-ticket/detail/select-amount-screen"
 import { SelectGameCardScreen } from "screens/buy-game-card-screen/select-game-card-screen"
 import { InfoBuyCardScreen } from "components/info-buy-card-screen/info-buy-card-screen"
+import { ConfirmTransferPhoneNumber } from "screens/transfer/confirm-transfer-phone-number"
 // import TransactionSuccessfull from "components/transaction-successfull/transaction-successful"
 
 const BottomTabConfig = {
@@ -68,6 +69,7 @@ const PrimaryRouteConfig = {
   BuyMovieTicketDetailScreen,
   BuyMovieTicketDetailSelectAmountScreen,
   selectGameCardScreen: SelectGameCardScreen,
+  confirmTransferToPhoneNumber: ConfirmTransferPhoneNumber
 }
 
 export const PrimaryNavigator = createStackNavigator(PrimaryRouteConfig, {

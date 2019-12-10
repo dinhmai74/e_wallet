@@ -1,3 +1,5 @@
+
+
 export const en = {
   common_ok: "OK!",
   common_cancel: "Cancel",
@@ -264,6 +266,8 @@ export const en = {
   textDiscount: "3% discount",
 
   // transfer to phone number
-  recent: "Recent"
+  recent: "Recent",
+  AccountInfo: "Account Info: ",
+  message: "Message: "
 }
 export type TranslateKey = keyof typeof en
