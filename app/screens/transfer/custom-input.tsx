@@ -11,7 +11,7 @@ export class CustomInput extends Component<Props, {}> {
   render() {
     const { placeholder } = this.props
     return (
-      <Item style={{ marginBottom: spacing[4] }}>
+      <Item style={{ marginBottom: spacing[5] }}>
         <Input
           placeholder={placeholder}
           placeholderTextColor={palette.grey}

@@ -3,7 +3,7 @@ import { observer } from "mobx-react"
 import { ViewStyle } from "react-native"
 import { Screen } from "components/screen"
 import { NavigationScreenProps } from "react-navigation"
-import { Text } from "components"
+import { Text, View, Header, SizedBox } from "components"
 import InputPhoneNumber from "screens/transfer/transfer-phone-number/input-phone-number"
 import { spacing } from "theme"
 
@@ -19,10 +19,13 @@ const ROOT: ViewStyle = {
 export class TransferPhoneNumber extends React.Component<any, {}> {
   render() {
     return (
-      <Screen style={ROOT} preset="scroll">
-        <Text preset="header" tx="titleTransferPhoneNumber" />
-        <InputPhoneNumber />
-      </Screen>
+      <View full>
+        <Header headerTx="titleTransferPhoneNumber" leftIcon="back"/>
+        <Screen style={ROOT} preset="scroll">
+          <SizedBox h={1}/>
+          <InputPhoneNumber />
+        </Screen>
+      </View>
     )
   }
 }
