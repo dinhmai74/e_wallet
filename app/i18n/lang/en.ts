@@ -262,5 +262,8 @@ export const en = {
   // select game card  screen
   buyCardGarena: "Buy card garena",
   textDiscount: "3% discount",
+
+  // transfer to phone number
+  recent: "Recent"
 }
 export type TranslateKey = keyof typeof en
