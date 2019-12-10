@@ -1,7 +1,7 @@
 import * as React from "react"
 import { observer } from "mobx-react"
 import { ViewStyle } from "react-native"
-import { Text } from "components"
+import { Text, View, Header } from "components"
 import { Screen } from "components"
 import { spacing } from "theme"
 import { NavigationScreenProps } from "react-navigation"
@@ -14,6 +14,7 @@ export interface PromotionScreenProps extends NavigationScreenProps<{}> {}
 
 const ROOT: ViewStyle = {
   paddingHorizontal: spacing[3],
+  paddingTop: spacing[3],
 }
 
 // @inject("mobxstuff")
@@ -21,13 +22,15 @@ const ROOT: ViewStyle = {
 export class PromotionScreen extends React.Component<PromotionScreenProps, {}> {
   render() {
     return (
-      <Screen style={ROOT} preset="scroll">
-        <Text preset="header" tx="promotion_header" />
-        <PromotionSearch />
-        <PromotionCard />
-        <Voucher />
-        <News />
-      </Screen>
+      <View full>
+        <Header headerTx="promotion_header" />
+        <Screen style={ROOT} preset="scroll">
+          <PromotionSearch />
+          <PromotionCard />
+          <Voucher />
+          <News />
+        </Screen>
+      </View>
     )
   }
 }
