@@ -13,6 +13,7 @@ export interface SettingScreenProps extends NavigationScreenProps<{}> {}
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,
   paddingHorizontal: spacing[5],
+  paddingTop: spacing[3],
 }
 
 // @inject("mobxstuff")

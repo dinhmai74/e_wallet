@@ -61,8 +61,7 @@ export class BuyTrainTicketConfirmTransactionScreen extends React.Component<Prop
           )}
         </Screen>
 
-        <View preset="footer">
-          <SizedBox h={4} />
+        <View preset="footerScroll">
           <TotalRow value={`600000`} />
           <SizedBox h={4} />
           <Button
