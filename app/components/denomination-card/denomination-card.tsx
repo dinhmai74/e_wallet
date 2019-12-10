@@ -1,14 +1,12 @@
 import React, { Component } from "react"
 import { StyleSheet, ViewStyle } from "react-native"
-import Amount from "screens/cash-screen/cash-in/amount"
-import ItemMoney from "screens/cash-screen/cash-in/item-money"
 import { palette, spacing } from "theme"
 import { Button, View, Screen, SizedBox, Text, icons, Icon } from "components"
 import { navigateService } from "utils"
 import produce from "immer"
 import { Footer, Left, Right } from "native-base"
 import Indicator from "screens/pay-internet/confirm-transaction/indicator"
-import { thisExpression } from "@babel/types"
+
 
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,

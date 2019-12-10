@@ -1,4 +1,4 @@
-import { FooterTab, TransactionSuccessfull } from "components"
+import { FooterTab, TransactionSuccessfull, SuccessBuyCardScreen } from "components"
 import { HomeScreen } from "screens/home-screen"
 import { PromotionScreen } from "screens/promotion-screen"
 import { createStackNavigator } from "react-navigation-stack"
@@ -24,12 +24,11 @@ import {
 import PayInternetSuccessfull from "screens/pay-internet/pay-internet-successfull/pay-internet-successfull"
 import { BuyPhoneCardScreen } from "screens/buy-phone-card-screen"
 import { BuyGameCardScreen } from "screens/buy-game-card-screen/buy-game-card-screen"
-import { BuyPhoneCardInfoScreen } from "screens/buy-phone-card-screen/buy-phone-card-info-screen"
-import { BuyPhoneCardSuccessScreen } from "screens/buy-phone-card-screen/buy-phone-card-success-screen"
 import { BuyMovieTicketGeneralScreen } from "screens/buy-movie-ticket/general-screen"
 import { BuyMovieTicketDetailScreen } from "screens/buy-movie-ticket/detail/detail-screen"
 import { BuyMovieTicketDetailSelectAmountScreen } from "screens/buy-movie-ticket/detail/select-amount-screen"
 import { SelectGameCardScreen } from "screens/buy-game-card-screen/select-game-card-screen"
+import { InfoBuyCardScreen } from "components/info-buy-card-screen/info-buy-card-screen"
 // import TransactionSuccessfull from "components/transaction-successfull/transaction-successful"
 
 const BottomTabConfig = {
@@ -63,8 +62,8 @@ const PrimaryRouteConfig = {
   payInternetSuccessfull: PayInternetSuccessfull,
   buyPhoneCardScreen: BuyPhoneCardScreen,
   buyGameCardScreen: BuyGameCardScreen,
-  buyPhoneCardInfoScreen: BuyPhoneCardInfoScreen,
-  buyPhoneCardSuccessScreen: BuyPhoneCardSuccessScreen,
+  buyPhoneCardInfoScreen: InfoBuyCardScreen,
+  buyPhoneCardSuccessScreen: SuccessBuyCardScreen,
   BuyMovieTicketGeneralScreen,
   BuyMovieTicketDetailScreen,
   BuyMovieTicketDetailSelectAmountScreen,

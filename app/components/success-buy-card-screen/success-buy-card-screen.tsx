@@ -12,7 +12,6 @@ import {
 } from "components"
 import { Screen } from "components"
 import { spacing } from "theme"
-import NoteBuyPhoneCardInfo from "screens/buy-phone-card-screen/buy-phone-card-info-screen/note-buy-phone-card-info"
 import { navigateService } from "utils"
 
 import {
@@ -29,7 +28,7 @@ interface Props {
   goGameCardScreen: string,
   navigation: NavigationScreenProp<NavigationState, NavigationParams>;
 }
-export class BuyPhoneCardSuccessScreen extends React.Component<Props, {}> {
+export class SuccessBuyCardScreen extends React.Component<Props, {}> {
   goBackBuyCard = () => {
     const type = this.props.navigation.getParam("type", {})
     const { goPhoneCardScreen, goGameCardScreen } = this.props

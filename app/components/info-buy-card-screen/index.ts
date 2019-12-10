@@ -1,0 +1,1 @@
+export * from "./info-buy-card-screen"

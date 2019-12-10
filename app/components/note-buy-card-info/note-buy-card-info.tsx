@@ -3,7 +3,7 @@ import { View, Image } from "react-native"
 import { icons, Text } from "components"
 import { spacing, palette } from "theme"
 
-export class NoteBuyPhoneCardInfo extends Component {
+export class NoteBuyCardInfo extends Component {
   render() {
     return (
       <View
@@ -26,4 +26,4 @@ export class NoteBuyPhoneCardInfo extends Component {
   }
 }
 
-export default NoteBuyPhoneCardInfo
+export default NoteBuyCardInfo
