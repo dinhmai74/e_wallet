@@ -8,6 +8,7 @@ import {
   ItemGameCard,
   ItemGameCardProps,
   Header,
+  SizedBox,
 } from "components"
 import { color, spacing, palette } from "theme"
 import { ViewStyle, StatusBar, Platform, StyleSheet } from "react-native"
@@ -29,8 +30,11 @@ export class BuyGameCardScreen extends Component {
     return (
       <View full>
         <Header headerTx="buyGameCardTitle" leftIcon="back" />
-        <PromotionSearch />
-        <ListGameCard />
+        <Screen>
+          <SizedBox h={5}/>
+          <PromotionSearch />
+          <ListGameCard />
+        </Screen>
       </View>
     )
   }

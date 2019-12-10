@@ -1,7 +1,7 @@
 import * as React from "react"
 import { observer } from "mobx-react"
 import { ViewStyle } from "react-native"
-import { Text, Header } from "components"
+import { Text, Header, View, SizedBox } from "components"
 import { Screen } from "components"
 import { spacing } from "theme"
 import { NavigationScreenProps } from "react-navigation"
@@ -21,12 +21,15 @@ const ROOT: ViewStyle = {
 export class BuyPhoneCardScreen extends React.Component<BuyPhoneCardScreenProps, {}> {
   render() {
     return (
-      <Screen style={ROOT} preset="scroll">
-        <Header headerTx="buyPhoneCard" style={{ paddingTop: spacing[6] }} leftIcon="back" />
-        <PromotionSearch />
-        <CategoryCard />
-        <DenominationCard />
-      </Screen>
+      <View full>
+        <Header headerTx="buyPhoneCard" leftIcon="back" />
+        <Screen style={ROOT} preset="scroll">
+          <SizedBox h={6} />
+          <PromotionSearch />
+          <CategoryCard />
+          <DenominationCard />
+        </Screen>
+      </View>
     )
   }
 }
