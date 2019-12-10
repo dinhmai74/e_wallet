@@ -23,9 +23,6 @@ const ROOT: ViewStyle = {
 }
 
 export class BuyGameCardScreen extends Component {
-  goToConfirmTransaction = () => {
-    navigateService.navigate("confrimTransactionPayInternet")
-  }
   render() {
     return (
       <View full>
