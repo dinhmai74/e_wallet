@@ -163,6 +163,10 @@ export class DenominationCard extends Component<Props, {}> {
         type: "Buy card garena",
       })
     }
+    this.setState({
+      numberCard: 0,
+      selected: 0
+    })
   }
   render() {
     return (

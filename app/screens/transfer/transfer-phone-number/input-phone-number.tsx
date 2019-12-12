@@ -67,6 +67,11 @@ export class InputPhoneNumber extends Component<{}, State> {
       amount: formatMoney(amount, 0),
       transactionDescription: transactionDescription
     })
+    this.setState({
+      phoneNumber: "",
+      amount: "", 
+      transactionDescription: ""
+    })
   }
   render() {
     const { phoneNumber, amount, transactionDescription } = this.state
