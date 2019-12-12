@@ -15,7 +15,7 @@ interface Props {
   labelLineSecond?: TranslateKey
   titleLineSecond?: TranslateKey
   labelLineThird?: TranslateKey
-  titleLineThird?: TranslateKey
+  titleLineThird?: string
   labelLineFourth?: TranslateKey
   titleLineFourth?: TranslateKey
   labelLineFifth?: TranslateKey
@@ -75,7 +75,9 @@ export class TransactionSuccessfull extends Component<Props, {}> {
               <Text tx={labelLineThird} b1 color={palette.blueGrey} />
             </Left>
             <Right>
-              <Text tx={titleLineThird} b1 color={palette.navy} />
+              <Text b1 color={palette.navy}>
+                {titleLineThird}
+              </Text>
             </Right>
           </View>
           <View style={styles.inforDetail}>

@@ -274,6 +274,12 @@ export const en = {
   // transfer to phone number
   recent: "Recent",
   AccountInfo: "Account Info: ",
-  message: "Message: "
+  message: "Message: ",
+
+  // transfer to phone number success
+  yourTransfer: "Your transfer",
+  to: "To",
+  transactionId: "Transaction Id",
+  createNewTransaction: "Create new transaction"
 }
 export type TranslateKey = keyof typeof en
