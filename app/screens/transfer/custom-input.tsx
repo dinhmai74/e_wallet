@@ -14,15 +14,14 @@ interface State {
 export class CustomInput extends Component<Props, State> {
   render() {
     const { placeholder } = this.props
-    const { text } = this.state
     return (
       <Item style={{ marginBottom: spacing[5] }}>
         <Input
           placeholder={placeholder}
           placeholderTextColor={palette.grey}
           style={styles.styleInput}
-          onChangeText={text => this.setState({ text })}
-          value={text}
+          // onChangeText={text => this.setState({ text })}
+          // value={text}
         />
       </Item>
     )

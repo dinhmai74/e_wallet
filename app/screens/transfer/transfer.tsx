@@ -4,7 +4,7 @@ import { ViewStyle } from "react-native"
 import { Screen } from "components/screen"
 import { spacing } from "../../theme"
 import { NavigationScreenProps } from "react-navigation"
-import { Text } from "components"
+import { Text, View, Header } from "components"
 import BankCard from "screens/transfer/bank-card"
 import TextField from "screens/transfer/text-field"
 import InfomationCard from "screens/transfer/infomation-card"
@@ -21,12 +21,14 @@ const ROOT: ViewStyle = {
 export class Transfer extends React.Component<SettingScreenProps, {}> {
   render() {
     return (
-      <Screen style={ROOT} preset="scroll">
-        <Text preset="header" tx="titleTransfer" />
-        <BankCard />
-        <TextField />
-        <InfomationCard />
-      </Screen>
+      <View full>
+        <Header headerTx="titleTransfer" leftIcon="back"/>
+        <Screen style={ROOT} preset="scroll">
+          <BankCard />
+          <TextField />
+          <InfomationCard />
+        </Screen>
+      </View>
     )
   }
 }
