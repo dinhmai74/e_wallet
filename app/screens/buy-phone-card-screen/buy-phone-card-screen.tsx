@@ -9,11 +9,10 @@ import { PromotionScreen } from "screens/promotion-screen"
 import PromotionSearch from "screens/promotion-screen/promotion-search/promotion-search"
 import CategoryCard from "screens/buy-phone-card-screen/category-card/category-card"
 
-
 export interface BuyPhoneCardScreenProps extends NavigationScreenProps<{}> {}
 
 const ROOT: ViewStyle = {
-  paddingHorizontal: spacing[3],
+  paddingHorizontal: spacing[5],
 }
 
 // @inject("mobxstuff")
@@ -27,7 +26,7 @@ export class BuyPhoneCardScreen extends React.Component<BuyPhoneCardScreenProps,
           <SizedBox h={6} />
           <PromotionSearch />
           <CategoryCard />
-          <DenominationCard titlePhoneCard="buyPhoneCard"/>
+          <DenominationCard titlePhoneCard="buyPhoneCard" />
         </Screen>
       </View>
     )

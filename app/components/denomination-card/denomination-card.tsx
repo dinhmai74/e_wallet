@@ -7,13 +7,12 @@ import produce from "immer"
 import { Footer, Left, Right } from "native-base"
 import Indicator from "screens/pay-internet/confirm-transaction/indicator"
 
-
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,
   // paddingHorizontal: spacing[6],
 }
 
-const data = [[10000, 20000, 50000], [100000, 200000, 500000]]
+const data = [[10000, 20000], [50000, 100000], [200000, 500000]]
 
 // @ts-ignore
 function formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
@@ -86,10 +85,10 @@ export class DenominationCard extends Component<Props, {}> {
           <Text tx="amount" color={palette.blueGrey} b1 />
         </Left>
         <Right style={styles.wrapperNumberCard}>
-          <Button onPress={this.decrementCount} transparent style={{ paddingRight: spacing[5] }}>
+          <Button onPress={this.decrementCount} transparent style={{ paddingRight: spacing[4] }}>
             <Icon icon="iconDecrement" />
           </Button>
-          <Text style={{ paddingRight: spacing[5] }} color={palette.blueGrey} b1>
+          <Text style={{ paddingRight: spacing[4] }} color={palette.blueGrey} b1>
             {this.state.numberCard}
           </Text>
           <Button transparent onPress={this.incrementCount}>
@@ -104,7 +103,7 @@ export class DenominationCard extends Component<Props, {}> {
     const { numberCard, selected } = this.state
     const totalMoney = formatMoney(numberCard * selected, 0)
     return (
-      <View style={{ flexDirection: "row", paddingHorizontal: spacing[2], paddingTop: spacing[4] }}>
+      <View style={{ flexDirection: "row", paddingHorizontal: spacing[4], paddingTop: spacing[4] }}>
         <Left>
           <Text tx="total" color={palette.blueGrey} b1 />
         </Left>
@@ -124,8 +123,8 @@ export class DenominationCard extends Component<Props, {}> {
         key={i}
         style={{
           flexDirection: "row",
-          flex: 1,
-          justifyContent: "space-around",
+          justifyContent: "space-between",
+          marginHorizontal: spacing[4],
         }}
       >
         {dat.map((val, index) => {
@@ -136,7 +135,7 @@ export class DenominationCard extends Component<Props, {}> {
               bordered={selected != val}
               transparent={selected != val}
               onPress={this.handlePress.bind(this, val)}
-              style={[styles.styleButton, styles.marginButton]}
+              style={[styles.styleButton]}
             />
           )
         })}
@@ -165,7 +164,7 @@ export class DenominationCard extends Component<Props, {}> {
     }
     this.setState({
       numberCard: 0,
-      selected: 0
+      selected: 0,
     })
   }
   render() {
@@ -173,32 +172,26 @@ export class DenominationCard extends Component<Props, {}> {
       <View full>
         <Screen style={ROOT}>
           <View style={{ paddingTop: spacing[5] }}>
-            <Indicator title="denominations" style={{ width: 85 }} />
+            <Indicator title="denominations" style={{ width: 70 }} />
           </View>
-          <View style={styles.wraper}>
-            {data.map((data, i) => {
-              // This will render a row for each data element.
-              return this.renderRow(data, i)
-            })}
-          </View>
+          {data.map((data, i) => {
+            // This will render a row for each data element.
+            return this.renderRow(data, i)
+          })}
           <SizedBox h={6} />
           <View
             style={{
-              width: 320,
+              width: 285,
               height: 1,
               backgroundColor: palette.blueGrey,
-              marginLeft: spacing[2],
+              marginHorizontal: spacing[3],
+              justifyContent: "center",
             }}
           ></View>
           {this.renderAmount()}
           {this.renderTotal()}
-          <View style={{ paddingTop: spacing[4] }}>
-            <Button
-              tx="buy"
-              full
-              bordered
-              onPress={this.goBuyPhoneCardInfoScreen}
-            />
+          <View style={{ paddingTop: spacing[4], paddingHorizontal: spacing[3] }}>
+            <Button tx="buy" full bordered onPress={this.goBuyPhoneCardInfoScreen} />
           </View>
         </Screen>
       </View>
@@ -215,13 +208,11 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: "center",
     justifyContent: "center",
-  },
-  marginButton: {
     marginTop: spacing[6],
   },
   wrapperAmount: {
     flexDirection: "row",
-    paddingHorizontal: spacing[2],
+    paddingHorizontal: spacing[4],
     paddingTop: spacing[4],
   },
   wrapperNumberCard: {
