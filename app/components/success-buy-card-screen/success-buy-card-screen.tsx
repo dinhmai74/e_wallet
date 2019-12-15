@@ -14,28 +14,25 @@ import { Screen } from "components"
 import { spacing } from "theme"
 import { navigateService } from "utils"
 
-import {
-  NavigationParams,
-  NavigationScreenProp,
-  NavigationState,
-} from 'react-navigation';
-const ROOT: ViewStyle = {}
+import { NavigationParams, NavigationScreenProp, NavigationState } from "react-navigation"
+const ROOT: ViewStyle = {
+  paddingHorizontal: spacing[2],
+}
 
 // @inject("mobxstuff")
 
 interface Props {
   goPhoneCardScreen: string
-  goGameCardScreen: string,
-  navigation: NavigationScreenProp<NavigationState, NavigationParams>;
+  goGameCardScreen: string
+  navigation: NavigationScreenProp<NavigationState, NavigationParams>
 }
 export class SuccessBuyCardScreen extends React.Component<Props, {}> {
   goBackBuyCard = () => {
     const type = this.props.navigation.getParam("type", {})
     const { goPhoneCardScreen, goGameCardScreen } = this.props
-    if (type==="Buy phone card") {
+    if (type === "Buy phone card") {
       navigateService.navigate("buyPhoneCardScreen")
-    }
-    else if (type==="Buy card garena") {
+    } else if (type === "Buy card garena") {
       navigateService.navigate("buyGameCardScreen")
     }
   }

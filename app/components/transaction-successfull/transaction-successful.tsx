@@ -41,7 +41,7 @@ export class TransactionSuccessfull extends Component<Props, {}> {
     } = this.props
     return (
       <View>
-        <Card style={{ marginHorizontal: spacing[4] }}>
+        <Card style={{ marginHorizontal: spacing[5] }}>
           <CardItem style={styles.item}>
             <Icon icon={"iconSucces"} size={metrics.images.xl} style={{ alignSelf: "center" }} />
           </CardItem>
@@ -52,7 +52,7 @@ export class TransactionSuccessfull extends Component<Props, {}> {
         </Card>
         <CardItem style={styles.wrapperContent}>
           <View style={{ paddingTop: spacing[5], paddingBottom: spacing[5] }}>
-            <Indicator title={titleInfo} style={{ width: 82 }} />
+            <Indicator title={titleInfo} style={{ width: 65 }} />
           </View>
           <View style={styles.inforDetail}>
             <Left>
@@ -99,7 +99,7 @@ export class TransactionSuccessfull extends Component<Props, {}> {
             </View>
           )}
           <View style={{ paddingTop: spacing[2], paddingBottom: spacing[3] }}>
-            <Indicator title="walletInfo" style={{ width: 105 }} />
+            <Indicator title="walletInfo" style={{ width: 90 }} />
           </View>
           <View style={styles.inforDetail}>
             <Left>
