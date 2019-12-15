@@ -6,7 +6,9 @@ import { Screen, NoteBuyCardInfo } from "components"
 import { spacing } from "theme"
 import { navigateService } from "utils"
 
-const ROOT: ViewStyle = {}
+const ROOT: ViewStyle = {
+  paddingHorizontal: spacing[3],
+}
 
 // @inject("mobxstuff")
 @observer
@@ -20,7 +22,7 @@ export class InfoBuyCardScreen extends React.Component<any, {}> {
       numberCard: numberCard,
       amount: amount,
       totalCost: totalCost,
-      type: type
+      type: type,
     })
   }
 
@@ -28,8 +30,8 @@ export class InfoBuyCardScreen extends React.Component<any, {}> {
     const numberCard = this.props.navigation.getParam("numberCard", {})
     const amount = this.props.navigation.getParam("selected", {})
     const totalCost = this.props.navigation.getParam("totalCost", {})
-    const type = this.props.navigation.getParam("type", {});
-    console.log("dasdasd", type);
+    const type = this.props.navigation.getParam("type", {})
+    console.log("dasdasd", type)
     return (
       <View full>
         <Header
