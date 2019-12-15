@@ -40,7 +40,7 @@ export class ItemGameCard extends Component<ItemGameCardProps> {
             style={{
               backgroundColor: palette.blueGrey,
               flex: 1,
-              width: 320,
+              width: 295,
               height: 1,
               marginLeft: 20,
               marginBottom: spacing[3],
@@ -57,6 +57,7 @@ export default ItemGameCard
 const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
+    paddingBottom: spacing[3],
   },
   styleImage: {
     width: 50,

@@ -19,7 +19,7 @@ import PromotionSearch from "screens/promotion-screen/promotion-search/promotion
 
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,
-  paddingHorizontal: spacing[5],
+  paddingHorizontal: spacing[3],
 }
 
 export class BuyGameCardScreen extends Component {
@@ -27,8 +27,8 @@ export class BuyGameCardScreen extends Component {
     return (
       <View full>
         <Header headerTx="buyGameCardTitle" leftIcon="back" />
-        <Screen>
-          <SizedBox h={5}/>
+        <Screen style={ROOT}>
+          <SizedBox h={5} />
           <PromotionSearch />
           <ListGameCard />
         </Screen>
