@@ -52,7 +52,7 @@ export class TransactionSuccessfull extends Component<Props, {}> {
         </Card>
         <CardItem style={styles.wrapperContent}>
           <View style={{ paddingTop: spacing[5], paddingBottom: spacing[5] }}>
-            <Indicator title={titleInfo} style={{ width: 65 }} />
+            <Indicator title={titleInfo} style={{ width: 78 }} />
           </View>
           <View style={styles.inforDetail}>
             <Left>
@@ -99,7 +99,7 @@ export class TransactionSuccessfull extends Component<Props, {}> {
             </View>
           )}
           <View style={{ paddingTop: spacing[2], paddingBottom: spacing[3] }}>
-            <Indicator title="walletInfo" style={{ width: 90 }} />
+            <Indicator title="walletInfo" style={{ width: 103 }} />
           </View>
           <View style={styles.inforDetail}>
             <Left>

@@ -172,7 +172,7 @@ export class DenominationCard extends Component<Props, {}> {
       <View full>
         <Screen style={ROOT}>
           <View style={{ paddingTop: spacing[5] }}>
-            <Indicator title="denominations" style={{ width: 70 }} />
+            <Indicator title="denominations" style={{ width: 72 }} />
           </View>
           {data.map((data, i) => {
             // This will render a row for each data element.
@@ -181,10 +181,10 @@ export class DenominationCard extends Component<Props, {}> {
           <SizedBox h={6} />
           <View
             style={{
-              width: 285,
+              width: 290,
               height: 1,
               backgroundColor: palette.blueGrey,
-              marginHorizontal: spacing[3],
+              marginHorizontal: spacing[4],
               justifyContent: "center",
             }}
           ></View>

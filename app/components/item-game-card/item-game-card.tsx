@@ -40,9 +40,9 @@ export class ItemGameCard extends Component<ItemGameCardProps> {
             style={{
               backgroundColor: palette.blueGrey,
               flex: 1,
-              width: 295,
+              width: 305,
               height: 1,
-              marginLeft: 20,
+              marginLeft: 25,
               marginBottom: spacing[3],
             }}
           ></View>

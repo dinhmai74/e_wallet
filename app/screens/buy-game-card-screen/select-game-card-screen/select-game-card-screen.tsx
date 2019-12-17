@@ -9,7 +9,7 @@ import { PromotionScreen } from "screens/promotion-screen"
 import { CardDiscount } from "screens/buy-game-card-screen/select-game-card-screen/component/card-discount"
 
 const ROOT: ViewStyle = {
-  paddingHorizontal: spacing[3],
+  paddingHorizontal: spacing[5],
 }
 
 // @inject("mobxstuff")

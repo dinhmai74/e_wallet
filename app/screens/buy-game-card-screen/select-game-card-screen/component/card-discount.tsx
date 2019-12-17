@@ -2,7 +2,7 @@ import * as React from "react"
 import { StyleSheet, View, ViewStyle } from "react-native"
 import { Card, CardItem } from "native-base"
 import { Icon, SizedBox, Text } from "components"
-import { color, metrics } from "theme"
+import { color, metrics, spacing } from "theme"
 
 export interface CardDiscountProps {
   style?: ViewStyle
@@ -18,7 +18,7 @@ export function CardDiscount(props: CardDiscountProps) {
   const textStyle = {}
 
   return (
-    <Card>
+    <Card style={{marginHorizontal: spacing[3]}}>
       <CardItem style={styles.item}>
         <Icon icon={"iconGarena"} size={metrics.images.xl} style={{ alignSelf: "center" }} />
       </CardItem>

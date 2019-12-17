@@ -21,7 +21,7 @@ export class CategoryCard extends Component {
     return (
       <View style={{ paddingHorizontal: spacing[3] }}>
         <View style={{ paddingTop: spacing[2] }}>
-          <Indicator title="chooseProvider" style={{ width: 60 }} />
+          <Indicator title="chooseProvider" style={{ width: 70 }} />
         </View>
         <ScrollView horizontal style={{ marginTop: spacing[4] }}>
           <Card style={styles.styleCard}>
