@@ -60,7 +60,7 @@ export class SuccessBuyCardScreen extends React.Component<Props, {}> {
             labelLineFifth="totalCost"
             titleLineFifth={totalCost}
           />
-          <View style={{ paddingHorizontal: spacing[5], paddingTop: spacing[6] }}>
+          <View style={{ paddingHorizontal: spacing[5], paddingTop: spacing[7] }}>
             <Button tx="buyAnotherCard" full bordered onPress={this.goBackBuyCard} />
           </View>
         </Screen>

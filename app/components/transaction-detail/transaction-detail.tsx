@@ -4,6 +4,7 @@ import { Card, Left, Right, CardItem } from "native-base"
 import { Text } from "components/text"
 import { TranslateKey } from "i18n/lang"
 import { palette, spacing } from "theme"
+import { TextWithDecoration } from "components/text-with-decoration"
 
 export interface Props {
   titleInfo?: TranslateKey
@@ -34,7 +35,8 @@ export class TransactionDetail extends Component<Props, {}> {
       titleLineFifth,
     } = this.props
     return (
-      <Card style={{ flexDirection: "column", marginHorizontal: spacing[6] }}>
+      <Card style={{ flexDirection: "column", marginHorizontal: spacing[5] }}>
+        
         <Text
           tx="transactionDetail"
           style={{ paddingLeft: spacing[5], paddingTop: spacing[4] }}

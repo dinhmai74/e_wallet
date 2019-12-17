@@ -6,6 +6,7 @@ import { navigateService } from "utils"
 import produce from "immer"
 import { Footer, Left, Right } from "native-base"
 import Indicator from "screens/pay-internet/confirm-transaction/indicator"
+import { TextWithDecoration } from "components/text-with-decoration"
 
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,

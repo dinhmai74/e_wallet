@@ -12,6 +12,7 @@ export class NoteBuyCardInfo extends Component {
           alignItems: "center",
           paddingHorizontal: spacing[5],
           paddingTop: spacing[4],
+          paddingBottom: spacing[3]
         }}
       >
         <Image source={icons.imageBuyPhoneCardInfo} style={{ width: 205, height: 205 }} />

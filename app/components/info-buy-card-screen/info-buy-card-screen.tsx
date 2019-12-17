@@ -5,6 +5,8 @@ import { Text, Header, Button, View, TransactionDetail, SizedBox } from "compone
 import { Screen, NoteBuyCardInfo } from "components"
 import { spacing } from "theme"
 import { navigateService } from "utils"
+import { WalletSelection } from "components/wallet-selection"
+import { TextWithDecoration } from "components/text-with-decoration"
 
 const ROOT: ViewStyle = {
   paddingHorizontal: spacing[3],
@@ -41,6 +43,13 @@ export class InfoBuyCardScreen extends React.Component<any, {}> {
         />
         <Screen style={ROOT} preset="scroll">
           <SizedBox h={6} />
+          <View style={{ marginHorizontal: spacing[5], paddingBottom: spacing[4] }}>
+            <TextWithDecoration tx="wallet" />
+            <WalletSelection />
+          </View>
+          <View style={{paddingHorizontal: spacing[5], paddingBottom: spacing[4]}}> 
+            <TextWithDecoration tx="info" />
+          </View>
           <TransactionDetail
             labelLineFirst="common_type"
             titleLineFirst={type}
@@ -54,7 +63,7 @@ export class InfoBuyCardScreen extends React.Component<any, {}> {
             titleLineFifth={totalCost}
           />
           <NoteBuyCardInfo />
-          <View style={{ paddingHorizontal: spacing[5], paddingTop: spacing[7] }}>
+          <View style={{ paddingHorizontal: spacing[5], paddingTop: spacing[8] }}>
             <Button tx="confirm" full bordered onPress={this.goTransactionSuccess} />
           </View>
         </Screen>
