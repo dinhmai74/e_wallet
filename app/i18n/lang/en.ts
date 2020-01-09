@@ -280,6 +280,10 @@ export const en = {
   yourTransfer: "Your transfer",
   to: "To",
   transactionId: "Transaction Id",
-  createNewTransaction: "Create new transaction"
+  createNewTransaction: "Create new transaction",
+  buyZingCard: "Buy card Zing",
+  buyBitCard: "Buy card BIT",
+  buyClipCard: "Load cents Clip.vn",
+  buyGosuCard: "Buy Gosu card"
 }
 export type TranslateKey = keyof typeof en

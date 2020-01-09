@@ -59,6 +59,12 @@ export const icons = {
   iconExpandArrow: require("./icons8-expand_arrow.png"),
   iconScreen: require("./icon_screen.png"),
   iconGarena: require("./icon-garena.png"),
+  iconZing: require("./icon-zing.png"),
+  iconOncash: require("./icon-oncash.jpeg"),
+  iconBit: require("./icon-bit.jpg"),
+  iconCliptv: require("./icon-cliptv.png"),
+  iconGate: require("./icon-gate.png"),
+  iconGosuCard: require("./icon-gosucard.png")
 }
 
 export type IconTypes = keyof typeof icons

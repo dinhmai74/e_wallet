@@ -61,8 +61,10 @@ const styles = StyleSheet.create({
   },
   styleImage: {
     width: 50,
-    height: 60,
+    height: 40,
     borderRadius: 5,
+    marginTop: 5,
+    marginLeft: 3
   },
   wrapperContent: {
     justifyContent: "center",

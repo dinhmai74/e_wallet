@@ -10,15 +10,12 @@ import { FlatList, ScrollView, TouchableOpacity } from "react-native-gesture-han
 import _ from "lodash"
 
 export const ListGameCardData: ItemGameCardProps[] = [
-  { title: "nameCardTest", subTitle: "discount", imageUrl: icons.beef },
-  { title: "nameCardTest", subTitle: "discount", imageUrl: icons.beef },
-  { title: "nameCardTest", subTitle: "discount", imageUrl: icons.beef },
-  { title: "nameCardTest", subTitle: "discount", imageUrl: icons.beef },
-  { title: "nameCardTest", subTitle: "discount", imageUrl: icons.beef },
-  { title: "nameCardTest", subTitle: "discount", imageUrl: icons.beef },
-  { title: "nameCardTest", subTitle: "discount", imageUrl: icons.beef },
-  { title: "nameCardTest", subTitle: "discount", imageUrl: icons.beef },
-  { title: "nameCardTest", subTitle: "discount", imageUrl: icons.beef },
+  { title: "nameCardTest", subTitle: "discount", imageUrl: icons.iconGarena },
+  { title: "buyZingCard", subTitle: "discount", imageUrl: icons.iconZing },
+  { title: "buyBitCard", subTitle: "discount", imageUrl: icons.iconBit },
+  { title: "buyClipCard", subTitle: "discount", imageUrl: icons.iconCliptv },
+  { title: "buyGosuCard", subTitle: "discount", imageUrl: icons.iconGosuCard },
+
 ]
 
 export class ListGameCard extends Component {
@@ -49,8 +46,8 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red'
   },
   styleImage: {
-    width: 60,
-    height: 50,
+    width: 40,
+    height: 30,
     borderRadius: 5,
   },
   wrapper: {
