@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Text, View, Image, StyleSheet, ScrollView } from "react-native"
+import { View, Image, StyleSheet, ScrollView } from "react-native"
 import Indicator from "screens/pay-internet/confirm-transaction/indicator"
 import { Card } from "native-base"
 import { icons, Button } from "components"

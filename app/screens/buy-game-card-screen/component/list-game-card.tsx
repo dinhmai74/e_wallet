@@ -1,12 +1,8 @@
 import React, { Component } from "react"
-import { View, Image, ImageSourcePropType, StyleSheet } from "react-native"
-import { CardItem, Card } from "native-base"
-import { Text } from "components/text"
-import { Icon, IconTypes, icons } from "components/icon"
-import { spacing, metrics } from "theme"
-import { TranslateKey } from "i18n/lang"
-import { Button, ItemGameCardProps, ItemGameCard } from "components"
-import { FlatList, ScrollView, TouchableOpacity } from "react-native-gesture-handler"
+import { StyleSheet, ScrollView } from "react-native"
+import { icons } from "components/icon"
+import { spacing } from "theme"
+import { ItemGameCardProps, ItemGameCard } from "components"
 import _ from "lodash"
 
 export const ListGameCardData: ItemGameCardProps[] = [
@@ -15,7 +11,6 @@ export const ListGameCardData: ItemGameCardProps[] = [
   { title: "buyBitCard", subTitle: "discount", imageUrl: icons.iconBit },
   { title: "buyClipCard", subTitle: "discount", imageUrl: icons.iconCliptv },
   { title: "buyGosuCard", subTitle: "discount", imageUrl: icons.iconGosuCard },
-
 ]
 
 export class ListGameCard extends Component {
@@ -43,7 +38,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-around",
-    // backgroundColor: 'red'
   },
   styleImage: {
     width: 40,
@@ -68,6 +62,5 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     flex: 1,
     paddingTop: 15,
-    // backgroundColor: 'red'
   },
 })

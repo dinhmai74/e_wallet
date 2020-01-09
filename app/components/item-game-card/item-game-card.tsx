@@ -1,13 +1,9 @@
 import React, { Component } from "react"
 import { View, Image, ImageSourcePropType, StyleSheet } from "react-native"
-import { CardItem, Card } from "native-base"
 import { Text } from "components/text"
-import { Icon, IconTypes, icons } from "components/icon"
+import { Icon } from "components/icon"
 import { spacing, metrics, palette } from "theme"
 import { TranslateKey } from "i18n/lang"
-import { Button } from "components"
-import { UnderlineText } from "components/underline-text"
-import { Touch } from "react-powerplug"
 import { TouchableOpacity } from "react-native-gesture-handler"
 import { navigateService } from "utils"
 
@@ -64,7 +60,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 5,
     marginTop: 5,
-    marginLeft: 3
+    marginLeft: 3,
   },
   wrapperContent: {
     justifyContent: "center",

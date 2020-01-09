@@ -1,7 +1,7 @@
 import * as React from "react"
 import { observer } from "mobx-react"
 import { ViewStyle } from "react-native"
-import { Text, Header, Button, View, TransactionDetail, SizedBox } from "components"
+import { Header, Button, View, TransactionDetail, SizedBox } from "components"
 import { Screen, NoteBuyCardInfo } from "components"
 import { spacing } from "theme"
 import { navigateService } from "utils"

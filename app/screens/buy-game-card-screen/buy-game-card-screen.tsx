@@ -1,19 +1,7 @@
 import React, { Component } from "react"
-import {
-  Screen,
-  Text,
-  Button,
-  View,
-  icons,
-  ItemGameCard,
-  ItemGameCardProps,
-  Header,
-  SizedBox,
-} from "components"
-import { color, spacing, palette } from "theme"
-import { ViewStyle, StatusBar, Platform, StyleSheet } from "react-native"
-import InfoPaymentCard from "screens/pay-internet/pay-internet/info-payment-card"
-import { navigateService } from "utils"
+import { Screen, View, Header, SizedBox } from "components"
+import { spacing } from "theme"
+import { ViewStyle, StyleSheet } from "react-native"
 import { ListGameCard } from "./component"
 import PromotionSearch from "screens/promotion-screen/promotion-search/promotion-search"
 

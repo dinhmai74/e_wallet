@@ -1,15 +1,6 @@
 import * as React from "react"
-import { observer } from "mobx-react"
 import { ViewStyle } from "react-native"
-import {
-  Text,
-  Header,
-  Button,
-  View,
-  TransactionDetail,
-  TransactionSuccessfull,
-  SizedBox,
-} from "components"
+import { Header, Button, View, TransactionSuccessfull, SizedBox } from "components"
 import { Screen } from "components"
 import { spacing } from "theme"
 import { navigateService } from "utils"
@@ -18,8 +9,6 @@ import { NavigationParams, NavigationScreenProp, NavigationState } from "react-n
 const ROOT: ViewStyle = {
   paddingHorizontal: spacing[2],
 }
-
-// @inject("mobxstuff")
 
 interface Props {
   goPhoneCardScreen: string
