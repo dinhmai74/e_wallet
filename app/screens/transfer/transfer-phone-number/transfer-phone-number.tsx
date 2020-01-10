@@ -11,7 +11,8 @@ export interface TransferPhoneNumber extends NavigationScreenProps<{}> {}
 
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,
-  paddingHorizontal: spacing[5],
+  paddingHorizontal: spacing[6],
+  paddingVertical: spacing[4]
 }
 
 // @inject("mobxstuff")

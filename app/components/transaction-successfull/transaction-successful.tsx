@@ -41,7 +41,7 @@ export class TransactionSuccessfull extends Component<Props, {}> {
     } = this.props
     return (
       <View>
-        <Card style={{ marginHorizontal: spacing[5] }}>
+        <Card >
           <CardItem style={styles.item}>
             <Icon icon={"iconSucces"} size={metrics.images.xl} style={{ alignSelf: "center" }} />
           </CardItem>

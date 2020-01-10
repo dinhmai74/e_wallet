@@ -19,11 +19,11 @@ export class CategoryCard extends Component {
   render() {
     const { selected } = this.state
     return (
-      <View style={{ paddingHorizontal: spacing[3] }}>
+      <View style={{ paddingHorizontal: spacing[3], paddingVertical: spacing[4] }}>
         <View style={{ paddingTop: spacing[2] }}>
           <Indicator title="chooseProvider" style={{ width: 70 }} />
         </View>
-        <ScrollView horizontal style={{ marginTop: spacing[4] }}>
+        <ScrollView horizontal style={{ margin: spacing[4], paddingVertical: spacing[4] }} showsHorizontalScrollIndicator={false}>
           <Card style={styles.styleCard}>
             <Button transparent bordered={!selected} onPress={this.handlePress.bind(this)}>
               <Image source={icons.iconViettel} style={styles.styledImage} />
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   styleCard: {
     justifyContent: "center",
     alignItems: "center",
-    marginHorizontal: spacing[1],
+    marginHorizontal: spacing[4],
   },
 })
 export default CategoryCard

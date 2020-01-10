@@ -11,7 +11,7 @@ import CategoryCard from "screens/buy-phone-card-screen/category-card/category-c
 export interface BuyPhoneCardScreenProps extends NavigationScreenProps<{}> {}
 
 const ROOT: ViewStyle = {
-  paddingHorizontal: spacing[5],
+  paddingHorizontal: spacing[6],
 }
 @observer
 export class BuyPhoneCardScreen extends React.Component<BuyPhoneCardScreenProps, {}> {

@@ -1,11 +1,12 @@
 import React, { Component } from "react"
 import { View, StyleSheet } from "react-native"
 import { spacing, palette } from "theme"
-import { Button, Text, RecentPhoneNumber } from "components"
+import { Button, Text, RecentPhoneNumber, SizedBox } from "components"
 import CustomInput from "../custom-input"
 import Indicator from "screens/pay-internet/confirm-transaction/indicator"
-import { Item, Input } from "native-base"
+import { Item, Input, Label, Form } from "native-base"
 import { navigateService } from "utils"
+import { translate } from "i18n"
 
 interface State {
   phoneNumber: string
@@ -69,17 +70,18 @@ export class InputPhoneNumber extends Component<{}, State> {
     })
     this.setState({
       phoneNumber: "",
-      amount: "", 
+      amount: "",
       transactionDescription: ""
     })
   }
   render() {
     const { phoneNumber, amount, transactionDescription } = this.state
     return (
-      <View style={{ paddingTop: spacing[5] }}>
-        <Item style={{ marginBottom: spacing[5] }}>
+      <Form style={{ paddingTop: spacing[5] }}>
+        <Item style={{ marginBottom: spacing[2] }} stackedLabel={true} >
+          <Label>{translate("common_phone")}*</Label>
           <Input
-            placeholder={"Phone number*"}
+            placeholder={"..."}
             placeholderTextColor={palette.grey}
             style={styles.styleInput}
             onChangeText={phoneNumber => this.setState({ phoneNumber })}
@@ -87,9 +89,10 @@ export class InputPhoneNumber extends Component<{}, State> {
             keyboardType="number-pad"
           />
         </Item>
-        <Item style={{ marginBottom: spacing[5] }}>
+        <Item style={{ marginBottom: spacing[2] }} stackedLabel={true}>
+          <Label>{translate("amount")}*</Label>
           <Input
-            placeholder={"Amount*"}
+            placeholder={"..."}
             placeholderTextColor={palette.grey}
             style={styles.styleInput}
             onChangeText={amount => this.setState({ amount })}
@@ -97,15 +100,17 @@ export class InputPhoneNumber extends Component<{}, State> {
             keyboardType="number-pad"
           />
         </Item>
-        <Item style={{ marginBottom: spacing[5] }}>
+        <Item style={{ marginBottom: spacing[2] }} stackedLabel={true}>
+          <Label>{"Transaction description"}</Label>
           <Input
-            placeholder={"Transaction description"}
+            placeholder={"..."}
             placeholderTextColor={palette.grey}
             style={styles.styleInput}
             onChangeText= {transactionDescription => {this.setState({transactionDescription})}}
             value={transactionDescription}
           />
         </Item>
+        <SizedBox h={2}/>
         <Text tx="noteTransfer" t1 style={styles.styleNote} />
         <Indicator title="recent" style={{ width: 125 }} />
         <RecentPhoneNumber phoneNumber="0769 423 567" />
@@ -119,7 +124,7 @@ export class InputPhoneNumber extends Component<{}, State> {
             full
           />
         </View>
-      </View>
+      </Form>
     )
   }
 }

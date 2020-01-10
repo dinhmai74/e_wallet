@@ -123,6 +123,7 @@ export class DenominationCard extends Component<Props, {}> {
         style={{
           flexDirection: "row",
           justifyContent: "space-between",
+          alignItems: "center",
           marginHorizontal: spacing[4],
         }}
       >
@@ -168,8 +169,7 @@ export class DenominationCard extends Component<Props, {}> {
   }
   render() {
     return (
-      <View full>
-        <Screen style={ROOT}>
+      <View >
           <View style={{ paddingTop: spacing[5] }}>
             <Indicator title="denominations" style={{ width: 72 }} />
           </View>
@@ -180,10 +180,9 @@ export class DenominationCard extends Component<Props, {}> {
           <SizedBox h={6} />
           <View
             style={{
-              width: 290,
+              width: "100%",
               height: 1,
               backgroundColor: palette.blueGrey,
-              marginHorizontal: spacing[4],
               justifyContent: "center",
             }}
           ></View>
@@ -192,7 +191,6 @@ export class DenominationCard extends Component<Props, {}> {
           <View style={{ paddingTop: spacing[4], paddingHorizontal: spacing[3] }}>
             <Button tx="buy" full bordered onPress={this.goBuyPhoneCardInfoScreen} />
           </View>
-        </Screen>
       </View>
     )
   }

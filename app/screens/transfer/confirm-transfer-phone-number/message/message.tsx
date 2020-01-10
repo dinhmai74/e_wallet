@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Image, StyleSheet, View } from "react-native"
-import { CardItem, Card, Thumbnail, Input, Item } from "native-base"
+import { CardItem, Card, Thumbnail, Input, Item, Textarea } from "native-base"
 import { icons, Text } from "components"
 import { metrics, spacing, palette } from "theme"
 import { TranslateKey } from "i18n/lang"
@@ -16,8 +16,7 @@ export class Message extends Component<Props, {}> {
       <Card style={styles.container}>
         <Text tx="message" style={styles.title} t1 color={palette.navy} bold />
         <View style={styles.contentMessage}>
-          <Text tx={transactionDescription} b1 color={palette.blueGrey} />
-          <View style={{ width: 280, height: 1.5, backgroundColor: palette.blueGrey }}></View>
+          <Textarea rowSpan={5} placeholder="Message"  bordered={false} underline={true}/>
         </View>
       </Card>
     )

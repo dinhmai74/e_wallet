@@ -16,7 +16,9 @@ import { navigateService } from "utils"
 
 import { NavigationParams, NavigationScreenProp, NavigationState } from "react-navigation"
 import { TranslateKey } from "i18n/lang"
-const ROOT: ViewStyle = {}
+const ROOT: ViewStyle = {
+  paddingHorizontal: spacing[6]
+}
 
 // @inject("mobxstuff")
 
@@ -35,7 +37,7 @@ function guidGenerator() {
 
 export class TransferPhoneNumberSuccess extends React.Component<Props, {}> {
   goBackTransferPhoneNumber = () => {
-    
+
     navigateService.navigate("transferPhoneNumber", {
       phoneNumber: " ",
       amount: " ",
@@ -60,7 +62,9 @@ export class TransferPhoneNumberSuccess extends React.Component<Props, {}> {
             labelLineThird="transactionID"
             titleLineThird={guidGenerator()}
           />
-          <View style={{ paddingHorizontal: spacing[5], paddingTop: spacing[7] }}>
+          <SizedBox h={6} />
+
+          <View style={{ marginHorizontal: spacing[5], paddingTop: spacing[7] }}>
             <Button
               tx="createNewTransaction"
               full

@@ -12,7 +12,7 @@ import { navigateService } from "utils"
 
 const ROOT: ViewStyle = {
   // backgroundColor: color.palette.black,
-  paddingHorizontal: spacing[5],
+  paddingHorizontal: spacing[6],
 }
 
 function guidGenerator() {

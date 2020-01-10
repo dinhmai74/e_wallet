@@ -7,7 +7,7 @@ import { navigateService } from "utils"
 
 import { NavigationParams, NavigationScreenProp, NavigationState } from "react-navigation"
 const ROOT: ViewStyle = {
-  paddingHorizontal: spacing[2],
+  paddingHorizontal: spacing[6],
 }
 
 interface Props {
