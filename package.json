@@ -33,7 +33,7 @@
     "apisauce": "1.0.3",
     "formik": "^2.0.4",
     "i18n-js": "^3.0.11",
-    "immer": "^5.0.0",
+    "immer": "^9.0.6",
     "lodash.throttle": "4.1.1",
     "mobx": "^4.13.0",
     "mobx-react": "^5.4.4",
